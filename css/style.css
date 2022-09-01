@@ -1,46 +1,46 @@
 body {
   margin: 0;
-  background-image: url(/img/fatec.jpg);
+  background-color: #f7f7f7;
   background-size: 1920px 1080px;
   font-family: tahoma;
 }
 img {
-  width: 80px;
+  width: 90px;
 }
 .cinza {
   background-color: #e7e7e7;
-  width: 1400px;
   margin: 0 auto;
   margin-top: 50px;
-  height: 800px;
   border-radius: 20px;
-  box-shadow: 5px 5px 7px rgb(53, 53, 53);
   position: relative;
-  padding: 2px;
+  padding: 30px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: fit-content;
 }
 .pcs {
-  width: 565px;
+  width: fit-content;
   background: #f7f7f7;
   border: solid 1px white;
   border-radius: 10px;
   padding: 1px;
-  margin: 30px 0px;
-  height: 124px;
+  margin: 17px 0px;
   display: flex;
   justify-content: space-around;
+  column-gap: 30px;
 }
 .prof {
   background-color: #f7f7f7;
-  width: 170px;
-  height: 120px;
-  border-radius: 10px;
+  width: fit-content;
   margin-left: 150px;
-  margin-top: 20px;
+  border-radius: 10px;
   padding: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding-inline: 20px;
+  grid-column: 1 / span 2;
+  column-gap: 20px;
 }
 header {
   margin: 0;
@@ -48,9 +48,7 @@ header {
 }
 
 .pro {
-  position: absolute;
-  margin-top: 90px;
-  margin-left: 97px;
+  position: relative;
 }
 .computadores {
   display: flex;
@@ -62,8 +60,37 @@ header {
   grid-template-columns: 1fr 1fr;
 }
 .coluna {
-  margin-left: 64px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-inline: 30px;
 }
 .pc {
   margin-top: 10px;
+}
+.computadores a:hover,
+a:visited {
+  background-color: #ccc;
+  color: inherit;
+  border-radius: 10px;
+}
+.prof a:hover,
+a:visited {
+  background-color: #ccc;
+  color: inherit;
+  border-radius: 10px;
+}
+.computadores a {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: black;
+  align-items: center;
+}
+.prof a {
+  text-decoration: none;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
