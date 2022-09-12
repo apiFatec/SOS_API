@@ -1,3 +1,9 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   background-color: #f7f7f7;
@@ -5,18 +11,17 @@ body {
   font-family: tahoma;
 }
 img {
-  width: 90px;
+  width: 75px;
 }
 .cinza {
   background-color: #e7e7e7;
   margin: 0 auto;
-  margin-top: 50px;
   border-radius: 20px;
   position: relative;
-  padding: 30px;
   display: grid;
   grid-template-columns: 1fr 1fr;
   width: fit-content;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 }
 .pcs {
   width: fit-content;
@@ -28,6 +33,7 @@ img {
   display: flex;
   justify-content: space-around;
   column-gap: 30px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 }
 .prof {
   background-color: #f7f7f7;
@@ -41,15 +47,13 @@ img {
   padding-inline: 20px;
   grid-column: 1 / span 2;
   column-gap: 20px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 }
 header {
   margin: 0;
   height: 60px;
 }
 
-.pro {
-  position: relative;
-}
 .computadores {
   display: flex;
   flex-direction: column;
@@ -93,4 +97,88 @@ a:visited {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+nav {
+  background: #d1d1d1;
+  text-align: center;
+  grid-column: 1 / -1;
+  display: flex;
+  margin-bottom: 20px;
+  border-radius: 6px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+
+nav ul {
+  display: inline-flex;
+  list-style: none;
+}
+
+nav ul li {
+  width: 120px;
+  margin: 15px;
+  padding: 15px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #000000;
+}
+
+.dropSala {
+  display: none;
+}
+
+nav ul li:hover .dropSala {
+  display: block;
+  position: absolute;
+  background: #d1d1d1;
+  margin-top: 15px;
+  margin-left: -30px;
+}
+
+nav ul li:hover .dropSala ul {
+  display: block;
+}
+
+nav ul li:hover .dropSala ul li {
+  text-align: center;
+  transition: 0.4s;
+}
+
+nav ul li:hover .dropSala ul li:hover {
+  background-color: rgb(167, 167, 167);
+}
+
+nav ul li a {
+  cursor: pointer;
+}
+
+.dropAndares {
+  display: none;
+}
+
+nav ul li:hover .dropAndares {
+  display: block;
+  position: absolute;
+  background: #d1d1d1;
+  margin-top: 15px;
+  margin-left: -30px;
+}
+
+nav ul li .dropAndares ul {
+  display: block;
+}
+
+nav ul li .dropAndares ul li {
+  text-align: center;
+  transition: 0.4s;
+}
+
+nav ul li:hover .dropAndares ul li:hover {
+  background-color: rgb(167, 167, 167);
+}
+
+nav ul li a {
+  cursor: pointer;
 }
