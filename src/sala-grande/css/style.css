@@ -25,8 +25,8 @@ img {
 }
 .pcs {
   width: fit-content;
-  background: #f7f7f7;
-  border: solid 1px white;
+  background: #f1f1f1;
+  border: solid 1px #f1f1f1;
   border-radius: 10px;
   padding: 1px;
   margin: 17px 0px;
@@ -36,7 +36,7 @@ img {
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 }
 .prof {
-  background-color: #f7f7f7;
+  background-color: #f1f1f1;
   width: fit-content;
   margin-left: 150px;
   border-radius: 10px;
@@ -99,19 +99,22 @@ a:visited {
   align-items: center;
 }
 
-nav ul #sala:hover {
-  background: rgb(188, 188, 188);
-  transition: 0.4s;
-}
-
 nav {
-  background: #d1d1d1;
+  background: #f1f1f1;
   text-align: center;
   grid-column: 1 / -1;
   display: flex;
   margin-bottom: 20px;
   border-radius: 6px;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  box-shadow: rgba(0, 0, 0, 0.1) 4px 6px 15px;
+}
+
+.navbar {
+  justify-content: flex-end;
+}
+
+#andar {
+  border-left: 0.1px solid #00000080;
 }
 
 nav ul {
@@ -140,9 +143,10 @@ nav ul li a {
 #andar:hover .dropAndares {
   display: block;
   position: absolute;
-  background: #d1d1d1;
+  background: #f7f7f7;
   margin-top: 15px;
   margin-left: -20px;
+  border-radius: 5px;
 }
 
 #andar .dropAndares ul {
@@ -155,18 +159,80 @@ nav ul li a {
 }
 
 #andar:hover .dropAndares ul li:hover {
-  background-color: rgb(188, 188, 188);
+  background-color: #ebebeb;
 }
 
 nav ul #andar:hover {
-  background: rgb(188, 188, 188);
+  background: #ebebeb;
   transition: 0.4s;
 }
 
-.dropSala {
+.dropSala4 {
   display: none;
 }
 
-.navbar {
-  justify-content: flex-end;
+#andar4:hover .dropSala4 {
+  display: block;
+  position: absolute;
+  background: #f7f7f7;
+  margin-top: -79px;
+  margin-left: 100px;
+  border-radius: 5px;
+}
+
+#andar4:hover .dropSala4 ul {
+  display: block;
+}
+
+#andar4:hover .dropSala4 ul li {
+  text-align: center;
+  transition: 0.4s;
+}
+
+#andar4:hover .dropSala4 ul li:hover {
+  background: #ebebeb;
+}
+
+nav ul #andar1:hover {
+  background: #ebebeb;
+  transition: 0.4s;
+}
+
+.dropSala1 {
+  display: none;
+}
+
+#andar1:hover .dropSala1 {
+  display: block;
+  position: absolute;
+  background: #f7f7f7;
+  margin-top: -20px;
+  margin-left: 100px;
+  border-radius: 5px;
+}
+
+.dropSala2 {
+  display: none;
+}
+
+#andar2:hover .dropSala2 {
+  display: block;
+  position: absolute;
+  background: #f7f7f7;
+  margin-top: -20px;
+  margin-left: 100px;
+  border-radius: 5px;
+}
+
+.dropSala3 {
+  display: none;
+}
+
+#andar3:hover .dropSala3 {
+  display: block;
+  position: absolute;
+  background: #f7f7f7;
+  margin-top: -20px;
+  margin-left: 100px;
+  border-radius: 5px;
 }

@@ -1,0 +1,33 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #555;
+}
+
+.DIV_PAI {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: rgb(226, 226, 226);
+  height: 200px;
+  width: 50%;
+  border-radius: 20px;
+}
+
+.F1 ul li, .F2 ul li{
+  display: inline;
+  justify-content: space-between;
+  border: 1px solid black;
+  width: 100%;
+  padding-block: 25px;
+  text-align: center;
+}
+
+.F1 ul, .F2 ul {
+  display: flex;
+  justify-content: space-between;
+}
