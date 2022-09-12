@@ -5,5 +5,38 @@
 }
 
 body {
-  background-color: #555;
+  background-color: #FFFFFF;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 20px;
+  width: 100%;
+  margin: auto;
+  background-color: #EEEEEE;
+
+}
+
+.logo {
+  width: 115px;
+}
+
+.button_header {
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+  align-items: center;
+}
+
+a:visited {
+  color: inherit;
+}
+
+a {
+  text-decoration: none;
+  font-size: larger;
+  font-weight: bold;
+
 }
