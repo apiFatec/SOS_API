@@ -11,7 +11,7 @@ body {
   font-family: tahoma;
 }
 img {
-  width: 75px;
+  width: 67px;
 }
 .cinza {
   background-color: #e7e7e7;
@@ -32,7 +32,7 @@ img {
   margin: 17px 0px;
   display: flex;
   justify-content: space-around;
-  column-gap: 30px;
+  column-gap: 24px;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 }
 .prof {
@@ -40,9 +40,9 @@ img {
   width: fit-content;
   margin-left: 150px;
   border-radius: 10px;
-  padding: 0;
+  padding: 1px;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   padding-inline: 20px;
   grid-column: 1 / span 2;
@@ -76,13 +76,13 @@ header {
 a:visited {
   background-color: #ccc;
   color: inherit;
-  border-radius: 10px;
+  border-radius: 4px;
 }
 .prof a:hover,
 a:visited {
   background-color: #ccc;
   color: inherit;
-  border-radius: 10px;
+  border-radius: 4px;
 }
 .computadores a {
   display: flex;
@@ -99,6 +99,11 @@ a:visited {
   align-items: center;
 }
 
+nav ul #sala:hover {
+  background: rgb(188, 188, 188);
+  transition: 0.4s;
+}
+
 nav {
   background: #d1d1d1;
   text-align: center;
@@ -110,44 +115,18 @@ nav {
 }
 
 nav ul {
-  display: inline-flex;
+  display: flex;
   list-style: none;
 }
 
 nav ul li {
   width: 120px;
-  margin: 15px;
-  padding: 15px;
+  padding: 20px;
 }
 
 nav ul li a {
   text-decoration: none;
   color: #000000;
-}
-
-.dropSala {
-  display: none;
-}
-
-nav ul li:hover .dropSala {
-  display: block;
-  position: absolute;
-  background: #d1d1d1;
-  margin-top: 15px;
-  margin-left: -30px;
-}
-
-nav ul li:hover .dropSala ul {
-  display: block;
-}
-
-nav ul li:hover .dropSala ul li {
-  text-align: center;
-  transition: 0.4s;
-}
-
-nav ul li:hover .dropSala ul li:hover {
-  background-color: rgb(167, 167, 167);
 }
 
 nav ul li a {
@@ -158,27 +137,36 @@ nav ul li a {
   display: none;
 }
 
-nav ul li:hover .dropAndares {
+#andar:hover .dropAndares {
   display: block;
   position: absolute;
   background: #d1d1d1;
   margin-top: 15px;
-  margin-left: -30px;
+  margin-left: -20px;
 }
 
-nav ul li .dropAndares ul {
+#andar .dropAndares ul {
   display: block;
 }
 
-nav ul li .dropAndares ul li {
+#andar .dropAndares ul li {
   text-align: center;
   transition: 0.4s;
 }
 
-nav ul li:hover .dropAndares ul li:hover {
-  background-color: rgb(167, 167, 167);
+#andar:hover .dropAndares ul li:hover {
+  background-color: rgb(188, 188, 188);
 }
 
-nav ul li a {
-  cursor: pointer;
+nav ul #andar:hover {
+  background: rgb(188, 188, 188);
+  transition: 0.4s;
+}
+
+.dropSala {
+  display: none;
+}
+
+.navbar {
+  justify-content: flex-end;
 }
