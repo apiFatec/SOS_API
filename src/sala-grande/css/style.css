@@ -113,6 +113,10 @@ nav {
   justify-content: flex-end;
 }
 
+#andar {
+  border-left: 0.1px solid #00000080;
+}
+
 nav ul {
   display: flex;
   list-style: none;
