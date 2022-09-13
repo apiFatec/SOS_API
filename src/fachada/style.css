@@ -1,0 +1,94 @@
+body{
+    margin-left: 100px;
+    margin-right: 100px;
+
+}
+
+.head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+
+.btn{
+    padding: 30px 200px ;
+    width: 150px;
+    cursor: pointer;
+    font-weight: 700;
+    font-family: Arial;
+    text-transform: uppercase ;
+    display: inline-block;
+    text-decoration: none;
+    border: 1px solid black;
+    background: rgb(155, 155, 156);
+    color: black;
+    
+}
+
+.btn2{
+    padding: 30px 60px ;
+    width: 40px;
+    cursor: pointer;
+    font-weight: 700;
+    font-family: Arial;
+    text-transform: uppercase ;
+    display: inline-block;
+    text-decoration: none;
+    border: 1px solid black;
+    background: rgb(155, 155, 156);
+    color: black;
+    
+}
+
+.btn:hover{
+    background: rgb(211, 208, 208);
+
+}
+
+.btn:active{
+    position: relative;
+    top: 3px;
+    box-shadow: none;
+    background: rgb(86, 143, 72);
+
+}
+
+.btn2:hover{
+    background: rgb(211, 208, 208);
+
+}
+
+.btn2:active{
+    position: relative;
+    top: 3px;
+    box-shadow: none;
+    background: rgb(86, 143, 72);
+
+}
+
+.coluna{
+    padding: 200px 30px ;
+    width: 30px;
+    background-color: rgb(54, 54, 248);   
+}
+
+.andares{
+    max-width: 552px;
+}
+
+.andares2{
+    max-width: 276px;
+}
+
+.azul {
+    grid-column: 3;
+    
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 552px 64px 276px;
+    margin-left: 100px;
+}
+
