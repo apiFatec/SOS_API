@@ -1,7 +1,7 @@
 body{
     margin-left: 100px;
     margin-right: 100px;
-
+    font-family: Tahoma;
 }
 
 .head {
@@ -21,7 +21,7 @@ body{
     display: inline-block;
     text-decoration: none;
     border: 1px solid black;
-    background: rgb(155, 155, 156);
+    background: #e7e7e7;
     color: black;
     
 }
@@ -36,7 +36,7 @@ body{
     display: inline-block;
     text-decoration: none;
     border: 1px solid black;
-    background: rgb(155, 155, 156);
+    background: #e7e7e7;
     color: black;
     
 }
