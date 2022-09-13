@@ -5,7 +5,8 @@
 }
 
 body {
-  background-color: #FFFFFF;
+  background-color: #ffffff;
+  font-family: Tahoma, Geneva, Verdana, sans-serif;
 }
 
 header {
@@ -15,8 +16,7 @@ header {
   padding: 5px 20px;
   width: 100%;
   margin: auto;
-  background-color: #EEEEEE;
-
+  background-color: #e7e7e7;
 }
 
 .logo {
@@ -25,7 +25,8 @@ header {
 
 .button_header {
   display: flex;
-  gap: 40px;
+  gap: 50px;
+  margin-right: 30px;
   justify-content: center;
   align-items: center;
 }
@@ -38,5 +39,4 @@ a {
   text-decoration: none;
   font-size: larger;
   font-weight: bold;
-
 }
