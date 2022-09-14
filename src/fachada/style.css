@@ -1,6 +1,4 @@
 body{
-    margin-left: 100px;
-    margin-right: 100px;
     font-family: Tahoma;
 }
 
@@ -8,7 +6,6 @@ body{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    
 }
 
 .btn{
@@ -16,13 +13,15 @@ body{
     width: 150px;
     cursor: pointer;
     font-weight: 700;
-    font-family: Arial;
     text-transform: uppercase ;
     display: inline-block;
     text-decoration: none;
     border: 1px solid black;
     background: #e7e7e7;
     color: black;
+    border-bottom-left-radius: 6px;
+    border-top-left-radius: 6px;
+    text-align: center;
     
 }
 
@@ -31,13 +30,14 @@ body{
     width: 40px;
     cursor: pointer;
     font-weight: 700;
-    font-family: Arial;
     text-transform: uppercase ;
     display: inline-block;
     text-decoration: none;
     border: 1px solid black;
     background: #e7e7e7;
     color: black;
+    border-bottom-right-radius: 6px;
+    border-top-right-radius: 6px;
     
 }
 
@@ -68,7 +68,7 @@ body{
 }
 
 .coluna{
-    padding: 200px 30px ;
+    padding: 201px 30px ;
     width: 30px;
     background-color: rgb(54, 54, 248);   
 }
@@ -88,7 +88,14 @@ body{
 
 .grid {
     display: grid;
-    grid-template-columns: 552px 64px 276px;
+    grid-template-columns: 551px 63px 275px;
     margin-left: 100px;
+    margin-right: 100px;
+
+}
+
+.titulo{
+    margin-left: 100px;
+    margin-right: 100px;
 }
 
