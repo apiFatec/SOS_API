@@ -376,7 +376,21 @@ nav {
 }
 
 .navbar {
-  justify-content: flex-end;
+  justify-content: space-between;
+}
+
+.voltar {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  gap: 20px;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+.voltar img {
+  width: 17px;
 }
 
 #andar {
