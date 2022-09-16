@@ -1,7 +1,8 @@
 # SOS API 1º ADS
 
 ## O que é
-
+<p>Service Out System SOS</p>
+É um sistema de ordem de serviços, para informar computadores com mau funcionamento dentro do campus FATEC prof. Jessen Vidal.
 
 ## Time
  <table>
