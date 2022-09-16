@@ -1,43 +1,48 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  background-color: #ffffff;
-  font-family: Tahoma, Geneva, Verdana, sans-serif;
-  margin: 0;
-}
-
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 5px 20px;
-  width: 100%;
-  margin: auto;
+  width: 100vw;
+  margin: 0;
   background-color: #e7e7e7;
+  font-family: tahoma;
 }
 
 .logo {
-  width: 115px;
+  width: 8rem;
+  margin-left: 5rem;
 }
 
 .button_header {
   display: flex;
-  gap: 50px;
-  margin-right: 30px;
   justify-content: center;
   align-items: center;
+  margin-right: 5rem;
 }
 
-a:visited {
+.head a:visited {
   color: inherit;
 }
 
-a {
+.head a {
   text-decoration: none;
-  font-size: larger;
-  font-weight: bold;
+  font-size: 14pt;
+}
+
+.button_header a {
+  height: 4rem;
+  border-right: solid 1px #979797;
+  border-left: solid 1px #979797;
+  padding-inline: 2.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.button_header a:hover {
+  background: rgb(211, 208, 208);
+  transition: 0.2s;
+}
+
+#contato {
+  border-right: none;
 }
