@@ -1,37 +1,33 @@
-*{
+* {
   margin: 0%;
   padding: 0;
   box-sizing: 0;
 }
 
-body{
-  font-size: 15px;
+body {
   color: black;
+  background: #f7f7f7;
 }
 
-main{
-  background-color: gray;
-  border-radius: 10px;
-  width: 60%;
-  overflow: hidden;
-  border: 1px solid black;
-  margin: auto;
+main {
+  font-family: Tahoma;
 }
 
-.cima{
+.cima {
   display: flex;
 }
 
-.corredor{
+.corredor {
   height: 70px;
+  border-inline: solid 1px #000000;
 }
 
-.baixo{
+.baixo {
   display: flex;
   padding-left: 0px;
 }
 
-.bloco{
+.bloco {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -40,28 +36,65 @@ main{
   width: 100%;
   text-align: center;
   padding: 40px 0px;
-  background-color: white;
+  background-color: #f1f1f1;
 }
 
-.escada{
-  display: flex;
+.escada {
+  display: grid;
+  grid-template-rows: auto auto auto auto;
   align-items: center;
   height: 80px;
+  width: 500px;
   text-align: center;
-  padding: 40px 10px;
   border-radius: 10px;
+  font-size: 13pt;
 }
 
-a{
+.escada div {
+  border-bottom: solid #000000 1px;
+  padding: 15px;
+}
+
+nav a {
   text-decoration: none;
+  color: #000000;
 }
 
-a:visited{
+nav a:visited {
   color: inherit;
 }
 
-a:hover{
-  color: white;
-  text-decoration: underline;
-  background-color: #595959;
+.cima a:hover {
+  background-color: rgb(215, 215, 215);
+  transition: 0.4s;
+}
+
+.baixo a:hover {
+  background-color: rgb(215, 215, 215);
+  transition: 0.4s;
+}
+
+.voltar {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  gap: 20px;
+  padding: 10px;
+  border: solid 1px #000000;
+  border-bottom: none;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  cursor: pointer;
+}
+
+.voltar img {
+  width: 17px;
+}
+
+.container {
+  background-color: #e7e7e7;
+  border-radius: 10px;
+  width: 60%;
+  margin: auto;
+  margin-top: 100px;
 }
