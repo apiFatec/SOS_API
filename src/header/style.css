@@ -32,9 +32,9 @@ header {
 }
 
 .button_header a {
-  height: 5rem;
-  border-right: solid 1px #979797;
-  border-left: solid 1px #979797;
+  height: 4rem;
+  /* border-right: solid 1px #979797;
+  border-left: solid 1px #979797; */
   padding-inline: 2.5rem;
   display: flex;
   align-items: center;

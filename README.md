@@ -5,7 +5,10 @@
 É um sistema de ordem de serviços, com o objetivo principal de informar computadores com mau funcionamento dentro do campus FATEC prof. Jessen Vidal e também navegar de forma dinamica pelo mapa da FATEC.
 
 # Relatório das sprints
-<a href="">Sprint - 01 18/09/2022</a>
+<ol>
+  <li><a href="./relatorios/Sprint-01.md">Sprint - 01 18/09/2022</a></li>
+</ol>
+
 
 # Tecnologias utilizadas
 <table>
@@ -78,10 +81,10 @@
     <tr>
     <td>Mateus Raimundo (Scrum Master)</td>
     <td><a href="https://github.com/MateusdiSousa">Github</a></td>
-    <td><a href="">LinkedIn</a></td>
+    <td><a href="https://www.linkedin.com/in/mateus-sousa-ba976423a">LinkedIn</a></td>
     </tr>
     <tr>
-    <td>Phelipe oliveira</td>
+    <td>Phelipe Pinheiro</td>
     <td><a href="https://github.com/Phelipepinheiro">Github</a></td>
     <td><a href="https://www.linkedin.com/in/phelipe-pinheiro-da-silva-28320824a/">LinkedIn</a></td>
     </tr>
