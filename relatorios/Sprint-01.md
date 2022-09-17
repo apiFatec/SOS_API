@@ -62,7 +62,7 @@ Nesta primeira Sprint o foco foi no desenvolvimento do mapa navegavel e da solic
 </table>
 
 ## Backlog da sprint
-<img src="" alt="sprint 01"/>
+<img src="https://user-images.githubusercontent.com/89823203/190877439-c500a234-8613-4a23-b1fb-33dcb1220112.png" alt="sprint 01"/>
 
 ## Trabalho desenvolvido
 
@@ -80,6 +80,6 @@ Nesta primeira Sprint o foco foi no desenvolvimento do mapa navegavel e da solic
     <img src="https://user-images.githubusercontent.com/89823203/190832945-e8986038-cf79-4067-9396-6a7efef8e923.png" alt="Sala selecionada"/>
   </li>
   <li>Página formulário para abrir chamado
-    <img src="" alt="Página formulário"/>
+    <img src="https://user-images.githubusercontent.com/89823203/190877469-1a5bc818-de08-4a31-95ad-b1807faecfcc.png" alt="Página formulário"/>
   </li>
 </ul>
