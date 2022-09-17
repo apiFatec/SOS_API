@@ -146,11 +146,13 @@ form label {
   border-radius: 6px;
   color: black;
   display: block;
-  padding: 0.5rem;
+  padding: 1rem;
   background: #f7f7f7;
   border: none;
+  font-family: tahoma;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   outline: none;
+  width: 16.8rem;
 }
 
 #forms-descrição textarea:hover {
