@@ -29,10 +29,10 @@ header {
   font-size: 14pt;
 }
 
-.button_header a {
+.button_header  a {
   height: 4rem;
-  border-right: solid 1px #979797;
-  border-left: solid 1px #979797;
+  /* border-right: solid 1px #979797;
+  border-left: solid 1px #979797; */
   padding-inline: 2.5rem;
   display: flex;
   align-items: center;
