@@ -1,68 +1,71 @@
 # SOS API 1º ADS
 
+## indice
+
+- [O que é](#o-que-é)
+- [Solução de proposta](#solução-de-proposta)
+- [Planejamento das sprints](#planejamento-das-sprints)
+- [Tecnologias utilizadas](#tecnologias-utilizadas)
+- [Time](#time)
+- [Relatório das sprints](#relatório-das-sprints)
+
 ## O que é
+
 <p>Service Out System SOS</p>
-É um sistema de ordem de serviços, com o objetivo principal de informar computadores com mau funcionamento dentro do campus FATEC prof. Jessen Vidal e também navegar de forma dinamica pelo mapa da FATEC.
+É um sistema de ordem de serviços com o objetivo principal de informar computadores com mau funcionamento dentro do campus FATEC prof. Jessen Vidal e também navegar de forma dinamica pelo mapa da FATEC.
 
 ## Solução de proposta
+
 <ul>
-  <li>Sistema web</li>
+  <li>Sistema web utilizando flask</li>
   <li>Mapa da FATEC navegavel</li>
   <li>Abrir ordem de serviço</li>
   <li>Verdetalhes de Hardware e software</li>
   <li>Identificação das máquinas</li>
+  <li>Alteração de layout</li>
 </ul>
 
-## Planejamento das sprints]
-<div style="display: grid; grid-template-columns: 50% 50%;">
-  <img style="width: 49%;" src="https://user-images.githubusercontent.com/89823203/190874109-48e0799a-58c6-4aac-a09a-a36fb71fec13.png" alt="Img sprint 01 e 02"/>
-  <img style="width: 50%;" src="https://user-images.githubusercontent.com/89823203/190874117-ac6cae61-01f9-47f9-8e46-8395927d8c97.png" alt="Img sprint 03 e 04"/>
-</div>
+## Benefícios
 
-# Relatório das sprints
-<ol>
-  <li><a href="./relatorios/Sprint-01.md">Sprint - 01 18/09/2022</a></li>
-</ol>
+<ul>
+  <li>Agilídade na manutenção</li>
+  <li>Controle de </li>
+</ul>
 
 
-# Tecnologias utilizadas
+## Planejamento das sprints
+
+  <img src="https://user-images.githubusercontent.com/89823203/190874109-48e0799a-58c6-4aac-a09a-a36fb71fec13.png" alt="Img sprint 01 e 02"/>
+
+## Tecnologias utilizadas
+
 <table>
   <thead>
     <th><img
-  src="https://user-images.githubusercontent.com/89823203/188508559-2e9b2add-9fb0-427f-b812-3201f43f9c57.png"
-  alt="Alt text"
-  title="Optional title"
-  style="display: inline-block; margin: 0 auto; width: 60px"></th>
-  <th><img
-  src="https://user-images.githubusercontent.com/89823203/188508718-75027df1-8a91-4a47-94b5-ce2664c6f2be.png"
-  alt="Alt text"
-  title="Optional title"
-  style="display: inline-block; margin: 0 auto; width: 60px"></th>
-  <th><img
-  src="https://user-images.githubusercontent.com/89823203/190717820-53e9f06b-1aec-4e46-91e1-94ea2cf07100.svg"
-  alt="Alt text"
-  title="Optional title"
-  style="display: inline-block; margin: 0 auto; width: 60px"></th>
-  <th><img
-  src="https://user-images.githubusercontent.com/89823203/190718367-aae8b007-5719-462b-bc27-7c729c86c1d1.png"
-  alt="Alt text"
-  title="Optional title"
-  style="display: inline-block; margin: 0 auto; width: 60px"></th>
-  <th><img
-  src="https://user-images.githubusercontent.com/89823203/190718687-f627ce18-9b3e-4ce1-bc9c-ddc3521a7705.png"
-  alt="Alt text"
-  title="Optional title"
-  style="display: inline-block; margin: 0 auto; width: 60px"></th>
-  <th><img
-  src="https://formsubmit.io/static/app/images/formsubmit.png"
-  alt="Alt text"
-  title="Optional title"
-  style="display: inline-block; margin: 0 auto; width: 60px"></th>
-  <th><img
-  src="https://user-images.githubusercontent.com/89823203/190719035-739acf76-1eee-45e9-82df-08a64baf1a69.png"
-  alt="Alt text"
-  title="Optional title"
-  style="display: inline-block; margin: 0 auto; width: 60px"></th>
+    src="https://user-images.githubusercontent.com/89823203/188508559-2e9b2add-9fb0-427f-b812-3201f43f9c57.png"
+    alt="Alt text"
+    title="Optional title"
+    style="display: inline-block; margin: 0 auto; width: 60px"></th>
+    <th><img
+    src="https://user-images.githubusercontent.com/89823203/188508718-75027df1-8a91-4a47-94b5-ce2664c6f2be.png"
+    alt="Alt text"
+    title="Optional title"
+    style="display: inline-block; margin: 0 auto; width: 60px"></th>
+    <th><img
+    src="https://user-images.githubusercontent.com/89823203/190717820-53e9f06b-1aec-4e46-91e1-94ea2cf07100.svg"
+    alt="Alt text"
+    title="Optional title"
+    style="display: inline-block; margin: 0 auto; width: 60px"></th>
+    <th><img
+    src="https://user-images.githubusercontent.com/89823203/190718367-aae8b007-5719-462b-bc27-7c729c86c1d1.png"
+    alt="Alt text"
+    title="Optional title"
+    style="display: inline-block; margin: 0 auto; width: 60px"></th>
+    <th><img
+    src="https://user-images.githubusercontent.com/89823203/190718687-f627ce18-9b3e-4ce1-bc9c-ddc3521a7705.png"
+    alt="Alt text"
+    title="Optional title"
+    style="display: inline-block; margin: 0 auto; width: 60px"></th>
   </thead>
   <tbody>
     <td>HTML</td>
@@ -70,12 +73,40 @@
     <td>JAVASCRIPT</td>
     <td>Flask</td>
     <td>MySQL</td>
+  </tbody>
+
+  <thead>
+    <th><img
+    src="https://formsubmit.io/static/app/images/formsubmit.png"
+    alt="Alt text"
+    title="Optional title"
+    style="display: inline-block; margin: 0 auto; width: 60px"></th>
+    <th><img
+    src="https://user-images.githubusercontent.com/89823203/190719035-739acf76-1eee-45e9-82df-08a64baf1a69.png"
+    alt="Alt text"
+    title="Optional title"
+    style="display: inline-block; margin: 0 auto; width: 60px"></th>
+    <th><img
+    src=""
+    alt="Bootstrap icon"
+    title="Optional title"
+    style="display: inline-block; margin: 0 auto; width: 60px"></th>
+    <th><img
+    src=""
+    alt="figma icon"
+    title="Optional title"
+    style="display: inline-block; margin: 0 auto; width: 60px"></th>
+  </thead>
+  <tbody>
     <td>FormSubmit</td>
     <td>Trello</td>
+    <td>Bootstrap 5</td>
+    <td>Figma</td>
   </tbody>
 </table>
 
 ## Time
+
  <table>
   <thead>
     <th>Integrante</th>
@@ -115,4 +146,18 @@
   </tbody>
 </table>
 
+### Disciplina focal Point: Programação em Microinformática
 
+<ul>
+<li>M2 (Master dos Masters): Prof. Jean Costa</li>
+<li>P2 (PO dos PO's): Prof. Antônio Egydio</li>
+</ul>
+
+## Relatório das sprints
+
+<ol>
+  <li><a href="./relatorios/Sprint-01.md">Sprint 01 - 18/09/2022</a></li>
+  <li><a href="">Sprint 02 - 09/10/2022 (indisponivel)</a></li>
+  <li><a href="">Sprint 03 - 06/11/2022 (indiponível)</a></li>
+  <li><a href="">Sprint 04 - 27/11/2022 (indiponível)</a></li>
+</ol>
