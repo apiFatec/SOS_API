@@ -1,9 +1,11 @@
 <a href="../README.md">Voltar</a>
 
 # Relatório Sprint - 01 (18/09)
+
 Nesta primeira Sprint o foco foi no desenvolvimento do mapa navegavel e da solicitação de chamado de serviço utilizando a API formsubmit.io
 
 ## Frontend
+
 <ul>
   <li>Tela prédio principal</li>
   <li>Tela pisos</li>
@@ -14,17 +16,20 @@ Nesta primeira Sprint o foco foi no desenvolvimento do mapa navegavel e da solic
 </ul>
 
 ## Backend
+
 <ul>
   <li>Modelo lógico do banco</li>
 </ul>
 
 ## Gerais
+
 <ul>
   <li>Mapeamento das salas</li>
   <li>Protótipo no Figma</li>
 </ul>
 
 ## Tecnologias utilizadas
+
 <table>
 <thead>
     <th><img
@@ -55,3 +60,17 @@ Nesta primeira Sprint o foco foi no desenvolvimento do mapa navegavel e da solic
     <td>FormSubmit</td>
   </tbody>
 </table>
+
+## Trabalho desenvolvido
+
+<ul style="display: grid; gap: 20px; grid-template-columns: auto auto">
+  <li>Página do prédio principal
+    <img src="../fachada.png" alt="fachada prédio fatec"/>
+  </li>
+  <li>Página do piso selecionado
+    <img src="../fachada.png" alt="fachada prédio fatec"/>
+  </li>
+  <li>Página da sala selecionada
+    <img src="../fachada.png" alt="fachada prédio fatec"/>
+  </li>
+</ul>
