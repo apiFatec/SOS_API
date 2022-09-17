@@ -4,6 +4,19 @@
 <p>Service Out System SOS</p>
 É um sistema de ordem de serviços, com o objetivo principal de informar computadores com mau funcionamento dentro do campus FATEC prof. Jessen Vidal e também navegar de forma dinamica pelo mapa da FATEC.
 
+## Solução de proposta
+<ul>
+  <li>Sistema web</li>
+  <li>Mapa da FATEC navegavel</li>
+  <li>Abrir ordem de serviço</li>
+  <li>Verdetalhes de Hardware e software</li>
+  <li>Identificação das máquinas</li>
+</ul>
+
+## Planejamento das sprints
+<img href="" alt="Img sprint 01 e 02"/>
+<img href="" alt="Img sprint 03 e 04"/>
+
 # Relatório das sprints
 <ol>
   <li><a href="./relatorios/Sprint-01.md">Sprint - 01 18/09/2022</a></li>
