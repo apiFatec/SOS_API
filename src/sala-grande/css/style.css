@@ -5,7 +5,6 @@
 }
 
 body {
-  margin: 0;
   background-color: #f7f7f7;
   background-size: 1920px 1080px;
   font-family: tahoma;
@@ -17,43 +16,6 @@ img {
 a {
   text-decoration: none;
   color: #000000;
-}
-
-.button_header {
-  display: flex;
-  gap: 50px;
-  margin-right: 30px;
-  justify-content: center;
-  align-items: center;
-}
-
-.head a:visited {
-  color: inherit;
-}
-
-.head a {
-  text-decoration: none;
-  font-size: 14pt;
-  font-weight: bold;
-}
-
-.logo {
-  width: 115px;
-}
-
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 5px 20px;
-  width: 100%;
-  margin: auto;
-  background-color: #e7e7e7;
-}
-
-header {
-  margin: 0;
-  height: 60px;
 }
 
 /* Estilos gerais */

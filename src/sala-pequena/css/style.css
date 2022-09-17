@@ -14,40 +14,8 @@ a {
   color: #000000;
 }
 
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 5px 20px;
-  width: 100%;
-  margin: auto;
-  background-color: #e7e7e7;
-}
-
 img {
   width: 67px;
-}
-
-.logo {
-  width: 115px;
-}
-
-.button_header {
-  display: flex;
-  gap: 50px;
-  margin-right: 30px;
-  justify-content: center;
-  align-items: center;
-}
-
-.head a:visited {
-  color: inherit;
-}
-
-.head a {
-  text-decoration: none;
-  font-size: 14pt;
-  font-weight: bold;
 }
 
 /* Style do header */
@@ -74,15 +42,11 @@ nav {
   padding: 10px;
   border: none;
   cursor: pointer;
-
 }
 
 .voltar img {
   width: 17px;
 }
-
-
-
 
 #andar {
   border-left: 0.1px solid #00000080;
