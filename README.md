@@ -1,9 +1,10 @@
 # SOS API 1º ADS
 
-## indice
+## Índice
 
 - [O que é](#o-que-é)
 - [Solução de proposta](#solução-de-proposta)
+- [Benefícios](#benefícios)
 - [Planejamento das sprints](#planejamento-das-sprints)
 - [Tecnologias utilizadas](#tecnologias-utilizadas)
 - [Time](#time)
@@ -29,13 +30,16 @@
 
 <ul>
   <li>Agilídade na manutenção</li>
-  <li>Controle de </li>
+  <li>Controle de manutenção</li>
+  <li>Facilidade de encontrar problemas</li>
+  <li>Mantém laboratórios funcionais</li>
+  <li>Identificar máquinas</li>
 </ul>
 
 
 ## Planejamento das sprints
 
-  <img src="https://user-images.githubusercontent.com/89823203/190874109-48e0799a-58c6-4aac-a09a-a36fb71fec13.png" alt="Img sprint 01 e 02"/>
+  <img src="https://user-images.githubusercontent.com/89823203/190877336-d27ff78c-6c44-4a79-9982-05c5641cb37e.jpg" alt="planejamento sprints"/>
 
 ## Tecnologias utilizadas
 
@@ -87,12 +91,12 @@
     title="Optional title"
     style="display: inline-block; margin: 0 auto; width: 60px"></th>
     <th><img
-    src=""
+    src="https://user-images.githubusercontent.com/89823203/190877369-d5177678-8274-4d10-9c9f-df1544614b4b.png"
     alt="Bootstrap icon"
     title="Optional title"
     style="display: inline-block; margin: 0 auto; width: 60px"></th>
     <th><img
-    src=""
+    src="https://user-images.githubusercontent.com/89823203/190877360-8c7f93cf-5f62-4f49-8641-3b605deb513e.png"
     alt="figma icon"
     title="Optional title"
     style="display: inline-block; margin: 0 auto; width: 60px"></th>
