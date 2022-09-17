@@ -19,7 +19,7 @@ main {
 
 .corredor {
   height: 70px;
-  border-inline: solid 1px #000000;
+  /* border-inline: solid 1px #000000; */
 }
 
 .baixo {
@@ -31,7 +31,8 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid black;
+  border: 1px solid #bebebe;
+  border-radius: 4px;
   height: 80px;
   width: 100%;
   text-align: center;
@@ -51,7 +52,7 @@ main {
 }
 
 .escada div {
-  border-bottom: solid #000000 1px;
+  border-bottom: solid #858585 1px;
   padding: 15px;
 }
 
@@ -80,7 +81,7 @@ nav a:visited {
   align-items: center;
   gap: 20px;
   padding: 10px;
-  border: solid 1px #000000;
+  border: solid 1px #bebebe;
   border-bottom: none;
   border-top-right-radius: 10px;
   border-top-left-radius: 10px;
@@ -97,4 +98,5 @@ nav a:visited {
   width: 60%;
   margin: auto;
   margin-top: 100px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 }

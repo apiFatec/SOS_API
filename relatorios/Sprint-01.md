@@ -65,12 +65,18 @@ Nesta primeira Sprint o foco foi no desenvolvimento do mapa navegavel e da solic
 
 <ul style="display: grid; gap: 20px; grid-template-columns: auto auto">
   <li>Página do prédio principal
-    <img src="../fachada.png" alt="fachada prédio fatec"/>
+    <img src="https://user-images.githubusercontent.com/89823203/190832831-079de5df-8ddd-4d63-a23f-7de20d3a560a.png" alt="fachada prédio fatec"/>
   </li>
   <li>Página do piso selecionado
-    <img src="../fachada.png" alt="fachada prédio fatec"/>
+    <img src="https://user-images.githubusercontent.com/89823203/190832858-789df087-2787-4133-b06d-1d8eae13860a.png" alt="Piso selecionado"/>
   </li>
-  <li>Página da sala selecionada
-    <img src="../fachada.png" alt="fachada prédio fatec"/>
+  <li>Página da sala selecionada layout grande
+    <img src="https://user-images.githubusercontent.com/89823203/190832868-bf5eff98-bc1e-492a-8b56-0d7b0cda8a1d.png" alt="Sala selecionada"/>
+  </li>
+  <li>Página da sala selecionada layout padrão
+    <img src="https://user-images.githubusercontent.com/89823203/190832945-e8986038-cf79-4067-9396-6a7efef8e923.png" alt="Sala selecionada"/>
+  </li>
+  <li>Página formulário para abrir chamado
+    <img src="" alt="Página formulário"/>
   </li>
 </ul>
