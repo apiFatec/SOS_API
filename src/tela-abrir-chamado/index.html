@@ -5,111 +5,113 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Abrir chamado</title>
     <link rel="stylesheet" href="style.css">
-    <style>
-        main {
-            background-image: url(img/fundo-escuro.jpeg);
-            background-repeat: no-repeat;
-            background-size: cover;
-            height: 100vh;
-        }
-    </style>
+    <link rel="stylesheet" href="../header/style.css">
 </head>
 
 <body>
-    <header>
+    <header class="head">
+        <a href="">
+            <img class="logo" src="../../img/logofatec 1.png" alt="logo">
+        </a>
 
-        <div id="menu_1">
-            <nav id="menu">
-                <img class="logo" src="img/logo-fatec.png" alt="">
-                <ul>
-                    <li><a href="">Contato</a></li>
-                    <li><a href="">Dúvidas</a></li>
-                    <li><a href="">Sobre</a></li>
-                </ul>
-            </nav>
-        </div>
+        <div class="button_header">
+            <a href="" id="contato">Contato</a>
+            <a href="">Inicio</a>
     </header>
+
     <div id="container">
-        <div id="container">
+        <a class="voltar" href="../sala-pequena/index.html"><img src="../../img/voltar.png" alt="">Voltar</a>
+        <div class="tela-detalhes">
+            <div id="icon-pc" class="tela-detalhes">
+                <img src="img/pc-icon.png" alt="">
+            </div>
             <div class="tela-detalhes">
-                <div id="icon-pc" class="tela-detalhes">
-                    <img src="img/pc-icon.png" alt="">
+                <div>
+                    <ul id="detalhes-1">
+                        <li>Nome do dispositivo</li>
+                        <li>ID do endereço</li>
+                        <li>Endereço</li>
+                    </ul>
                 </div>
-                <div class="tela-detalhes">
-                    <div>
-                        <ul id="detalhes-1">
-                            <li>Nome do dispositivo</li>
-                            <li>ID do endereço</li>
-                            <li>Endereço</li>
-                        </ul>
-                    </div>
-                    <div>
-                        <ul id="detalhes-2">
-                            <li>DESKTOP-VJNCDEO</li>
-                            <li>30222BOF-40028922-4515-A7D2-69242469935B2</li>
-                            <li>4º piso, sala 402</li>
-                        </ul>
-                    </div>
+                <div>
+                    <ul id="detalhes-2">
+                        <li>DESKTOP-VJNCDEO</li>
+                        <li>30222BOF-40028922-4515-A7D2-69242469935B2</li>
+                        <li>4º piso, sala 402</li>
+                    </ul>
                 </div>
-
-
             </div>
 
-            <div id="forms">
-                <form id="contactform" action="https://formsubmit.io/send/suport.fatec@gmail.com" method="POST">
-                    <div id="forms-titulo">
-                        <label for="input.título">Título
-                            <hr>
-                        </label>
-                        <input placeholder="digite o título" type="text" id="input.título" name="titulo"> <br>
-                    </div>
-                    <div class="forms-categoria">
-                        <label style="text-transform: uppercase" for="">Categoria
-                            <hr>
-                        </label> <br>
-                        <div>
-                            <input value="hardware" type="radio" name="categoria" id="hardware">
-                            <label for="hardware">Hardware</label>
-                        </div>
-                        <div>
-                            <input value="software" type="radio" name="categoria" id="software">
-                            <label for="software">Software</label>
-                        </div>
-                        <div>
-                            <input value="rede" type="radio" name="categoria" id="rede">
-                            <label for="rede">Rede</label>
-                        </div>
-                    </div>
 
-                    <div id="forms-codigo-erro">
-                        <label for="codigo.erro">Código de erro
-                            <hr>
-                        </label><br>
-                        <input placeholder="digite o código do erro" id="codigo.erro" name="codigo_de_erro" type="text">
-                    </div>
-
-                    <div id="forms-descrição">
-                        <label for="descrição.erro">Descrição
-                            <hr>
-                        </label><br>
-                        <textarea placeholder="descreva o problema com o computador" name="comment" id="descrição.erro"
-                            cols="30" rows="10"></textarea>
-                    </div>
-                    <input name="_formsubmit_id" type="text" style="display:none">
-                    <input type="hidden" name="email" value="nicota1234@gmail.com" type="email" id="email">
-                    <div class="enviar-bottom">
-                        <input value="Submit" type="submit" name="" id="">
-                    </div>
-                    <input name="_redirect" type="hidden" id="name" value="https://google.com">
-                </form>
-
-            </div>
-
-    
         </div>
+
+        <div id="forms">
+            <form id="contactform" action="https://formsubmit.io/send/suport.fatec@gmail.com" method="POST">
+                <div id="forms-titulo">
+                    <label for="input.título">Título
+                        <hr>
+                    </label>
+                    <input type="text" id="input.título" name="titulo">
+                </div>
+
+                <div class="forms-categoria">
+                    <label style="text-transform: uppercase" for="">Categoria
+                        <hr>
+                    </label>
+                    <div>
+                        <input value="hardware" type="radio" name="categoria" id="hardware">
+                        <label for="hardware">Hardware</label>
+                    </div>
+
+                    <div>
+                        <input value="software" type="radio" name="categoria" id="software">
+                        <label for="software">Software</label>
+                    </div>
+
+                    <div>
+                        <input value="rede" type="radio" name="categoria" id="rede">
+                        <label for="rede">Rede</label>
+                    </div>
+
+                </div>
+
+                <div id="forms-codigo-erro">
+                    <label for="codigo.erro">Código de erro
+                        <hr>
+                    </label>
+                    <input id="codigo.erro" name="codigo_de_erro" type="text">
+                </div>
+
+                <div id="forms-email">
+                    <label for="input.título">Insira seu email para ser notificado
+                        <hr>
+                    </label>
+                    <input type="email" placeholder="email@exemple.com" type="text" id="input.email" name="email">
+                </div>
+
+                <div id="forms-descrição">
+                    <label for="descrição.erro">Descrição
+                        <hr>
+                    </label><br>
+                    <input placeholder="descreva o problema do computador" name="descrição" id="descricao-erro" cols="30" rows="10"></input>
+                </div>
+
+                <input name="_formsubmit_id" type="text" style="display:none">
+                <input type="hidden" name="email" value="nicota1234@gmail.com" type="email" id="email">
+                <div class="enviar-bottom">
+                    <input value="Enviar" type="submit" name="" id="enviar">
+                </div>
+
+                <input name="_redirect" type="hidden" id="name" value="https://google.com">
+            </form>
+
+        </div>
+
+
     </div>
+
 
 </body>
 
