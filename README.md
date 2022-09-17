@@ -14,8 +14,8 @@
 </ul>
 
 ## Planejamento das sprints
-<img href="" alt="Img sprint 01 e 02"/>
-<img href="" alt="Img sprint 03 e 04"/>
+<img href="https://user-images.githubusercontent.com/89823203/190874109-48e0799a-58c6-4aac-a09a-a36fb71fec13.png" alt="Img sprint 01 e 02"/>
+<img href="https://user-images.githubusercontent.com/89823203/190874117-ac6cae61-01f9-47f9-8e46-8395927d8c97.png" alt="Img sprint 03 e 04"/>
 
 # Relatório das sprints
 <ol>
