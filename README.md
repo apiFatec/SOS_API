@@ -1,5 +1,8 @@
 # SOS API 1º ADS
 
+## Nosso projeto
+<img src="https://user-images.githubusercontent.com/89823203/190880818-0882e9f4-1969-49e4-acd0-e63c9cf62998.gif" />
+
 ## Índice
 
 - [O que é](#o-que-é)
