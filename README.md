@@ -1,7 +1,7 @@
 # SOS API 1º ADS
 
 ## Nosso projeto
-<img src="https://user-images.githubusercontent.com/89823203/190880818-0882e9f4-1969-49e4-acd0-e63c9cf62998.gif" />
+<img src="https://user-images.githubusercontent.com/89823203/190881607-8584abd3-f1c7-4d2d-a3fa-d13ba1c863b6.gif" />
 
 ## Índice
 
