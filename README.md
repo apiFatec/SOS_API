@@ -24,7 +24,7 @@
   <li>Sistema web utilizando flask</li>
   <li>Mapa da FATEC navegavel</li>
   <li>Abrir ordem de serviço</li>
-  <li>Verdetalhes de Hardware e software</li>
+  <li>Ver detalhes de Hardware e software</li>
   <li>Identificação das máquinas</li>
   <li>Alteração de layout</li>
 </ul>
