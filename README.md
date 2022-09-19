@@ -16,13 +16,13 @@
 ## O que é
 
 <p>Service Out System SOS</p>
-É um sistema de ordem de serviços com o objetivo principal de informar computadores com mau funcionamento dentro do campus FATEC prof. Jessen Vidal e também navegar de forma dinamica pelo mapa da FATEC.
+É um sistema de ordem de serviços com o objetivo principal de informar computadores com mau funcionamento dentro do campus FATEC prof. Jessen Vidal e também navegar de forma dinâmica pelo mapa da FATEC.
 
 ## Solução de proposta
 
 <ul>
   <li>Sistema web utilizando flask</li>
-  <li>Mapa da FATEC navegavel</li>
+  <li>Mapa da FATEC navegável</li>
   <li>Abrir ordem de serviço</li>
   <li>Ver detalhes de Hardware e software</li>
   <li>Identificação das máquinas</li>
