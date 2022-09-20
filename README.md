@@ -1,5 +1,6 @@
 # SOS API 1º ADS
 
+## <a href="https://apifatec.github.io/SOS_API/">Visite nossa plataforma</a>
 ## Nosso projeto
 <img src="https://user-images.githubusercontent.com/89823203/190881607-8584abd3-f1c7-4d2d-a3fa-d13ba1c863b6.gif" />
 
