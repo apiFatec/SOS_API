@@ -8,6 +8,7 @@
     <title>Abrir chamado</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="../header/style.css">
+    <script src="script.js"></script>
 </head>
 
 <body>
@@ -18,7 +19,7 @@
 
         <div class="button_header">
             <a href="" id="contato">Contato</a>
-            <a href="">Inicio</a>
+            <a href="../fachada/index.html">Inicio</a>
     </header>
 
     <div id="container">
@@ -53,7 +54,7 @@
                     <label for="input.título">Título
                         <hr>
                     </label>
-                    <input type="text" id="input.título" name="titulo">
+                    <input type="text" id="input.título" name="titulo" autocomplete="off" required>
                 </div>
 
                 <div class="forms-categoria">
@@ -61,17 +62,17 @@
                         <hr>
                     </label>
                     <div>
-                        <input value="hardware" type="radio" name="categoria" id="hardware">
+                        <input value="hardware" type="radio" name="categoria" id="hardware" required>
                         <label for="hardware">Hardware</label>
                     </div>
 
                     <div>
-                        <input value="software" type="radio" name="categoria" id="software">
+                        <input value="software" type="radio" name="categoria" id="software" required>
                         <label for="software">Software</label>
                     </div>
 
                     <div>
-                        <input value="rede" type="radio" name="categoria" id="rede">
+                        <input value="rede" type="radio" name="categoria" id="rede" required>
                         <label for="rede">Rede</label>
                     </div>
 
@@ -81,21 +82,22 @@
                     <label for="codigo.erro">Código de erro
                         <hr>
                     </label>
-                    <input id="codigo.erro" name="codigo_de_erro" type="text">
+                    <input id="codigo.erro" name="codigo_de_erro" type="text"  autocomplete="off" required>
                 </div>
 
                 <div id="forms-email">
                     <label for="input.título">Insira seu email para ser notificado
                         <hr>
                     </label>
-                    <input type="email" placeholder="email@exemple.com" type="text" id="email" name="email">
+                    <input type="email" placeholder="email@exemple.com" type="text" id="email" name="email"  autocomplete="off" required>
                 </div>
 
                 <div id="forms-descrição">
                     <label for="descrição.erro">Descrição
                         <hr>
                     </label>
-                    <textarea placeholder="descreva o problema do computador" name="descrição" id="descricao-erro" cols="30" rows="10"></textarea>
+                    <textarea placeholder="descreva o problema do computador" name="descrição" id="descricao-erro"
+                        cols="30" rows="10" required></textarea>
                 </div>
 
                 <input name="_formsubmit_id" type="text" style="display:none">
@@ -103,7 +105,7 @@
                     <input value="Enviar" type="submit" name="" id="enviar">
                 </div>
 
-                <input name="_redirect" type="hidden" id="name" value="#">
+                <input name="_redirect" type="hidden" id="name" value="https://apifatec.github.io/SOS_API/src/tela-abrir-chamado/index.html?status=true">
             </form>
 
         </div>
@@ -111,6 +113,17 @@
 
     </div>
 
+    <div class="modal" id="modal">
+        <div class="card">
+            <h1>Solicitação enviada com sucesso</h1>
+            <p>Obrigado por nos avisar!</p>
+            <div class="button">
+                <button onclick="modal()">
+                    OK
+                </button>
+            </div>
+        </div>
+    </div>
 
 </body>
 
