@@ -5,16 +5,17 @@
 }
 
 body {
-  color: black;
   background: #f7f7f7;
+  color: #000;
 }
 
 main {
-  font-family: Tahoma;
+  font-family: "Sen", sans-serif;
 }
 
 .cima {
   display: flex;
+  color: #182d7b;
 }
 
 .corredor {
@@ -58,7 +59,7 @@ main {
 
 nav a {
   text-decoration: none;
-  color: #000000;
+  color: #182d7b;
 }
 
 nav a:visited {
@@ -97,6 +98,6 @@ nav a:visited {
   border-radius: 10px;
   width: 60%;
   margin: auto;
-  margin-top: 100px;
+  margin-top: 15rem;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 }
