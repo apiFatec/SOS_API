@@ -2,7 +2,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Tahoma;
 }
 
 body {
@@ -18,7 +17,11 @@ img {
   width: 67px;
 }
 
-nav {
+.container {
+  font-family: Tahoma;
+}
+
+.container nav {
   background: #f1f1f1;
   text-align: center;
   grid-column: 1 / -1;
@@ -50,22 +53,22 @@ nav {
   border-left: 0.1px solid #00000080;
 }
 
-nav ul {
+.container nav ul {
   display: flex;
   list-style: none;
 }
 
-nav ul li {
+.container nav ul li {
   width: 120px;
   padding: 20px;
 }
 
-nav ul li a {
+.container nav ul li a {
   text-decoration: none;
   color: #000000;
 }
 
-nav ul li a {
+.container nav ul li a {
   cursor: pointer;
 }
 
@@ -95,7 +98,7 @@ nav ul li a {
   background-color: #ebebeb;
 }
 
-nav ul #andar:hover {
+.container nav ul #andar:hover {
   background: #ebebeb;
   transition: 0.4s;
 }
@@ -126,7 +129,7 @@ nav ul #andar:hover {
   background: #ebebeb;
 }
 
-nav ul #andar1:hover {
+.container nav ul #andar1:hover {
   background: #ebebeb;
   transition: 0.4s;
 }
