@@ -1,50 +1,139 @@
 header {
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
+  font-family: "Sen", sans-serif;
+  background-color: #a8bafe;
   align-items: center;
-  width: 100%;
-  margin: 0;
-  background-color: #e7e7e7;
-  font-family: tahoma;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
-    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  padding: 1rem 4rem;
+  max-width: 100%;
+}
+
+header li {
+  color: #fff;
+}
+
+header a {
+  text-decoration: none;
 }
 
 .logo {
-  width: 8rem;
-  margin-left: 5rem;
+  grid-column: 1;
+  text-shadow: 5px 0px #182d7b;
+  font-size: 36pt;
+  font-family: "Roboto", sans-serif;
+  color: #fff;
+  grid-row: 1;
+  font-weight: bolder;
 }
 
-.button_header {
+.nav ul {
+  list-style: none;
+  display: inline-flex;
+  gap: 5rem;
+}
+
+.nav a {
+  font-size: 15pt;
+}
+
+.login {
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
+  gap: 1rem;
   align-items: center;
-  margin-right: 5rem;
+  grid-row: 1;
+  font-weight: bold;
 }
 
-.head a:visited {
-  color: inherit;
+.login .btn1 {
+  background-color: #fff;
+  color: #182d7b;
+  padding: 0.7rem 2.6rem;
+  border-radius: 10px;
+  font-size: 15pt;
 }
 
-.head a {
-  text-decoration: none;
-  font-size: 14pt;
+.login .btn2 {
+  background-color: #182d7b;
+  color: #fff;
+  border: solid 2px #182d7b;
+  padding: 0.67rem 2rem;
+  border-radius: 10px;
+  font-size: 13pt;
 }
 
-.button_header a {
-  height: 4rem;
-  /* border-right: solid 1px #979797;
-  border-left: solid 1px #979797; */
-  padding-inline: 2.5rem;
-  display: flex;
-  align-items: center;
+.nav li:hover {
+  color: #011457;
+  transition: 0.2s;
+  font-weight: bold;
 }
 
-.button_header a:hover {
-  background: rgb(211, 208, 208);
+.login .btn1:hover {
+  border-color: #182d7b;
+  background-color: #182d7b;
+  color: #fff;
   transition: 0.2s;
 }
 
-#contato {
-  border-right: none;
+.login .btn2:hover {
+  background-color: #fff;
+  border-color: #182d7b;
+  color: #182d7b;
+  transition: 0.2s;
+}
+
+.inicio {
+  position: relative;
+}
+
+.inicio::before {
+  display: none;
+  transform: translateX(-50%);
+  border-radius: 100%;
+  position: absolute;
+  background: #011457;
+  bottom: -10px;
+  height: 6px;
+  content: " ";
+  width: 6px;
+  left: 50%;
+}
+
+.inicio:hover::before {
+  display: block;
+}
+
+.chamados {
+  position: relative;
+}
+
+.chamados:hover::before {
+  transform: translateX(-50%);
+  border-radius: 100%;
+  position: absolute;
+  background: #011457;
+  bottom: -10px;
+  height: 6px;
+  content: " ";
+  width: 6px;
+  left: 50%;
+  transition: 0.2s;
+}
+
+.contato {
+  position: relative;
+}
+
+.contato:hover::before {
+  transform: translateX(-50%);
+  border-radius: 100%;
+  position: absolute;
+  background: #011457;
+  bottom: -10px;
+  height: 6px;
+  content: " ";
+  width: 6px;
+  left: 50%;
+  transition: 0.2s;
 }
