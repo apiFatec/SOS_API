@@ -13,12 +13,12 @@ img {
   width: 64px;
 }
 
-a {
-  text-decoration: none;
-  color: #000000;
-}
-
 /* Estilos gerais */
+
+.container a {
+  color: #000000;
+  text-decoration: none;
+}
 
 .container {
   margin: 50px;
@@ -327,7 +327,7 @@ a:visited {
 
 /* Estilo container */
 
-nav {
+.layout-pcs nav {
   background: #f1f1f1;
   text-align: center;
   grid-column: 1 / -1;
@@ -359,22 +359,22 @@ nav {
   border-left: 0.1px solid #00000080;
 }
 
-nav ul {
+.layout-pcs nav ul {
   display: flex;
   list-style: none;
 }
 
-nav ul li {
+.layout-pcs nav ul li {
   width: 120px;
   padding: 20px;
 }
 
-nav ul li a {
+.layout-pcs nav ul li a {
   text-decoration: none;
   color: #000000;
 }
 
-nav ul li a {
+.layout-pcs nav ul li a {
   cursor: pointer;
 }
 
@@ -404,7 +404,7 @@ nav ul li a {
   background-color: #ebebeb;
 }
 
-nav ul #andar:hover {
+.layout-pcs nav ul #andar:hover {
   background: #ebebeb;
   transition: 0.4s;
 }
@@ -435,7 +435,7 @@ nav ul #andar:hover {
   background: #ebebeb;
 }
 
-nav ul #andar1:hover {
+.layout-pcs nav ul #andar1:hover {
   background: #ebebeb;
   transition: 0.4s;
 }
