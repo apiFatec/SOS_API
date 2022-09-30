@@ -39,7 +39,7 @@ a {
 .info1 p {
   color: #fff;
   max-width: 20rem;
-  font-size: 14pt;
+  font-size: 15pt;
 }
 
 .info1 .btn2 {
@@ -87,4 +87,11 @@ a {
 
 .sec2 {
   max-width: 100%;
+}
+
+.carousel-caption {
+  text-align: start;
+  bottom: 9.25rem;
+  color: #000;
+  max-width: 300px;
 }
