@@ -332,7 +332,7 @@ form label {
   position: absolute;
   left: 0;
   top: 19px;
-  background: #a8bafe;
+  background: #182d7b;
   width: 100%;
   height: 2px;
   transform: translateX(-50%);
@@ -349,14 +349,14 @@ form label {
   margin: 0 auto;
   position: relative;
   z-index: 10;
-  color: #a8bafe;
+  color: #182d7b;
 }
 .progress-count:after {
   content: "";
   height: 40px;
   width: 40px;
   background: #fff;
-  border: 2px solid #a8bafe;
+  border: 2px solid #182d7b;
   position: absolute;
   left: 50%;
   top: 50%;
@@ -376,8 +376,8 @@ form label {
 }
 
 .current-item .progress-count:after {
-  background: #a8bafe;
-  border: 2px solid #a8bafe;
+  background: #182d7b;
+  border: 2px solid #182d7b;
 }
 .current-item .progress-count {
   color: #ffffff;
