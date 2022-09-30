@@ -9,6 +9,9 @@
   <link rel="stylesheet" href="./css/style.css">
   <link rel="stylesheet" href="../header/style.css">
   <script src="script.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Sen:wght@400;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -17,7 +20,7 @@
       <h1 class="logo">FATEC</h1>
     </a>
 
-    <nav class="nav">
+    <nav class="nave">
       <ul>
         <a href="../home/index.html">
           <li>Início</li>
@@ -37,81 +40,185 @@
     </div>
   </header>
 
+  <section class="step-wizard">
+    <ul class="step-wizard-list">
+      <li class="step-wizard-item">
+        <span class="progress-count">1</span>
+        <span class="progress-label">Selecione o andar</span>
+      </li>
+      <li class="step-wizard-item">
+        <span class="progress-count">2</span>
+        <span class="progress-label">Selecione a sala</span>
+      </li>
+      <li class="step-wizard-item current-item">
+        <span class="progress-count">3</span>
+        <span class="progress-label">Selecione o computador a ser reportado</span>
+      </li>
+      <li class="step-wizard-item">
+        <span class="progress-count">4</span>
+        <span class="progress-label">Realize o chamado</span>
+      </li>
+    </ul>
+  </section>
+
   <div class="container">
     <div class="layout-pcs">
       <nav class="navbar">
         <a class="voltar" href="" id="avoltar"><img src="../../img/voltar.png" alt="">Voltar</a>
         <ul class="lista-nav">
-          <li id="andar"> <a href="#">Andares</a>
-            <div class="dropAndares">
-              <ul>
-                <li><a>Térreo</a></li>
-                <li id="andar1"><a>Andar 1</a>
-                  <div class="dropSala1">
-                    <ul>
-                      <li><a>Sala 101</a></li>
-                      <li><a>Sala 102</a></li>
-                      <li><a>Sala 103</a></li>
-                      <li><a>Sala 104</a></li>
-                      <li><a>Sala 105</a></li>
-                      <li><a>Sala 106</a></li>
-                      <li><a>Sala 107</a></li>
-                      <li><a>Sala 108</a></li>
-                      <li><a>Sala 109</a></li>
-                      <li><a>Sala 110</a></li>
-                    </ul>
-                  </div>
-                </li>
-                <li id="andar2"><a>Andar 2</a>
-                  <div class="dropSala2">
-                    <ul>
-                      <li><a>Sala 201</a></li>
-                      <li><a>Sala 202</a></li>
-                      <li><a>Sala 203</a></li>
-                      <li><a>Sala 204</a></li>
-                      <li><a>Sala 205</a></li>
-                      <li><a>Sala 206</a></li>
-                      <li><a>Sala 207</a></li>
-                      <li><a>Sala 208</a></li>
-                      <li><a>Sala 209</a></li>
-                      <li><a>Sala 210</a></li>
-                    </ul>
-                  </div>
-                </li>
-                <li id="andar3"><a>Andar 3</a>
-                  <div class="dropSala3">
-                    <ul>
-                      <li><a href="../sala-pequena/index.html">Sala 305</a></li>
-                      <li><a>Sala 302</a></li>
-                      <li><a>Sala 303</a></li>
-                      <li><a>Sala 304</a></li>
-                      <li><a>Sala 305</a></li>
-                      <li><a>Sala 306</a></li>
-                      <li><a>Sala 307</a></li>
-                      <li><a>Sala 308</a></li>
-                      <li><a>Sala 309</a></li>
-                      <li><a>Sala 310</a></li>
-                    </ul>
-                  </div>
-                </li>
-                <li id="andar4"><a>Andar 4</a>
-                  <div class="dropSala4">
-                    <ul>
-                      <li><a href="../sala-grande/index.html">Sala 401</a></li>
-                      <li><a>Sala 402</a></li>
-                      <li><a>Sala 403</a></li>
-                      <li><a>Sala 404</a></li>
-                      <li><a>Sala 405</a></li>
-                      <li><a>Sala 406</a></li>
-                      <li><a>Sala 407</a></li>
-                      <li><a>Sala 408</a></li>
-                      <li><a>Sala 409</a></li>
-                      <li><a>Sala 410</a></li>
-                    </ul>
-                  </div>
-                </li>
-              </ul>
-            </div>
+          <a href="#">
+            <li id="andar"> Andares
+          </a>
+          <div class="dropAndares">
+            <ul>
+              <a>
+                <li>Térreo</li>
+              </a>
+              <li id="andar1"><a>Andar 1</a>
+                <div class="dropSala1">
+                  <ul>
+                    <a href="#">
+                      <li>Sala 101</li>
+                    </a>
+                    <a href="#">
+                      <li>Sala 102</li>
+                    </a>
+                    <a href="#">
+                      <li>Sala 103</li>
+                    </a>
+                    <a href="#">
+                      <li>Sala 104</li>
+                    </a>
+                    <a href="#">
+                      <li>Sala 105</li>
+                    </a>
+                    <a href="#">
+                      <li>Sala 106</li>
+                    </a>
+                    <a href="#">
+                      <li>Sala 107</li>
+                    </a>
+                    <a href="#">
+                      <li>Sala 108</li>
+                    </a>
+                    <a href="#">
+                      <li>Sala 109</li>
+                    </a>
+                    <a href="#">
+                      <li>Sala 110</li>
+                    </a>
+                  </ul>
+                </div>
+              </li>
+              <li id="andar2"><a>Andar 2</a>
+                <div class="dropSala2">
+                  <ul>
+                    <a href="#">
+                      <li>Sala 201</li>
+                    </a>
+                    <a href="#">
+                      <li>Sala 202</li>
+                    </a>
+                    <a href="#">
+                      <li>Sala 203</li>
+                    </a>
+                    <a href="#">
+                      <li>Sala 204</li>
+                    </a>
+                    <a href="#">
+                      <li>Sala 205</li>
+                    </a>
+                    <a href="#">
+                      <li>Sala 206</li>
+                    </a>
+                    <a href="#">
+                      <li>Sala 207</li>
+                    </a>
+                    <a href="#">
+                      <li>Sala 208</li>
+                    </a>
+                    <a href="#">
+                      <li>Sala 209</li>
+                    </a>
+                    <a href="#">
+                      <li>Sala 210</li>
+                    </a>
+                  </ul>
+                </div>
+              </li>
+              <li id="andar3"><a>Andar 3</a>
+                <div class="dropSala3">
+                  <ul>
+                    <a href="../sala-pequena/index.html">
+                      <li>Sala 305</li>
+                    </a>
+                    <a href="#">
+                      <li>Sala 302</li>
+                    </a>
+                    <a href="#">
+                      <li>Sala 303</li>
+                    </a>
+                    <a href="#">
+                      <li>Sala 304</li>
+                    </a>
+                    <a href="#">
+                      <li>Sala 305</li>
+                    </a>
+                    <a href="#">
+                      <li>Sala 306</li>
+                    </a>
+                    <a href="#">
+                      <li>Sala 307</li>
+                    </a>
+                    <a href="#">
+                      <li>Sala 308</li>
+                    </a>
+                    <a href="#">
+                      <li>Sala 309</li>
+                    </a>
+                    <a href="#">
+                      <li>Sala 310</li>
+                    </a>
+                  </ul>
+                </div>
+              </li>
+              <li id="andar4"><a>Andar 4</a>
+                <div class="dropSala4">
+                  <ul>
+                    <a href="../sala-grande/index.html">
+                      <li>Sala 401</li>
+                      <a href="#">
+                        <li>Sala 402</li>
+                      </a>
+                      <a href="#">
+                        <li>Sala 403</li>
+                      </a>
+                      <a href="#">
+                        <li>Sala 404</li>
+                      </a>
+                      <a href="#">
+                        <li>Sala 405</li>
+                      </a>
+                      <a href="#">
+                        <li>Sala 406</li>
+                      </a>
+                      <a href="#">
+                        <li>Sala 407</li>
+                      </a>
+                      <a href="#">
+                        <li>Sala 408</li>
+                      </a>
+                      <a href="#">
+                        <li>Sala 409</li>
+                      </a>
+                      <a href="#">
+                        <li>Sala 410</li>
+                      </a>
+                  </ul>
+                </div>
+              </li>
+            </ul>
+          </div>
           </li>
       </nav>
 

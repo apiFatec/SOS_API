@@ -5,18 +5,18 @@
 }
 
 body {
-  font-family: tahoma;
-  background: #f7f7f7;
+  font-family: "Sen", sans-serif;
+  background: #fff;
   display: flex;
   flex-direction: column;
 }
 
 #container {
-  background-color: #e7e7e7;
+  background-color: #f8f8f8;
   border-radius: 5px;
   width: 42%;
   margin: auto;
-  margin-top: 2rem;
+  margin-top: 4rem;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 }
 .tela-detalhes {
@@ -34,7 +34,7 @@ body {
 }
 
 #detalhes-1 li {
-  text-transform: lowercase;
+  text-transform: capitalize;
   font-weight: bold;
   padding: 3px;
   margin-left: -20%;
@@ -51,7 +51,7 @@ body {
   list-style: none;
 }
 #detalhes-1 li {
-  text-transform: lowercase;
+  text-transform: capitalize;
   font-weight: bold;
 }
 #detalhes-2 li {
@@ -62,7 +62,7 @@ body {
 #icon-pc {
   display: flex;
   padding: 1rem;
-  background-color: #f7f7f7;
+  background-color: #fff;
   border-radius: 10%;
   margin: 2% 10% 3% 4%;
   align-items: center;
@@ -85,7 +85,7 @@ form label {
   border: none;
   height: 2rem;
   padding-left: 1rem;
-  background: #f7f7f7;
+  background: #fff;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   outline: none;
 }
@@ -119,9 +119,10 @@ form label {
   border: none;
   height: 2rem;
   padding-left: 1rem;
-  background: #f7f7f7;
+  background: #fff;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   outline: none;
+  font-family: "Sen", sans-serif;
 }
 
 #forms-email {
@@ -135,9 +136,10 @@ form label {
   border: none;
   height: 2rem;
   padding-left: 1rem;
-  background: #f7f7f7;
+  background: #fff;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   outline: none;
+  font-family: "Sen", sans-serif;
 }
 
 #forms-descrição {
@@ -149,12 +151,12 @@ form label {
   color: black;
   display: block;
   padding: 1rem;
-  background: #f7f7f7;
+  background: #fff;
   border: none;
-  font-family: tahoma;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   outline: none;
   width: 16.8rem;
+  font-family: "Sen", sans-serif;
 }
 
 #forms-descrição textarea:hover {
@@ -179,6 +181,7 @@ form label {
 #forms-titulo input {
   border-radius: 6px;
   text-align: left;
+  font-family: "Sen", sans-serif;
 }
 #forms-categoria {
   margin: 1% 10% 3% 6%;
@@ -194,16 +197,22 @@ form label {
 #enviar {
   padding: 1em 1.4em 1em 1.4em;
   margin-bottom: 4%;
-  border: none;
+  font-family: "Sen", sans-serif;
+  color: #fff;
+  font-weight: bold;
+  border: solid 2px transparent;
   border-radius: 4px;
-  background: #f7f7f7;
+  background-color: #182d7b;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }
 
 #enviar:hover {
-  background: rgb(211, 208, 208);
-  transition: 0.4s;
+  background: #fff;
+  color: #182d7b;
+  transition: 0.2s;
   cursor: pointer;
+  font-weight: bold;
+  border-color: #182d7b;
 }
 
 #descricao-erro {
@@ -284,4 +293,93 @@ form label {
 .button > button:active {
   border: 1px solid black;
   padding-block: 9px;
+}
+
+/* progress bar */
+
+.step-wizard {
+  margin: auto;
+  max-width: max-content;
+}
+
+.step-wizard-list {
+  background: #fff;
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
+  color: #000;
+  list-style-type: none;
+  border-radius: 10px;
+  display: flex;
+  padding: 20px 10px;
+  position: relative;
+  z-index: 10;
+  margin-top: 6rem;
+}
+
+.step-wizard-item {
+  padding: 0px 20px;
+  flex-basis: 0;
+  -webkit-box-flex: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  max-width: 280px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  min-width: 100px;
+  position: relative;
+}
+.step-wizard-item + .step-wizard-item:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 19px;
+  background: #a8bafe;
+  width: 100%;
+  height: 2px;
+  transform: translateX(-50%);
+  z-index: -10;
+}
+.progress-count {
+  height: 40px;
+  width: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-weight: 500;
+  margin: 0 auto;
+  position: relative;
+  z-index: 10;
+  color: #a8bafe;
+}
+.progress-count:after {
+  content: "";
+  height: 40px;
+  width: 40px;
+  background: #fff;
+  border: 2px solid #a8bafe;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  z-index: -10;
+}
+
+.progress-label {
+  font-size: 14px;
+  font-weight: 500;
+  margin-top: 10px;
+}
+.current-item .progress-count:before,
+.current-item ~ .step-wizard-item .progress-count:before {
+  display: none;
+}
+
+.current-item .progress-count:after {
+  background: #a8bafe;
+  border: 2px solid #a8bafe;
+}
+.current-item .progress-count {
+  color: #ffffff;
 }

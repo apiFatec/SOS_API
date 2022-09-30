@@ -21,7 +21,7 @@ a:visited {
 
 .grid .btn {
   padding: 30px;
-  width: 400px;
+  width: 700px;
   cursor: pointer;
   font-weight: 700;
   display: flex;
@@ -37,7 +37,7 @@ a:visited {
 
 .grid .btn3 {
   padding: 30px 60px;
-  width: 40px;
+  width: 140px;
   cursor: pointer;
   font-weight: 700;
   text-transform: uppercase;
@@ -102,10 +102,94 @@ a:visited {
   width: fit-content;
   border-radius: 6px;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
-  margin-top: 15rem;
+  margin-top: 4rem;
   font-size: 15pt;
 }
 
 .titulo {
   margin: 70px 100px 30px 0px;
+}
+
+/* progress bar */
+
+.step-wizard-list {
+  background: #fff;
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
+  color: #000;
+  list-style-type: none;
+  border-radius: 10px;
+  display: flex;
+  padding: 20px 10px;
+  position: relative;
+  z-index: 10;
+  margin-top: 6rem;
+}
+
+.step-wizard-item {
+  padding: 0px 20px;
+  flex-basis: 0;
+  -webkit-box-flex: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  max-width: 280px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  min-width: 100px;
+  position: relative;
+}
+.step-wizard-item + .step-wizard-item:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 19px;
+  background: #a8bafe;
+  width: 100%;
+  height: 2px;
+  transform: translateX(-50%);
+  z-index: -10;
+}
+.progress-count {
+  height: 40px;
+  width: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-weight: 500;
+  margin: 0 auto;
+  position: relative;
+  z-index: 10;
+  color: #a8bafe;
+}
+.progress-count:after {
+  content: "";
+  height: 40px;
+  width: 40px;
+  background: #fff;
+  border: 2px solid #a8bafe;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  z-index: -10;
+}
+
+.progress-label {
+  font-size: 14px;
+  font-weight: 500;
+  margin-top: 10px;
+}
+.current-item .progress-count:before,
+.current-item ~ .step-wizard-item .progress-count:before {
+  display: none;
+}
+
+.current-item .progress-count:after {
+  background: #a8bafe;
+  border: 2px solid #a8bafe;
+}
+.current-item .progress-count {
+  color: #ffffff;
 }
