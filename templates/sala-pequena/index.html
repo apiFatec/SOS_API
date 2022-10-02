@@ -6,8 +6,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sala pequena</title>
-  <link rel="stylesheet" href="./css/style.css">
-  <link rel="stylesheet" href="../header/style.css">
+  <link rel="stylesheet" href="{{url_for('static', filename='sala-pequena/style.css')}}">
+  <link rel="stylesheet" href="{{url_for('static', filename='header/style.css')}}">
   <script src="script.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,13 +16,13 @@
 
 <body>
   <header>
-    <a href="../home/index.html">
+    <a href="/">
       <h1 class="logo">FATEC</h1>
     </a>
 
     <nav class="nave">
       <ul>
-        <a href="../home/index.html">
+        <a href="/">
           <li>Início</li>
         </a>
         <a href="#">
@@ -64,7 +64,7 @@
   <div class="container">
     <div class="layout-pcs">
       <nav class="navbar">
-        <a class="voltar" href="/piso/{{piso}}" id="avoltar"><img src="../../img/voltar.png" alt="">Voltar</a>
+        <a class="voltar" href="/piso/{{piso}}" id="avoltar"><img src="{{url_for('static', filename='assets/voltar.png')}}" alt="">Voltar</a>
         <ul class="lista-nav">
           <a href="#">
             <li id="andar"> Andares
@@ -224,22 +224,22 @@
 
       <div class="pc-prof">
         <span>Professor</span>
-        <a href="../tela-abrir-chamado/index.html"><img src="../../img/pc.png" alt="icon pc">
+        <a href="../tela-abrir-chamado/index.html"><img src="{{url_for('static', filename='assets/pc.png')}}" alt="icon pc">
           <figcaption class="leg-prof">30500</figcaption>
         </a>
       </div>
 
       <div class="fileira1">
         <ul>
-          <li><a href="../tela-abrir-chamado/index.html"><img src="../../img/pc.png" alt="logo-pc">
+          <li><a href="../tela-abrir-chamado/index.html"><img src="{{url_for('static', filename='assets/pc.png')}}" alt="logo-pc">
               <figcaption>30501</figcaption>
             </a>
           </li>
-          <li><a href="../tela-abrir-chamado/index.html"><img src="../../img/pc.png" alt="logo-pc">
+          <li><a href="../tela-abrir-chamado/index.html"><img src="{{url_for('static', filename='assets/pc.png')}}" alt="logo-pc">
               <figcaption>30502</figcaption>
             </a>
           </li>
-          <li><a href="../tela-abrir-chamado/index.html"><img src="../../img/pc.png" alt="logo-pc">
+          <li><a href="../tela-abrir-chamado/index.html"><img src="{{url_for('static', filename='assets/pc.png')}}" alt="logo-pc">
               <figcaption>30503</figcaption>
             </a>
           </li>
@@ -248,15 +248,15 @@
 
       <div class="fileira2">
         <ul>
-          <li><a href="../tela-abrir-chamado/index.html"><img src="../../img/pc.png" alt="logo-pc">
+          <li><a href="../tela-abrir-chamado/index.html"><img src="{{url_for('static', filename='assets/pc.png')}}" alt="logo-pc">
               <figcaption>30504</figcaption>
             </a>
           </li>
-          <li><a href="../tela-abrir-chamado/index.html"><img src="../../img/pc.png" alt="logo-pc">
+          <li><a href="../tela-abrir-chamado/index.html"><img src="{{url_for('static', filename='assets/pc.png')}}" alt="logo-pc">
               <figcaption>30505</figcaption>
             </a>
           </li>
-          <li><a href="../tela-abrir-chamado/index.html"><img src="../../img/pc.png" alt="logo-pc">
+          <li><a href="../tela-abrir-chamado/index.html"><img src="{{url_for('static', filename='assets/pc.png')}}" alt="logo-pc">
               <figcaption>30506</figcaption>
             </a>
           </li>
@@ -265,15 +265,15 @@
 
       <div class="fileira3">
         <ul>
-          <li><a href="../tela-abrir-chamado/index.html"><img src="../../img/pc.png" alt="logo-pc">
+          <li><a href="../tela-abrir-chamado/index.html"><img src="{{url_for('static', filename='assets/pc.png')}}" alt="logo-pc">
               <figcaption>30507</figcaption>
             </a>
           </li>
-          <li><a href="../tela-abrir-chamado/index.html"><img src="../../img/pc.png" alt="logo-pc">
+          <li><a href="../tela-abrir-chamado/index.html"><img src="{{url_for('static', filename='assets/pc.png')}}" alt="logo-pc">
               <figcaption>30508</figcaption>
             </a>
           </li>
-          <li><a href="../tela-abrir-chamado/index.html"><img src="../../img/pc.png" alt="logo-pc">
+          <li><a href="../tela-abrir-chamado/index.html"><img src="{{url_for('static', filename='assets/pc.png')}}" alt="logo-pc">
               <figcaption>30509</figcaption>
             </a>
           </li>
@@ -282,15 +282,15 @@
 
       <div class="fileira4">
         <ul>
-          <li><a href="../tela-abrir-chamado/index.html"><img src="../../img/pc.png" alt="logo-pc">
+          <li><a href="../tela-abrir-chamado/index.html"><img src="{{url_for('static', filename='assets/pc.png')}}" alt="logo-pc">
               <figcaption>30510</figcaption>
             </a>
           </li>
-          <li><a href="../tela-abrir-chamado/index.html"><img src="../../img/pc.png" alt="logo-pc">
+          <li><a href="../tela-abrir-chamado/index.html"><img src="{{url_for('static', filename='assets/pc.png')}}" alt="logo-pc">
               <figcaption>30511</figcaption>
             </a>
           </li>
-          <li><a href="../tela-abrir-chamado/index.html"><img src="../../img/pc.png" alt="logo-pc">
+          <li><a href="../tela-abrir-chamado/index.html"><img src="{{url_for('static', filename='assets/pc.png')}}" alt="logo-pc">
               <figcaption>30512</figcaption>
             </a>
           </li>
@@ -299,15 +299,15 @@
 
       <div class="fileira5">
         <ul>
-          <li><a href="../tela-abrir-chamado/index.html"><img src="../../img/pc.png" alt="logo-pc">
+          <li><a href="../tela-abrir-chamado/index.html"><img src="{{url_for('static', filename='assets/pc.png')}}" alt="logo-pc">
               <figcaption>30513</figcaption>
             </a>
           </li>
-          <li><a href="../tela-abrir-chamado/index.html"><img src="../../img/pc.png" alt="logo-pc">
+          <li><a href="../tela-abrir-chamado/index.html"><img src="{{url_for('static', filename='assets/pc.png')}}" alt="logo-pc">
               <figcaption>30514</figcaption>
             </a>
           </li>
-          <li><a href="../tela-abrir-chamado/index.html"><img src="../../img/pc.png" alt="logo-pc">
+          <li><a href="../tela-abrir-chamado/index.html"><img src="{{url_for('static', filename='assets/pc.png')}}" alt="logo-pc">
               <figcaption>30515</figcaption>
             </a>
           </li>
@@ -316,15 +316,15 @@
 
       <div class="fileira6">
         <ul>
-          <li><a href="../tela-abrir-chamado/index.html"><img src="../../img/pc.png" alt="logo-pc">
+          <li><a href="../tela-abrir-chamado/index.html"><img src="{{url_for('static', filename='assets/pc.png')}}" alt="logo-pc">
               <figcaption>30516</figcaption>
             </a>
           </li>
-          <li><a href="../tela-abrir-chamado/index.html"><img src="../../img/pc.png" alt="logo-pc">
+          <li><a href="../tela-abrir-chamado/index.html"><img src="{{url_for('static', filename='assets/pc.png')}}" alt="logo-pc">
               <figcaption>30518</figcaption>
             </a>
           </li>
-          <li><a href="../tela-abrir-chamado/index.html"><img src="../../img/pc.png" alt="logo-pc">
+          <li><a href="../tela-abrir-chamado/index.html"><img src="{{url_for('static', filename='assets/pc.png')}}" alt="logo-pc">
               <figcaption>30519</figcaption>
             </a>
           </li>
