@@ -6,8 +6,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Corredor</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="../header/style.css">
+  <link rel="stylesheet" href="{{url_for('static', filename='pisos/style.css')}}">
+  <link rel="stylesheet" href="{{url_for('static', filename='header/style.css')}}">
   <script src="script.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -65,13 +65,13 @@
     </section>
 
     <div class="container">
-      <nav><a class="voltar" href="../fachada/index.html"><img src="../../img/voltar.png" alt="">Voltar</a></nav>
+      <nav><a class="voltar" href="/fachada"><img src="{{url_for('static', filename='assets/voltar.png')}}" alt="">Voltar</a></nav>
       <nav class="cima">
-        <a href="../sala-grande/index.html" target="_self" class="bloco" id="a1">
-          <h1 id="h1-01"></h1>
+        <a href="/piso/{{num}}/sala/{{num}}01" target="_self" class="bloco" id="a1">
+          <h1 id="h1-01">{{num}}01</h1>
         </a>
-        <a href="../sala-pequena/index.html" target="_self" class="bloco" id="a3">
-          <h1 id="h1-03"></h1>
+        <a href="/piso/{{num}}/sala/{{num}}03" target="_self" class="bloco" id="a3">
+          <h1 id="h1-03">{{num}}03</h1>
         </a>
         <div class="escada">
           <div></div>
@@ -79,17 +79,17 @@
           <div></div>
           <div></div>
         </div>
-        <a href="../sala-pequena/index.html" target="_self" class="bloco" id="a5">
-          <h1 id="h1-05"></h1>
+        <a href="/piso/{{num}}/sala/{{num}}05" target="_self" class="bloco" id="a5">
+          <h1 id="h1-05">{{num}}05</h1>
         </a>
-        <a href="../sala-pequena/index.html" target="_self" class="bloco" id="a7">
-          <h1 id="h1-07"></h1>
+        <a href="/piso/{{num}}/sala/{{num}}07" target="_self" class="bloco" id="a7">
+          <h1 id="h1-07">{{num}}07</h1>
         </a>
-        <a href="../sala-pequena/index.html" target="_self" class="bloco" id="a9">
-          <h1 id="h1-09"></h1>
+        <a href="/piso/{{num}}/sala/{{num}}09" target="_self" class="bloco" id="a9">
+          <h1 id="h1-09">{{num}}09</h1>
         </a>
-        <a href="../sala-pequena/index.html" target="_self" class="bloco" id="a11">
-          <h1 id="h1-11"></h1>
+        <a href="/piso/{{num}}/sala/{{num}}11" target="_self" class="bloco" id="a11">
+          <h1 id="h1-11">{{num}}11</h1>
         </a>
       </nav>
 
@@ -97,17 +97,17 @@
       </nav>
 
       <nav class="baixo">
-        <a href="../sala-grande/index.html" target="_self" class="bloco" id="a2">
-          <h1 id="h1-02"></h1>
+        <a href="/piso/{{num}}/sala/{{num}}02" target="_self" class="bloco" id="a2">
+          <h1 id="h1-02">{{num}}02</h1>
         </a>
-        <a href="../sala-pequena/index.html" target="_self" class="bloco" id="a4">
-          <h1 id="h1-04"></h1>
+        <a href="/piso/{{num}}/sala/{{num}}04" target="_self" class="bloco" id="a4">
+          <h1 id="h1-04">{{num}}04</h1>
         </a>
-        <a href="../sala-pequena/index.html" target="_self" class="bloco" id="a6">
-          <h1 id="h1-06"></h1>
+        <a href="/piso/{{num}}/sala/{{num}}06" target="_self" class="bloco" id="a6">
+          <h1 id="h1-06">{{num}}06</h1>
         </a>
-        <a href="../sala-pequena/index.html" target="_self" class="bloco" id="a8">
-          <h1 id="h1-08"></h1>
+        <a href="/piso/{{num}}/sala/{{num}}08" target="_self" class="bloco" id="a8">
+          <h1 id="h1-08">{{num}}08</h1>
         </a>
         <div class="escada">
           <div></div>
@@ -115,12 +115,18 @@
           <div></div>
           <div></div>
         </div>
-        <a href="../sala-pequena/index.html" target="_self" class="bloco" id="a10">
-          <h1 id="h1-10"></h1>
+        <a href="/piso/{{num}}/sala/{{num}}10" target="_self" class="bloco" id="a10">
+          <h1 id="h1-10">{{num}}10</h1>
         </a>
-        <a href="../sala-pequena/index.html" target="_self" class="bloco" id="a12">
-          <h1 id="h1-12"></h1>
+        {% if num == "3" %}
+        <a href="/sala/auditorio" target="_self" class="bloco" id="a12">
+          <h1 id="h1-12">Auditório</h1>
         </a>
+        {% else %}
+        <a href="/piso/{{num}}/sala/{{num}}12" target="_self" class="bloco" id="a12">
+          <h1 id="h1-12">{{num}}12</h1>
+        </a>
+        {% endif %}
       </nav>
     </div>
   </main>
