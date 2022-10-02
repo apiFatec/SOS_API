@@ -18,6 +18,6 @@ def Piso(num):
 @main.route("/piso/<num>/sala/<sala>")
 def Sala(num, sala):
   if sala ==  "401" or sala == "402" or sala == "301" or sala == "302":
-    return render_template("sala-grande/index.html", piso=num)
+    return render_template("sala-grande/index.html", piso=num, sala=sala)
   else:
-    return render_template("sala-pequena/index.html", piso=num)
+    return render_template("sala-pequena/index.html", piso=num, sala=sala)
