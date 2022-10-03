@@ -1,4 +1,4 @@
-from app import db
+from db import db
 
 class Address(db.Model):
   id = db.Column(db.Interger, primary_key=True, nullable=False)
