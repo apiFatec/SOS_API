@@ -104,22 +104,24 @@
     <h2>Chamados recentes.</h2>
 
     <section class="grid-details">
+      {% for chamado in chamados %}
       <div class="detail">
         <div class="card">
           <img src="{{url_for('static', filename='assets/monitor.svg')}}" alt="monitor-icon">
           <div class="info-detail">
             <div>
-              <h5>Sem internet</h5>
+              <h5>{{chamado.titulo}}</h5>
               <div class="local">
                 <h5>Local:</h5>
-                <p>402 02</p>
+                <p>{{chamado.sala}} {{chamado.numero}}</p>
               </div>
             </div>
-            <div class="status"></div>
+            <div class="status-{{chamado.status}}"></div>
           </div>
         </div>
         <a href="#" class="detalhes">Detalhes</a>
       </div>
+      {% endfor %}
     </section>
   </article>
 
