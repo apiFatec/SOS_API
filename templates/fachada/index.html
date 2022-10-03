@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="../header/style.css">
+    <link rel="stylesheet" href="{{url_for('static', filename='fachada/style.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='header/style.css')}}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Sen:wght@400;700&display=swap" rel="stylesheet">
@@ -16,13 +16,13 @@
 <body>
 
     <header>
-        <a href="../home/index.html">
+        <a href="/">
             <h1 class="logo">FATEC</h1>
         </a>
 
         <nav class="nave">
             <ul>
-                <a href="../home/index.html">
+                <a href="/">
                     <li>Início</li>
                 </a>
                 <a href="#">
@@ -66,10 +66,10 @@
 
             <div class="andares1">
 
-                <a href="../pisos/index.html?piso=4" class="btn">Quarto andar</a>
-                <a href="../pisos/index.html?piso=3" class="btn">Terceiro andar</a>
-                <a href="../pisos/index.html?piso=2" class="btn">Segundo andar</a>
-                <a href="../pisos/index.html?piso=1" class="btn">Primeiro andar</a>
+                <a href="/piso/4" class="btn">Quarto andar</a>
+                <a href="/piso/3" class="btn">Terceiro andar</a>
+                <a href="/piso/2" class="btn">Segundo andar</a>
+                <a href="/piso/1" class="btn">Primeiro andar</a>
                 <a href="#" class="btn">Térreo </a>
 
             </div>
@@ -78,10 +78,10 @@
 
             <div class="andares2">
 
-                <a href="../pisos/index.html?piso=4" class="btn3">4º</a>
-                <a href="../pisos/index.html?piso=3" class="btn3">3º</a>
-                <a href="../pisos/index.html?piso=2" class="btn3">2º</a>
-                <a href="../pisos/index.html?piso=1" class="btn3">1º</a>
+                <a href="/piso/4" class="btn3">4º</a>
+                <a href="/piso/3" class="btn3">3º</a>
+                <a href="/piso/2" class="btn3">2º</a>
+                <a href="/piso/1" class="btn3">1º</a>
                 <a href="#" class="btn3">T</a>
 
             </div>

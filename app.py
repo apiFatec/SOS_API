@@ -1,22 +1,17 @@
-import os
-from flask import Flask, render_template
 from dotenv import load_dotenv
-from flask_mysqldb import MySQL
+from flask import Flask, render_template, url_for
+from flask_sqlalchemy import SQLAlchemy
+import os
+from routes import main
 
 load_dotenv()
 app = Flask(__name__)
+app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv("DATABASE_URI")
+# app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+db = SQLAlchemy()
+db.init_app(app)
 
-app.config['MYSQL_USER'] = os.getenv("USER")
-app.config['MYSQL_PASSWORD'] = os.getenv("")
-app.config['MYSQL_HOST'] = os.getenv("SERVER")
-app.config['MYSQL_DB'] = os.getenv("DATA_BASE")
-# app.config['MYSQL_PORT'] = os.getenv("") if you use default port you don't need change this
+app.register_blueprint(main)
 
-mysql = MySQL(app)
-
-@app.route("/")
-def Home():
-  cur = mysql.connection.cursor()
-  cur.execute('''CREATE TABLE example (id INTEGER, name VARCHAR(20))''')
-  return render_template('home/index.html')
-
+if __name__ == "__main__": 
+  app.run()
