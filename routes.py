@@ -1,11 +1,14 @@
 from flask import Blueprint, render_template, request, redirect, url_for
+import json
+from models.chamados import Chamados
 
 
 main = Blueprint("routes", __name__)
 
 @main.route("/")
 def Index():
-  return render_template("home/index.html")
+  chamados = Chamados.query.all()
+  return render_template("home/index.html", chamados=chamados)
 
 @main.route("/fachada")
 def Fachada():
