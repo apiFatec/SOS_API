@@ -149,9 +149,29 @@ a {
   border-radius: 50%;
 }
 
+.detalhes {
+  background-color: #0429a9;
+  padding: 0.7rem 1.5rem;
+  font-weight: bold;
+  font-size: 14pt;
+  border-radius: 10px;
+  margin-top: 20px;
+  border: 2px transparent solid;
+}
+
+.detalhes:hover {
+  color: #0429a9;
+  background-color: #fff;
+  border-color: #0429a9;
+}
+
 footer {
   background-color: #a8bafe;
   padding: 20px;
+}
+
+footer a:hover {
+  color: #fff;
 }
 /* ------carousel style------ */
 
