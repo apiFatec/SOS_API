@@ -20,6 +20,7 @@ a {
   /* grid-template-columns: 1fr 1fr; */
   justify-content: space-between;
   padding: 4rem;
+  align-items: center;
   max-width: 100%;
 }
 
@@ -89,9 +90,128 @@ a {
   max-width: 100%;
 }
 
+.sec3 {
+  padding: 4rem;
+}
+
+.grid-details {
+  display: flex;
+  margin-top: 40px;
+}
+
+.sec3 h3 {
+  font-size: 10pt;
+  color: #3a3a3a;
+}
+
+.sec3 h2 {
+  font-size: 22pt;
+  font-weight: bolder;
+  color: #3a3a3a;
+}
+.detail {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.card {
+  display: flex;
+  padding: 1.5rem 3rem;
+  border-radius: 10px;
+  border: none;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.card img {
+  border: solid 1px #b6b6b6;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.local {
+  display: flex;
+  gap: 7px;
+  grid-column: 1;
+}
+
+.info-detail {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.status {
+  background-color: #eb5757;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+
+footer {
+  background-color: #a8bafe;
+  padding: 20px;
+}
+/* ------carousel style------ */
+
 .carousel-caption {
   text-align: start;
   bottom: 9.25rem;
-  color: #000;
+  color: fff(169, 13, 13);
   max-width: 300px;
+  max-height: 400px;
+}
+
+.carousel-caption p {
+  font-size: 12pt;
+}
+
+.carousel-caption h1 {
+  font-size: 15pt;
+}
+
+.carousel-caption a {
+  background-color: #0429a9;
+  padding: 0.6rem 1.3rem;
+  border: solid 2px transparent;
+  border-radius: 10px;
+  font-size: 12pt;
+  font-weight: bold;
+}
+
+.carousel-caption a:hover {
+  border-color: #0429a9;
+  background-color: #fff;
+  color: #0429a9;
+  transition: 0.3s;
+}
+
+/* ---------- responsividade --------- */
+
+@media (max-width: 1313px) {
+  .sec1 {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+@media (max-width: 885px) {
+  .sec1 img {
+    display: none;
+  }
+  .sec2 {
+    display: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .info1 {
+    margin: 0;
+  }
+  .sec1 {
+    padding: 1rem;
+  }
+  .sec2 {
+    display: none;
+  }
 }
