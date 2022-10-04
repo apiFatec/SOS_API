@@ -24,3 +24,7 @@ def Sala(num, sala):
     return render_template("sala-grande/index.html", piso=num, sala=sala)
   else:
     return render_template("sala-pequena/index.html", piso=num, sala=sala)
+
+@main.route("/abrir-chamado")
+def Chamados():
+  return render_template("tela-abrir-chamado/index.html")
