@@ -7,6 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="{{url_for('static', filename='sala-grande/style.css')}}">
   <link rel="stylesheet" href="{{url_for('static', filename='header/style.css')}}">
+  <link rel="stylesheet" href="{{url_for('static', filename='footer/style.css')}}">
   <script src="script.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -64,7 +65,7 @@
   <div class="container">
     <div class="layout-pcs">
       <nav class="navbar">
-        <a class="voltar" href="/piso/{{piso}}" id="avoltar"><img src="{{url_for('static', filename='assets/voltar.png')}}" alt=""/>Voltar</a>
+        <a class="voltar" href="/piso/{{piso}}" id="avoltar"><img src="{{url_for('static', filename='assets/voltar.png')}}" alt="" />Voltar</a>
         <ul class="lista-nav">
           <a href="#">
             <li id="andar"> Andares
@@ -365,6 +366,10 @@
       </div>
     </div>
   </div>
+
+  <footer>
+    <a href="#" class="logo">FATEC</a>
+  </footer>
   <script src="./js/main.js"></script>
 </body>
 
