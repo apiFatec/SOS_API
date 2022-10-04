@@ -383,6 +383,10 @@ a:visited {
   display: none;
 }
 
+#andar {
+  cursor: default;
+}
+
 #andar:hover .dropAndares {
   display: block;
   position: absolute;
