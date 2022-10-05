@@ -166,3 +166,20 @@ header a {
     gap: 20px;
   }
 }
+
+@media (max-width: 458px) {
+  .nave a {
+    font-size: 12pt;
+  }
+  .login .btn1 {
+    font-size: 12pt;
+    padding: 0.5rem 2rem;
+  }
+  .login .btn2 {
+    font-size: 12pt;
+    padding: 0.5rem 2rem;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+}

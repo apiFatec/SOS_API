@@ -96,7 +96,7 @@ nav a:visited {
 .container {
   background-color: #f8f8f8;
   border-radius: 10px;
-  width: 60%;
+  width: 70%;
   margin: auto;
   margin-top: 4rem;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
@@ -188,4 +188,41 @@ nav a:visited {
 }
 .current-item .progress-count {
   color: #ffffff;
+}
+
+@media (max-width: 923px) {
+  .cima a {
+    height: auto;
+  }
+  .baixo a {
+    height: auto;
+  }
+  .escada div {
+    padding: 3px;
+  }
+  .escada {
+    width: 70%;
+  }
+}
+
+@media (max-width: 520px) {
+  .cima h1 {
+    font-size: 12pt;
+  }
+  .baixo h1 {
+    font-size: 12pt;
+  }
+  .cima a {
+    padding: 0;
+  }
+
+  .baixo a {
+    padding: 0;
+  }
+}
+
+@media (max-width: 569px) {
+  .step-wizard {
+    display: none;
+  }
 }

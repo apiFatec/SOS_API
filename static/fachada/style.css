@@ -5,10 +5,9 @@
 }
 
 main {
-  display: grid;
-  justify-items: center;
   background: #fff;
   font-family: "Sen", sans-serif;
+  position: relative;
 }
 
 body {
@@ -20,8 +19,7 @@ a:visited {
 }
 
 .grid .btn {
-  padding: 30px;
-  width: 500px;
+  padding: 30px 200px;
   cursor: pointer;
   font-weight: 700;
   display: flex;
@@ -37,7 +35,6 @@ a:visited {
 
 .grid .btn3 {
   padding: 30px 60px;
-  width: 140px;
   cursor: pointer;
   font-weight: 700;
   text-transform: uppercase;
@@ -71,6 +68,7 @@ a:visited {
 }
 
 .coluna {
+  display: flex;
   width: 80px;
   background-color: #182d7b;
   margin: 0;
@@ -97,13 +95,13 @@ a:visited {
 }
 
 .grid {
-  display: grid;
-  grid-template-columns: auto auto auto;
+  display: flex;
   width: fit-content;
   border-radius: 6px;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
   margin-top: 4rem;
   font-size: 15pt;
+  margin: auto;
 }
 
 .titulo {
@@ -191,4 +189,21 @@ a:visited {
 }
 .current-item .progress-count {
   color: #ffffff;
+}
+
+.step-wizard {
+  margin: auto;
+  max-width: max-content;
+}
+
+@media (max-width: 765px) {
+  .grid .btn {
+    padding: 30px 100px;
+  }
+}
+
+@media (max-width: 570px) {
+  .grid .btn {
+    padding: 30px 60px;
+  }
 }
