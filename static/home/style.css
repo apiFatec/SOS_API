@@ -206,25 +206,33 @@ footer a:hover {
 
 .carousel-caption {
   text-align: start;
-  bottom: 9.25rem;
-  color: fff(169, 13, 13);
+  bottom: 4rem;
   max-width: 300px;
   max-height: 400px;
+  /* box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; */
+  background-color: rgba(255, 255, 255, 0.434);
+  /* border-radius: 10px; */
+  padding: 30px 20px;
 }
 
 .carousel-caption p {
   font-size: 12pt;
+  color: #3a3a3a;
+  font-weight: 600;
 }
 
-.carousel-caption h1 {
-  font-size: 15pt;
+.carousel-caption h2 {
+  font-size: 24pt;
+  color: #3a3a3a;
+  font-weight: 900;
 }
 
 .carousel-caption a {
   background-color: #0429a9;
-  padding: 0.6rem 1.3rem;
+  padding: 0.4rem 1rem;
   border: solid 2px transparent;
   border-radius: 10px;
+  box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
   font-size: 12pt;
   font-weight: bold;
 }
