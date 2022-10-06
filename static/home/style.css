@@ -323,3 +323,15 @@ footer a:hover {
     width: 10%;
   }
 }
+
+@media (min-width: 1420px) {
+  .img-carrosel {
+    margin: auto;
+    width: 1140px;
+    object-fit: fill;
+  }
+  .carousel-control-next,
+  .carousel-control-prev {
+    width: 10%;
+  }
+}
