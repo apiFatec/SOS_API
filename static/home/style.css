@@ -206,19 +206,29 @@ footer a:hover {
 
 .carousel-caption {
   text-align: start;
-  bottom: 4rem;
+  bottom: 5rem;
   max-width: 300px;
   max-height: 400px;
   /* box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; */
   background-color: rgba(255, 255, 255, 0.434);
   /* border-radius: 10px; */
   padding: 30px 20px;
+  left: 12rem;
 }
 
 .carousel-caption p {
   font-size: 12pt;
   color: #3a3a3a;
   font-weight: 600;
+}
+
+.carousel {
+  background-color: #a8bbfe6b;
+}
+
+.img-carrosel {
+  margin: auto;
+  width: 900px;
 }
 
 .carousel-caption h2 {
@@ -242,6 +252,11 @@ footer a:hover {
   background-color: #fff;
   color: #0429a9;
   transition: 0.3s;
+}
+
+.carousel-control-next,
+.carousel-control-prev {
+  width: 12%;
 }
 
 /* ---------- responsividade --------- */
@@ -270,5 +285,41 @@ footer a:hover {
   }
   .sec2 {
     display: none;
+  }
+}
+
+@media (min-width: 1669px) {
+  .img-carrosel {
+    margin: auto;
+    width: 1350px;
+    object-fit: fill;
+  }
+  .carousel-control-next,
+  .carousel-control-prev {
+    width: 10%;
+  }
+}
+
+@media (min-width: 1900px) {
+  .img-carrosel {
+    margin: auto;
+    width: 1600px;
+    object-fit: fill;
+  }
+  .carousel-control-next,
+  .carousel-control-prev {
+    width: 8%;
+  }
+}
+
+@media (max-width: 1024px) {
+  .img-carrosel {
+    margin: auto;
+    width: 800px;
+    object-fit: fill;
+  }
+  .carousel-control-next,
+  .carousel-control-prev {
+    width: 10%;
   }
 }
