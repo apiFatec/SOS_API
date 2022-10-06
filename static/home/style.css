@@ -288,6 +288,17 @@ footer a:hover {
   }
 }
 
+@media (min-width: 1420px) {
+  .img-carrosel {
+    margin: auto;
+    width: 1140px;
+    object-fit: fill;
+  }
+  .carousel-control-next,
+  .carousel-control-prev {
+    width: 10%;
+  }
+}
 @media (min-width: 1669px) {
   .img-carrosel {
     margin: auto;
@@ -316,18 +327,6 @@ footer a:hover {
   .img-carrosel {
     margin: auto;
     width: 800px;
-    object-fit: fill;
-  }
-  .carousel-control-next,
-  .carousel-control-prev {
-    width: 10%;
-  }
-}
-
-@media (min-width: 1420px) {
-  .img-carrosel {
-    margin: auto;
-    width: 1140px;
     object-fit: fill;
   }
   .carousel-control-next,
