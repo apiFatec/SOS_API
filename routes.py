@@ -28,3 +28,7 @@ def Sala(num, sala):
 @main.route("/abrir-chamado")
 def Chamados():
   return render_template("tela-abrir-chamado/index.html")
+
+@main.route("/chamados")
+def chamado():
+  return render_template("chamados/index.html")
