@@ -1,17 +1,17 @@
 from db import db
 import enum
 
-class SisType(enum.Enum):
-  old = "32"
-  new = "64"
+class Computadores(db.Model):
+  idComputador = db.Column(db.Integer, primary_key=True)
+  processador = db.Column(db.String)
+  ram = db.Column(db.String)
+  tipo_sis = db.Column(db.String)
+  win = db.Column(db.String)
+  versao = db.Column(db.String)
+  sala = db.Column(db.String)
+  numero = db.Column(db.String)
+  patrimonio_gabinete = db.Column(db.String)
+  patrimonio_monitor = db.Column(db.String)
 
-class Computers(db.Model):
-  id = db.Column(db.Integer, primary_key=True, nullable=False)
-  Processador = db.Column(db.String, nullable=False)
-  ram = db.Column(db.String, nullable=False)
-  tipo_sis = db.Column(enum.Enum(SisType), nullable=False)
-  Win = db.Column(db.String, nullable=False)
-  Versao = db.Column(db.String, nullable=False)
-  idEndereco = db.Comlumn(db.Integer, db.ForeignKey("address.id"), nullable=False)
 
 
