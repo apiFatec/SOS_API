@@ -288,10 +288,10 @@ footer a:hover {
   }
 }
 
-@media (min-width: 1420px) {
+@media (min-width: 1380px) {
   .img-carrosel {
     margin: auto;
-    width: 1140px;
+    width: 1200px;
     object-fit: fill;
   }
   .carousel-control-next,
