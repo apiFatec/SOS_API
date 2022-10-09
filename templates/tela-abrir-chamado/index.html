@@ -17,7 +17,7 @@
 
 <body>
     <header>
-        <a href="../home/index.html">
+        <a href="/">
             <h1 class="logo">FATEC</h1>
         </a>
 
@@ -63,7 +63,8 @@
     </section>
 
     <div id="container">
-        <a class="voltar" href="../sala-pequena/index.html"><img src="{{url_for('static', filename='assets/voltar.png')}}" alt="">Voltar</a>
+        <a class="voltar" href="/fachada"><img
+                src="{{url_for('static', filename='assets/voltar.png')}}" alt="">Voltar</a>
         <div class="tela-detalhes">
             <div id="icon-pc" class="tela-detalhes">
                 <img src="{{url_for('static', filename='assets/pc.png')}}" alt="">
@@ -88,67 +89,40 @@
 
         </div>
 
-        <div id="forms">
-            <form id="contactform" action="/novo-chamado" method="POST">
-                <div id="forms-titulo">
-                    <label for="input.título">Título
-                        <hr>
-                    </label>
-                    <input placeholder="Digite um título" type="text" id="input.título" name="titulo" autocomplete="off" required>
-                </div>
+        <form action="/novo-chamado" class="form" method="POST">
+            <h3 class="h3">Título</h3>
+            <input name="titulo" type="text" placeholder="Digite um título">
+            <h3 class="h3">Categoria</h3>
+            <div class="categoria">
+                <label for="categoria1">
+                    <input type="radio" id="categoria1" value="Hardware" name="categoria">
+                    Hardware
+                </label>
+                <label for="categoria2">
+                    <input type="radio" id="categoria2" value="Software" name="categoria">
+                    Software
+                </label>
+                <label for="categoria3">
+                    <input type="radio" id="categoria3" value="Rede" name="categoria">
+                    Rede
+                </label>
+            </div>
 
-                <div class="forms-categoria">
-                    <label style="text-transform: uppercase" for="">Categoria
-                        <hr>
-                    </label>
-                    <div>
-                        <input value="hardware" type="radio" name="categoria" id="hardware" required>
-                        <label for="hardware">Hardware</label>
-                    </div>
+            <h3 class="h3">Código de error</h3>
+            <input name="cod_erro" type="text" placeholder="digite código de erro (opicional)">
 
-                    <div>
-                        <input value="software" type="radio" name="categoria" id="software" required>
-                        <label for="software">Software</label>
-                    </div>
+            <h3 class="h3">Descrição</h3>
+            <input name="desc" type="text" placeholder="descreva o problema do computador" class="desc">
 
-                    <div>
-                        <input value="rede" type="radio" name="categoria" id="rede" required>
-                        <label for="rede">Rede</label>
-                    </div>
+            <label class="notif" for="notificar">
+                <input onclick="showEmail()" type="checkbox" name="notificar" id="notificar">
+                Receber uma email quando o chamado for resolvido
+            </label>
 
-                </div>
-
-                <div id="forms-codigo-erro">
-                    <label for="codigo.erro">Código de erro
-                        <hr>
-                    </label>
-                    <input placeholder="Digite o código de erro (opicional)" id="codigo.erro" name="codigo_de_erro" type="text" autocomplete="off" required>
-                </div>
-
-                <div id="forms-email">
-                    <label for="input.título">Insira seu email para ser notificado
-                        <hr>
-                    </label>
-                    <input type="email" placeholder="email@exemple.com" type="text" id="email" name="email" autocomplete="off" required>
-                </div>
-
-                <div id="forms-descrição">
-                    <label for="descrição.erro">Descrição
-                        <hr>
-                    </label>
-                    <textarea placeholder="descreva o problema do computador" name="text" id="text" cols="30" rows="10" required></textarea>
-                </div>
-
-                <input name="_formsubmit_id" type="text" style="display:none">
-                <div class="enviar-bottom">
-                    <input value="Enviar" type="submit" name="" id="enviar">
-                </div>
-
-                <input name="_redirect" type="hidden" id="name" value="https://apifatec.github.io/SOS_API/src/tela-abrir-chamado/index.html?status=true&">
-            </form>
-
-        </div>
-
+            <input placeholder="email@exemple.com" type="email" name="email" id="email">
+            
+            <input class="enviar" type="submit" value="Enviar">
+        </form>
 
     </div>
 
@@ -167,6 +141,18 @@
     <footer>
         <a href="#" class="logo">FATEC</a>
     </footer>
+
+    <script>
+        function showEmail(id) {
+            check = document.getElementById('notificar')
+            if (check.checked) {
+                document.getElementById('email').style.display = "flex"
+            } else {
+                document.getElementById('email').style.display = "none"
+                check.checked = false
+            }
+        }
+    </script>
 </body>
 
 </html>
