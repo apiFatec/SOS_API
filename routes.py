@@ -42,8 +42,15 @@ def NewChamado(id):
 def Create():
   titulo = request.form.get("titulo")
   categoria = request.form.get('categoria')
-  cod_erro = request.form.get('codigo_de_erro')
-  return "" 
+  cod_erro = request.form.get('cod_erro')
+  desc = request.form.get('desc')
+  notif = request.form.get('notificar')
+  if notif != None:
+    email = request.form.get('email')
+  else:
+    email = "none"
+  print(titulo,categoria,cod_erro,desc,notif,email)
+  return ""
 
 
 @main.route("/chamados")
