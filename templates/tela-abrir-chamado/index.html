@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="{{url_for('static',filename='footer/style.css')}}">
     <link rel="stylesheet" href="{{url_for('static',filename='tela-abrir-chamados/style.css')}}">
     <link rel="stylesheet" href="{{url_for('static',filename='header/style.css')}}">
-    <script src="script.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Sen:wght@400;700&display=swap" rel="stylesheet">
@@ -24,10 +23,10 @@
 
         <nav class="nave">
             <ul>
-                <a href="../home/index.html">
+                <a href="/">
                     <li>Início</li>
                 </a>
-                <a href="#">
+                <a href="/chamados">
                     <li>Chamados</li>
                 </a>
                 <a href="#">
@@ -64,24 +63,24 @@
     </section>
 
     <div id="container">
-        <a class="voltar" href="../sala-pequena/index.html"><img src="../../img/voltar.png" alt="">Voltar</a>
+        <a class="voltar" href="../sala-pequena/index.html"><img src="{{url_for('static', filename='assets/voltar.png')}}" alt="">Voltar</a>
         <div class="tela-detalhes">
             <div id="icon-pc" class="tela-detalhes">
-                <img src="img/pc-icon.png" alt="">
+                <img src="{{url_for('static', filename='assets/pc.png')}}" alt="">
             </div>
             <div class="tela-detalhes">
                 <div>
                     <ul id="detalhes-1">
-                        <li>Nome do dispositivo</li>
-                        <li>ID do endereço</li>
+                        <li>Processador</li>
+                        <li>Ram</li>
                         <li>Endereço</li>
                     </ul>
                 </div>
                 <div>
                     <ul id="detalhes-2">
-                        <li>DESKTOP-VJNCDEO</li>
-                        <li>30222BOF-40028922-4515-A7D2-69242469935B2</li>
-                        <li>4º piso, sala 402</li>
+                        <li>{{pc.processador}}</li>
+                        <li>{{pc.ram}}</li>
+                        <li>sala {{pc.sala}}, número {{pc.numero}}</li>
                     </ul>
                 </div>
             </div>
@@ -90,12 +89,12 @@
         </div>
 
         <div id="forms">
-            <form id="contactform" action="https://formsubmit.io/send/suport.fatec@gmail.com" method="POST">
+            <form id="contactform" action="/novo-chamado" method="POST">
                 <div id="forms-titulo">
                     <label for="input.título">Título
                         <hr>
                     </label>
-                    <input type="text" id="input.título" name="titulo" autocomplete="off" required>
+                    <input placeholder="Digite um título" type="text" id="input.título" name="titulo" autocomplete="off" required>
                 </div>
 
                 <div class="forms-categoria">
@@ -123,7 +122,7 @@
                     <label for="codigo.erro">Código de erro
                         <hr>
                     </label>
-                    <input id="codigo.erro" name="codigo_de_erro" type="text" autocomplete="off" required>
+                    <input placeholder="Digite o código de erro (opicional)" id="codigo.erro" name="codigo_de_erro" type="text" autocomplete="off" required>
                 </div>
 
                 <div id="forms-email">
@@ -137,7 +136,7 @@
                     <label for="descrição.erro">Descrição
                         <hr>
                     </label>
-                    <textarea placeholder="descreva o problema do computador" name="descrição" id="descricao-erro" cols="30" rows="10" required></textarea>
+                    <textarea placeholder="descreva o problema do computador" name="text" id="text" cols="30" rows="10" required></textarea>
                 </div>
 
                 <input name="_formsubmit_id" type="text" style="display:none">
