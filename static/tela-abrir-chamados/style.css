@@ -14,10 +14,10 @@ body {
 #container {
   background-color: #fbfbfb;
   border-radius: 5px;
-  width: 42%;
+  width: 50%;
   margin: auto;
   margin-top: 4rem;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 4px 12px;
 }
 .tela-detalhes {
   display: flex;
