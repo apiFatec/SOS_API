@@ -40,7 +40,7 @@ body {
   box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 }
 
-.verde {
+.concluido {
   font-weight: 400;
   padding: 8px 12px;
   text-align: center;
@@ -49,6 +49,30 @@ body {
   color: #ffffff;
   background-color: #3eaf3f;
   width: 86px;
+  border-radius: 20px;
+}
+
+.aberto {
+  font-weight: 400;
+  padding: 8px 12px;
+  text-align: center;
+  font-size: 10pt;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #ffffff;
+  background-color: #E14942;
+  width: 86px;
+  border-radius: 20px;
+}
+
+.manutenção {
+  font-weight: 400;
+  padding: 8px 12px;
+  text-align: center;
+  font-size: 10pt;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #ffffff;
+  background-color: #E1CE25;
+  width: 100px;
   border-radius: 20px;
 }
 
@@ -62,7 +86,11 @@ section h6 {
 }
 
 .ti {
-  font-weight: 500;
+  font-weight: 600;
+}
+
+.titulo {
+  font-weight: 600;
 }
 
 section h2 {
