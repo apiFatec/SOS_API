@@ -69,8 +69,8 @@ a {
 }
 
 .btns a:hover {
-  border-color: #0429a9;
-  color: #0429a9;
+  border-color: #011457;
+  color: #011457;
   transition: 0.2s;
 }
 
@@ -179,7 +179,7 @@ a {
 }
 
 .detalhes {
-  background-color: #0429a9;
+  background-color: #011457;
   padding: 0.7rem 1.5rem;
   font-weight: bold;
   font-size: 14pt;
@@ -189,9 +189,9 @@ a {
 }
 
 .detalhes:hover {
-  color: #0429a9;
+  color: #011457;
   background-color: #fff;
-  border-color: #0429a9;
+  border-color: #011457;
 }
 
 footer {
@@ -238,7 +238,7 @@ footer a:hover {
 }
 
 .carousel-caption a {
-  background-color: #0429a9;
+  background-color: #011457;
   padding: 0.4rem 1rem;
   border: solid 2px transparent;
   border-radius: 10px;
@@ -248,9 +248,9 @@ footer a:hover {
 }
 
 .carousel-caption a:hover {
-  border-color: #0429a9;
+  border-color: #011457;
   background-color: #fff;
-  color: #0429a9;
+  color: #011457;
   transition: 0.3s;
 }
 
