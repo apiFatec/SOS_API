@@ -85,19 +85,16 @@ Nesta Sprint o foco foi desenvolver a tela home e a tela de chamados gerais, a c
 ## Trabalho desenvolvido
 
 <ul style="display: grid; gap: 20px; grid-template-columns: auto auto">
-  <li>Página do prédio principal
-    <img src="https://user-images.githubusercontent.com/89823203/190832831-079de5df-8ddd-4d63-a23f-7de20d3a560a.png" alt="fachada prédio fatec"/>
+  <li>Tela Home
+    <img src="https://user-images.githubusercontent.com/111662298/194793014-fea31487-0d25-4fb3-bb92-9132299521ba.png" alt="Home"/>
   </li>
-  <li>Página do piso selecionado
-    <img src="https://user-images.githubusercontent.com/89823203/190832858-789df087-2787-4133-b06d-1d8eae13860a.png" alt="Piso selecionado"/>
+  <li>Carrossel com uso do Bootstrap
+    <img src="https://user-images.githubusercontent.com/111662298/194793074-3039791f-0f09-4c7e-9911-c2e274ae2869.png" alt="Carrossel"/>
   </li>
-  <li>Página da sala selecionada layout grande
-    <img src="https://user-images.githubusercontent.com/89823203/190832868-bf5eff98-bc1e-492a-8b56-0d7b0cda8a1d.png" alt="Sala selecionada"/>
+  <li>Chamados recentes
+    <img src="https://user-images.githubusercontent.com/111662298/194793137-51a012cd-2c3f-47af-bb3d-60b54c7c6fa1.jpeg" alt="Chamados-recentes"/>
   </li>
-  <li>Página da sala selecionada layout padrão
-    <img src="https://user-images.githubusercontent.com/89823203/190832945-e8986038-cf79-4067-9396-6a7efef8e923.png" alt="Sala selecionada"/>
-  </li>
-  <li>Página formulário para abrir chamado
-    <img src="https://user-images.githubusercontent.com/89823203/190877469-1a5bc818-de08-4a31-95ad-b1807faecfcc.png" alt="Página formulário"/>
+  <li>Tela Chamados Gerais
+    <img src="https://user-images.githubusercontent.com/111662298/194793164-d85bae34-e605-44d4-923b-eaaa221fe7b5.jpeg" alt="tela-chamados"/>
   </li>
 </ul>
