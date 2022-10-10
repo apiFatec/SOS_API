@@ -5,6 +5,7 @@ from sqlalchemy import desc
 from models.chamados import Chamados
 from models.computers import Computadores
 from db import db
+from models.tbl_chamados import TblChamados
 
 
 main = Blueprint("routes", __name__)
@@ -38,8 +39,8 @@ def NewChamado(id):
   print(pc)
   return render_template("tela-abrir-chamado/index.html", pc=pc)
 
-@main.route('/novo-chamado', methods=["POST", "GET"])
-def Create():
+@main.route('/novo-chamado/<id>', methods=["POST", "GET"])
+def Create(id):
   titulo = request.form.get("titulo")
   categoria = request.form.get('categoria')
   cod_erro = request.form.get('cod_erro')
@@ -49,8 +50,19 @@ def Create():
     email = request.form.get('email')
   else:
     email = "none"
-  print(titulo,categoria,cod_erro,desc,notif,email)
-  return ""
+  chamado = TblChamados(
+    titulo_chamado=titulo,
+    categoria_chamado=categoria,
+    cod_erro_chamado=cod_erro,
+    descricao_chamado=desc,
+    status_chamado="aberto",
+    notificar_chamado="",
+    fk_idComputador=id
+  )
+  db.session.add(chamado)
+  db.session.commit()
+
+  return redirect(url_for('routes.TelaChamado'))
 
 
 @main.route("/chamados")
