@@ -5,4 +5,4 @@ class Address(db.Model):
   lab = db.Column(db.String, nullable=False)
   num = db.Column(db.String, nullable=False)
   patrimony = db.Column(db.String)
-  computer = db.relationship("Computers", backref="address", lazy=True)
+  computer = db.relationship("Computador", backref="address", lazy=True)
