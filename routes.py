@@ -56,7 +56,7 @@ def Create(id):
     cod_erro_chamado=cod_erro,
     descricao_chamado=desc,
     status_chamado="aberto",
-    notificar_chamado="",
+    notificar_chamado=0,
     fk_idComputador=id
   )
   db.session.add(chamado)
@@ -69,3 +69,7 @@ def Create(id):
 def TelaChamado():
   chamados = db.session.query(Chamados).all()
   return render_template("chamados/index.html", chamados=chamados)
+
+def filter():
+  chamados = db.session.query(Chamados).all()
+  db.session.query(Chamados).filter_by(status="aberto").all()
