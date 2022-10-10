@@ -80,7 +80,7 @@ Nesta Sprint o foco foi desenvolver a tela home e a tela de chamados gerais, a c
 </table>
 
 ## Backlog da sprint
-<img src="https://user-images.githubusercontent.com/111662298/194792930-2ca8a7e1-1867-40cf-b8ee-766df4830a4b.png" alt="sprint 01"/>
+<img src="https://user-images.githubusercontent.com/89823203/194793542-9fd09f21-6396-4f6c-bf13-1b5d75d05855.png" alt="sprint 01"/>
 
 ## Trabalho desenvolvido
 
