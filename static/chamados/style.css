@@ -30,6 +30,20 @@ body {
   outline: none;
 }
 
+.limpar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  background-color: #182d7b;
+  border-radius: .375rem;
+  width: 50px;
+}
+
+.limpar > img {
+  width: 70%;
+}
+
 .div {
   padding: 20px;
   display: flex;
