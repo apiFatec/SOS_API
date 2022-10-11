@@ -1,5 +1,4 @@
 from flask import Blueprint, render_template, request, redirect, url_for, session
-import json
 
 from sqlalchemy import desc
 from models.chamados import Chamados
@@ -73,13 +72,13 @@ def Create(id):
   return redirect(url_for('routes.TelaChamado'))
 
 # Tela de chamados.
-@main.route("/chamados", methods=["GET"])
+@main.route("/chamados/", methods=["GET"])
 def TelaChamado():
-  chamados = Filtrar(request.args.get("status"), request.args.get("categoria"))
+  chamados = Filtrar(request.args.get("status"), request.args.get("categoria"), request.args.get("search"))
   return render_template("chamados/index.html", chamados=chamados)
 
 
-def Filtrar(status, categoria):
+def Filtrar(status, categoria, search):
   # verifica se tem valor nos dois parametros e salva cada um em uma sessao.
   if status:
     session["status"] = status
@@ -88,17 +87,28 @@ def Filtrar(status, categoria):
 
   # se as duas seções tiverem valor retorna o filtro com as duas condições.
   if session.get("status") and session.get("categoria"):
-    chamado = Chamados.query.filter(db.and_(Chamados.status == session.get("status"), Chamados.categoria == session.get("categoria"))).all()
-    return chamado
+    if search:
+      chamado = Chamados.query.filter(db.and_(Chamados.status == session.get("status"), Chamados.categoria == session.get("categoria"), Chamados.titulo.like(f"%{search}%"))).all()
+    else:
+      chamado = Chamados.query.filter(db.and_(Chamados.status == session.get("status"), Chamados.categoria == session.get("categoria"))).all()
   # se SOMENTE status tiver um valor retorna somente chamados com o status que foi passado.
   elif session.get("status") and not session.get("categoria"):
-    chamado = db.session.query(Chamados).filter_by(status=session.get("status")).all()
+    if search:
+      chamado = Chamados.query.filter(db.and_(Chamados.status==session.get("status")),Chamados.titulo.like(f"%{search}%")).all()
+    else:
+      chamado = db.session.query(Chamados).filter_by(status=session.get("status")).all()
   #  se SOMENTE categoria tiver um valor retorna somento os chamados com a categoria.
   elif session.get("categoria") and not session.get("status"):
-    chamado = db.session.query(Chamados).filter_by(categoria=session.get("categoria")).all()
+    if search:
+      chamado = Chamados.query.filter(db.and_(Chamados.categoria==session.get("categoria")),Chamados.titulo.like(f"%{search}%")).all()
+    else:
+      chamado = db.session.query(Chamados).filter_by(categoria=session.get("categoria")).all()
   #  se as duas sessions estiverem vazias retorna todos os chamados.
   else:
-    chamado = db.session.query(Chamados).all()
+    if search:
+      chamado = Chamados.query.filter(Chamados.titulo.like(f"%{search}%")).all()
+    else:
+      chamado = db.session.query(Chamados).all()
   return chamado
 
 # Limpa o filtro da tela de chamados.
@@ -109,3 +119,6 @@ def Limpar():
   return redirect(url_for("routes.TelaChamado"))
 
 # Pesquisar pelo nome do computador
+def Search():
+  chamados =  Chamados.query.filter(Chamados.titulo.like("%Sem%")).all()
+  return chamados
