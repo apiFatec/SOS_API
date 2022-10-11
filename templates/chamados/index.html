@@ -26,7 +26,7 @@
         <a href="/">
           <li>Início</li>
         </a>
-        <a href="#">
+        <a href="/chamados">
           <li>Chamados</li>
         </a>
         <a href="#">
@@ -44,7 +44,7 @@
     <nav class="nav">
       <div class="pesquisa">
         <img src="{{url_for('static', filename='assets/lupa.svg')}}" alt="lupa" class="lupa" />
-        <input type="search" name="pesquisa" id="pes" placeholder="Pesquisar" />
+        <input type="search" name="pesquisa" id="pes" placeholder="Pesquisar por nome do computador" />
       </div>
 
       <div class="btn-group">
@@ -52,9 +52,9 @@
           Status
         </button>
         <ul class="dropdown-menu">
-          <li><a class="dropdown-item" href="#">Em aberto</a></li>
-          <li><a class="dropdown-item" href="#">Manutenção</a></li>
-          <li><a class="dropdown-item" href="#">Finalizado</a></li>
+          <li><a class="dropdown-item" href="/chamados?status=aberto">Em aberto</a></li>
+          <li><a class="dropdown-item" href="/chamados?status=manutencao">Manutenção</a></li>
+          <li><a class="dropdown-item" href="/chamados?status=concluido">Finalizado</a></li>
         </ul>
       </div>
 
@@ -63,11 +63,14 @@
           Categoria
         </button>
         <ul class="dropdown-menu">
-          <li><a class="dropdown-item" href="#">Software</a></li>
-          <li><a class="dropdown-item" href="#">Hardware</a></li>
-          <li><a class="dropdown-item" href="#">Rede</a></li>
+          <li><a class="dropdown-item" href="/chamados?categoria=software">Software</a></li>
+          <li><a class="dropdown-item" href="/chamados?categoria=hardware">Hardware</a></li>
+          <li><a class="dropdown-item" href="/chamados?categoria=rede">Rede</a></li>
         </ul>
       </div>
+      <a href="/limpar" class="limpar">
+        <img src="{{url_for('static', filename='assets/lixo.svg')}}" alt="limpar filtro">
+      </a>
     </nav>
     <section class="cards">
 
