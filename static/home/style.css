@@ -68,7 +68,7 @@ a {
   overflow-wrap: break-word;
 }
 
-.btns a:hover {
+.btns a:hover, .btns button:hover {
   border-color: #011457;
   color: #011457;
   transition: 0.2s;
@@ -333,4 +333,12 @@ footer a:hover {
   .carousel-control-prev {
     width: 10%;
   }
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0;
 }
