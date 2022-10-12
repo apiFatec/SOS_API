@@ -5,7 +5,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Abrir chamado</title>
+    <title>Abrir chamado - Fatec</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <link rel="icon" type="image/x-icon" href="{{url_for('static', filename='assets/favicon.png')}}">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="{{url_for('static',filename='footer/style.css')}}">
     <link rel="stylesheet" href="{{url_for('static',filename='tela-abrir-chamados/style.css')}}">
@@ -63,13 +66,13 @@
     </section>
 
     <div id="container">
-        <a class="voltar" href="/fachada"><img
-                src="{{url_for('static', filename='assets/voltar.png')}}" alt="">Voltar</a>
+        <a class="voltar" href="/fachada"><img src="{{url_for('static', filename='assets/voltar.png')}}"
+                alt="">Voltar</a>
         <div class="tela-detalhes">
             <div id="icon-pc" class="tela-detalhes">
                 <img src="{{url_for('static', filename='assets/pc.png')}}" alt="">
             </div>
-            <div class="tela-detalhes">
+            <div class="tela-detalhes" id="detalhes">
                 <div>
                     <ul id="detalhes-1">
                         <li>Processador</li>
@@ -91,58 +94,87 @@
 
         <form action="/novo-chamado/{{pc.idComputador}}" class="form" method="POST">
             <h3 class="h3">Título</h3>
-            <input name="titulo" type="text" placeholder="Digite um título">
+            <input autocomplete="off" required name="titulo" type="text" placeholder="Digite um título">
             <h3 class="h3">Categoria</h3>
             <div class="categoria">
                 <label for="categoria1">
-                    <input type="radio" id="categoria1" value="Hardware" name="categoria">
+                    <input required type="radio" id="categoria1" value="Hardware" name="categoria">
                     Hardware
                 </label>
                 <label for="categoria2">
-                    <input type="radio" id="categoria2" value="Software" name="categoria">
+                    <input required type="radio" id="categoria2" value="Software" name="categoria">
                     Software
                 </label>
                 <label for="categoria3">
-                    <input type="radio" id="categoria3" value="Rede" name="categoria">
+                    <input required type="radio" id="categoria3" value="Rede" name="categoria">
                     Rede
                 </label>
             </div>
 
             <h3 class="h3">Código de error</h3>
-            <input name="cod_erro" type="text" placeholder="digite código de erro (opicional)">
+            <input autocomplete="off" name="cod_erro" type="text" placeholder="digite código de erro (opicional)">
 
             <h3 class="h3">Descrição</h3>
-            <input name="desc" type="text" placeholder="descreva o problema do computador" class="desc">
+            <input autocomplete="off" required name="desc" type="text" placeholder="descreva o problema do computador"
+                class="desc">
 
             <label class="notif" for="notificar">
                 <input onclick="showEmail()" type="checkbox" name="notificar" id="notificar">
                 Receber uma email quando o chamado for resolvido
             </label>
 
-            <input placeholder="email@exemple.com" type="email" name="email" id="email">
-            
+            <input autocomplete="off" placeholder="email@exemple.com" type="email" name="email" id="email">
+
             <input class="enviar" type="submit" value="Enviar">
         </form>
 
     </div>
 
-    <div class="modal" id="modal">
-        <div class="card">
-            <h1>Solicitação enviada com sucesso</h1>
-            <p>Obrigado por nos avisar!</p>
-            <div class="button">
-                <button onclick="modal()">
-                    OK
-                </button>
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="false">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-exclamation-octagon-fill" viewBox="0 0 16 16">
+                        <path
+                            d="M11.46.146A.5.5 0 0 0 11.107 0H4.893a.5.5 0 0 0-.353.146L.146 4.54A.5.5 0 0 0 0 4.893v6.214a.5.5 0 0 0 .146.353l4.394 4.394a.5.5 0 0 0 .353.146h6.214a.5.5 0 0 0 .353-.146l4.394-4.394a.5.5 0 0 0 .146-.353V4.893a.5.5 0 0 0-.146-.353L11.46.146zM8 4c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995A.905.905 0 0 1 8 4zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z">
+                        </path>
+                    </svg>
+                    <h5 class="modal-title" id="staticBackdropLabel">Erro ao tentar encontrar o computador</h5>
+                    <a href="/" class="btn-close" aria-label="Close"></a>
+                </div>
+                <div class="modal-body">
+                    O computador informado não foi encontrado.
+                    <p>Verifique o número da sala e do computador!</p>
+                </div>
+                <div class="modal-footer">
+                    <a href="/" class="btn btn-primary" >Voltar</a>
+                </div>
             </div>
         </div>
     </div>
+
 
     <footer>
         <a href="#" class="logo">FATEC</a>
     </footer>
 
+    {% if not pc %}
     <script>
+        window.onload = function () {
+            OpenBootstrapPopup();
+        };
+        
+        document.getElementById("detalhes").style.display = "none"
+    </script>
+    {% endif %}
+    <script type="text/javascript">
+        function OpenBootstrapPopup() {
+            let myModal = new bootstrap.Modal(document.getElementById("staticBackdrop"));
+            myModal.show();
+        }
+
         function showEmail(id) {
             check = document.getElementById('notificar')
             if (check.checked) {
@@ -153,6 +185,9 @@
             }
         }
     </script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+      crossorigin="anonymous"></script>
 </body>
 
 </html>
