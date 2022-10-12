@@ -10,7 +10,7 @@ from models.tbl_chamados import TblChamados
 main = Blueprint("routes", __name__)
 
 # Tela Home.
-@main.route("/")
+@main.route("/", methods=["GET"])
 def Index():
   chamados = Chamados.query.all()
   return render_template("home/index.html", chamados=chamados)
@@ -40,7 +40,6 @@ def Sala(num, sala):
 @main.route("/abrir-chamado/<id>")
 def NewChamado(id):
   pc = db.session.query(Computadores).filter_by(idComputador=id).first()
-  print(pc)
   return render_template("tela-abrir-chamado/index.html", pc=pc)
 
 
@@ -48,32 +47,35 @@ def NewChamado(id):
 # É redirecionado para a tela de chamados.
 @main.route('/novo-chamado/<id>', methods=["POST", "GET"])
 def Create(id):
-  titulo = request.form.get("titulo")
-  categoria = request.form.get('categoria')
-  cod_erro = request.form.get('cod_erro')
-  desc = request.form.get('desc')
-  notif = request.form.get('notificar')
-  if notif != None:
-    email = request.form.get('email')
-  else:
-    email = "none"
-  chamado = TblChamados(
-    titulo_chamado=titulo,
-    categoria_chamado=categoria,
-    cod_erro_chamado=cod_erro,
-    descricao_chamado=desc,
-    status_chamado="aberto",
-    notificar_chamado=0,
-    fk_idComputador=id
-  )
-  db.session.add(chamado)
-  db.session.commit()
-
-  return redirect(url_for('routes.TelaChamado'))
+  getPc = db.session.query(Computadores).filter_by(idComputador=id).first()
+  if getPc:
+    titulo = request.form.get("titulo")
+    categoria = request.form.get('categoria')
+    cod_erro = request.form.get('cod_erro')
+    desc = request.form.get('desc')
+    if titulo and categoria and desc:
+      notif = request.form.get('notificar')
+      if notif != None:
+        email = request.form.get('email')
+      else:
+        email = "none"
+      chamado = TblChamados(
+        titulo_chamado=titulo,
+        categoria_chamado=categoria,
+        cod_erro_chamado=cod_erro,
+        descricao_chamado=desc,
+        status_chamado="aberto",
+        notificar_chamado=0,
+        fk_idComputador=id
+      )
+      db.session.add(chamado)
+      db.session.commit()
+      return redirect(url_for('routes.TelaChamados'))
+    return redirect(url_for('routes.Index'))
 
 # Tela de chamados.
 @main.route("/chamados/", methods=["GET"])
-def TelaChamado():
+def TelaChamados():
   chamados = Filtrar(request.args.get("status"), request.args.get("categoria"), request.args.get("search"))
   return render_template("chamados/index.html", chamados=chamados)
 
@@ -116,9 +118,16 @@ def Filtrar(status, categoria, search):
 def Limpar():
   session["status"] = None
   session["categoria"] = None
-  return redirect(url_for("routes.TelaChamado"))
+  return redirect(url_for("routes.TelaChamados"))
 
 # Pesquisar pelo nome do computador
 def Search():
   chamados =  Chamados.query.filter(Chamados.titulo.like("%Sem%")).all()
   return chamados
+
+@main.route("/novochamado")
+def HomeChamado():
+  sala = request.args.get("sala")
+  num = request.args.get("numero")
+  computador = Computadores.query.filter(db.and_(Computadores.sala==sala, Computadores.numero==num)).first()
+  return render_template("tela-abrir-chamado/index.html", pc=computador)
