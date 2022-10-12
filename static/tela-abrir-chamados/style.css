@@ -283,3 +283,13 @@ body {
 .current-item .progress-count {
   color: #ffffff;
 }
+
+svg {
+  color: red;
+  width: 20px;
+  height: 20px;
+}
+
+.modal-header {
+  gap: 10px;
+}
