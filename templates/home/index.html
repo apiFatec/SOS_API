@@ -2,18 +2,19 @@
 <html lang="pt-BR">
 
 <head>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Home</title>
+  <title>Home - Fatec</title>
+  <link rel="icon" type="image/x-icon" href="{{url_for('static', filename='assets/favicon.png')}}">
   <link rel="stylesheet" href="{{url_for('static', filename='home/style.css')}}">
   <link rel="stylesheet" href="{{url_for('static', filename='header/style.css')}}">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Sen:wght@400;700;800&display=swap" rel="stylesheet">
-
-
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Sen:wght@400;700;800&display=swap"
+    rel="stylesheet">
 </head>
 
 <body>
@@ -41,14 +42,16 @@
       <a href="#" class="btn1">Entrar</a>
       <a href="#" class="btn2">Registrar-se</a>
   </header>
-
+  
   <section class="sec1">
     <div class="info1">
       <h1>Sistema de Ordem<br>de Serviços.</h1>
-      <p>Nosso sistema tem como objetivo principal, informar computadores com mau funcionamento dentro do campus da FATEC prof. Jessen Vidal, sendo acessado através de uma navegação dinâmica pelo mapa da FATEC.</p>
+      <p>Nosso sistema tem como objetivo principal, informar computadores com mau funcionamento dentro do campus da
+        FATEC prof. Jessen Vidal, sendo acessado através de uma navegação dinâmica pelo mapa da FATEC.</p>
       <div class="btns">
         <a href="/fachada" class="btn2">Navegar pelo mapa</a>
-        <a href="#" class="btn2">Abrir chamado</a>
+        <!-- <a href="#" class="btn2">Abrir chamado</a> -->
+        <button type="button" class="btn2" data-bs-toggle="modal" data-bs-target="#exampleModal">Abrir chamado</button>
       </div>
     </div>
 
@@ -60,21 +63,27 @@
   <section class="sec2">
     <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="false">
       <div class="carousel-indicators">
-        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+          aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+          aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+          aria-label="Slide 3"></button>
       </div>
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <img src="{{url_for('static', filename='assets/Fatec-Sjc.png')}}" height="600px" class="d-block  img-carrosel" alt="...">
+          <img src="{{url_for('static', filename='assets/Fatec-Sjc.png')}}" height="600px" class="d-block  img-carrosel"
+            alt="...">
           <div class="carousel-caption d-none d-md-block">
             <h2>Esta é a Fatec</h2>
-            <p>As Faculdades de Tecnologia do Estado de São Paulo são instituições de ensino superior públicas brasileiras; pertencentes ao Centro Estadual de Educação Tecnológica Paula Souza.</p>
+            <p>As Faculdades de Tecnologia do Estado de São Paulo são instituições de ensino superior públicas
+              brasileiras; pertencentes ao Centro Estadual de Educação Tecnológica Paula Souza.</p>
             <a href="http://www.fatecsp.br/">Ver mais</a>
           </div>
         </div>
         <div class="carousel-item">
-          <img src="{{url_for('static', filename='assets/Sala.jpeg')}}" height="600px" class="d-block  img-carrosel" alt="...">
+          <img src="{{url_for('static', filename='assets/Sala.jpeg')}}" height="600px" class="d-block  img-carrosel"
+            alt="...">
 
           <div class="carousel-caption d-none d-md-block">
             <h2>Laboratórios</h2>
@@ -82,19 +91,23 @@
           </div>
         </div>
         <div class="carousel-item">
-          <img src="{{url_for('static', filename='assets/Corredor2.jpeg')}}" height="600px" class="d-block  img-carrosel" alt="...">
+          <img src="{{url_for('static', filename='assets/Corredor2.jpeg')}}" height="600px"
+            class="d-block  img-carrosel" alt="...">
           <div class="carousel-caption d-none d-md-block">
             <h2>Acesse as salas</h2>
-            <p>Você pode navegar pelas salas e laboratórios acessando o botão abaixo, podendo relatar um problema em alguma máquina.</p>
+            <p>Você pode navegar pelas salas e laboratórios acessando o botão abaixo, podendo relatar um problema em
+              alguma máquina.</p>
             <a href="/fachada">Acessar</a>
           </div>
         </div>
       </div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+        data-bs-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Previous</span>
       </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+        data-bs-slide="next">
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Next</span>
       </button>
@@ -126,11 +139,41 @@
     </section>
   </article>
 
+  <!-- MODAL ABRIR CHAMADO -->
+
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Informe a sala e o número do computador</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form id="newOrder" action="/novochamado" method="GET">
+            <div class="mb-3">
+              <label for="recipient-name" class="col-form-label">Sala:</label>
+              <input type="number" class="form-control" id="recipient-name" name="sala" required autocomplete="off">
+            </div>
+            <div class="mb-3">
+              <label for="message-text" class="col-form-label">Número:</label>
+              <input type="number" class="form-control" name="numero" required autocomplete="off">
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+          <button type="submit" form="newOrder" class="btn btn-primary">Enviar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <footer>
     <a href="#" class="logo">FATEC</a>
   </footer>
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+    crossorigin="anonymous"></script>
 </body>
 
 </html>
