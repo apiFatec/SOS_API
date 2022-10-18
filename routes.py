@@ -131,3 +131,7 @@ def HomeChamado():
   num = request.args.get("numero")
   computador = Computadores.query.filter(db.and_(Computadores.sala==sala, Computadores.numero==num)).first()
   return render_template("tela-abrir-chamado/index.html", pc=computador)
+
+@main.route('/teladetalhes')
+def teladetalhes():
+  return render_template('tela-detalhes/index.html')
