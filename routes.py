@@ -59,7 +59,9 @@ def Create(id):
       if notif != None:
         notif = 1
         email = request.form.get('email')
-      print(notif)
+      else: 
+        email = None
+        notif = 0
       chamado = TblChamados(
         titulo_chamado=titulo,
         categoria_chamado=categoria,
