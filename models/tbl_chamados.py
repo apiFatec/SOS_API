@@ -1,3 +1,4 @@
+import email
 from db import db
 from models.tbl_computador import Computador
 
@@ -11,4 +12,6 @@ class TblChamados(db.Model):
   descricao_chamado = db.Column(db.String, nullable=False)
   status_chamado = db.Column(db.String, nullable=False)
   notificar_chamado = db.Column(db.String, nullable=True)
+  email = db.Column(db.String, nullable=True)
+  data = db.Column(db.String, nullable=False)
   fk_idComputador = db.Column(db.Integer, db.ForeignKey(Computador.idComputador))
