@@ -47,7 +47,7 @@
 
 ## Planejamento das sprints
 
-  <img src="https://user-images.githubusercontent.com/89823203/190877336-d27ff78c-6c44-4a79-9982-05c5641cb37e.jpg" alt="planejamento sprints"/>
+  <img src="https://user-images.githubusercontent.com/111662298/196576883-3d3582ab-9edd-4e83-984d-81e9b91b461f.png" alt="planejamento sprints"/>
 
 ## Tecnologias utilizadas
 
