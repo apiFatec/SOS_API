@@ -1,0 +1,30 @@
+main{
+    background-color: rgb(255, 255, 255);
+    border-radius: 20 px;
+    margin-left: 3%;
+    margin-top: 3%;
+    border-style: solid;
+    border-width: 0.3px;
+    border-color: rgb(158, 154, 154) ;
+    border-radius: 10px;
+    padding-left: 20px;
+    
+}
+#conteudo1{
+    display: flex;
+}
+
+#pc_logo {
+    margin-top: 2%;
+    margin-right: 15%;
+}
+
+#pc_logo img {
+    height: 120px;
+    width: 120px;
+    border-style: solid;
+    border-width: 0.2px;
+    border-color: rgb(158, 154, 154)  ;
+    border-radius:10px ;
+    padding: 15px;
+}

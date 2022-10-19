@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="{{url_for('static', filename='header/style.css')}}">
     <link rel="icon" type="image/x-icon" href="{{url_for('static', filename='assets/favicon.png')}}">
     <link rel="stylesheet" href="style.css">
-    
+    <link rel="stylesheet" href="{{url_for('static', filename= 'tela-detalhes/style.css')}}">
     
     <title>Detalhes</title>
 </head>
@@ -36,6 +36,34 @@
             <a href="#" class="btn2">Registrar-se</a>
         </div>
     </header>
+
+    <main>
+        <div id="conteudo1">
+            <div  id="pc_logo">
+                <img src="../../static/assets/pc.png" alt="">
+            </div>
+            <div>
+                <h4>Windows Edition</h4> 
+                <ul>
+                    <li>Windows Education 10</li>
+                    <li>Copyright c 2014 microsoft, All rights reserved</li>
+                    <li>Service Pack 2</li>
+                </ul>
+            </div>
+        </div>
+
+        <div>
+            <p>System</p> <hr>
+            <ul class="coluna1"></ul>
+            <ul class="coluna2"></ul>
+        </div>
+
+        <div>
+            <h3>Especificações do Windows</h3>
+            <ul class="coluna1"></ul>
+            <ul class="coluna2"></ul>
+        </div>
+    </main>
 
     
 </body>

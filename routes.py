@@ -140,11 +140,11 @@ def HomeChamado():
   computador = Computadores.query.filter(db.and_(Computadores.sala==sala, Computadores.numero==num)).first()
   return render_template("tela-abrir-chamado/index.html", pc=computador)
 
-<<<<<<< HEAD
+
 @main.route('/teladetalhes')
 def teladetalhes():
   return render_template('tela-detalhes/index.html')
-=======
+
 def insertDate():
   date = datetime.now().strftime("%Y %m %d %X")
   date = date.replace(" ", "-")
@@ -159,4 +159,4 @@ def getDate(chamados):
     date = date[:10] + " " + date[11:]
     dates.append(date)
   return dates
->>>>>>> 68a2465bc3dd13989961fe6704835b2918582f35
+
