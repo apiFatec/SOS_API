@@ -1,8 +1,16 @@
+body{
+  font-family: sans-serif;
+  background: #fff;
+  display: flex;
+  flex-direction: column;}
+
 main{
     background-color: rgb(255, 255, 255);
     border-radius: 20 px;
     margin-left: 3%;
     margin-top: 3%;
+    margin-right: 2%;
+    margin-bottom: 4%;
     border-style: solid;
     border-width: 0.3px;
     border-color: rgb(158, 154, 154) ;
@@ -10,21 +18,107 @@ main{
     padding-left: 20px;
     
 }
-#conteudo1{
+.conteudo{
     display: flex;
+    margin-right: 3px;
 }
 
+
 #pc_logo {
-    margin-top: 2%;
-    margin-right: 15%;
+    margin-top: 5%;
+    margin-right: 5%;
+    margin-left: 4%;
 }
 
 #pc_logo img {
-    height: 120px;
-    width: 120px;
+    height: 100px;
+    width: 100px;
     border-style: solid;
     border-width: 0.2px;
     border-color: rgb(158, 154, 154)  ;
     border-radius:10px ;
-    padding: 15px;
+    padding: 25px;
 }
+
+#windows_edition {
+    display: block;
+    margin-top: 5%;
+    width: 70%;
+}
+#windows_edition ul {
+    list-style: none;
+    margin-left: -5%;
+}
+
+#windows_edition li {
+    padding: 5px;
+}
+
+.conteudo h3{
+    margin-left: 4%;
+}
+
+.colunas{
+    display: flex;
+    margin-left: 8%;
+}
+
+.colunas2{
+    display: flex;
+    margin-top: 20px;
+}
+
+.coluna1 {
+    list-style: none;
+    display: flexbox;
+    font-size: medium;
+    width: 15%;
+}
+.coluna2 {
+    list-style: none;
+    display: flexbox;
+    font-size: medium;
+    margin-left: 20%;
+
+}
+.coluna1 li {
+    margin-top: 7px;
+}
+.coluna2 li {
+    color: rgba(83, 82, 82, 0.849);
+    text-decoration: none;
+    margin-top: 7px;
+}
+ #especificacoes{
+    width: 95%;
+ }
+
+ 
+ 
+ #botao{
+    display: flex;
+    width: 100%;
+    align-self: center;
+    margin-left: 45% !important;
+    margin-bottom: 10px;
+    margin-top: 5px;
+  }
+
+  #botao button  {
+    border-radius: 20px;
+    width: 10%;
+    padding: 15px;
+    background-color:  rgb(84, 138, 253);
+    color: white;
+    border-color:  rgb(84, 138, 253);
+  }
+
+    
+  #botao > button:hover {
+    background-color: rgb(71, 121, 231);
+  }
+  
+  #botao > button:active {
+    border: 1px solid black;
+    padding-block: 9px;
+  }
