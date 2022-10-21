@@ -143,10 +143,13 @@ def HomeChamado():
 
 @main.route('/<int:sala>/<int:num>/teladetalhes')
 def teladetalhes(sala,num):
-
   comp =  Computadores.query.filter_by(sala=sala, numero=num).first()
-  print(comp)
   return render_template('tela-detalhes/index.html', comp=comp)
+
+@main.route('/<int:sala>/<int:num>/teladetalhes/edit')
+def tela_detalhes_edit(sala, num):
+  comp = Computadores.query.filter_by(sala = sala,numero = num).first()
+  return render_template('tela-detalhes-edit/index.html',comp=comp)
 
 def insertDate():
   date = datetime.now().strftime("%Y %m %d %X")
