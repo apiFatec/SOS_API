@@ -21,6 +21,10 @@ def Index():
 def Fachada():
   return render_template("fachada/index.html")
 
+@main.route("/login")
+def Login():
+  return render_template("tela-login/index.html")
+
 # Função para abrir tela de pisos no andar quem o parametro <num> foi passado.
 @main.route("/piso/<num>")
 def Piso(num):
