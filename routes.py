@@ -43,7 +43,6 @@ def NewChamado(id):
   pc = db.session.query(Computadores).filter_by(idComputador=id).first()
   return render_template("tela-abrir-chamado/index.html", pc=pc)
 
-
 # Função para crair o chamado e envia-lo para o banco de dados.
 # É redirecionado para a tela de chamados.
 @main.route('/novo-chamado/<id>', methods=["POST", "GET"])
