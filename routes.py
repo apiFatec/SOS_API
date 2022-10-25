@@ -21,6 +21,10 @@ def Index():
 def Fachada():
   return render_template("fachada/index.html")
 
+@main.route("/login")
+def Login():
+  return render_template("tela-login/index.html")
+
 # Função para abrir tela de pisos no andar quem o parametro <num> foi passado.
 @main.route("/piso/<num>")
 def Piso(num):
@@ -144,6 +148,11 @@ def HomeChamado():
 def teladetalhes(sala,num):
   comp =  Computadores.query.filter_by(sala=sala, numero=num).first()
   return render_template('tela-detalhes/index.html', comp=comp)
+
+@main.route('/<int:sala>/<int:num>/teladetalhes/edit')
+def tela_detalhes_edit(sala, num):
+  comp = Computadores.query.filter_by(sala = sala,numero = num).first()
+  return render_template('tela-detalhes-edit/index.html',comp=comp)
 
 def insertDate():
   date = datetime.now().strftime("%Y %m %d %X")

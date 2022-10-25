@@ -40,16 +40,15 @@
     <main>
         <div class="conteudo">
             <div  id="pc_logo">
-                <img src="../../static/assets/pc.png" alt="">
+                <img src="../../static/assets/icone-windows.png" alt="">
             </div>
 
             <div id="windows_edition">
 
-                    <hr>
-                    <h3>Windows Edition </h3>
-
+                <h3>Windows Edition <hr> </h3>
+                    <br>
                 <ul>
-                    <li>Windows Education 10</li>
+                    <li>{{comp.win}}</li>
                     <li>Copyright c 2014 microsoft. All rights reserved. </li>
                     <li>Service Pack 2</li>
                 </ul>
@@ -59,46 +58,25 @@
 
         <div class="conteudo">
             <div id="especificacoes">
-                <h3>Especificações do Windows <hr> <h3>
+                <h3>Sistema <hr> <h3>
                 <div class="colunas2">
                     <ul class="coluna1">
                         <li>Nome do dispositivo</li>
                         <li>Processador</li>
                         <li>Ram</li>
-                        <li>Id do dispositivo</li>
-                        <li>ID do produto</li>
                         <li>Tipo de sistema </li>
+                        <li>Endereço</li>
                     </ul>
                     <ul class="coluna2">
                         <li>DESKTOP-VJNCDEO</li>
                         <li>{{comp.processador}}</li>
                         <li>{{comp.ram}}</li>
-                        <li> None</li>
-                        <li>None</li>
                         <li>Sistema Operacional de {{comp.tipo_sis}} bits</li>
-                    </ul>
-                </div>
-            </div>
-        
-        </div>
-
-        <div class="conteudo">
-            <div id="especificacoes">
-                <h3>Especificações do Windows <hr> <h3>
-                <div class="colunas2">
-                    <ul class="coluna1">
-                        <li>Sistema Operacional</li>
-                        <li>Versão</li>
-                        <li>Endereço</li>
-                    </ul>
-                    <ul class="coluna2">
-                        <li>{{comp.win}}</li>
-                        <li>{{comp.versao}}</li>
                         <li>sala {{comp.sala}}, computador {{comp.numero}}</li>
                     </ul>
                 </div>
             </div>
-            
+        
         </div>
 
         <div id = 'botao'>
