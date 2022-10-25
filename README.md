@@ -1,11 +1,5 @@
 # SOS API 1º ADS
 
-## <a href="https://apifatec.github.io/SOS_API/src/fachada/index.html">Visite nossa plataforma</a>
-## Nosso projeto
-<img src="https://user-images.githubusercontent.com/111662298/196295029-f0e95762-6129-4a1d-b0eb-be215642fbdb.mp4">
-
-
-
 
 
 ## Índice
