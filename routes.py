@@ -78,8 +78,8 @@ def Create(id):
       )
       db.session.add(chamado)
       db.session.commit()
-      return redirect(url_for('routes.TelaChamados'))
-    return redirect(url_for('routes.Index'))
+      return render_template("tela-abrir-chamado/confirm.html")
+    return redirect(url_for('routes.TelaChamados'))
 
 # Tela de chamados.
 @main.route("/chamados/", methods=["GET"])
@@ -140,6 +140,8 @@ def Search():
 def HomeChamado():
   sala = request.args.get("sala")
   num = request.args.get("numero")
+  if len(num) == 1:
+    num = "0" + num
   computador = Computadores.query.filter(db.and_(Computadores.sala==sala, Computadores.numero==num)).first()
   return render_template("tela-abrir-chamado/index.html", pc=computador)
 

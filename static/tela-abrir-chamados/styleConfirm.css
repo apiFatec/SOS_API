@@ -1,0 +1,75 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Sen", sans-serif;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  background-color: #555;
+  height: 100vh;
+  width: 100vw;
+}
+
+main {
+  background-color: #F8F8F8;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 50px;
+  border-radius: 10px;
+  background-color: white;
+  justify-content: space-between;
+  width: fit-content;
+  align-items: center;
+  gap: 40px;
+  box-shadow: 4px 4px 4px 1px rgba(0, 0, 0, 0.1);
+}
+
+.card label {
+  text-align: center;
+}
+
+.card label a:visited {
+  color: inherit;
+}
+
+.card label h2 {
+  font-size: 32px;
+}
+
+.card label span {
+  font-size: 20px;
+}
+
+.card img {
+  width: 210px;
+}
+
+.ok {
+  text-decoration: none;
+  padding: 10px;
+  width: 60px;
+  background-color: #07185A;
+  color: white;
+  border-radius: 5px;
+  text-align: center;
+  align-self: flex-end;
+  font-weight: 600;
+  border: 1px solid #07185A;
+}
+
+.ok:hover {
+  background-color: white;
+  border: 1px solid #07185A;
+  color: #07185A;
+  font-weight: 600;
+}

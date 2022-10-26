@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{{url_for('static', filename='header/style.css')}}">
+  <link rel="stylesheet" href="{{url_for('static', filename='tela-abrir-chamados/styleConfirm.css')}}">
+  <title>Document</title>
+</head>
+
+<body>
+  <header>
+    <a href="../home/index.html">
+      <h1 class="logo">FATEC</h1>
+    </a>
+
+    <nav class="nave">
+      <ul>
+        <a href="../home/index.html">
+          <li>Início</li>
+        </a>
+        <a href="chamados">
+          <li>Chamados</li>
+        </a>
+        <a href="#">
+          <li>Contato</li>
+        </a>
+      </ul>
+    </nav>
+
+    <div class="login">
+      <a href="#" class="btn1">Entrar</a>
+      <a href="#" class="btn2">Registrar-se</a>
+    </div>
+  </header>
+
+  <main>
+    <div class="card">
+      <label for="">
+        <h2 >Chamado enviado com sucesso</h2>
+        <span >
+          Você pode acompanha-lo pela tela de
+          <a href="/chamados">Chamados</a>
+        </span>
+      </label>
+      <img src="{{url_for('static', filename='assets/Vector.svg')}}" alt="sucesso">
+      <a class="ok" href="/">OK</a>
+    </div>
+  </main>
+
+</body>
+
+</html>
