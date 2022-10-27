@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{url_for('static', filename='header/style.css')}}">
     <link rel="icon" type="image/x-icon" href="{{url_for('static', filename='assets/favicon.png')}}">
-   <link rel="stylesheet" href="{{url_for('static', filename= 'tela-detalhes-edit/style.css')}}">
+   <link rel="stylesheet" href="{{url_for('static', filename='tela-detalhes-edit/style.css')}}">
     <title>Edição de detalhes</title>
 </head>
 <body>
@@ -39,7 +39,7 @@
     <main>
         <div class="conteudo">
             <div id="logo-win">
-                <img src="../../static/assets/logo-windows.png" alt="">
+                <img src="{{url_for('static', filename='assets/icone-windows.png')}}" alt="">
             </div>
             <div id='versão-win'>
                 <h3>Versão do Windows <hr></h3>
