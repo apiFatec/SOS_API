@@ -38,21 +38,26 @@
     </header>
 
     <main>
+
         <div class="conteudo">
             <div  id="pc_logo">
-                <img src="../../static/assets/icone-windows.png" alt="">
+                <img src="{{url_for('static', filename= 'assets/icone-windows.png')}}" alt="">
             </div>
-
+            
             <div id="windows_edition">
-
-                <h3>Windows Edition <hr> </h3>
-                    <br>
+                
+                <h3>Windows Edition   <hr>
+                 </h3>                    <br>
                 <ul>
                     <li>{{comp.win}}</li>
                     <li>Copyright c 2014 microsoft. All rights reserved. </li>
                     <li>Service Pack 2</li>
                 </ul>
+                
+            </div>
 
+            <div id="edicao">
+                <a href="/%s/%s/tela-detalhes/edit"><img  src="{{url_for('static', filename= 'assets/lapis.png')}}" alt=""></a>
             </div>
         </div>
 
@@ -60,27 +65,27 @@
             <div id="especificacoes">
                 <h3>Sistema <hr> <h3>
                 <div class="colunas2">
-                    <ul class="coluna1">
-                        <li>Nome do dispositivo</li>
-                        <li>Processador</li>
-                        <li>Ram</li>
-                        <li>Tipo de sistema </li>
-                        <li>Endereço</li>
-                    </ul>
-                    <ul class="coluna2">
-                        <li>DESKTOP-VJNCDEO</li>
-                        <li>{{comp.processador}}</li>
-                        <li>{{comp.ram}}</li>
-                        <li>Sistema Operacional de {{comp.tipo_sis}} bits</li>
-                        <li>sala {{comp.sala}}, computador {{comp.numero}}</li>
-                    </ul>
+                        <ul class="coluna1">
+                            <li>Nome do dispositivo</li>
+                            <li>Processador</li>
+                            <li>Ram</li>
+                            <li>Tipo de sistema </li>
+                            <li>Endereço</li>
+                        </ul>
+                        <ul class="coluna2">
+                            <li>DESKTOP-VJNCDEO</li>
+                            <li>{{comp.processador}}</li>
+                            <li>{{comp.ram}}</li>
+                            <li>Sistema Operacional de {{comp.tipo_sis}} bits</li>
+                            <li>sala {{comp.sala}}, computador {{comp.numero}}</li>
+                        </ul>
                 </div>
             </div>
         
         </div>
 
         <div id = 'botao'>
-            <button>ABRIR CHAMADO</button>
+            <button>Salvar</button>
         </div>
 </body>
 </html>

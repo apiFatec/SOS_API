@@ -12,9 +12,9 @@ main{
     background-color: #ffffff;
     border-style: solid;
     border-radius: 20 px;
-    width: 60%;
+    width: 70%;
     height: 100%;
-    margin-left: 20%;
+    margin-left: 15%;
     margin-top: 3%;
     margin-bottom: 15%;
     border-style: solid;
@@ -100,30 +100,39 @@ main{
     margin-top: 15px;
 }
  
- #botao{
-    display: flex;
-    width: 100%;
-    align-self: center;
-    margin-left: 3% !important;
-    margin-bottom: 10px;
-    margin-top: 40px;
-  }
-
-  #botao button  {
+#botao button:hover{
+    color:  #182d7b;
+    background-color: white;
+    border-style: ridge;
+    border-color: #182d7b;
+ }
+#botao button{
+    width: 100px;
+    height: 50px;
     border-radius: 20px;
-    width: 150px;
-    padding: 15px;
-    background-color:  rgb(84, 138, 253);
+    border-style: inherit;
     color: white;
-    border-color:  rgb(84, 138, 253);
-  }
-
-    
-  #botao > button:hover {
-    background-color: rgb(71, 121, 231);
-  }
+    margin-top: -10px;
+    margin-bottom: 20px;
+    margin-left: 85%;
+    background-color: #182d7b;
+}
   
   #botao > button:active {
+    transition: 0.2s;
     border: 1px solid black;
     padding-block: 9px;
   }
+
+
+#edicao{
+    margin-left:3%;
+    margin-top: 6%;
+}
+
+ #edicao img{
+    position: relative;
+    width: 30px;
+    height: 30px;
+    }
+  

@@ -6,11 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{url_for('static', filename='header/style.css')}}">
     <link rel="icon" type="image/x-icon" href="{{url_for('static', filename='assets/favicon.png')}}">
-   <link rel="stylesheet" href="{{url_for('static', filename= 'tela-detalhes-edit/style.css')}}">
-    <title>Edição de detalhes</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="{{url_for('static', filename= 'tela-detalhes-edit/style.css')}}">
+    
+    <title>Detalhes</title>
 </head>
 <body>
-    
     <header>
         <a href="/">
             <h1 class="logo">FATEC</h1>
@@ -38,41 +39,56 @@
 
     <main>
         <div class="conteudo">
-            <div id="logo-win">
-                <img src="../../static/assets/logo-windows.png" alt="">
+            <div  id="pc_logo">
+                <img src="{{url_for('static', filename='assets/icone-windows.png')}}" alt="">
+
             </div>
-            <div id='versão-win'>
-                <h3>Versão do Windows <hr></h3>
+
+            <div id="windows_edition">
+
+                <h3>Windows Edition <hr> </h3>
+                    <br>
                 <ul>
-                    <li>Windows 10 Education</li>
-                    <li>Copyright c 2014 Microsoft Corporation. All rights reserved. </li>
-                    <li>Service pack 2</li>
+                    <li>{{comp.win}}</li>
+                    <li>Copyright c 2014 microsoft. All rights reserved. </li>
+                    <li>Service Pack 2</li>
                 </ul>
+
             </div>
         </div>
 
-        <div class="conteudo">
-            <div id="conteudo"></div>
-            <h3>Sistema <hr></h3>
-            <div id="coluna">
-                <ul id="coluna1">
-                    <li>Nome do dispositivo</li>
-                    <li>Processador</li>
-                    <li>RAM instalada</li>
-                    <li>Tipo de Sistema</li>
-                    <li>Endereço</li>
-                </ul>
-                <ul id="coluna2">
-                    <li>DESKTOP-VJNCDEO</li>
-                    <li>{{comp.processador}}</li>
-                    <li><input type="text"></li>
-                    <li>Sistema operacional de {{comp.tipo_sis}} bits</li>
-                    <li>endereço</li>
-                </ul>
-            </div>
-            <button>Salvar</button>
+        <form class="conteudo">
+                <div id="especificacoes">
+                    <h3>Sistema <hr> <h3>
+                    <div class="colunas2">
+                            <ul class="coluna1">
+                                <li>Nome do dispositivo</li>
+                                <li>Processador</li>
+                                <label for="ram">
+                                    <li>Ram</li>
+                                </label>
+                                <li>Tipo de sistema </li>
+                                <label for="endereco">
+                                    <li>Endereço</li>
+                                </label>
+                            </ul>
+                            <ul class="coluna2">
+                                <li>DESKTOP-VJNCDEO</li>
+                                <li>{{comp.processador}}</li>
+                                <li class ='input_'><input type="number" id="ram" name="ram" placeholder="Digite a quantidade de RAM atual">
+                                </li>
+                                </input>
+                                <li>Sistema Operacional de {{comp.tipo_sis}} bits</li>
+                                <li class="input_"><input type="text" id="endereco" name="endereco" placeholder="Digite o endereço atual do PC" >
+                                </li>
+                            </ul>
+                    </div>
+                </div>
+            </form>
+    </div>
+
+        <div id = 'botao'>
+            <button><strong>Salvar</strong></button>
         </div>
-    </main>
-    
 </body>
 </html>
