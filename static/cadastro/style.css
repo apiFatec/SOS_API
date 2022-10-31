@@ -1,0 +1,123 @@
+body{
+    box-sizing: border-box;
+    margin: 0%;
+    padding: 0%;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(45deg,#42A5F5,#64B5F6,#90CAF9,#BBDEFB,#E3F2FD);
+}
+
+
+.container{
+    display: grid;
+    grid-template-columns: 1.5fr 2fr;
+    grid-template-rows: 1fr;
+    margin: 10%;
+    height: 600px;
+    width: 900px;
+    background-color: black;
+    border-radius: 10px;
+    box-shadow: 1px 1px 1px #00000036;
+}
+
+.lado{
+    background-color: #A8BAFE;
+    border-radius: 10px 0px 0px 10px;
+}
+
+.lado > h1{
+    padding-top: 40%;
+    margin-bottom: 0%;
+    font-size: 65px;
+    text-shadow: 1px 1px 3px #00000026;
+    text-align: center;
+    color: white;
+}
+
+.lado > p {
+    margin-top: 20px;
+    font-size: 20px;
+    font-weight: lighter;
+    text-align: center;
+    color: white;
+}
+
+.cadastro{
+    background-color: white;
+    border-radius: 0px 10px 10px 0px;
+}
+
+.cadastro > h1{
+    color: #A8BAFE;
+    font-size: 60px;
+    text-shadow: 1px 1px 1px #00000026;
+    padding-top: 10%;
+    padding-left: 15%;
+    margin-bottom: 0%;
+}
+
+.cadastro > p{
+    font-size: 20px;
+    padding-left: 20%;
+}
+
+.nome{
+    margin-top: 5%;
+    margin-left: 20%;
+    outline: none;
+    border: none;
+    padding: 10px 10px;
+    background-color: #EAEAEA;
+    width: 270px;
+}
+
+.email{
+    margin-top: 5%;
+    margin-left: 20%;
+    border: none;
+    outline: none;
+    padding: 10px 10px;
+    background-color: #EAEAEA;
+    width: 270px;
+}
+
+.senha{
+    margin-top: 5%;
+    margin-left: 20%;
+    outline: none;
+    border: none;
+    padding: 10px 10px;
+    background-color: #EAEAEA;
+    width: 270px;
+}
+
+button{
+    color: white;
+    border: none;
+    border-radius: 10px;
+    margin-top: 5%;
+    margin-left: 40%;
+    margin-bottom: 0%;
+    padding: 10px 10px;
+    background-color: #07185A;
+    width: 100px;
+}
+
+button:hover{
+    background-color: #04002c;
+    cursor: pointer;
+}
+
+p > a{
+    text-decoration: none;
+    font-size: 15px;
+    margin-left: 23%;
+}
+
+p > a:hover{
+    color: #04002c;
+}
+
+.input_container{
+    position: relative;
+}
