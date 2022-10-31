@@ -163,7 +163,7 @@ def tela_detalhes_edit(id):
     Computadores.query.filter_by(idComputador=id).update({"sala":sala})
     Computadores.query.filter_by(idComputador=id).update({"numero":numero})
     db.session.commit()
-    return redirect(url_for('routes.teladetalhes'))
+    return redirect(url_for('routes.teladetalhes', sala=comp.sala, num=comp.numero))
   return render_template('tela-detalhes-edit/index.html',comp=comp)
 
 def insertDate():
