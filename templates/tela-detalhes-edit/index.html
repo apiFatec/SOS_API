@@ -56,7 +56,7 @@
             </div>
         </div>
 
-        <form class="conteudo">
+        <form action="/{{comp.idComputador}}/teladetalhes/edit" method="POST" class="conteudo">
                 <div id="especificacoes">
                     <h3>Sistema <hr> <h3>
                     <div class="colunas2">
@@ -67,27 +67,31 @@
                                     <li>Ram</li>
                                 </label>
                                 <li>Tipo de sistema </li>
-                                <label for="endereco">
+                                <label for="sala">
                                     <li>Endereço</li>
                                 </label>
+                                <label for="numero"></label>
                             </ul>
                             <ul class="coluna2">
                                 <li>DESKTOP-VJNCDEO</li>
                                 <li>{{comp.processador}}</li>
-                                <li class ='input_'><input type="number" id="ram" name="ram" placeholder="Digite a quantidade de RAM atual">
+                                <li class ='input_'><input type="text" value="{{comp.ram}}" name="ram" placeholder="{{comp.ram}}">
                                 </li>
                                 </input>
                                 <li>Sistema Operacional de {{comp.tipo_sis}} bits</li>
-                                <li class="input_"><input type="text" id="endereco" name="endereco" placeholder="Digite o endereço atual do PC" >
+                                <li class="input_sala">
+                                    <input type="text" value="{{comp.sala}}" name="sala" placeholder="sala {{comp.sala}}" >
+                                    <input type="text" value="{{comp.numero}}" name="numero" placeholder = '{{comp.numero}}'>
                                 </li>
                             </ul>
+                    </div>
+                    <div id = 'botao'>
+                        <button type="submit" ><strong>Salvar</strong></button>
                     </div>
                 </div>
             </form>
     </div>
 
-        <div id = 'botao'>
-            <button><strong>Salvar</strong></button>
-        </div>
+        
 </body>
 </html>

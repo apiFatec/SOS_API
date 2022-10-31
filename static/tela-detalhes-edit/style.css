@@ -112,10 +112,11 @@ main{
     border-radius: 20px;
     border-style: inherit;
     color: white;
-    margin-top: -10px;
-    margin-bottom: 20px;
-    margin-left: 85%;
+    margin-top: 2%;
+    margin-left:95%;
+    margin-bottom: 30px;
     background-color: #182d7b;
+    display: block;
 }
   
   #botao > button:active {

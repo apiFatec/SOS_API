@@ -151,9 +151,19 @@ def teladetalhes(sala,num):
   comp =  Computadores.query.filter_by(sala=sala, numero=num).first()
   return render_template('tela-detalhes/index.html', comp=comp)
 
-@main.route('/<int:sala>/<int:num>/teladetalhes/edit')
-def tela_detalhes_edit(sala, num):
-  comp = Computadores.query.filter_by(sala = sala,numero = num).first()
+@main.route('/<id>/teladetalhes/edit', methods=['GET','POST'])
+def tela_detalhes_edit(id):
+  comp = Computadores.query.filter_by(idComputador=id).first()
+  if request.method == 'POST':
+    ram = request.form['ram']
+    sala = request.form['sala']
+    numero = request.form['numero']
+
+    Computadores.query.filter_by(idComputador=id).update({'ram':ram})
+    Computadores.query.filter_by(idComputador=id).update({"sala":sala})
+    Computadores.query.filter_by(idComputador=id).update({"numero":numero})
+    db.session.commit()
+    return redirect(url_for('routes.teladetalhes'))
   return render_template('tela-detalhes-edit/index.html',comp=comp)
 
 def insertDate():
@@ -170,4 +180,3 @@ def getDate(chamados):
     date = date[:10] + " " + date[11:]
     dates.append(date)
   return dates
-
