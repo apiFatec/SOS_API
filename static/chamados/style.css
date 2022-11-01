@@ -23,6 +23,7 @@ body {
   border-radius: 10px;
   padding: 10px;
 }
+
 #pes {
   width: 530px;
   border: none;
@@ -40,7 +41,7 @@ body {
   width: 50px;
 }
 
-.limpar > img {
+.limpar>img {
   width: 70%;
 }
 
@@ -219,3 +220,75 @@ input::-webkit-search-results-decoration {
 .cards a {
   color: inherit;
 }
+
+
+.body-modal {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  justify-content: start;
+  align-items: flex-start;
+  padding: 15px;
+}
+
+.left {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+
+.right {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+
+.right span {
+  margin-bottom: 10px;
+  width: 330px;
+}
+
+.right h3 {
+  width: 200px;
+}
+.left h3 {
+  width: 300px;
+}
+
+.bottom {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  grid-column: 1/3;
+  margin-top: 30px;
+}
+
+.body-modal label {
+  display: flex;
+  flex-direction: column;
+  font-weight: 500;
+  font-size: 25px;
+  height: fit-content;
+  margin-bottom: 15px;
+}
+
+.body-modal label span {
+  font-size: 15px;
+  font-weight: 400;
+}
+
+#data {
+  margin-bottom: 20px;
+}
+
+@media (min-width: 576px) {
+  .modal-dialog {
+    max-width: 700px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
+
+.modal-header {
+  border: none;
+}
+

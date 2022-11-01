@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static', filename='header/style.css')}}">
+    <link rel="icon" type="image/x-icon" href="{{url_for('static', filename='assets/favicon.png')}}">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="{{url_for('static', filename= 'tela-detalhes/style.css')}}">
+    
+    <title>Detalhes</title>
+</head>
+<body>
+    <header>
+        <a href="/">
+            <h1 class="logo">FATEC</h1>
+        </a>
+
+        <nav class="nave">
+            <ul>
+                <a href="/">
+                    <li>Início</li>
+                </a>
+                <a href="/chamados">
+                    <li>Chamados</li>
+                </a>
+                <a href="#">
+                    <li>Contato</li>
+                </a>
+            </ul>
+        </nav>
+
+        <div class="login">
+            <a href="#" class="btn1">Entrar</a>
+            <a href="#" class="btn2">Registrar-se</a>
+        </div>
+    </header>
+
+    <main>
+
+        <div class="conteudo">
+            <div  id="pc_logo">
+                <img src="{{url_for('static', filename= 'assets/icone-windows.png')}}" alt="">
+            </div>
+            
+            <div id="windows_edition">
+                
+                <h3>Windows Edition   <hr>
+                 </h3>                    <br>
+                <ul>
+                    <li>{{comp.win}}</li>
+                    <li>Copyright c 2014 microsoft. All rights reserved. </li>
+                    <li>Service Pack 2</li>
+                </ul>
+                
+            </div>
+
+            <div id="edicao">
+                <a href="/{{comp.idComputador}}/teladetalhes/edit"><img  src="{{url_for('static', filename= 'assets/lapis.png')}}" alt=""></a>
+            </div>
+        </div>
+
+        <div class="conteudo">
+            <div id="especificacoes">
+                <h3>Sistema <hr> <h3>
+                <div class="colunas2">
+                        <ul class="coluna1">
+                            <li>Nome do dispositivo</li>
+                            <li>Processador</li>
+                            <li>Ram</li>
+                            <li>Tipo de sistema </li>
+                            <li>Endereço</li>
+                        </ul>
+                        <ul class="coluna2">
+                            <li>DESKTOP-VJNCDEO</li>
+                            <li>{{comp.processador}}</li>
+                            <li>{{comp.ram}}</li>
+                            <li>Sistema Operacional de {{comp.tipo_sis}} bits</li>
+                            <li>sala {{comp.sala}}, computador {{comp.numero}}</li>
+                        </ul>
+                </div>
+            </div>
+        
+        </div>
+
+        <div id = 'botao'>
+            <button>Salvar</button>
+        </div>
+</body>
+</html>

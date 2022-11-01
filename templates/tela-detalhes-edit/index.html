@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static', filename='header/style.css')}}">
+    <link rel="icon" type="image/x-icon" href="{{url_for('static', filename='assets/favicon.png')}}">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="{{url_for('static', filename= 'tela-detalhes-edit/style.css')}}">
+    <title>Detalhes</title>
+</head>
+<body>
+    <header>
+        <a href="/">
+            <h1 class="logo">FATEC</h1>
+        </a>
+
+        <nav class="nave">
+            <ul>
+                <a href="/">
+                    <li>Início</li>
+                </a>
+                <a href="/chamados">
+                    <li>Chamados</li>
+                </a>
+                <a href="#">
+                    <li>Contato</li>
+                </a>
+            </ul>
+        </nav>
+
+        <div class="login">
+            <a href="#" class="btn1">Entrar</a>
+            <a href="#" class="btn2">Registrar-se</a>
+        </div>
+    </header>
+
+    <main>
+        <div class="conteudo">
+
+            <div  id="pc_logo">
+                <img src="{{url_for('static', filename='assets/icone-windows.png')}}" alt="">
+            </div>
+
+            <div id="windows_edition">
+
+                <h3>Windows Edition <hr> </h3>
+                    <br>
+                <ul>
+                    <li>{{comp.win}}</li>
+                    <li>Copyright c 2014 microsoft. All rights reserved. </li>
+                    <li>Service Pack 2</li>
+                </ul>
+
+            </div>
+        </div>
+
+        <form action="/{{comp.idComputador}}/teladetalhes/edit" method="POST" class="conteudo">
+                <div id="especificacoes">
+                    <h3>Sistema <hr> <h3>
+                    <div class="colunas2">
+                            <ul class="coluna1">
+                                <li>Nome do dispositivo</li>
+                                <li>Processador</li>
+                                <label for="ram">
+                                    <li>Ram</li>
+                                </label>
+                                <li>Tipo de sistema </li>
+                                <label for="sala">
+                                    <li>Endereço</li>
+                                </label>
+                                <label for="numero"></label>
+                            </ul>
+                            <ul class="coluna2">
+                                <li>DESKTOP-VJNCDEO</li>
+                                <li>{{comp.processador}}</li>
+                                <li class ='input_'><input type="text" value="{{comp.ram}}" name="ram" placeholder="{{comp.ram}}">
+                                </li>
+                                </input>
+                                <li>Sistema Operacional de {{comp.tipo_sis}} bits</li>
+                                <li class="input_sala">
+                                    <input type="text" value="{{comp.sala}}" name="sala" placeholder="sala {{comp.sala}}" >
+                                    <input type="text" value="{{comp.numero}}" name="numero" placeholder = '{{comp.numero}}'>
+                                </li>
+                            </ul>
+                    </div>
+                    <div id = 'botao'>
+                        <button type="submit" ><strong>Salvar</strong></button>
+                    </div>
+                </div>
+            </form>
+    </div>
+
+        
+</body>
+</html>

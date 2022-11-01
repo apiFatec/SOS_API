@@ -17,6 +17,7 @@ class Chamados(db.Model):
     status = db.Column(db.String)
     notificar = db.Column(db.String)
     Processador = db.Column(db.String)
+    data = db.Column(db.String)
     ram = db.Column(db.String)
     Win = db.Column(db.String)
     sala = db.Column(db.String)

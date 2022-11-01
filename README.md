@@ -1,8 +1,6 @@
 # SOS API 1º ADS
 
-## <a href="https://apifatec.github.io/SOS_API/src/fachada/index.html">Visite nossa plataforma</a>
-## Nosso projeto
-<img src="https://user-images.githubusercontent.com/89823203/190881607-8584abd3-f1c7-4d2d-a3fa-d13ba1c863b6.gif" />
+
 
 ## Índice
 
@@ -43,7 +41,7 @@
 
 ## Planejamento das sprints
 
-  <img src="https://user-images.githubusercontent.com/89823203/190877336-d27ff78c-6c44-4a79-9982-05c5641cb37e.jpg" alt="planejamento sprints"/>
+  <img src="https://user-images.githubusercontent.com/111662298/196576883-3d3582ab-9edd-4e83-984d-81e9b91b461f.png" alt="planejamento sprints"/>
 
 ## Tecnologias utilizadas
 

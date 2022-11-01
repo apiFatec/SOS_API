@@ -1,0 +1,82 @@
+*{
+    margin: 0;
+    padding: 0;
+    
+}
+
+.main{
+    background-color: #e0e0e0;
+    padding: 8%;
+    font-family: "Roboto", sans-serif;
+    font-weight: bolder;
+    
+}
+
+.titulo{
+    color: #a8bafe;
+    padding: 40px;
+    
+}
+.corpo{
+    display: grid;
+    grid-template-columns: 200px 500px;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+    width: 900px;
+    margin: auto;
+    margin-left: 10%;
+    border-radius: 10px;
+    background-color: #fff;
+    margin-top: -50px;
+    
+}
+
+.grid{
+    grid-column: 2;
+}
+.blocoazul{
+    background: #a8bafe;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    width: 100%px;
+    height: 100%;
+    margin-left: -100px;
+    
+    
+}
+
+.telalogin{
+    text-align: center;
+    border-radius: 10px;
+    
+}
+
+.inputlogin{
+    border: none;
+    padding: 10px;
+    background: rgb(179, 178, 178);
+    margin: 10px;
+}
+.link{
+    
+    text-decoration: none;
+    color:  rgb(0, 0, 185);
+    
+}
+
+.secao{
+    border-radius: 10px;
+}
+
+.btn{
+    border: none;
+    padding: 10px;
+    padding-left: 17px;
+    padding-right: 17px;
+    
+    background: rgb(0, 0, 185);
+    margin: 10px;
+    border-radius: 10px;
+    color: #fff;
+}
