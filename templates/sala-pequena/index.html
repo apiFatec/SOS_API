@@ -227,7 +227,7 @@
 
       <div class="pc-prof">
         <span>Professor</span>
-        <a href="../tela-abrir-chamado/index.html"><img src="{{url_for('static', filename='assets/pc.png')}}"
+        <a href="/abrir-chamado/{{pcs[0].idComputador}}"><img src="{{url_for('static', filename='assets/pc.png')}}"
             alt="icon pc">
           {% if not pcs[0] %}
           <figcaption class="pro">nao tem</figcaption>
