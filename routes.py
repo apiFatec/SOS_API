@@ -1,4 +1,6 @@
+from argparse import _VersionAction
 from MySQLdb import Date
+from cachelib import NullCache
 from flask import Blueprint, render_template, request, redirect, url_for, session
 from datetime import datetime
 from sqlalchemy import desc
@@ -151,20 +153,34 @@ def teladetalhes(sala,num):
   comp =  Computadores.query.filter_by(sala=sala, numero=num).first()
   return render_template('tela-detalhes/index.html', comp=comp)
 
+
+#Tela de atualização de detalhes de computadores
+
 @main.route('/<id>/teladetalhes/edit', methods=['GET','POST'])
 def tela_detalhes_edit(id):
   comp = Computadores.query.filter_by(idComputador=id).first()
   if request.method == 'POST':
+    win = request.form['win']
+    processador = request.form['processador']
     ram = request.form['ram']
+    tipo_sis = request.form['tipo_sis']
+    versao = request.form['versao']
     sala = request.form['sala']
     numero = request.form['numero']
+    patrimonio_gabinete = request.form['patrimonio_gabinete']
 
+    Computadores.query.filter_by(idComputador=id).update({'win':win})
+    Computadores.query.filter_by(idComputador=id).update({'processador':processador})
     Computadores.query.filter_by(idComputador=id).update({'ram':ram})
+    Computadores.query.filter_by(idComputador=id).update({'tipo_sis':tipo_sis})
+    Computadores.query.filter_by(idComputador=id).update({'versao':versao})
     Computadores.query.filter_by(idComputador=id).update({"sala":sala})
     Computadores.query.filter_by(idComputador=id).update({"numero":numero})
+    Computadores.query.filter_by(idComputador=id).update({'patrimonio_gabinete':patrimonio_gabinete})
     db.session.commit()
     return redirect(url_for('routes.teladetalhes', sala=comp.sala, num=comp.numero))
   return render_template('tela-detalhes-edit/index.html',comp=comp)
+
 
 def insertDate():
   date = datetime.now().strftime("%Y %m %d %X")

@@ -62,27 +62,68 @@
                     <div class="colunas2">
                             <ul class="coluna1">
                                 <li>Nome do dispositivo</li>
-                                <li>Processador</li>
+
+                                <label for="win">
+                                    <li>Windows</li>
+                                </label>
+
+                                <label for="processador">
+                                    <li>Processador</li>
+                                </label>
+
                                 <label for="ram">
                                     <li>Ram</li>
                                 </label>
-                                <li>Tipo de sistema </li>
+
+                                <label for="tipo_sis">
+                                    <li>Tipo de sistema </li>
+                                </label>
+
+                                <label for="versao">
+                                    <li>versao do windows</li>
+                                </label>
+
                                 <label for="sala">
                                     <li>Endereço</li>
                                 </label>
+
                                 <label for="numero"></label>
+                                <label for="patrimonio_gabinete">
+                                    <li>Patrimônio</li>
+                                </label>
                             </ul>
                             <ul class="coluna2">
                                 <li>DESKTOP-VJNCDEO</li>
-                                <li>{{comp.processador}}</li>
-                                <li class ='input_'><input type="text" value="{{comp.ram}}" name="ram" placeholder="{{comp.ram}}">
+
+                                <li>
+                                    <input type="text" value="{{comp.win}}" name="win" placeholder="{{comp.win}}">
                                 </li>
-                                </input>
-                                <li>Sistema Operacional de {{comp.tipo_sis}} bits</li>
+
+                                <li>
+                                    <input type="text" value="{{comp.processador}}" name="processador" placeholder="processador {{comp.processador}}">
+                                </li>
+
+                                <li >
+                                    <input type="text" value="{{comp.ram}}" name="ram" placeholder="{{comp.ram}}">
+                                </li>
+
+                                <li>
+                                    <input type="text" value="{{comp.tipo_sis}}" name="tipo_sis" placeholder="tipo de sistema {{comp.tipo_sis}}">
+                                </li>
+
+                                <li>
+                                    <input type="text" value="{{comp.versao}}" name="versao" placeholder=" {{comp.versao}}">
+                                </li>
+                                
                                 <li class="input_sala">
                                     <input type="text" value="{{comp.sala}}" name="sala" placeholder="sala {{comp.sala}}" >
                                     <input type="text" value="{{comp.numero}}" name="numero" placeholder = '{{comp.numero}}'>
                                 </li>
+
+                                <li>
+                                    <input type="text" value="{{comp.patrimonio_gabinete}}" name="patrimonio_gabinete" placeholder="{{comp.patrimonio_gabinete}}"> 
+                                </li>
+
                             </ul>
                     </div>
                     <div id = 'botao'>
