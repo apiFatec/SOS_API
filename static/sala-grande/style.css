@@ -85,6 +85,7 @@ a:visited {
   border-radius: 10px;
   margin: 0px 30px 10px 30px;
   box-shadow: rgba(0, 0, 0, 0.3) 0px 4px 12px;
+  gap: 4px;
 }
 
 .fileira {
@@ -96,6 +97,7 @@ a:visited {
   padding: 10px;
   border-radius: 10px;
   margin: 0px 30px 10px 30px;
+  gap: 4px;
   box-shadow: rgba(0, 0, 0, 0.3) 0px 4px 12px;
 }
 
@@ -358,4 +360,27 @@ a:visited {
 
 .current-item .progress-count {
   color: #ffffff;
+}
+
+.highlight {
+  background-color: lightgray;
+}
+
+.is-dragging {
+  cursor: move;
+  opacity: 0.3;
+}
+
+.over {
+  background-color: #4cd13711;
+}
+
+.dropzone {
+  min-width: 70px;
+  width: 70px;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }

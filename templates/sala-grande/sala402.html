@@ -231,124 +231,117 @@
         </a>
       </div>
 
+
       <div class="fileira1">
         {% for x in range(1, 5) %}
-        {% if not pcs[x] %}
-        <div class="pc">
-          <img src="{{url_for('static', filename='assets/pc-off.png')}}" alt="Sem computador">
-          Vazio
+        <div class="dropzone">
+          {% if not pcs[x] %}
+          
+          {% else %}
+          <a href="/abrir-chamado/{{pcs[x].idComputador}}" class="pc" draggable="true">
+            <img src="{{url_for('static', filename='assets/pc.png')}}" alt="logo-pc">
+            {{pcs[x].sala}}{{pcs[x].numero}}
+          </a>
+          {% endif %}
         </div>
-        {% else %}
-        <a href="/abrir-chamado/{{pcs[x].idComputador}}" class="pc">
-          <img src="{{url_for('static', filename='assets/pc.png')}}" alt="logo-pc">
-          {{pcs[x].sala}}{{pcs[x].numero}}
-        </a>
-        {% endif %}
         {% endfor %}
       </div>
       <div class="fileira">
         {% for x in range(5, 9) %}
-        {% if not pcs[x] %}
-        <div class="pc">
-          <img src="{{url_for('static', filename='assets/pc-off.png')}}" alt="Sem computador">
-          Vazio
+        <div class="dropzone">
+          {% if not pcs[x] %}
+          
+          {% else %}
+          <a href="/abrir-chamado/{{pcs[x].idComputador}}" class="pc" draggable="true">
+            <img src="{{url_for('static', filename='assets/pc.png')}}" alt="logo-pc">
+            {{pcs[x].sala}}{{pcs[x].numero}}
+          </a>
+          {% endif %}
         </div>
-        {% else %}
-        <a href="/abrir-chamado/{{pcs[x].idComputador}}" class="pc">
-          <img src="{{url_for('static', filename='assets/pc.png')}}" alt="logo-pc">
-          {{pcs[x].sala}}{{pcs[x].numero}}
-        </a>
-        {% endif %}
         {% endfor %}
       </div>
       <div class="fileira1">
         {% for x in range(9, 13) %}
-        {% if not pcs[x] %}
-        <div class="pc">
-          <img src="{{url_for('static', filename='assets/pc-off.png')}}" alt="Sem computador">
-          Vazio
+        <div class="dropzone">
+          {% if not pcs[x] %}
+          
+          {% else %}
+          <a href="/abrir-chamado/{{pcs[x].idComputador}}" class="pc" draggable="true">
+            <img src="{{url_for('static', filename='assets/pc.png')}}" alt="logo-pc">
+            {{pcs[x].sala}}{{pcs[x].numero}}
+          </a>
+          {% endif %}
         </div>
-        {% else %}
-        <a href="/abrir-chamado/{{pcs[x].idComputador}}" class="pc">
-          <img src="{{url_for('static', filename='assets/pc.png')}}" alt="logo-pc">
-          {{pcs[x].sala}}{{pcs[x].numero}}
-        </a href="/abrir-chamado/{{pcs[x].idComputador}}">
-        {% endif %}
         {% endfor %}
       </div>
       <div class="fileira">
         {% for x in range(13, 17) %}
-        {% if not pcs[x] %}
-        <div class="pc">
-          <img src="{{url_for('static', filename='assets/pc-off.png')}}" alt="Sem computador">
-          Vazio
+        <div class="dropzone">
+          {% if not pcs[x] %}
+          
+          {% else %}
+          <a href="/abrir-chamado/{{pcs[x].idComputador}}" class="pc" draggable="true">
+            <img src="{{url_for('static', filename='assets/pc.png')}}" alt="logo-pc">
+            {{pcs[x].sala}}{{pcs[x].numero}}
+          </a>
+          {% endif %}
         </div>
-        {% else %}
-        <a href="/abrir-chamado/{{pcs[x].idComputador}}" class="pc">
-          <img src="{{url_for('static', filename='assets/pc.png')}}" alt="logo-pc">
-          {{pcs[x].sala}}{{pcs[x].numero}}
-        </a href="/abrir-chamado/{{pcs[x].idComputador}}">
-        {% endif %}
         {% endfor %}
       </div>
       <div class="fileira1">
         {% for x in range(17, 21) %}
-        {% if not pcs[x] %}
-        <div class="pc">
-          <img src="{{url_for('static', filename='assets/pc-off.png')}}" alt="Sem computador">
-          Vazio
+        <div class="dropzone">
+          {% if not pcs[x] %}
+          
+          {% else %}
+          <a href="/abrir-chamado/{{pcs[x].idComputador}}" class="pc" draggable="true">
+            <img src="{{url_for('static', filename='assets/pc.png')}}" alt="logo-pc">
+            {{pcs[x].sala}}{{pcs[x].numero}}
+          </a>
+          {% endif %}
         </div>
-        {% else %}
-        <a href="/abrir-chamado/{{pcs[x].idComputador}}" class="pc">
-          <img src="{{url_for('static', filename='assets/pc.png')}}" alt="logo-pc">
-          {{pcs[x].sala}}{{pcs[x].numero}}
-        </a>
-        {% endif %}
         {% endfor %}
       </div>
       <div class="fileira">
         {% for x in range(21, 25) %}
-        {% if not pcs[x] %}
-        <div class="pc">
-          <img src="{{url_for('static', filename='assets/pc-off.png')}}" alt="Sem computador">
-          Vazio
+        <div class="dropzone">
+          {% if not pcs[x] %}
+          
+          {% else %}
+          <a href="/abrir-chamado/{{pcs[x].idComputador}}" class="pc" draggable="true">
+            <img src="{{url_for('static', filename='assets/pc.png')}}" alt="logo-pc">
+            {{pcs[x].sala}}{{pcs[x].numero}}
+          </a>
+          {% endif %}
         </div>
-        {% else %}
-        <a href="/abrir-chamado/{{pcs[x].idComputador}}" class="pc">
-          <img src="{{url_for('static', filename='assets/pc.png')}}" alt="logo-pc">
-          {{pcs[x].sala}}{{pcs[x].numero}}
-        </a>
-        {% endif %}
         {% endfor %}
       </div>
       <div class="fileira1">
         {% for x in range(25, 29) %}
-        {% if not pcs[x] %}
-        <div class="pc">
-          <img src="{{url_for('static', filename='assets/pc-off.png')}}" alt="Sem computador">
-          Vazio
+        <div class="dropzone">
+          {% if not pcs[x] %}
+          
+          {% else %}
+          <a href="/abrir-chamado/{{pcs[x].idComputador}}" class="pc" draggable="true">
+            <img src="{{url_for('static', filename='assets/pc.png')}}" alt="logo-pc">
+            {{pcs[x].sala}}{{pcs[x].numero}}
+          </a>
+          {% endif %}
         </div>
-        {% else %}
-        <a href="/abrir-chamado/{{pcs[x].idComputador}}" class="pc">
-          <img src="{{url_for('static', filename='assets/pc.png')}}" alt="logo-pc">
-          {{pcs[x].sala}}{{pcs[x].numero}}
-        </a>
-        {% endif %}
         {% endfor %}
       </div>
       <div class="fileira">
         {% for x in range(29, 33) %}
-        {% if not pcs[x] %}
-        <div class="pc">
-          <img src="{{url_for('static', filename='assets/pc-off.png')}}" alt="Sem computador">
-          Vazio
+        <div class="dropzone">
+          {% if not pcs[x] %}
+            <!-- AUSENCIA DE COMPUTADOR -->
+          {% else %}
+          <a href="/abrir-chamado/{{pcs[x].idComputador}}" class="pc" draggable="true">
+            <img src="{{url_for('static', filename='assets/pc.png')}}" alt="logo-pc">
+            {{pcs[x].sala}}{{pcs[x].numero}}
+          </a>
+          {% endif %}
         </div>
-        {% else %}
-        <a href="/abrir-chamado/{{pcs[x].idComputador}}" class="pc">
-          <img src="{{url_for('static', filename='assets/pc.png')}}" alt="logo-pc">
-          {{pcs[x].sala}}{{pcs[x].numero}}
-        </a>
-        {% endif %}
         {% endfor %}
       </div>
     </div>
@@ -357,6 +350,7 @@
   <footer>
     <a href="#" class="logo">FATEC</a>
   </footer>
+  <script src="{{url_for('static', filename='sala-grande/script.js')}}" defer></script>
 </body>
 
 </html>
