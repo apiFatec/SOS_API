@@ -196,3 +196,7 @@ def getDate(chamados):
     date = date[:10] + " " + date[11:]
     dates.append(date)
   return dates
+
+@main.route('/cadastro')
+def cadastro():
+ return render_template('cadastro/index.html')

@@ -6,9 +6,9 @@ html{
     display: grid;
     grid-template-columns: 1.5fr 2fr;
     grid-template-rows: 1fr;
-    margin: 10% 15% 5% 15%;
-    height: 600px;
-    width: 900px;
+    margin: 4% 0% 0% 16%;
+    height: 34.375rem;
+    width: 56.25rem;
     background-color: black;
     border-radius: 10px;
     box-shadow: 1px 1px 1px #00000036;
@@ -16,21 +16,23 @@ html{
 
 .lado{
     background-color: #A8BAFE;
+    font-family: "Sen", sans-serif;
+    font-weight: lighter;
     border-radius: 10px 0px 0px 10px;
 }
 
 .lado > h1{
     padding-top: 40%;
     margin-bottom: 0%;
-    font-size: 65px;
+    font-size: 3.75rem;
     text-shadow: 1px 1px 3px #00000026;
     text-align: center;
     color: white;
 }
 
 .lado > p {
-    margin-top: 20px;
-    font-size: 20px;
+    margin-top: 1.25rem;
+    font-size: 1.25rem;
     font-weight: lighter;
     text-align: center;
     color: white;
@@ -39,50 +41,36 @@ html{
 .cadastro{
     background-color: white;
     border-radius: 0px 10px 10px 0px;
+    font-family: "Sen", sans-serif;
+    font-weight: lighter;
 }
 
 .cadastro > h1{
     color: #A8BAFE;
-    font-size: 60px;
+    font-size: 3.43rem;
     text-shadow: 1px 1px 1px #00000026;
-    padding-top: 10%;
-    padding-left: 15%;
+    padding: 6% 0% 0% 13%;
     margin-bottom: 0%;
 }
 
 .cadastro > p{
-    font-size: 20px;
-    padding-left: 20%;
+    font-size: 1.18rem;
+    margin-bottom: 1%;
+    padding-left: 19%;
+    padding-top: 0.31rem;
 }
 
-.nome{
-    margin-top: 5%;
-    margin-left: 20%;
-    outline: none;
-    border: none;
-    padding: 10px 10px;
-    background-color: #EAEAEA;
-    width: 270px;
-}
-
-.email{
-    margin-top: 5%;
-    margin-left: 20%;
-    border: none;
-    outline: none;
-    padding: 10px 10px;
-    background-color: #EAEAEA;
-    width: 270px;
-}
-
+.nome,
+.email,
 .senha{
     margin-top: 5%;
     margin-left: 20%;
+    height: 5%;
     outline: none;
     border: none;
-    padding: 10px 10px;
+    padding: 0.625rem 0.625rem;
     background-color: #EAEAEA;
-    width: 270px;
+    width: 16.8rem;
 }
 
 button{
@@ -92,9 +80,9 @@ button{
     margin-top: 5%;
     margin-left: 40%;
     margin-bottom: 0%;
-    padding: 10px 10px;
+    padding: 0.625rem 0.625rem;
     background-color: #07185A;
-    width: 100px;
+    width: 6.25rem;
 }
 
 button:hover{
@@ -104,8 +92,8 @@ button:hover{
 
 p > a{
     text-decoration: none;
-    font-size: 15px;
-    margin-left: 23%;
+    font-size: 0.9375rem;
+    margin-left: 22%;
 }
 
 p > a:hover{
