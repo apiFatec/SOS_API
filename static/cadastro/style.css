@@ -1,17 +1,26 @@
-html{
-    overflow: hidden;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Sen", sans-serif;
+}
+
+body {
+    background-color: #F8F8F8;
+    display: flex;
+    height: 100vh;
 }
 
 .container{
     display: grid;
     grid-template-columns: 1.5fr 2fr;
     grid-template-rows: 1fr;
-    margin: 4% 0% 0% 16%;
+    margin: auto;
     height: 34.375rem;
     width: 56.25rem;
     background-color: black;
     border-radius: 10px;
-    box-shadow: 1px 1px 1px #00000036;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.3);
 }
 
 .lado{

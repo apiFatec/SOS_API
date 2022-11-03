@@ -1,82 +1,109 @@
-*{
+* {
     margin: 0;
     padding: 0;
-    
+    box-sizing: border-box;
 }
 
-.main{
+body {
+    display: flex;
+    height: 100vh;
+}
+
+.main {
     background-color: #e0e0e0;
-    padding: 8%;
     font-family: "Roboto", sans-serif;
     font-weight: bolder;
-    
 }
 
-.titulo{
+.titulo {
     color: #a8bafe;
-    padding: 40px;
-    
+    padding: 16px;
+    font-size: 36px;
+    margin-bottom: 15px;
 }
-.corpo{
-    display: grid;
-    grid-template-columns: 200px 500px;
+
+.corpo {
+    display: flex;
     justify-content: center;
     align-items: center;
     height: 500px;
     width: 900px;
     margin: auto;
-    margin-left: 10%;
     border-radius: 10px;
     background-color: #fff;
-    margin-top: -50px;
-    
 }
 
-.grid{
-    grid-column: 2;
-}
-.blocoazul{
+.blocoazul {
     background: #a8bafe;
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
-    width: 100%px;
+    width: 30%;
     height: 100%;
-    margin-left: -100px;
-    
-    
 }
 
-.telalogin{
+.telalogin {
     text-align: center;
     border-radius: 10px;
-    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
 }
 
-.inputlogin{
+.inputlogin {
     border: none;
     padding: 10px;
     background: rgb(179, 178, 178);
     margin: 10px;
-}
-.link{
-    
-    text-decoration: none;
-    color:  rgb(0, 0, 185);
-    
+    border-radius: 5px;
+    outline: none;
+    width: 40%;
 }
 
-.secao{
+.inputlogin:hover {
+    background-color: rgb(109, 109, 109);
+}
+
+.inputlogin:hover::placeholder {
+    color: rgb(214, 214, 214);
+    opacity: 1;
+    /* Firefox */
+}
+
+.inputlogin:hover:-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
+    color: rgb(214, 214, 214);
+}
+
+.inputlogin:hover::-ms-input-placeholder {
+    /* Microsoft Edge */
+    color: rgb(214, 214, 214);
+}
+
+.link {
+    text-decoration: none;
+    color: #07185A;
+    font-weight: 500;
+    margin-top: 5px;
+}
+
+.secao {
     border-radius: 10px;
 }
 
-.btn{
+.btn {
     border: none;
     padding: 10px;
     padding-left: 17px;
     padding-right: 17px;
-    
-    background: rgb(0, 0, 185);
+    width: 100px;
+    background: #07185A;
     margin: 10px;
     border-radius: 10px;
     color: #fff;
+}
+
+.btn:hover {
+    background-color: #1a285f;
 }
