@@ -85,3 +85,31 @@ img {
 .back a:visited {
   color: inherit;
 }
+
+.btn-a {
+  background-color: #182d7b;
+  border: none;
+  color: white;
+  padding:14px;
+  border-radius: 8px;
+  margin-block: 6px;
+  width: 180px;
+  font-size: 20px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+}
+
+.btn-a:hover {
+  background-color: #a8bafe;
+  color: #182d7b;
+}
+
+.btn-a:active {
+  background-color: #182d7b;
+  color: #a8bafe;
+}
+
+.btn-a:visited {
+  color: white;
+}
