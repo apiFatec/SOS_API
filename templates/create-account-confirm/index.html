@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{{url_for('static', filename='create-account-confirm/style.css')}}">
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="card">
+
+    <div class="top">
+      <img src="{{url_for('static', filename='assets/confirm_email.png')}}" alt="icon confirm email">
+      <h1 class="title">Confirme seu Email</h1>
+    </div>
+    <div class="body-msg">
+      <span>
+        Olá {{name}}, você está quase pronto para utilizar sua conta, abrir chamados e acompanhar o andamento deles.
+      </span>
+      <span>
+        Basta clicar no link abaixo para enviar um email de Confirmação para o seu endereço de Email: <b>{{email}}</b> 
+      </span>
+    </div>
+
+    <form action="/created_account/{{email}}" method="POST">
+      <input class="btn" type="submit" value="Verificar">
+    </form>
+
+    <span class="back">Voltar para o <a href="/">inicio</a></span>
+  </div>
+</body>
+
+</html>

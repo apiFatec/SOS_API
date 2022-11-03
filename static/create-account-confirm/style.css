@@ -1,0 +1,87 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Sen", sans-serif;
+}
+
+body {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  background-color: #F8F8F8;
+  font-weight: 500;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin: auto;
+  background-color: white;
+  box-shadow: 0 4px 4px rgba(0,0,0,0.3);
+  border-radius: 8px;
+  width: 40%;
+  overflow: hidden;
+  padding-bottom: 16px;
+}
+
+img {
+  width: 30%;
+}
+
+.card .top {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #A8BAFE;
+  width: 100%;
+  color: #050D32;
+  padding: 16px;
+  font-weight: bold;
+}
+
+.body-msg {
+  text-align: center;
+  padding: 0 8%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-block: 26px;
+}
+
+.btn {
+  background-color: #182d7b;
+  border: none;
+  color: white;
+  padding:14px;
+  border-radius: 8px;
+  margin-block: 6px;
+  width: 180px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #a8bafe;
+  color: #182d7b;
+}
+
+.btn:active {
+  background-color: #182d7b;
+  color: #a8bafe;
+}
+
+.back {
+  padding-top: 16px;
+}
+
+.back a {
+  font-weight: bold;
+}
+
+.back a:visited {
+  color: inherit;
+}
