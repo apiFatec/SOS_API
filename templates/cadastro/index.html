@@ -13,15 +13,15 @@
             <h1>Cadastre-se</h1>
             <p>para abrir um novo chamado ou acessar chamados já existentes</p>
         </div>
-        <div class="cadastro">
+        <form action="cadastro" method="POST" class="cadastro">
             <h1>crie sua conta</h1>
             <p>seu email institucional para registro:</p>
-            <input class="nome" type="text" placeholder="digite seu nome">
-            <input  class="email" type="text" placeholder="email">
-            <input class="senha" type="password"  placeholder="senha">
+            <input class="nome" type="text" name="name" placeholder="digite seu nome">
+            <input  class="email" type="email" name="email" placeholder="email">
+            <input class="senha" type="password" name="password" placeholder="senha">
             <button>cadastrar</button>
-            <p><a href="">já possuo uma conta</a></p>
-        </div>
+            <p><a href="/login">já possuo uma conta</a></p>
+        </form>
     </div>
 </body>
 </html>

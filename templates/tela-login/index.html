@@ -5,30 +5,26 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{url_for('static', filename='tela-login/style.css')}}">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+    <script src="https://kit.fontawesome.com/00b11d72aa.js" crossorigin="anonymous"></script>
     <title>Login</title>
 </head>
 <body class="main">
 
-    <main >
-        
         <div class="corpo">
             <div class="blocoazul"></div>
-            <div class="telalogin">
+            <form action="/login" method="post" class="telalogin">
                 
                 <h1 class="titulo">Acessar conta</h1>
                 
-                <div>
-                    <input class="inputlogin" type="text" name="usuario" placeholder="Usuário">
-                </div>
+                    <input class="inputlogin" type="email" name="email" placeholder="Email">
 
-                <div>
-                    <input class="inputlogin" type="password" name="senha" placeholder="Senha">
-                </div>
-                <button class="btn">Entrar</button><br>
-                <a class="link" href="#">Não possui uma conta?<br>Clique aqui para se cadastrar</a>
-            </div>
+                    <input class="inputlogin" type="password" name="password" placeholder="Senha">
+                <input type="submit" class="btn" value="Entrar">
+                <a class="link" href="/cadastro">Não possui uma conta?<br>Clique aqui para se cadastrar</a>
+            </form>
 
         </div>
-   </main> 
+
 </body>
 </html>
