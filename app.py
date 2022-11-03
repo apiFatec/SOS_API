@@ -3,6 +3,7 @@ from flask import Flask
 from routes import main
 from flask_session import Session
 from db import db
+from mail import mail
 import os
 
 load_dotenv()
@@ -11,8 +12,12 @@ app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv("DATABASE_URI")
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config["SESSION_PERMANENT"] = False
 app.config["SESSION_TYPE"] = "filesystem"
+app.config.from_pyfile('config.cfg')
+
+
 Session(app)
 db.init_app(app)
+mail.init_app(app)
 
 app.register_blueprint(main)
 
