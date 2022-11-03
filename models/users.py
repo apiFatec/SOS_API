@@ -7,3 +7,4 @@ class Users(db.Model):
   nome = db.Column(db.String, nullable=False)
   senha = db.Column(db.String(72), nullable=False)
   email = db.Column(db.String, nullable=False)
+  turma = db.column(db.String, nullable=True)
