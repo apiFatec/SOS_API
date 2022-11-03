@@ -195,11 +195,16 @@ def getDate(chamados):
     dates.append(date)
   return dates
 
+
+
+# Rota para criar um novo usuário no banco
+
 @main.route('/cadastro', methods=["GET", "POST"])
 def cadastro():
   if request.method == "POST":
     name = request.form['name']
     email = request.form['email']
+    turma = request.form['turma']
     password = request.form['password'].encode('ASCII')
     salt = bcrypt.gensalt()
     hashed = bcrypt.hashpw(password, salt)
@@ -207,30 +212,57 @@ def cadastro():
     user = Users(
       nome=name,
       email=email,
-      senha=hashed
+      senha=hashed,
+      turma=turma
     )
     try:
       db.session.add(user)
       db.session.commit()
     except:
-      return "Erro ao criar usuário"
-      
-    token = s.dumps(email, salt='email-confirm')
-    msg = Message('Confirm Email', sender='talison.bmc@gmail.com', recipients=[email])
-    link = url_for('routes.confirm_email', token=token, _external=True)
-    msg.body = f"Your link is {link}"
-    mail.send(msg)
-
-  return render_template('cadastro/index.html')
+      return "Erro ao criar usuário"      
+    return redirect(url_for('routes.created_account', email=email, name=name))
+  else:
+    return render_template('cadastro/index.html')
 
 
-@main.route('/confirm_email/<token>')
-def confirm_email(token):
+# Rota para tela de confirmar email 
+# aqui chama a função para enviar o link de confirmação para o email função send_link() 
+# Depois que o link é enviado para o email, o navegador é redirecionado para o email
+@main.route('/created_account/<email>', defaults={'name': None}, methods=["GET", "POST"])
+@main.route('/created_account/<email>/<name>', methods=["GET", "POST"])
+def created_account(email, name):
+  if request.method == "GET":
+    return render_template('create-account-confirm/index.html', email=email, name=name)
+  else:
+    try:
+      send_link(email)
+      return redirect("https://outlook.office365.com/mail/")
+    except:
+      return "erro"
+
+#  Função para enviar link de confirmação para o email
+def send_link(email):
+  token = s.dumps(email, salt='email-confirm')
+  msg = Message('Confirm Email', sender='talison.bmc@gmail.com', recipients=[email])
+  link = url_for('routes.confirm_email', token=token, email=email, _external=True)
+  msg.body = f"Your link is {link}"
+  mail.send(msg)
+
+
+# Depois que o usuário abre o email e clica no link para confirmar
+# Vem para esta rota que Valida o token e altera no banco que o email foi confirmado
+@main.route('/confirm_email/<email>/<token>')
+def confirm_email(email,token):
   try:
     email = s.loads(token, salt='email-confirm', max_age=900)
   except SignatureExpired:
     return "The Token is experied"
+  user = Users.query.filter(Users.email == email).first()
+  user.confirmed = True
+  db.session.commit()
   return "The token works"
+
+
 
 @main.route('/login', methods=["GET", "POST"])
 def Login():
@@ -238,7 +270,7 @@ def Login():
     email = request.form['email']
     passwd = request.form['password'].encode('ASCII')
     user = db.session.query(Users).filter_by(email=email).first()
-
+    print(user.confirmed)
     # userPass = user.senha.encode('ASCII')
 
     # if bcrypt.checkpw(passwd, userPass):
