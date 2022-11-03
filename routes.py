@@ -1,16 +1,18 @@
-from argparse import _VersionAction
-from MySQLdb import Date
-from cachelib import NullCache
+import bcrypt
 from flask import Blueprint, render_template, request, redirect, url_for, session
 from datetime import datetime
-from sqlalchemy import desc
 from models.chamados import Chamados
 from models.computers import Computadores
 from db import db
 from models.tbl_chamados import TblChamados
-
+from flask_mail import Mail, Message
+from itsdangerous import URLSafeTimedSerializer, SignatureExpired
+from mail import mail
+from models.users import Users
 
 main = Blueprint("routes", __name__)
+
+s = URLSafeTimedSerializer('Thisisasecret!')
 
 # Tela Home.
 @main.route("/", methods=["GET"])
@@ -22,10 +24,6 @@ def Index():
 @main.route("/fachada")
 def Fachada():
   return render_template("fachada/index.html")
-
-@main.route("/login")
-def Login():
-  return render_template("tela-login/index.html")
 
 # Função para abrir tela de pisos no andar quem o parametro <num> foi passado.
 @main.route("/piso/<num>")
@@ -197,6 +195,59 @@ def getDate(chamados):
     dates.append(date)
   return dates
 
-@main.route('/cadastro')
+@main.route('/cadastro', methods=["GET", "POST"])
 def cadastro():
- return render_template('cadastro/index.html')
+  if request.method == "POST":
+    name = request.form['name']
+    email = request.form['email']
+    password = request.form['password'].encode('ASCII')
+    salt = bcrypt.gensalt()
+    hashed = bcrypt.hashpw(password, salt)
+
+    user = Users(
+      nome=name,
+      email=email,
+      senha=hashed
+    )
+    try:
+      db.session.add(user)
+      db.session.commit()
+    except:
+      return "Erro ao criar usuário"
+      
+    token = s.dumps(email, salt='email-confirm')
+    msg = Message('Confirm Email', sender='talison.bmc@gmail.com', recipients=[email])
+    link = url_for('routes.confirm_email', token=token, _external=True)
+    msg.body = f"Your link is {link}"
+    mail.send(msg)
+
+  return render_template('cadastro/index.html')
+
+
+@main.route('/confirm_email/<token>')
+def confirm_email(token):
+  try:
+    email = s.loads(token, salt='email-confirm', max_age=900)
+  except SignatureExpired:
+    return "The Token is experied"
+  return "The token works"
+
+@main.route('/login', methods=["GET", "POST"])
+def Login():
+  if request.method == "POST":
+    email = request.form['email']
+    passwd = request.form['password'].encode('ASCII')
+    user = db.session.query(Users).filter_by(email=email).first()
+
+    # userPass = user.senha.encode('ASCII')
+
+    # if bcrypt.checkpw(passwd, userPass):
+    #   print('match')
+    # else: print("does'nt match")
+
+    session['email'] = user.email
+    session['name'] = user.nome
+    session['logged'] = True
+
+  
+  return render_template("tela-login/index.html")
