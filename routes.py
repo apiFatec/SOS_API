@@ -260,7 +260,11 @@ def confirm_email(email,token):
   user = Users.query.filter(Users.email == email).first()
   user.confirmed = True
   db.session.commit()
-  return "The token works"
+  return redirect(url_for('routes.confirmed_email', name=user.nome))
+
+@main.route('/confirmed_email/<name>')
+def confirmed_email(name):
+  return render_template('create-account-confirm/confirmed.html', name=name)
 
 
 

@@ -14,22 +14,14 @@
 
     <div class="top">
       <img src="{{url_for('static', filename='assets/confirm_email.png')}}" alt="icon confirm email">
-      <h1 class="title">Verifique seu Email</h1>
+      <h1 class="title">Email verificado</h1>
     </div>
     <div class="body-msg">
       <span>
-        Olá {{name}}, você está quase pronto para utilizar sua conta, abrir chamados e acompanhar o andamento deles.
-      </span>
-      <span>
-        Basta clicar no link abaixo para enviar um email de Confirmação para o seu endereço de Email: <b>{{email}}</b> 
+        Olá {{name}}, seu email ja foi verificado e, agora você pode abrir chamados e acompanha-los com a sua conta.
       </span>
     </div>
-
-    <form action="/created_account/{{email}}" method="POST">
-      <input class="btn" type="submit" value="Verificar">
-    </form>
-
-    <span class="back">Voltar para o <a href="/">inicio</a></span>
+      <a href="/login" class="btn-a">Entrar na conta</a>
   </div>
 </body>
 
