@@ -26,10 +26,13 @@ body {
   font-weight: lighter;
   border-radius: 10px 0px 0px 10px;
   padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .lado > h1 {
-  padding-top: 40%;
+  padding-top: 36%;
   margin-bottom: 0%;
   font-size: 3.75rem;
   text-align: center;
@@ -50,11 +53,13 @@ body {
   border-radius: 0px 10px 10px 0px;
   font-family: "Sen", sans-serif;
   font-weight: lighter;
+  padding: 1rem 3rem;
 }
 
 .cadastro > h1 {
   color: #a8bafe;
   font-size: 3.43rem;
+  width: 500px;
   padding: 6% 0% 0% 13%;
   margin-bottom: 0%;
 }

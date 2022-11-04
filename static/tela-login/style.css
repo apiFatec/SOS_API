@@ -1,109 +1,125 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    display: flex;
-    height: 100vh;
+  display: flex;
+  height: 100vh;
 }
 
 .main {
-    background-color: #e0e0e0;
-    font-family: "Roboto", sans-serif;
-    font-weight: bolder;
+  background-color: #c8c8c80d;
+  font-family: "Sen", sans-serif;
+  font-weight: bolder;
 }
 
 .titulo {
-    color: #a8bafe;
-    padding: 16px;
-    font-size: 36px;
-    margin-bottom: 15px;
+  color: #a8bafe;
+  padding: 16px;
+  font-size: 35pt;
+  margin-bottom: 15px;
 }
 
 .corpo {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 500px;
-    width: 900px;
-    margin: auto;
-    border-radius: 10px;
-    background-color: #fff;
+  display: grid;
+  grid-template-columns: 1.5fr 2fr;
+  grid-template-rows: 1fr;
+  margin: auto;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 .blocoazul {
-    background: #a8bafe;
-    border-top-left-radius: 10px;
-    border-bottom-left-radius: 10px;
-    width: 30%;
-    height: 100%;
+  background-color: #a8bafe;
+  border-radius: 10px 0px 0px 10px;
 }
 
 .telalogin {
-    text-align: center;
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 70%;
+  background-color: white;
+  border-radius: 0px 10px 10px 0px;
+  font-family: "Sen", sans-serif;
+  font-weight: lighter;
+  padding: 7rem 8rem;
+  gap: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.inputlogin {
-    border: none;
-    padding: 10px;
-    background: rgb(179, 178, 178);
-    margin: 10px;
-    border-radius: 5px;
-    outline: none;
-    width: 40%;
+.email,
+.senha {
+  outline: none;
+  border: none;
+  background-color: #eaeaea;
+  margin-inline: auto;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  width: 300px;
+}
+
+.em,
+.sh {
+  padding: 0.25rem;
+  outline: none;
+  border: none;
+  background-color: transparent;
+  font-family: "Sen", sans-serif;
 }
 
 .inputlogin:hover {
-    background-color: rgb(109, 109, 109);
+  background-color: rgb(109, 109, 109);
 }
 
 .inputlogin:hover::placeholder {
-    color: rgb(214, 214, 214);
-    opacity: 1;
-    /* Firefox */
+  color: rgb(214, 214, 214);
+  opacity: 1;
+  /* Firefox */
 }
 
 .inputlogin:hover:-ms-input-placeholder {
-    /* Internet Explorer 10-11 */
-    color: rgb(214, 214, 214);
+  /* Internet Explorer 10-11 */
+  color: rgb(214, 214, 214);
 }
 
 .inputlogin:hover::-ms-input-placeholder {
-    /* Microsoft Edge */
-    color: rgb(214, 214, 214);
+  /* Microsoft Edge */
+  color: rgb(214, 214, 214);
 }
 
 .link {
-    text-decoration: none;
-    color: #07185A;
-    font-weight: 500;
-    margin-top: 5px;
+  text-decoration: none;
+  color: #07185a;
+  font-weight: 500;
+  margin-top: 5px;
+  text-align: center;
 }
 
 .secao {
-    border-radius: 10px;
+  border-radius: 10px;
 }
 
 .btn {
-    border: none;
-    padding: 10px;
-    padding-left: 17px;
-    padding-right: 17px;
-    width: 100px;
-    background: #07185A;
-    margin: 10px;
-    border-radius: 10px;
-    color: #fff;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  margin-inline: auto;
+  padding: 0.73rem 1.5rem;
+  background-color: #07185a;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  font-weight: 700;
+  font-size: 11pt;
 }
 
 .btn:hover {
-    background-color: #1a285f;
+  background-color: #1a285f;
+}
+
+i {
+  color: #6c6c6c;
 }
