@@ -44,7 +44,7 @@
   <main>
     <nav class="nav-search">
       <div class="search">
-        <img src="../../static/assets/Lupa.svg" alt="lupa">
+        <img src="{{url_for('static', filename='assets/Lupa.svg')}}" alt="lupa">
         <input type="search" name="pesquisar" id="pesquisar" placeholder="Pesquisar">
       </div>
       <div class="btn-group">
@@ -62,13 +62,13 @@
     </nav>
 
     <div class="aluno">
-      <div class="foto"><img src="../../static/assets/user.svg" alt="user" width="51px"></div>
+      <div class="foto"><img src="{{url_for('static', filename='assets/user.svg')}}" alt="user" width="51px"></div>
       <div class="info">
         <p>Nome: Phelipe Pinheiro da Silva</p>
         <p>Turma: Análise e Desenvolvimento de sistemas 1 Semestre</p>
         <p>Chamados: 4</p>
       </div>
-      <div class="edit"><a href="#"><img src="../../static/assets/pencil-solid.svg" alt="lapis" width="26px"></a></div>
+      <div class="edit"><a href="#"><img src="{{url_for('static', filename='assets/pencil-solid.svg')}}" alt="lapis" width="26px"></a></div>
     </div>
   </main>
 

@@ -283,3 +283,21 @@ def Login():
 
   
   return render_template("tela-login/index.html")
+
+# Tela de usuários.
+@main.route("/usuarios")
+def Usuarios():
+  return render_template("usuarios/index.html")
+
+@main.route("/usuarios/edit")
+def Usuarios_edit(id):
+  usr = Users.query.filter_by(Usuarios=id).first()
+  if request.method == 'POST':
+    nome = request.form['nome']
+    turma = request.form['turma']
+
+    Users.query.filter_by(Usuarios=id).update({'nome':nome})
+    Users.query.filter_by(Usuarios=id).update({'turma':turma})
+    db.session.commit()
+    return redirect(url_for('routes.usuarios'))
+  return render_template("usuarios-edit/index.html",usr = usr)
