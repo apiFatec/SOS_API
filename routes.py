@@ -1,4 +1,3 @@
-import bcrypt
 from flask import Blueprint, render_template, request, redirect, url_for, session
 from datetime import datetime
 from models.chamados import Chamados
@@ -9,6 +8,7 @@ from flask_mail import Mail, Message
 from itsdangerous import URLSafeTimedSerializer, SignatureExpired
 from mail import mail
 from models.users import Users
+from werkzeug.security import generate_password_hash, check_password_hash
 
 main = Blueprint("routes", __name__)
 
@@ -44,8 +44,12 @@ def Sala(num, sala):
 # Tela para abrir um novo chamado
 @main.route("/abrir-chamado/<id>")
 def NewChamado(id):
-  pc = db.session.query(Computadores).filter_by(idComputador=id).first()
-  return render_template("tela-abrir-chamado/index.html", pc=pc)
+  if not session.get('verified') and session.get('logged'):
+    return redirect(url_for('routes.created_account', email=session.get('email'), name=session.get('name')))
+  else:
+    pc = db.session.query(Computadores).filter_by(idComputador=id).first()
+    return render_template("tela-abrir-chamado/index.html", pc=pc)
+
 
 # Função para crair o chamado e envia-lo para o banco de dados.
 # É redirecionado para a tela de chamados.
@@ -205,15 +209,14 @@ def cadastro():
     name = request.form['name']
     email = request.form['email']
     turma = request.form['turma']
-    password = request.form['password'].encode('ASCII')
-    salt = bcrypt.gensalt()
-    hashed = bcrypt.hashpw(password, salt)
-
+    password = request.form['password']
+    hashed = generate_password_hash(password, method='sha256')
+    
     user = Users(
       nome=name,
       email=email,
       senha=hashed,
-      turma=turma
+      turma=turma,
     )
     try:
       db.session.add(user)
@@ -259,6 +262,7 @@ def confirm_email(email,token):
     return "The Token is experied"
   user = Users.query.filter(Users.email == email).first()
   user.confirmed = True
+  session['verified'] = True
   db.session.commit()
   return redirect(url_for('routes.confirmed_email', name=user.nome))
 
@@ -266,27 +270,33 @@ def confirm_email(email,token):
 def confirmed_email(name):
   return render_template('create-account-confirm/confirmed.html', name=name)
 
-
-
 @main.route('/login', methods=["GET", "POST"])
 def Login():
   if request.method == "POST":
     email = request.form['email']
-    passwd = request.form['password'].encode('ASCII')
-    user = db.session.query(Users).filter_by(email=email).first()
-    print(user.confirmed)
-    # userPass = user.senha.encode('ASCII')
-
-    # if bcrypt.checkpw(passwd, userPass):
-    #   print('match')
-    # else: print("does'nt match")
-
-    session['email'] = user.email
-    session['name'] = user.nome
-    session['logged'] = True
-
-  
+    senha = request.form['password']
+    user = Users.query.filter_by(email=email).first()
+    if user:
+      if check_password_hash(user.senha, senha):
+        login_user(user)
+        return redirect(url_for('routes.Index'))
   return render_template("tela-login/index.html")
+  
+@main.route('/logout')
+def Logout():
+  logout_user()
+  return redirect(url_for('routes.Index'))
+
+def login_user(user):
+  session['name'] = user.nome
+  session['email'] = user.email
+  session['logged'] = True
+  session['verified'] = user.confirmed
+  print(user.confirmed)
+
+def logout_user():
+  session.clear()
+
 
 # Tela de usuários.
 @main.route("/usuarios")
@@ -305,3 +315,4 @@ def Usuarios_edit(id):
     db.session.commit()
     return redirect(url_for('routes.usuarios'))
   return render_template("usuarios-edit/index.html",usr = usr)
+

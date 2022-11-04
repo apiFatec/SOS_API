@@ -21,8 +21,13 @@
         Olá {{name}}, seu email ja foi verificado e, agora você pode abrir chamados e acompanha-los com a sua conta.
       </span>
     </div>
+
+    {% if session['logged'] %}
+      <a href="/" class="btn-a">Inicio</a>
+    {% else %}
       <a href="/login" class="btn-a">Entrar na conta</a>
-  </div>
+    {% endif %}
+    </div>
 </body>
 
 </html>
