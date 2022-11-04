@@ -6,8 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Abrir chamado - Fatec</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
     <link rel="icon" type="image/x-icon" href="{{url_for('static', filename='assets/favicon.png')}}">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="{{url_for('static',filename='footer/style.css')}}">
@@ -16,6 +15,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Sen:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/00b11d72aa.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -66,8 +66,10 @@
     </section>
 
     <div id="container">
-        <a class="voltar" href="/fachada"><img src="{{url_for('static', filename='assets/voltar.png')}}"
-                alt="">Voltar</a>
+        <div class="nav-voltar">
+            <a class="voltar" href="/fachada"><img src="{{url_for('static', filename='assets/voltar.png')}}" alt="">Voltar</a>
+            <a href="#" class="info"><i class="fa-solid fa-circle-info fa-2xl"></i></a>
+        </div>
         <div class="tela-detalhes">
             <div id="icon-pc" class="tela-detalhes">
                 <img src="{{url_for('static', filename='assets/pc.png')}}" alt="">
@@ -115,8 +117,7 @@
             <input autocomplete="off" name="cod_erro" type="text" placeholder="digite código de erro (opicional)">
 
             <h3 class="h3">Descrição</h3>
-            <input autocomplete="off" required name="desc" type="text" placeholder="descreva o problema do computador"
-                class="desc">
+            <input autocomplete="off" required name="desc" type="text" placeholder="descreva o problema do computador" class="desc">
 
             <label class="notif" for="notificar">
                 <input onclick="showEmail()" type="checkbox" name="notificar" id="notificar">
@@ -126,19 +127,17 @@
             <input autocomplete="off" placeholder="email@exemple.com" type="email" name="email" id="email">
 
             <input class="enviar" type="submit" value="Enviar">
+
         </form>
 
     </div>
 
-    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-        aria-labelledby="staticBackdropLabel" aria-hidden="false">
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="false">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                        class="bi bi-exclamation-octagon-fill" viewBox="0 0 16 16">
-                        <path
-                            d="M11.46.146A.5.5 0 0 0 11.107 0H4.893a.5.5 0 0 0-.353.146L.146 4.54A.5.5 0 0 0 0 4.893v6.214a.5.5 0 0 0 .146.353l4.394 4.394a.5.5 0 0 0 .353.146h6.214a.5.5 0 0 0 .353-.146l4.394-4.394a.5.5 0 0 0 .146-.353V4.893a.5.5 0 0 0-.146-.353L11.46.146zM8 4c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995A.905.905 0 0 1 8 4zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-exclamation-octagon-fill" viewBox="0 0 16 16">
+                        <path d="M11.46.146A.5.5 0 0 0 11.107 0H4.893a.5.5 0 0 0-.353.146L.146 4.54A.5.5 0 0 0 0 4.893v6.214a.5.5 0 0 0 .146.353l4.394 4.394a.5.5 0 0 0 .353.146h6.214a.5.5 0 0 0 .353-.146l4.394-4.394a.5.5 0 0 0 .146-.353V4.893a.5.5 0 0 0-.146-.353L11.46.146zM8 4c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995A.905.905 0 0 1 8 4zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z">
                         </path>
                     </svg>
                     <h5 class="modal-title" id="staticBackdropLabel">Erro ao tentar encontrar o computador</h5>
@@ -149,7 +148,7 @@
                     <p>Verifique o número da sala e do computador!</p>
                 </div>
                 <div class="modal-footer">
-                    <a href="/" class="btn btn-primary" >Voltar</a>
+                    <a href="/" class="btn btn-primary">Voltar</a>
                 </div>
             </div>
         </div>
@@ -165,7 +164,7 @@
         window.onload = function () {
             OpenBootstrapPopup();
         };
-        
+
         document.getElementById("detalhes").style.display = "none"
     </script>
     {% endif %}
@@ -185,9 +184,7 @@
             }
         }
     </script>
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
-      crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
 </body>
 
 </html>

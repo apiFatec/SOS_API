@@ -106,8 +106,6 @@ body {
   gap: 5px;
 }
 
-
-
 .notif {
   cursor: pointer;
   margin-bottom: 10px;
@@ -119,8 +117,8 @@ body {
 
 .enviar {
   padding: 10px !important;
-  width: 50% !important;
-  align-self: center;
+  width: 10% !important;
+  align-self: flex-start;
   margin-top: 20px;
   background-color: #182d7b !important;
   color: white !important;
@@ -292,4 +290,21 @@ svg {
 
 .modal-header {
   gap: 10px;
+}
+
+.nav-voltar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.info {
+  margin: 20px;
+}
+i {
+  color: #182d7b;
+}
+
+i:hover {
+  color: #0c1537;
 }
