@@ -28,8 +28,11 @@
     <form action="/created_account/{{email}}" method="POST">
       <input class="btn" type="submit" value="Verificar">
     </form>
-
-    <span class="back">Voltar para o <a href="/">inicio</a></span>
+    {% if session['logged'] %}
+    <span class="back">Voltar para o <a href="/login">Inicio!</a></span>
+    {% else %}
+    <span class="back"><a href="/login">Entrar na minha conta!</a></span>
+    {% endif %}
   </div>
 </body>
 

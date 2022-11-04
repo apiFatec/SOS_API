@@ -39,8 +39,14 @@
     </nav>
 
     <div class="login">
+    {% if session['logged'] %}
+      <a href="/" class="btn1">Meus chamados</a>
+      <a href="/logout" class="btn2">Sair</a>
+    {% else %}
       <a href="/login" class="btn1">Entrar</a>
       <a href="/cadastro" class="btn2">Registrar-se</a>
+    {% endif %}
+    </div>
   </header>
   
   <section class="sec1">
