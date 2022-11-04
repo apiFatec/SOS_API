@@ -1,15 +1,53 @@
+body {
+    font-family: "Sen", sans-serif;
+
+}
+
 .div {
-    display:inline-block;
-    
-    
-}
-.con {
+    max-width: max-content;
+    max-height: max-content;
+    margin-top: 60px;
+    margin-left: 90px;
     display: flex;
-    color: #A8BAFE;
+    flex-direction: column;
 }
+
+.con {
+    font-weight: 600;
+    font-size: 19pt;
+    color: #A8BAFE;
+    display: flex;
+    gap: 50px;
+}
+
+.tr {
+    margin-top: 10px;
+    height: 2px;
+    width: 800px;
+    background-color: #DEDEDE;
+}
+
 .as {
+    font-weight: 600;
+    margin-top: 30px;
     color: #A8BAFE;
+    font-size: 19pt;
 }
+
 .com {
+    font-weight: 600;
     color: #A8BAFE;
+    font-size: 19pt;
+}
+
+.btn {
+    font-weight: 600;
+    padding: 8px 12px;
+    text-align: center;
+    font-size: 12pt;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #ffffff;
+    background-color: #07185A;
+    width: 100px;
+    border-radius: 20px;
 }
