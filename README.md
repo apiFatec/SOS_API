@@ -42,6 +42,10 @@
 ## Planejamento das sprints
 
   <img src="https://user-images.githubusercontent.com/111662298/196576883-3d3582ab-9edd-4e83-984d-81e9b91b461f.png" alt="planejamento sprints"/>
+  
+## Backlog do projeto
+
+  <img src="https://user-images.githubusercontent.com/111662298/199861262-f5db4226-f4f8-45a7-aa7f-e3b0dc2098f9.png" alt="backlog-produto"/>
 
 ## Tecnologias utilizadas
 
