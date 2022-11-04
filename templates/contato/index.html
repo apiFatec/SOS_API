@@ -37,19 +37,14 @@
   <div class="div">
     <h3 class="con">Entre em contato com o suporte</h3>
     <div class="tr"></div>
-    <label for="Assunto" class="as">
-      <p>Assunto:</p>
-      <input type="email" name="email" id="email">
-    </label>
-    <br>
-    <label for="comment" class="com">
-      <p>Descrição:</p>
-      <textarea name="comment" id="comment" cols="40" rows="8"></textarea>
-      <a href="#" class="btn">Enviar</a>
-    </label>
-
-    <input name="_formsubmit_id" type="text" style="display:none">
+    <form action="https://formsubmit.co/wedevtm@gmail.com" method="POST">
+      <label class="as" for="name">Assunto</label>
+      <input type="text" name="name" id="assunto" required>
+      <label class="com" for="name">Descrição</label>
+      <input type="email" name="email" id="descrição" required>
+      <input type="hidden" name="_captcha" value="false">
   </div>
+  <button class="btn" type="submit">Enviar</button>
   </form>
   </main>
 </body>

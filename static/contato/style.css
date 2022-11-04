@@ -1,11 +1,9 @@
 body {
     font-family: "Sen", sans-serif;
-
 }
 
 .div {
-    max-width: max-content;
-    max-height: max-content;
+    padding: 4;
     margin-top: 60px;
     margin-left: 90px;
     display: flex;
@@ -41,6 +39,7 @@ body {
 }
 
 .btn {
+
     font-weight: 600;
     padding: 8px 12px;
     text-align: center;
@@ -50,4 +49,12 @@ body {
     background-color: #07185A;
     width: 100px;
     border-radius: 20px;
+}
+input {
+    border-color: #DEDEDE;
+    
+}
+button {
+    margin-top: 50px;
+    margin-left: 90px;
 }
