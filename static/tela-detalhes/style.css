@@ -100,7 +100,29 @@ main{
     text-decoration: none;
     margin-top: 15px;
 }
- 
+
+#botões {
+    display: flex;
+    margin-left: 82%;
+    margin-bottom: 1%;
+}
+
+#botao-edit button {
+    width: 100px;
+    height: 50px;
+    border-radius: 20px;
+    border-style: inherit;
+    color: white;
+    background-color: #182d7b;
+}
+
+#botao-edit button:hover{
+    color:  #182d7b;
+    background-color: white;
+    border-style: ridge;
+    border-color: #182d7b;
+}
+
 #botao button:hover{
     color:  #182d7b;
     background-color: white;
@@ -113,10 +135,8 @@ main{
     border-radius: 20px;
     border-style: inherit;
     color: white;
-    margin-top: -10px;
-    margin-bottom: 20px;
-    margin-left: 85%;
     background-color: #182d7b;
+    margin-right:20px ;
 }
   
   #botao > button:active {
@@ -177,7 +197,22 @@ main{
         width: 340px;
         margin-bottom: 20px;
     }
+
+    #botões {
+        margin-left: 65%;
+    }
     #botao button{
+        width: 80px;
+        height: 40px;
+        border-radius: 20px;
+        border-style: inherit;
+        color: white;
+        margin-top: -10px;
+        margin-bottom: 20px;
+        margin-left: 80%;
+        background-color: #182d7b;
+    }
+    #botao-edit button{
         width: 80px;
         height: 40px;
         border-radius: 20px;
@@ -242,6 +277,9 @@ main{
     .coluna2 li {
         width: 340px;
         margin-bottom: 20px;
+    }
+    #botões {
+        margin-left: 45%;
     }
     #botao button{
         width: 80px;

@@ -170,17 +170,31 @@ def tela_detalhes_edit(id):
     sala = request.form['sala']
     numero = request.form['numero']
     patrimonio_gabinete = request.form['patrimonio_gabinete']
+    # if comp.sala == sala and comp.numero == numero:
+    has_pc = Computadores.query.filter(db.and_(Computadores.sala == sala, Computadores.numero == numero)).first()
 
-    Computadores.query.filter_by(idComputador=id).update({'win':win})
-    Computadores.query.filter_by(idComputador=id).update({'processador':processador})
-    Computadores.query.filter_by(idComputador=id).update({'ram':ram})
-    Computadores.query.filter_by(idComputador=id).update({'tipo_sis':tipo_sis})
-    Computadores.query.filter_by(idComputador=id).update({'versao':versao})
-    Computadores.query.filter_by(idComputador=id).update({"sala":sala})
-    Computadores.query.filter_by(idComputador=id).update({"numero":numero})
-    Computadores.query.filter_by(idComputador=id).update({'patrimonio_gabinete':patrimonio_gabinete})
-    db.session.commit()
-    return redirect(url_for('routes.teladetalhes', sala=comp.sala, num=comp.numero))
+    if comp.sala == sala and comp.numero == numero:
+      Computadores.query.filter_by(idComputador=id).update({'win':win})
+      Computadores.query.filter_by(idComputador=id).update({'processador':processador})
+      Computadores.query.filter_by(idComputador=id).update({'ram':ram})
+      Computadores.query.filter_by(idComputador=id).update({'tipo_sis':tipo_sis})
+      Computadores.query.filter_by(idComputador=id).update({'versao':versao})
+      Computadores.query.filter_by(idComputador=id).update({'patrimonio_gabinete':patrimonio_gabinete})
+      db.session.commit()
+      return redirect(url_for('routes.teladetalhes', sala=comp.sala, num=comp.numero))
+
+
+    if not has_pc: 
+      Computadores.query.filter_by(idComputador=id).update({'win':win})
+      Computadores.query.filter_by(idComputador=id).update({'processador':processador})
+      Computadores.query.filter_by(idComputador=id).update({'ram':ram})
+      Computadores.query.filter_by(idComputador=id).update({'tipo_sis':tipo_sis})
+      Computadores.query.filter_by(idComputador=id).update({'versao':versao})
+      Computadores.query.filter_by(idComputador=id).update({"sala":sala})
+      Computadores.query.filter_by(idComputador=id).update({"numero":numero})
+      Computadores.query.filter_by(idComputador=id).update({'patrimonio_gabinete':patrimonio_gabinete})
+      db.session.commit()
+      return redirect(url_for('routes.teladetalhes', sala=comp.sala, num=comp.numero))
   return render_template('tela-detalhes-edit/index.html',comp=comp)
 
 
