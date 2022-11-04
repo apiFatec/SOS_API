@@ -1,12 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="../../static/cadastro/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Sen:wght@400;700;800&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/731346dae6.js" crossorigin="anonymous"></script>
 </head>
+
 <body>
     <div class="container">
         <div class="lado">
@@ -14,15 +20,28 @@
             <p>para abrir um novo chamado ou acessar chamados já existentes</p>
         </div>
         <form action="cadastro" method="POST" class="cadastro">
-            <h1>crie sua conta</h1>
-            <p>seu email institucional para registro:</p>
-            <input class="nome" type="text" name="name" placeholder="digite seu nome">
-            <input  class="email" type="email" name="email" placeholder="email">
-            <input  class="email" type="text" name="turma" placeholder="turma">
-            <input class="senha" type="password" name="password" placeholder="senha">
-            <button>cadastrar</button>
-            <p><a href="/login">já possuo uma conta</a></p>
+            <h1>Crie sua conta</h1>
+            <p>use seu email institucional para registro:</p>
+            <div class="nome">
+                <i class="fa-regular fa-user fa-xl"></i>
+                <input class="nm" type="text" name="name" placeholder="Digite seu nome">
+            </div>
+            <div class="email">
+                <i class="fa-regular fa-envelope fa-xl"></i>
+                <input class="em" type="email" name="email" placeholder="Email">
+            </div>
+            <div class="turma">
+                <i class="fa-solid fa-users fa-xl"></i>
+                <input class="tm" type="text" name="turma" placeholder="Turma">
+            </div>
+            <div class="senha">
+                <i class="fa-solid fa-lock fa-xl"></i>
+                <input class="sh" type="password" name="password" placeholder="Senha">
+            </div>
+            <button>Cadastrar</button>
+            <a href="/login" class="ja">já possuo uma conta</a>
         </form>
     </div>
 </body>
+
 </html>
