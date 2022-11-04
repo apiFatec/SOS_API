@@ -14,34 +14,41 @@
 </head>
 
 <body>
-    <div class="container">
-        <div class="lado">
-            <h1>Cadastre-se</h1>
-            <p>para abrir um novo chamado ou acessar chamados já existentes</p>
+    <header>
+        <h1 class="logo">FATEC</h1>
+    </header>
+
+    <section class="flex">
+        <div class="container">
+
+            <div class="lado">
+                <h1>Cadastre-se</h1>
+                <p>para abrir um novo chamado ou acessar chamados já existentes</p>
+            </div>
+            <form action="cadastro" method="POST" class="cadastro">
+                <h1>Crie sua conta</h1>
+                <p>use seu email institucional para registro:</p>
+                <div class="nome">
+                    <i class="fa-regular fa-user fa-xl"></i>
+                    <input class="nm" type="text" name="name" placeholder="Digite seu nome">
+                </div>
+                <div class="email">
+                    <i class="fa-regular fa-envelope fa-xl"></i>
+                    <input class="em" type="email" name="email" placeholder="Email">
+                </div>
+                <div class="turma">
+                    <i class="fa-solid fa-users fa-xl"></i>
+                    <input class="tm" type="text" name="turma" placeholder="Turma">
+                </div>
+                <div class="senha">
+                    <i class="fa-solid fa-lock fa-xl"></i>
+                    <input class="sh" type="password" name="password" placeholder="Senha">
+                </div>
+                <button>Cadastrar</button>
+                <a href="/login" class="ja">já possuo uma conta</a>
+            </form>
         </div>
-        <form action="cadastro" method="POST" class="cadastro">
-            <h1>Crie sua conta</h1>
-            <p>use seu email institucional para registro:</p>
-            <div class="nome">
-                <i class="fa-regular fa-user fa-xl"></i>
-                <input class="nm" type="text" name="name" placeholder="Digite seu nome">
-            </div>
-            <div class="email">
-                <i class="fa-regular fa-envelope fa-xl"></i>
-                <input class="em" type="email" name="email" placeholder="Email">
-            </div>
-            <div class="turma">
-                <i class="fa-solid fa-users fa-xl"></i>
-                <input class="tm" type="text" name="turma" placeholder="Turma">
-            </div>
-            <div class="senha">
-                <i class="fa-solid fa-lock fa-xl"></i>
-                <input class="sh" type="password" name="password" placeholder="Senha">
-            </div>
-            <button>Cadastrar</button>
-            <a href="/login" class="ja">já possuo uma conta</a>
-        </form>
-    </div>
+    </section>
 </body>
 
 </html>

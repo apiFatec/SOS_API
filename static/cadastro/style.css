@@ -7,8 +7,11 @@
 
 body {
   background-color: #c8c8c80d;
-  display: flex;
   height: 100vh;
+}
+
+.flex {
+  display: flex;
 }
 
 .container {
@@ -16,6 +19,7 @@ body {
   grid-template-columns: 1.5fr 2fr;
   grid-template-rows: 1fr;
   margin: auto;
+  margin-top: 150px;
   border-radius: 10px;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
@@ -140,4 +144,25 @@ button:hover {
 
 i {
   color: #6c6c6c;
+}
+
+.logo {
+  grid-column: 1;
+  text-shadow: 5px 0px #182d7b;
+  font-size: 36pt;
+  font-family: "Roboto", sans-serif;
+  color: #fff;
+  grid-row: 1;
+  font-weight: bolder;
+  margin: 0;
+  margin-left: 40px;
+  max-height: 57px;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  line-height: 1.25;
+}
+
+header {
+  background-color: #a8bafe;
+  padding: 10px;
 }
