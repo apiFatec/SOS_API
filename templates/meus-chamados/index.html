@@ -44,7 +44,7 @@
   </header>
   <section class="container">
     <nav class="nav">
-      <form action="/chamados" class="pesquisa">
+      <form action="/meus_chamados" class="pesquisa">
         <img src="{{url_for('static', filename='assets/lupa.svg')}}" alt="lupa" class="lupa" />
         <input type="search" name="search" id="pes" placeholder="Pesquisar pelo titulo" />
         <input type="submit" hidden />
@@ -55,9 +55,9 @@
           Status
         </button>
         <ul class="dropdown-menu">
-          <li><a class="dropdown-item" href="/chamados?status=aberto">Em aberto</a></li>
-          <li><a class="dropdown-item" href="/chamados?status=manutencao">Manutenção</a></li>
-          <li><a class="dropdown-item" href="/chamados?status=concluido">concluído</a></li>
+          <li><a class="dropdown-item" href="/meus_chamados?status=aberto">Em aberto</a></li>
+          <li><a class="dropdown-item" href="/meus_chamados?status=manutencao">Manutenção</a></li>
+          <li><a class="dropdown-item" href="/meus_chamados?status=concluido">concluído</a></li>
         </ul>
       </div>
 
