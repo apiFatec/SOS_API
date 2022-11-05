@@ -1,5 +1,6 @@
 from flask import Blueprint, render_template, request, redirect, url_for, session
 from datetime import datetime
+from models.adm_suporte import Suporte
 from models.chamados import Chamados
 from models.computers import Computadores
 from db import db
@@ -17,6 +18,7 @@ s = URLSafeTimedSerializer('Thisisasecret!')
 # Tela Home.
 @main.route("/", methods=["GET"])
 def Index():
+  hashed = generate_password_hash("talison1", method='sha256')
   chamados = Chamados.query.all()
   return render_template("home/index.html", chamados=chamados)
 
@@ -56,6 +58,10 @@ def NewChamado(id):
 @main.route('/novo-chamado/<id>', methods=["POST", "GET"])
 def Create(id):
   getPc = db.session.query(Computadores).filter_by(idComputador=id).first()
+  user = db.session.query(Users).filter_by(email=session.get('email')).first()
+  if user:
+    id_usuario = user.id_usuario
+  else: id_usuario = 0
   if getPc:
     titulo = request.form.get("titulo")
     categoria = request.form.get('categoria')
@@ -78,7 +84,8 @@ def Create(id):
         notificar_chamado=notif,
         email=email,
         data=insertDate(),
-        fk_idComputador=id
+        fk_idComputador=id,
+        fk_idUsuario=id_usuario
       )
       db.session.add(chamado)
       db.session.commit()
@@ -290,10 +297,21 @@ def Login():
     email = request.form['email']
     senha = request.form['password']
     user = Users.query.filter_by(email=email).first()
+
     if user:
       if check_password_hash(user.senha, senha):
         login_user(user)
         return redirect(url_for('routes.Index'))
+
+    if email == "suporte.sjc@fatec.com":
+      user_sup = Suporte.query.filter_by(email=email).first()
+      if check_password_hash(user_sup.senha, senha):
+        login_sup(user_sup)
+        return redirect(url_for('routes.Index'))
+
+
+
+
   return render_template("tela-login/index.html")
   
 @main.route('/logout')
@@ -306,7 +324,13 @@ def login_user(user):
   session['email'] = user.email
   session['logged'] = True
   session['verified'] = user.confirmed
-  print(user.confirmed)
+
+def login_sup(user):
+  session['name'] = user.nome
+  session['email'] = user.email
+  session['logged'] = True
+  session['categoria'] = user.categoria
+
 
 def logout_user():
   session.clear()
@@ -315,11 +339,12 @@ def logout_user():
 # Tela de usuários.
 @main.route("/usuarios")
 def Usuarios():
-  return render_template("usuarios/index.html")
+  users = db.session.query(Users).all()
+  return render_template("usuarios/index.html", users=users)
 
-@main.route("/usuarios/edit")
+@main.route("/usuarios/edit/<id>", methods=["GET", "POST"])
 def Usuarios_edit(id):
-  usr = Users.query.filter_by(Usuarios=id).first()
+  usr = Users.query.filter_by(id_usuario=id).first()
   if request.method == 'POST':
     nome = request.form['nome']
     turma = request.form['turma']
