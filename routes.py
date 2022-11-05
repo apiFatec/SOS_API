@@ -394,14 +394,13 @@ def meus_chamados_filter(status, categoria, search):
     if search:
       chamado = Chamados.query.filter(db.and_(Chamados.status==session.get("status"),Chamados.titulo.like(f"%{search}%"), Chamados.id_usuario == session.get('id_user'))).all()
     else:
-      chamado = Chamados.query.filter(db.and_(Chamados.status == session.get('status'), Chamados.id_usuario == session.get('id_user')))
-      chamado = db.session.query(Chamados).filter_by(status=session.get("status")).all()
+      chamado = Chamados.query.filter(db.and_(Chamados.status == session.get('status'), Chamados.id_usuario == session.get('id_user'))).all()
   #  se SOMENTE categoria tiver um valor retorna somento os chamados com a categoria.
   elif session.get("categoria") and not session.get("status"):
     if search:
       chamado = Chamados.query.filter(db.and_(Chamados.categoria==session.get("categoria")), Chamados.id_usuario == session.get('id_user')).all()
     else:
-      chamado = Chamados.query.filter(db.and_(Chamados.categoria == session.get('categoria'), Chamados.id_usuario == session.get('id_user')))
+      chamado = Chamados.query.filter(db.and_(Chamados.categoria == session.get('categoria')), Chamados.id_usuario == session.get('id_user')).all()
   #  se as duas sessions estiverem vazias retorna todos os chamados.
   else:
     if search:
