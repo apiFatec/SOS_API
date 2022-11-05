@@ -1,12 +1,4 @@
 from db import db
-import enum
-
-
-class Cat(enum.Enum):
-    rede = "rede"
-    software = "software"
-    hardware = "hardware"
-
 
 class Chamados(db.Model):
     idChamado = db.Column(db.Integer, primary_key=True)
