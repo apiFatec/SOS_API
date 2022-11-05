@@ -79,6 +79,7 @@
   box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
   margin-left: 305px;
   margin-top: 60px;
+  width: 50%;
 }
 .foto {
   display: flex;
@@ -90,14 +91,41 @@
   height: 58px;
 }
 .edit {
-  margin-left: 60px;
+  /* margin-left: 60px; */
+  justify-self: flex-end;
 }
+
+.edit button {
+  background: none;
+  border: none;
+}
+
 .info p {
   line-height: 0.8;
 }
 .info {
+  display: flex;
+  flex-direction: column;
   margin-top: 16px;
+  width: 100%;
+  gap: 5px;
 }
+
+.info label {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  gap: 25px;
+}
+
+.info input {
+  width: 80%;
+  background: none;
+  padding: 5px;
+  border-width: 1px;
+  border-color: transparent;
+}
+
 main {
   height: 100vh;
 }
