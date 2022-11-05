@@ -36,7 +36,7 @@ body {
 }
 
 .lado > h1 {
-  padding-top: 36%;
+  padding-top: 40%;
   margin-bottom: 0%;
   font-size: 3.75rem;
   text-align: center;
@@ -130,8 +130,16 @@ button:hover {
   font-size: 0.9375rem;
   text-align: center;
   margin-inline: auto;
-  margin-bottom: 40px;
   color: #07185a;
+}
+
+.voltar {
+  text-decoration: none;
+  font-size: 0.9375rem;
+  text-align: center;
+  margin-inline: auto;
+  color: #07185a;
+  margin-bottom: 40px;
 }
 
 .ja:hover {
