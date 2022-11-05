@@ -1,3 +1,4 @@
+import re
 from flask import Blueprint, render_template, request, redirect, url_for, session
 from datetime import datetime
 from models.adm_suporte import Suporte
@@ -324,12 +325,14 @@ def login_user(user):
   session['email'] = user.email
   session['logged'] = True
   session['verified'] = user.confirmed
+  session['id_user'] = user.id_usuario
 
 def login_sup(user):
   session['name'] = user.nome
   session['email'] = user.email
   session['logged'] = True
   session['categoria'] = user.categoria
+  session['id_user'] = user.idUsers_suporte
 
 
 def logout_user():
@@ -355,3 +358,58 @@ def Usuarios_edit(id):
     return redirect(url_for('routes.usuarios'))
   return render_template("usuarios-edit/index.html",usr = usr)
 
+
+# -------------------------------------------------------------------------------------------------
+#  FILTRO DOS CHAMADOS DE UM USUÁRIO LOGADO
+# -------------------------------------------------------------------------------------------------
+@main.route('/meus_chamados')
+def meus_chamados():
+  chamados = meus_chamados_filter(request.args.get("status"), request.args.get("categoria"), request.args.get("search"))
+
+  # chamados = Chamados.query.filter_by(id_usuario=session.get('id_user')).all()
+  dates = getDate(chamados)
+  for i in range(0, len(chamados)):
+    chamados[i].data = dates[i]
+  return render_template('meus-chamados/index.html', chamados=chamados)
+
+
+def meus_chamados_filter(status, categoria, search):
+  # verifica se tem valor nos dois parametros e salva cada um em uma sessao.
+  if status:
+    session["status"] = status
+  if categoria:
+    session["categoria"] = categoria
+
+  # se as duas seções tiverem valor retorna o filtro com as duas condições.
+  
+  if session.get("status") and session.get("categoria"):
+    if search:
+      chamado = Chamados.query.filter(db.and_(Chamados.status == session.get("status"), Chamados.categoria == session.get("categoria"), Chamados.titulo.like(f"%{search}%"), Chamados.id_usuario == session.get('id_user'))).all()
+    else:
+      chamado = Chamados.query.filter(db.and_(Chamados.status == session.get("status"), Chamados.categoria == session.get("categoria"), Chamados.id_usuario == session.get('id_user'))).all()
+  # se SOMENTE status tiver um valor retorna somente chamados com o status que foi passado.
+  elif session.get("status") and not session.get("categoria"):
+    if search:
+      chamado = Chamados.query.filter(db.and_(Chamados.status==session.get("status"),Chamados.titulo.like(f"%{search}%"), Chamados.id_usuario == session.get('id_user'))).all()
+    else:
+      chamado = Chamados.query.filter(db.and_(Chamados.status == session.get('status'), Chamados.id_usuario == session.get('id_user')))
+      chamado = db.session.query(Chamados).filter_by(status=session.get("status")).all()
+  #  se SOMENTE categoria tiver um valor retorna somento os chamados com a categoria.
+  elif session.get("categoria") and not session.get("status"):
+    if search:
+      chamado = Chamados.query.filter(db.and_(Chamados.categoria==session.get("categoria")), Chamados.id_usuario == session.get('id_user')).all()
+    else:
+      chamado = Chamados.query.filter(db.and_(Chamados.categoria == session.get('categoria'), Chamados.id_usuario == session.get('id_user')))
+  #  se as duas sessions estiverem vazias retorna todos os chamados.
+  else:
+    if search:
+      chamado = Chamados.query.filter(db.and_(Chamados.titulo.like(f"%{search}%"), Chamados.id_usuario == session.get('id_user'))).all()
+    else:
+      chamado = db.session.query(Chamados).filter_by(id_usuario=session.get('id_user')).all()
+  return chamado
+
+@main.route("/limpar_meu_chamado")
+def Limpar_meu_chamado():
+  session["status"] = None
+  session["categoria"] = None
+  return redirect(url_for("routes.meus_chamados"))

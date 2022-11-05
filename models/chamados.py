@@ -14,3 +14,4 @@ class Chamados(db.Model):
     Win = db.Column(db.String)
     sala = db.Column(db.String)
     numero = db.Column(db.String)
+    id_usuario = db.Column(db.String)
