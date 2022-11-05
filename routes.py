@@ -19,7 +19,6 @@ s = URLSafeTimedSerializer('Thisisasecret!')
 # Tela Home.
 @main.route("/", methods=["GET"])
 def Index():
-  hashed = generate_password_hash("talison1", method='sha256')
   chamados = Chamados.query.all()
   return render_template("home/index.html", chamados=chamados)
 
@@ -364,6 +363,9 @@ def Usuarios_edit(id):
 # -------------------------------------------------------------------------------------------------
 @main.route('/meus_chamados')
 def meus_chamados():
+  if not session.get('logged'):
+    return redirect(url_for("routes.Index"))
+
   chamados = meus_chamados_filter(request.args.get("status"), request.args.get("categoria"), request.args.get("search"))
 
   # chamados = Chamados.query.filter_by(id_usuario=session.get('id_user')).all()
