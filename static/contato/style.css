@@ -1,77 +1,77 @@
 body {
-    font-family: "Sen", sans-serif;
+  font-family: "Sen", sans-serif;
 }
 
 .div {
-    padding: 4;
-    margin-top: 50px;
-    margin-left: 90px;
-    display: flex;
-    flex-direction: column;
+  padding: 4;
+  margin-top: 50px;
+  margin-left: 90px;
+  display: flex;
+  flex-direction: column;
 }
 
 .con {
-    font-weight: 600;
-    font-size: 19pt;
-    color: #A8BAFE;
-    display: flex;
-    margin-top: 20px;
+  font-weight: 600;
+  font-size: 19pt;
+  color: #a8bafe;
+  display: flex;
+  margin-top: 20px;
 }
 
 .tr {
-    margin-top: 10px;
-    height: 2px;
-    width: 1000px;
-    background-color: #DEDEDE;
+  margin-top: 10px;
+  height: 2px;
+  width: 1000px;
+  background-color: #dedede;
 }
 
 .as {
-    font-weight: 600;
-    gap: 50px;
-    color: #A8BAFE;
-    font-size: 19pt;
+  font-weight: 600;
+  gap: 50px;
+  color: #a8bafe;
+  font-size: 19pt;
 }
 
 .com {
-    font-weight: 600;
-    color: #A8BAFE;
-    font-size: 19pt;
+  font-weight: 600;
+  color: #a8bafe;
+  font-size: 19pt;
 }
 
 .btn {
-
-    font-weight: 600;
-    padding: 8px 12px;
-    text-align: center;
-    font-size: 12pt;
-    font-family: Arial, Helvetica, sans-serif;
-    color: #ffffff;
-    background-color: #07185A;
-    width: 100px;
-    border-radius: 20px;
+  font-weight: 600;
+  padding: 8px 12px;
+  text-align: center;
+  font-size: 12pt;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #ffffff;
+  background-color: #07185a;
+  width: 100px;
+  border-radius: 12px;
+  border-color: transparent;
+  margin-bottom: 166px;
+  margin-top: 30px;
 }
 
 input {
-    border-color: #DEDEDE;
-
+  border-color: #dedede;
 }
 
 button {
-    margin-top: 15px;
-    margin-left: 90px;
+  margin-top: 15px;
+  margin-left: 90px;
 }
 
 .box1 {
-    display: block;
-    width: 400px;
-    height: 55px;
-    margin-top: 9px;
-
+  display: block;
+  width: 400px;
+  height: 55px;
+  margin-top: 9px;
 }
 
 .box2 {
-    margin-top: 9px;
-    display: block;
-    width: 400px;
-    height: 120px;
+  margin-top: 9px;
+  display: block;
+  width: 400px;
+  height: 120px;
 }
