@@ -81,21 +81,21 @@ Nesta Sprint o foco foi a criação das telas de login e cadastro de principal u
 </table>
 
 ## Backlog da sprint
-<img src="https://user-images.githubusercontent.com/89823203/194793542-9fd09f21-6396-4f6c-bf13-1b5d75d05855.png" alt="sprint 01"/>
+<img src="https://user-images.githubusercontent.com/111662298/200138125-e63f0203-4fe4-4ea1-b641-88bb618fdea6.png" alt="Sprint 03"/>
 
 ## Trabalho desenvolvido
 
 <ul style="display: grid; gap: 20px; grid-template-columns: auto auto">
-  <li>Tela Home
-    <img src="https://user-images.githubusercontent.com/111662298/194793014-fea31487-0d25-4fb3-bb92-9132299521ba.png" alt="Home"/>
+  <li>Tela Cadastro
+    <img src="https://user-images.githubusercontent.com/111662298/200141104-00205bc7-eacb-4145-baaa-04efac4e0a2b.png" alt="Home"/>
   </li>
-  <li>Carrossel com uso do Bootstrap
-    <img src="https://user-images.githubusercontent.com/111662298/194793074-3039791f-0f09-4c7e-9911-c2e274ae2869.png" alt="Carrossel"/>
+  <li>Tela Login
+    <img src="https://user-images.githubusercontent.com/111662298/200141119-d0d6b583-0d2e-4728-aede-4f000bb3c9e0.png" alt="Carrossel"/>
   </li>
-  <li>Chamados recentes
-    <img src="https://user-images.githubusercontent.com/111662298/194793137-51a012cd-2c3f-47af-bb3d-60b54c7c6fa1.jpeg" alt="Chamados-recentes"/>
+  <li>Tela de Usuários
+    <img src="https://user-images.githubusercontent.com/111662298/200141139-c639d670-f0d6-4239-b80a-6bcff3d9f54e.png" alt="Chamados-recentes"/>
   </li>
-  <li>Tela Chamados Gerais
-    <img src="https://user-images.githubusercontent.com/111662298/194793164-d85bae34-e605-44d4-923b-eaaa221fe7b5.jpeg" alt="tela-chamados"/>
+  <li>Tela de Contato com o Suporte
+    <img src="https://user-images.githubusercontent.com/111662298/200141160-8480cf19-bb14-486e-8a85-9bc6e6ae2b7b.png" alt="tela-chamados"/>
   </li>
 </ul>
