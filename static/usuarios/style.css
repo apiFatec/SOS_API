@@ -78,7 +78,7 @@
   border-radius: 10px;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
   margin-left: 305px;
-  margin-top: 60px;
+  margin-top: 30px;
   width: 50%;
 }
 .foto {
@@ -106,16 +106,16 @@
 .info {
   display: flex;
   flex-direction: column;
-  margin-top: 16px;
   width: 100%;
-  gap: 5px;
+  padding: 10px;
+  gap: 10px;
 }
 
 .info label {
   display: flex;
-  width: 100%;
-  justify-content: space-between;
-  gap: 25px;
+  width: 80%;
+  align-items: center;
+  gap: 20px;
 }
 
 .info input {
@@ -130,3 +130,35 @@ main {
   height: 100vh;
 }
 
+#name1,
+#turma1,
+#chamados1 {
+  border-color: #000;
+}
+
+.btn-edit {
+  display: flex;
+  gap: 10px;
+  margin-top: 90px;
+}
+
+.btn-edit .sub {
+  background-color: #07185a;
+  padding: 6px 12px;
+  border-radius: 20px;
+  color: #fff;
+  border: none;
+}
+
+.sub:hover {
+  background-color: #05103d;
+}
+
+i {
+  color: #db4e4e;
+  margin-left: 125px;
+}
+
+i:hover {
+  color: #a93c3c;
+}
