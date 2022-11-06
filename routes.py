@@ -348,13 +348,13 @@ def Usuarios():
 def Usuarios_edit(id):
   usr = Users.query.filter_by(id_usuario=id).first()
   if request.method == 'POST':
-    nome = request.form['nome']
+    nome = request.form['name']
     turma = request.form['turma']
 
-    Users.query.filter_by(Usuarios=id).update({'nome':nome})
-    Users.query.filter_by(Usuarios=id).update({'turma':turma})
+    Users.query.filter_by(id_usuario=id).update({'nome':nome})
+    Users.query.filter_by(id_usuario=id).update({'turma':turma})
     db.session.commit()
-    return redirect(url_for('routes.usuarios'))
+    return redirect(url_for('routes.Usuarios'))
   return render_template("usuarios-edit/index.html",usr = usr)
 
 
