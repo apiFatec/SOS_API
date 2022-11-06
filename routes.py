@@ -1,4 +1,3 @@
-import re
 from flask import Blueprint, render_template, request, redirect, url_for, session
 from datetime import datetime
 from models.adm_suporte import Suporte
@@ -107,26 +106,28 @@ def Filtrar(status, categoria, search):
   if status:
     session["status"] = status
   if categoria:
-    session["categoria"] = categoria
+    session["categoria_chamado"] = categoria
+
+  
 
   # se as duas seções tiverem valor retorna o filtro com as duas condições.
-  if session.get("status") and session.get("categoria"):
+  if session.get("status") and session.get("categoria_chamado"):
     if search:
-      chamado = Chamados.query.filter(db.and_(Chamados.status == session.get("status"), Chamados.categoria == session.get("categoria"), Chamados.titulo.like(f"%{search}%"))).all()
+      chamado = Chamados.query.filter(db.and_(Chamados.status == session.get("status"), Chamados.categoria == session.get("categoria_chamado"), Chamados.titulo.like(f"%{search}%"))).all()
     else:
-      chamado = Chamados.query.filter(db.and_(Chamados.status == session.get("status"), Chamados.categoria == session.get("categoria"))).all()
+      chamado = Chamados.query.filter(db.and_(Chamados.status == session.get("status"), Chamados.categoria == session.get("categoria_chamado"))).all()
   # se SOMENTE status tiver um valor retorna somente chamados com o status que foi passado.
-  elif session.get("status") and not session.get("categoria"):
+  elif session.get("status") and not session.get("categoria_chamado"):
     if search:
       chamado = Chamados.query.filter(db.and_(Chamados.status==session.get("status")),Chamados.titulo.like(f"%{search}%")).all()
     else:
       chamado = db.session.query(Chamados).filter_by(status=session.get("status")).all()
   #  se SOMENTE categoria tiver um valor retorna somento os chamados com a categoria.
-  elif session.get("categoria") and not session.get("status"):
+  elif session.get("categoria_chamado") and not session.get("status"):
     if search:
-      chamado = Chamados.query.filter(db.and_(Chamados.categoria==session.get("categoria")),Chamados.titulo.like(f"%{search}%")).all()
+      chamado = Chamados.query.filter(db.and_(Chamados.categoria==session.get("categoria_chamado")),Chamados.titulo.like(f"%{search}%")).all()
     else:
-      chamado = db.session.query(Chamados).filter_by(categoria=session.get("categoria")).all()
+      chamado = db.session.query(Chamados).filter_by(categoria=session.get("categoria_chamado")).all()
   #  se as duas sessions estiverem vazias retorna todos os chamados.
   else:
     if search:
@@ -139,7 +140,7 @@ def Filtrar(status, categoria, search):
 @main.route("/limpar")
 def Limpar():
   session["status"] = None
-  session["categoria"] = None
+  session["categoria_chamado"] = None
   return redirect(url_for("routes.TelaChamados"))
 
 # Pesquisar pelo nome do computador
@@ -159,50 +160,53 @@ def HomeChamado():
 
 @main.route('/<int:sala>/<int:num>/teladetalhes')
 def teladetalhes(sala,num):
-  comp =  Computadores.query.filter_by(sala=sala, numero=num).first()
-  return render_template('tela-detalhes/index.html', comp=comp)
+    comp =  Computadores.query.filter_by(sala=sala, numero=num).first()
+    return render_template('tela-detalhes/index.html', comp=comp)
+  
 
 
 #Tela de atualização de detalhes de computadores
 
 @main.route('/<id>/teladetalhes/edit', methods=['GET','POST'])
 def tela_detalhes_edit(id):
-  comp = Computadores.query.filter_by(idComputador=id).first()
-  if request.method == 'POST':
-    win = request.form['win']
-    processador = request.form['processador']
-    ram = request.form['ram']
-    tipo_sis = request.form['tipo_sis']
-    versao = request.form['versao']
-    sala = request.form['sala']
-    numero = request.form['numero']
-    patrimonio_gabinete = request.form['patrimonio_gabinete']
-    # if comp.sala == sala and comp.numero == numero:
-    has_pc = Computadores.query.filter(db.and_(Computadores.sala == sala, Computadores.numero == numero)).first()
+  if session.get('categoria') == 'suporte' or session.get('categoria') == 'admin':
+    comp = Computadores.query.filter_by(idComputador=id).first()
+    if request.method == 'POST':
+      win = request.form['win']
+      processador = request.form['processador']
+      ram = request.form['ram']
+      tipo_sis = request.form['tipo_sis']
+      versao = request.form['versao']
+      sala = request.form['sala']
+      numero = request.form['numero']
+      patrimonio_gabinete = request.form['patrimonio_gabinete']
+      # if comp.sala == sala and comp.numero == numero:
+      has_pc = Computadores.query.filter(db.and_(Computadores.sala == sala, Computadores.numero == numero)).first()
 
-    if comp.sala == sala and comp.numero == numero:
-      Computadores.query.filter_by(idComputador=id).update({'win':win})
-      Computadores.query.filter_by(idComputador=id).update({'processador':processador})
-      Computadores.query.filter_by(idComputador=id).update({'ram':ram})
-      Computadores.query.filter_by(idComputador=id).update({'tipo_sis':tipo_sis})
-      Computadores.query.filter_by(idComputador=id).update({'versao':versao})
-      Computadores.query.filter_by(idComputador=id).update({'patrimonio_gabinete':patrimonio_gabinete})
-      db.session.commit()
-      return redirect(url_for('routes.teladetalhes', sala=comp.sala, num=comp.numero))
+      if comp.sala == sala and comp.numero == numero:
+        Computadores.query.filter_by(idComputador=id).update({'win':win})
+        Computadores.query.filter_by(idComputador=id).update({'processador':processador})
+        Computadores.query.filter_by(idComputador=id).update({'ram':ram})
+        Computadores.query.filter_by(idComputador=id).update({'tipo_sis':tipo_sis})
+        Computadores.query.filter_by(idComputador=id).update({'versao':versao})
+        Computadores.query.filter_by(idComputador=id).update({'patrimonio_gabinete':patrimonio_gabinete})
+        db.session.commit()
+        return redirect(url_for('routes.teladetalhes', sala=comp.sala, num=comp.numero))
 
 
-    if not has_pc: 
-      Computadores.query.filter_by(idComputador=id).update({'win':win})
-      Computadores.query.filter_by(idComputador=id).update({'processador':processador})
-      Computadores.query.filter_by(idComputador=id).update({'ram':ram})
-      Computadores.query.filter_by(idComputador=id).update({'tipo_sis':tipo_sis})
-      Computadores.query.filter_by(idComputador=id).update({'versao':versao})
-      Computadores.query.filter_by(idComputador=id).update({"sala":sala})
-      Computadores.query.filter_by(idComputador=id).update({"numero":numero})
-      Computadores.query.filter_by(idComputador=id).update({'patrimonio_gabinete':patrimonio_gabinete})
-      db.session.commit()
-      return redirect(url_for('routes.teladetalhes', sala=comp.sala, num=comp.numero))
-  return render_template('tela-detalhes-edit/index.html',comp=comp)
+      if not has_pc: 
+        Computadores.query.filter_by(idComputador=id).update({'win':win})
+        Computadores.query.filter_by(idComputador=id).update({'processador':processador})
+        Computadores.query.filter_by(idComputador=id).update({'ram':ram})
+        Computadores.query.filter_by(idComputador=id).update({'tipo_sis':tipo_sis})
+        Computadores.query.filter_by(idComputador=id).update({'versao':versao})
+        Computadores.query.filter_by(idComputador=id).update({"sala":sala})
+        Computadores.query.filter_by(idComputador=id).update({"numero":numero})
+        Computadores.query.filter_by(idComputador=id).update({'patrimonio_gabinete':patrimonio_gabinete})
+        db.session.commit()
+        return redirect(url_for('routes.teladetalhes', sala=comp.sala, num=comp.numero))
+    return render_template('tela-detalhes-edit/index.html',comp=comp)
+  return redirect(url_for('routes.Index'))
 
 
 def insertDate():
@@ -384,21 +388,21 @@ def meus_chamados_filter(status, categoria, search):
 
   # se as duas seções tiverem valor retorna o filtro com as duas condições.
   
-  if session.get("status") and session.get("categoria"):
+  if session.get("status") and session.get("categoria_chamado"):
     if search:
-      chamado = Chamados.query.filter(db.and_(Chamados.status == session.get("status"), Chamados.categoria == session.get("categoria"), Chamados.titulo.like(f"%{search}%"), Chamados.id_usuario == session.get('id_user'))).all()
+      chamado = Chamados.query.filter(db.and_(Chamados.status == session.get("status"), Chamados.categoria == session.get("categoria_chamado"), Chamados.titulo.like(f"%{search}%"), Chamados.id_usuario == session.get('id_user'))).all()
     else:
-      chamado = Chamados.query.filter(db.and_(Chamados.status == session.get("status"), Chamados.categoria == session.get("categoria"), Chamados.id_usuario == session.get('id_user'))).all()
+      chamado = Chamados.query.filter(db.and_(Chamados.status == session.get("status"), Chamados.categoria == session.get("categoria_chamado"), Chamados.id_usuario == session.get('id_user'))).all()
   # se SOMENTE status tiver um valor retorna somente chamados com o status que foi passado.
-  elif session.get("status") and not session.get("categoria"):
+  elif session.get("status") and not session.get("categoria_chamado"):
     if search:
       chamado = Chamados.query.filter(db.and_(Chamados.status==session.get("status"),Chamados.titulo.like(f"%{search}%"), Chamados.id_usuario == session.get('id_user'))).all()
     else:
       chamado = Chamados.query.filter(db.and_(Chamados.status == session.get('status'), Chamados.id_usuario == session.get('id_user'))).all()
   #  se SOMENTE categoria tiver um valor retorna somento os chamados com a categoria.
-  elif session.get("categoria") and not session.get("status"):
+  elif session.get("categoria_chamado") and not session.get("status"):
     if search:
-      chamado = Chamados.query.filter(db.and_(Chamados.categoria==session.get("categoria")), Chamados.id_usuario == session.get('id_user')).all()
+      chamado = Chamados.query.filter(db.and_(Chamados.categoria==session.get("categoria_chamado")), Chamados.id_usuario == session.get('id_user')).all()
     else:
       chamado = Chamados.query.filter(db.and_(Chamados.categoria == session.get('categoria')), Chamados.id_usuario == session.get('id_user')).all()
   #  se as duas sessions estiverem vazias retorna todos os chamados.
@@ -414,3 +418,21 @@ def Limpar_meu_chamado():
   session["status"] = None
   session["categoria"] = None
   return redirect(url_for("routes.meus_chamados"))
+
+
+@main.route('/edit_chamados/<id>', methods=["post"])
+def edit_chamados(id):
+  chamado = TblChamados.query.filter_by(idChamados=id).first()
+  chamado.titulo_chamado = request.form.get('title')
+  chamado.cod_erro_chamado = request.form.get('error')
+  chamado.descricao_chamado = request.form.get('desc')
+  chamado.status_chamado = request.form.get('status-hidden')
+  db.session.commit()
+
+  return redirect(url_for('routes.TelaChamados'))
+
+
+
+@main.route('/contato')
+def contato():
+  return render_template('contato/index.html')
