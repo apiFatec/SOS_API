@@ -129,15 +129,15 @@
 main {
   height: 100vh;
 }
-
+/* 
 #name1,
 #turma1,
 #chamados1 {
   border-color: #000;
-}
+} */
 
 .btn-edit {
-  display: flex;
+  display: none;
   gap: 10px;
   margin-top: 90px;
 }
@@ -162,3 +162,9 @@ i {
 i:hover {
   color: #a93c3c;
 }
+
+.trash {
+  display: none;
+}
+
+

@@ -62,30 +62,39 @@
         </ul>
       </div>
     </nav>
-
+    {% set count = namespace(value=1) %}
     {% for user in users %}
-    <form name="formulario" action="/" method="POST" class="aluno">
+    <form name="formulario" action="/usuarios/edit/{{user.id_usuario}}" method="POST" class="aluno">
       <div class="foto"><img src="{{url_for('static', filename='assets/user.svg')}}" alt="user" width="51px"></div>
       <div class="info">
-        <label for="name">
+        <label for="name{{count.value}}">
           Nome:
-          <input id="name" type="text" name="name" disabled value="{{user.nome}}" />
+          <input id="name{{count.value}}" type="text" name="name" disabled value="{{user.nome}}" />
         </label>
-        <label for="turma">
+        <label for="turma{{count.value}}">
           Email:
-          <input id="turma" type="text" name="turma" disabled value="{{user.turma}}" />
+          <input id="turma{{count.value}}" type="text" name="turma" disabled value="{{user.turma}}" />
         </label>
-        <label for="chamados">
+        <label for="chamados{{count.value}}">
           Chamados:
-          <input id="chamados" type="text" name="chamados" disabled value="{{user.count_chamados}}" />
+          <input id="chamados{{count.value}}" type="text" name="chamados" disabled value="{{user.count_chamados}}" />
         </label>
       </div>
       <div class="edit">
-        <button onclick="edit(event)">
+        <button id="iconEdit{{count.value}}" onclick="edit(event,'{{count.value}}')">
           <img src="{{url_for('static', filename='assets/pencil-solid.svg')}}" alt="lapis" width="26px">
         </button>
+
+          <button class="trash" id="iconTrash{{count.value}}" onclick="edit(event,'{{count.value}}')">
+            <i class="fa-solid fa-trash fa-2xl"></i>
+          </button>
+          <div id="btn-edit{{count.value}}" class="btn-edit">
+            <input type="submit" onclick="edit(event,'{{count.value}}')" value="Cancelar" class="sub">
+            <input type="submit" value="Salvar" class="sub">
+          </div>
       </div>
     </form>
+    {% set count.value = count.value + 1 %}
     {% endfor %}
 
     <form name="formulario" action="/" method="POST" class="aluno">
