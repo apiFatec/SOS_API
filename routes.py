@@ -79,7 +79,7 @@ def Create(id):
         categoria_chamado=categoria,
         cod_erro_chamado=cod_erro,
         descricao_chamado=desc,
-        status_chamado="aberto",
+        status_chamado="Aberto",
         notificar_chamado=notif,
         email=email,
         data=insertDate(),
