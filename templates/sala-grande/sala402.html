@@ -238,7 +238,11 @@
           {% if not pcs[x] %}
           
           {% else %}
+         {% if session.get('logged') and session.get('categoria') == 'suporte' or session.get('categoria') == 'admin' %}
+          <a href="/{{pcs[x].sala}}/{{pcs[x].numero}}/teladetalhes" class="pc" draggable="true">
+          {% else %}
           <a href="/abrir-chamado/{{pcs[x].idComputador}}" class="pc" draggable="true">
+          {% endif %}
             <img src="{{url_for('static', filename='assets/pc.png')}}" alt="logo-pc">
             {{pcs[x].sala}}{{pcs[x].numero}}
           </a>
@@ -252,7 +256,11 @@
           {% if not pcs[x] %}
           
           {% else %}
+         {% if session.get('logged') and session.get('categoria') == 'suporte' or session.get('categoria') == 'admin' %}
+          <a href="/{{pcs[x].sala}}/{{pcs[x].numero}}/teladetalhes" class="pc" draggable="true">
+          {% else %}
           <a href="/abrir-chamado/{{pcs[x].idComputador}}" class="pc" draggable="true">
+          {% endif %}
             <img src="{{url_for('static', filename='assets/pc.png')}}" alt="logo-pc">
             {{pcs[x].sala}}{{pcs[x].numero}}
           </a>
@@ -266,7 +274,11 @@
           {% if not pcs[x] %}
           
           {% else %}
+         {% if session.get('logged') and session.get('categoria') == 'suporte' or session.get('categoria') == 'admin' %}
+          <a href="/{{pcs[x].sala}}/{{pcs[x].numero}}/teladetalhes" class="pc" draggable="true">
+          {% else %}
           <a href="/abrir-chamado/{{pcs[x].idComputador}}" class="pc" draggable="true">
+          {% endif %}
             <img src="{{url_for('static', filename='assets/pc.png')}}" alt="logo-pc">
             {{pcs[x].sala}}{{pcs[x].numero}}
           </a>
@@ -280,7 +292,11 @@
           {% if not pcs[x] %}
           
           {% else %}
+         {% if session.get('logged') and session.get('categoria') == 'suporte' or session.get('categoria') == 'admin' %}
+          <a href="/{{pcs[x].sala}}/{{pcs[x].numero}}/teladetalhes" class="pc" draggable="true">
+          {% else %}
           <a href="/abrir-chamado/{{pcs[x].idComputador}}" class="pc" draggable="true">
+          {% endif %}
             <img src="{{url_for('static', filename='assets/pc.png')}}" alt="logo-pc">
             {{pcs[x].sala}}{{pcs[x].numero}}
           </a>
@@ -294,7 +310,11 @@
           {% if not pcs[x] %}
           
           {% else %}
+         {% if session.get('logged') and session.get('categoria') == 'suporte' or session.get('categoria') == 'admin' %}
+          <a href="/{{pcs[x].sala}}/{{pcs[x].numero}}/teladetalhes" class="pc" draggable="true">
+          {% else %}
           <a href="/abrir-chamado/{{pcs[x].idComputador}}" class="pc" draggable="true">
+          {% endif %}
             <img src="{{url_for('static', filename='assets/pc.png')}}" alt="logo-pc">
             {{pcs[x].sala}}{{pcs[x].numero}}
           </a>
@@ -308,7 +328,11 @@
           {% if not pcs[x] %}
           
           {% else %}
+         {% if session.get('logged') and session.get('categoria') == 'suporte' or session.get('categoria') == 'admin' %}
+          <a href="/{{pcs[x].sala}}/{{pcs[x].numero}}/teladetalhes" class="pc" draggable="true">
+          {% else %}
           <a href="/abrir-chamado/{{pcs[x].idComputador}}" class="pc" draggable="true">
+          {% endif %}
             <img src="{{url_for('static', filename='assets/pc.png')}}" alt="logo-pc">
             {{pcs[x].sala}}{{pcs[x].numero}}
           </a>
@@ -322,7 +346,11 @@
           {% if not pcs[x] %}
           
           {% else %}
+         {% if session.get('logged') and session.get('categoria') == 'suporte' or session.get('categoria') == 'admin' %}
+          <a href="/{{pcs[x].sala}}/{{pcs[x].numero}}/teladetalhes" class="pc" draggable="true">
+          {% else %}
           <a href="/abrir-chamado/{{pcs[x].idComputador}}" class="pc" draggable="true">
+          {% endif %}
             <img src="{{url_for('static', filename='assets/pc.png')}}" alt="logo-pc">
             {{pcs[x].sala}}{{pcs[x].numero}}
           </a>
@@ -336,7 +364,11 @@
           {% if not pcs[x] %}
             <!-- AUSENCIA DE COMPUTADOR -->
           {% else %}
+         {% if session.get('logged') and session.get('categoria') == 'suporte' or session.get('categoria') == 'admin' %}
+          <a href="/{{pcs[x].sala}}/{{pcs[x].numero}}/teladetalhes" class="pc" draggable="true">
+          {% else %}
           <a href="/abrir-chamado/{{pcs[x].idComputador}}" class="pc" draggable="true">
+          {% endif %}
             <img src="{{url_for('static', filename='assets/pc.png')}}" alt="logo-pc">
             {{pcs[x].sala}}{{pcs[x].numero}}
           </a>
@@ -350,7 +382,10 @@
   <footer>
     <a href="#" class="logo">FATEC</a>
   </footer>
+  {% if session.get('logged') and session.get('categoria') == 'suporte' or session.get('categoria') == 'admin' %}
   <script src="{{url_for('static', filename='sala-grande/script.js')}}" defer></script>
+  {% endif %}
+</body>
 </body>
 
 </html>
