@@ -11,6 +11,8 @@ Nesta Sprint o foco foi a criação das telas de login e cadastro de principal u
   <li>Tela Cadastro</li>
   <li>Tela de detalhes do computador</li>
   <li>Tela de contato com suporte</li>
+  <li>Tela de verificação de email</li>
+  <li>Tela de edição de chamados abertos</li>
   <li>Ajustes em alguns estilos</li>
 </ul>
 
@@ -97,5 +99,14 @@ Nesta Sprint o foco foi a criação das telas de login e cadastro de principal u
   </li>
   <li>Tela de Contato com o Suporte
     <img src="https://user-images.githubusercontent.com/111662298/200141160-8480cf19-bb14-486e-8a85-9bc6e6ae2b7b.png" alt="tela-chamados"/>
+  </li>
+  <li>Tela de Edição do Chamado Aberto
+    <img src="https://user-images.githubusercontent.com/111662298/200200936-778e6aea-579e-4df7-8ce7-1256ae1cfe8f.jpeg" alt="tela-chamados"/>
+  </li>
+  <li>Tela de Verificar Email
+    <img src="https://user-images.githubusercontent.com/111662298/200200961-06e97d24-f3a9-46d2-99bc-34fdcdc2b357.jpeg" alt="tela-chamados"/>
+  </li>
+  <li>Tela de Email Verificado
+    <img src="https://user-images.githubusercontent.com/111662298/200200979-298e3fb2-78ea-4808-8b49-edfa64250724.jpeg" alt="tela-chamados"/>
   </li>
 </ul>
