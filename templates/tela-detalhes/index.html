@@ -56,9 +56,12 @@
                 
             </div>
 
+            {% if session.get('categoria') == 'suporte' or session.get('categoria') == 'admin' %}
             <div id="edicao">
                 <a href="/{{comp.idComputador}}/teladetalhes/edit"><img  src="{{url_for('static', filename= 'assets/lapis.png')}}" alt=""></a>
             </div>
+            {% endif %}
+
         </div>
 
         <div class="conteudo">
@@ -88,11 +91,13 @@
                 </div>
                 <div id="botões">
                     <div id = 'botao'>
-                        <a href="/abrir-chamado/{{comp.idComputador}}#"><button>Voltar</button></a>
+                        <a href="/piso/{{comp.sala[0]}}/sala/{{comp.sala}}"><button>Voltar</button></a>
                     </div>
+                    {% if session.get('categoria') == 'suporte' or session.get('categoria') == 'admin' %}
                     <div id = 'botao-edit'>
                         <a href="/{{comp.idComputador}}/teladetalhes/edit"><button>Editar</button></a>
                     </div>
+                    {% endif %}
                 </div>
             </div>
         </div>
