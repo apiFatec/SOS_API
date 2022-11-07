@@ -1,5 +1,6 @@
 from flask import Blueprint, render_template, request, redirect, url_for, session
 from datetime import datetime
+from models.Adress import Address
 from models.adm_suporte import Suporte
 from models.chamados import Chamados
 from models.computers import Computadores
@@ -8,6 +9,7 @@ from models.tbl_chamados import TblChamados
 from flask_mail import Mail, Message
 from itsdangerous import URLSafeTimedSerializer, SignatureExpired
 from mail import mail
+from models.tbl_computador import Computador
 from models.users import Users
 from werkzeug.security import generate_password_hash, check_password_hash
 
@@ -436,3 +438,39 @@ def edit_chamados(id):
 @main.route('/contato')
 def contato():
   return render_template('contato/index.html')
+
+@main.route('/adicionar_computador', methods=["GET", "POST"])
+def adicionar_computador():
+  if request.method == "POST":
+    sala = request.form.get('sala')
+    num = request.form.get('num')
+
+    computador = Computadores.query.filter(db.and_(Computadores.sala == sala , Computadores.numero == num)).first()
+    if not computador:
+      proc = request.form.get('proc')
+      ram = request.form.get('ram')
+      type_sys = request.form.get('type_sys')
+      win_edition = request.form.get('win_edition')
+      version = request.form.get('version')
+      pat_mon = request.form.get('pat_mon')
+      pat_gab = request.form.get('pat_gab')
+      
+      address = Address(
+        sala=sala,
+        numero=num,
+      )
+
+      newPC = Computador(
+        Processador=proc,
+        ram=ram,
+        tipo_de_sistema=type_sys,
+        Win_edicao=win_edition,
+        Versao=version
+      )
+      address.computador.append(newPC)
+      db.session.add(newPC)
+      db.session.add(address)
+      db.session.commit()
+    print(computador)
+
+  return render_template('add-pc/index.html')

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{{url_for('static', filename='header/style.css')}}">
+  <link rel="stylesheet" href="{{url_for('static', filename='add-pc/style.css')}}">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous" />
+  <title>Document</title>
+</head>
+
+<body>
+
+  <header>
+    <a href="../home/index.html">
+      <h1 class="logo">FATEC</h1>
+    </a>
+
+    <nav class="nave">
+      <ul>
+        <a href="/">
+          <li>Início</li>
+        </a>
+        <a href="/chamados">
+          <li>Chamados</li>
+        </a>
+        <a href="/contato">
+          <li>Contato</li>
+        </a>
+      </ul>
+    </nav>
+
+    <div class="login">
+      <a href="#" class="btn1">Entrar</a>
+      <a href="/cadastro" class="btn2">Registrar-se</a>
+    </div>
+  </header>
+
+  <main>
+    <h1 class="title">Adicionar novo computador</h1>
+    <form action="/adicionar_computador" method="post" class="row g-3">
+      <div class="col-md-6">
+        <label for="inputEmail4" class="form-label">Processador</label>
+        <input type="text" class="form-control" id="processador" name="proc" placeholder="Processador" >
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label">RAM</label>
+        <input type="number" class="form-control" id="ram" name="ram" placeholder="RAM">
+      </div>
+      <div class="col-12">
+        <label for="inputAddress" class="form-label">Arquitetura do Processador</label>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="type_sys" id="exampleRadios1" value="32" checked>
+          <label class="form-check-label" for="exampleRadios1">
+            32 - Bits
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="type_sys" id="exampleRadios2" value="64">
+          <label class="form-check-label" for="exampleRadios2">
+            64 - Bits
+          </label>
+        </div>
+      </div>
+      <div class="col-12">
+        <label for="inputAddress2" class="form-label">Edição do Windows </label>
+        <input type="text" class="form-control" id="win_edition" name="win_edition" placeholder="Edição do Windows">
+      </div>
+      <div class="col-md-6">
+        <label for="inputCity" class="form-label">Versão</label>
+        <input type="text" class="form-control" id="versao" name="version" placeholder="Versão do Windows">
+      </div>
+      <div class="col-md-4">
+        <label for="inputState" class="form-label">Sala</label>
+        <input type="text" class="form-control" id="sala" placeholder="Ex: 402" name="sala">
+      </div>
+      <div class="col-md-2">
+        <label for="inputZip" class="form-label">Numero</label>
+        <input type="text" class="form-control" id="num" placeholder="Ex: 12" name="num">
+      </div>
+      <div class="col-md-4">
+        <label for="inputState" class="form-label">Patrimonio Monitor</label>
+        <input type="text" class="form-control" id="sala" placeholder="Nº Patrimonio" name="pat_mon">
+      </div>
+      <div class="col-md-4">
+        <label for="inputState" class="form-label">Patrimonio Gabinete</label>
+        <input type="text" class="form-control" id="sala" placeholder="Nº Patrimonio" name="pat_gab">
+      </div>
+      <div class="col-12">
+        <button type="submit" class="btn btn-primary">Sign in</button>
+      </div>
+    </form>
+  </main>
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+    crossorigin="anonymous"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,31 @@
+* {
+  margin: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+body {
+
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  padding:  10px 60px;
+  justify-content: center;
+  align-items: center;
+}
+
+form {
+  border: 1px solid rgb(77, 77, 77);
+  border-radius: 10px;
+  padding: 10px;
+  width: 80%;
+}
+
+.title {
+  padding: 16px;
+  margin-bottom: 20px;
+  text-align: left;
+  width: 80%;
+}
