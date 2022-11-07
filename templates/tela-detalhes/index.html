@@ -14,28 +14,35 @@
 <body>
     <header>
         <a href="/">
-            <h1 class="logo">FATEC</h1>
+          <h1 class="logo">FATEC</h1>
         </a>
-
+    
         <nav class="nave">
-            <ul>
-                <a href="/">
-                    <li>Início</li>
-                </a>
-                <a href="/chamados">
-                    <li>Chamados</li>
-                </a>
-                <a href="#">
-                    <li>Contato</li>
-                </a>
-            </ul>
+          <ul>
+            <a href="/" class="inicio">
+              <li>Início</li>
+            </a>
+            <a href="/chamados" class="chamados">
+              <li>Chamados</li>
+            </a>
+            <a href="/contato" class="contato">
+              <li>Contato</li>
+            </a>
+          </ul>
         </nav>
-
         <div class="login">
-            <a href="#" class="btn1">Entrar</a>
-            <a href="#" class="btn2">Registrar-se</a>
+          {% if session['categoria'] == "admin" %}
+          <a href="/usuarios" class="btn1">Usuários</a>
+          <a href="/logout" class="btn2">Sair</a>
+          {% elif session['logged'] %}
+          <a href="/meus_chamados" class="btn1">Meus chamados</a>
+          <a href="/logout" class="btn2">Sair</a>
+          {% else %}
+          <a href="/login" class="btn1">Entrar</a>
+          <a href="/cadastro" class="btn2">Registrar-se</a>
+          {% endif %}
         </div>
-    </header>
+      </header>
 
     <main>
 
@@ -91,7 +98,7 @@
                 </div>
                 <div id="botões">
                     <div id = 'botao'>
-                        <a href="/piso/{{comp.sala[0]}}/sala/{{comp.sala}}"><button>Voltar</button></a>
+                        <a href="/abrir-chamado/{{comp.idComputador}}"><button>Voltar</button></a>
                     </div>
                     {% if session.get('categoria') == 'suporte' or session.get('categoria') == 'admin' %}
                     <div id = 'botao-edit'>

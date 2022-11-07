@@ -125,6 +125,9 @@
     <h2>Chamados recentes.</h2>
 
     <section class="grid-details">
+      {% if not chamados %}
+      <p style="padding: 16px; background-color: lightgray; border-radius: 5px;border: 1px solid gray;">Não foi encontrado nenhum chamado no momento</p>
+      {% else %}
       {% for chamado in chamados %}
       <div class="detail">
         <div class="card">
@@ -140,9 +143,10 @@
             <div class="status-{{chamado.status}}"></div>
           </div>
         </div>
-        <a href="#" class="detalhes">Detalhes</a>
+        <a href="/chamados/?search={{chamado.titulo}}" class="detalhes">Detalhes</a>
       </div>
       {% endfor %}
+      {% endif %}
     </section>
   </article>
 

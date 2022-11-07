@@ -19,29 +19,37 @@
 
 <body>
   <header>
-    <a href="../home/index.html">
+    <a href="/">
       <h1 class="logo">FATEC</h1>
     </a>
 
     <nav class="nave">
       <ul>
-        <a href="/">
+        <a href="/" class="inicio">
           <li>Início</li>
         </a>
-        <a href="/chamados">
+        <a href="/chamados" class="chamados">
           <li>Chamados</li>
         </a>
-        <a href="#">
+        <a href="/contato" class="contato">
           <li>Contato</li>
         </a>
       </ul>
     </nav>
-
     <div class="login">
-      <a href="#" class="btn1">Entrar</a>
-      <a href="#" class="btn2">Registrar-se</a>
+      {% if session['categoria'] == "admin" %}
+      <a href="/usuarios" class="btn1">Usuários</a>
+      <a href="/logout" class="btn2">Sair</a>
+      {% elif session['logged'] %}
+      <a href="/meus_chamados" class="btn1">Meus chamados</a>
+      <a href="/logout" class="btn2">Sair</a>
+      {% else %}
+      <a href="/login" class="btn1">Entrar</a>
+      <a href="/cadastro" class="btn2">Registrar-se</a>
+      {% endif %}
     </div>
   </header>
+  
   <section class="container">
     <nav class="nav">
       <form action="/chamados" class="pesquisa">
@@ -74,9 +82,18 @@
       <a href="/limpar" class="limpar">
         <img src="{{url_for('static', filename='assets/lixo.svg')}}" alt="limpar filtro">
       </a>
+      <!-- <div class="form-check form-switch">
+        <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+        <label class="form-check-label" for="flexSwitchCheckDefault">Recentes</label>
+      </div> -->
     </nav>
-    <h1>Editar chamados</h1>
     {% if session.get('logged') and session.get('categoria') == 'suporte' or session.get('categoria') == 'admin' %}
+    <div class="searched-for">
+      <h1>Editar chamados</h1>
+      {% if searched_for %}
+      <span>Exibindo {{len}} resultados para o titulo: <b>{{searched_for}}</b></span>
+      {% endif %}
+    </div>
     <section class="cards">
       {% set count = namespace(value=1) %}
       {% for chamado in chamados %}
@@ -101,20 +118,31 @@
           {% endif %}
         </div>
 
+        <input type="hidden" id="proc{{count.value}}" value="{{chamado.Processador}}">
+        <input type="hidden" id="ram{{count.value}}" value="{{chamado.ram}}">
+        <input type="hidden" id="win{{count.value}}" value="{{chamado.Win}}">
+        <input type="hidden" id="sala{{count.value}}" value="{{chamado.sala}}">
+        <input type="hidden" id="num{{count.value}}" value="{{chamado.numero}}">
+        <input type="hidden" id="idChamado{{count.value}}" value="{{chamado.idChamado}}">
       </div>
-      <input type="hidden" id="proc{{count.value}}" value="{{chamado.Processador}}">
-      <input type="hidden" id="ram{{count.value}}" value="{{chamado.ram}}">
-      <input type="hidden" id="win{{count.value}}" value="{{chamado.Win}}">
-      <input type="hidden" id="sala{{count.value}}" value="{{chamado.sala}}">
-      <input type="hidden" id="num{{count.value}}" value="{{chamado.numero}}">
-      <input type="hidden" id="idChamado{{count.value}}" value="{{chamado.idChamado}}">
       {% set count.value = count.value + 1 %}
       {% endfor %}
     </section>
 
     {% else %}
-
+    <div class="searched-for">
+      <h1>Chamados</h1>
+      {% if searched_for %}
+      <span>Exibindo {{len}} resultados para o titulo: <b>{{searched_for}}</b></span>
+      {% endif %}
+    </div>
+    
     <section class="cards">
+      {% if not chamados %}
+      <div style="display: flex;flex-direction: column;">
+        <p style="padding: 16px; background-color: lightgray; border-radius: 5px;border: 1px solid gray;">Não foi encontrado nenhum chamado no momento</p>
+      </div>
+      {% else %}
       {% set count = namespace(value=1) %}
       {% for chamado in chamados %}
       <div class="div" role="button" data-bs-toggle="modal" data-bs-target="#exampleModal"
@@ -140,15 +168,16 @@
           {% endif %}
         </div>
 
+        <input type="hidden" id="proc{{count.value}}" value="{{chamado.Processador}}">
+        <input type="hidden" id="ram{{count.value}}" value="{{chamado.ram}}">
+        <input type="hidden" id="win{{count.value}}" value="{{chamado.Win}}">
+        <input type="hidden" id="sala{{count.value}}" value="{{chamado.sala}}">
+        <input type="hidden" id="num{{count.value}}" value="{{chamado.numero}}">
+        <input type="hidden" id="idChamado{{count.value}}" value="{{chamado.idChamado}}">
       </div>
-      <input type="hidden" id="proc{{count.value}}" value="{{chamado.Processador}}">
-      <input type="hidden" id="ram{{count.value}}" value="{{chamado.ram}}">
-      <input type="hidden" id="win{{count.value}}" value="{{chamado.Win}}">
-      <input type="hidden" id="sala{{count.value}}" value="{{chamado.sala}}">
-      <input type="hidden" id="num{{count.value}}" value="{{chamado.numero}}">
-      <input type="hidden" id="idChamado{{count.value}}" value="{{chamado.idChamado}}">
       {% set count.value = count.value + 1 %}
       {% endfor %}
+      {% endif %}
     </section>
     {% endif %}
     <ul class="row-list">
@@ -278,10 +307,6 @@
       {% endif %}
     </div>
   </div>
-
-  <script>
-
-  </script>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"

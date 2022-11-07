@@ -67,8 +67,13 @@
 
     <div id="container">
         <div class="nav-voltar">
-            <a class="voltar" href="/fachada"><img src="{{url_for('static', filename='assets/voltar.png')}}" alt="">Voltar</a>
+            {% if not pc %}
+            <a class="voltar" href=""><img src="{{url_for('static', filename='assets/voltar.png')}}" alt="">Voltar</a>
+            <a href="" class="info"><i class="fa-solid fa-circle-info fa-2xl"></i></a>
+            {% else %}
+            <a class="voltar" href="/piso/{{pc.sala[0]}}/sala/{{pc.sala}}"><img src="{{url_for('static', filename='assets/voltar.png')}}" alt="">Voltar</a>
             <a href="/{{pc.sala}}/{{pc.numero}}/teladetalhes" class="info"><i class="fa-solid fa-circle-info fa-2xl"></i></a>
+            {% endif %}
         </div>
         <div class="tela-detalhes">
             <div id="icon-pc" class="tela-detalhes">
