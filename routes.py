@@ -20,7 +20,7 @@ s = URLSafeTimedSerializer('Thisisasecret!')
 # Tela Home.
 @main.route("/", methods=["GET"])
 def Index():
-  chamados = Chamados.query.all()
+  chamados = Chamados.query.order_by(Chamados.idChamado.desc()).limit(8).all()
   return render_template("home/index.html", chamados=chamados)
 
 # Tela fachada.
@@ -100,7 +100,7 @@ def TelaChamados():
   dates = getDate(chamados)
   for i in range(0, len(chamados)):
     chamados[i].data = dates[i]
-  return render_template("chamados/index.html", chamados=chamados)
+  return render_template("chamados/index.html", chamados=chamados, searched_for=request.args.get("search"), len=len(chamados))
 
 
 def Filtrar(status, categoria, search):
@@ -378,7 +378,7 @@ def meus_chamados():
   dates = getDate(chamados)
   for i in range(0, len(chamados)):
     chamados[i].data = dates[i]
-  return render_template('meus-chamados/index.html', chamados=chamados)
+  return render_template('meus-chamados/index.html', chamados=chamados, searched_for=request.args.get("search"), len=len(chamados))
 
 
 def meus_chamados_filter(status, categoria, search):
@@ -462,7 +462,7 @@ def adicionar_computador():
 
       newPC = Computador(
         Processador=proc,
-        ram=ram,
+        ram=ram+".00 GB",
         tipo_de_sistema=type_sys,
         Win_edicao=win_edition,
         Versao=version
