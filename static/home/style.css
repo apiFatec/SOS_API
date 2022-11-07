@@ -159,19 +159,19 @@ a {
   overflow: hidden;
 }
 
-.status-aberto {
+.status-Aberto {
   background-color: #eb5757;
   width: 30px;
   height: 30px;
   border-radius: 50%;
 }
-.status-manutenção {
+.status-Manutenção {
   background-color: #d4d011;
   width: 30px;
   height: 30px;
   border-radius: 50%;
 }
-.status-concluido {
+.status-Concluído {
   background-color: #1ba60f;
   width: 30px;
   height: 30px;
