@@ -18,8 +18,26 @@ body {
   padding: 30px;
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: 10px;
   height: 100%;
+}
+
+.searched-for span {
+  background-color: lightgray;
+  border: 1px solid rgb(177, 177, 177);
+  padding: 5px;
+  border-radius: 10px;
+  width: 50%;
+}
+
+.searched-for {
+  margin-bottom: 5px;
+  display: flex;
+  flex-direction: column;
+}
+
+.searched-for h1 {
+  margin: 0;
 }
 
 .pesquisa {
@@ -60,6 +78,10 @@ body {
   max-width: 275px;
   background-color: #ffffff;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+.div:hover {
+  background-color: rgb(245, 245, 245);
 }
 
 .Concluído {
