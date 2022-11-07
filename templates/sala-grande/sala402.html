@@ -72,10 +72,9 @@
   <div class="container">
     <div class="layout-pcs">
       <nav class="navbar">
-        <a class="voltar" href="/piso/{{piso}}" id="avoltar"><img
-            src="{{url_for('static', filename='assets/voltar.png')}}" alt="" />Voltar</a>
-        <ul class="lista-nav">
-          <a href="/adicionar_computador">Adicionar computador</a>
+        <a class="voltar" href="/piso/{{piso}}" id="avoltar"><img src="{{url_for('static', filename='assets/voltar.png')}}" alt="" />Voltar</a>
+        <ul class="lista-nav" style="align-items: center;">
+          <a href="/adicionar_computador" style="margin-right: 30px">Adicionar computador</a>
           <span>
             <li id="andar"> Andares
           </span>
@@ -233,8 +232,7 @@
       </nav>
       <div class="pc-prof">
         <span>Professor</span>
-        <a href="/abrir-chamado/{{pcs[0].idComputador}}"><img src="{{url_for('static', filename='assets/pc.png')}}"
-            alt="icon pc">
+        <a href="/abrir-chamado/{{pcs[0].idComputador}}"><img src="{{url_for('static', filename='assets/pc.png')}}" alt="icon pc">
           <figcaption class="pro">{{pcs[0].sala}}{{pcs[0].numero}}</figcaption>
         </a>
       </div>
