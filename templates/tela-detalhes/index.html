@@ -1,114 +1,122 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{url_for('static', filename='header/style.css')}}">
-    <link rel="icon" type="image/x-icon" href="{{url_for('static', filename='assets/favicon.png')}}">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="{{url_for('static', filename= 'tela-detalhes/style.css')}}">
-    
-    <title>Detalhes</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{{url_for('static', filename='header/style.css')}}">
+  <link rel="icon" type="image/x-icon" href="{{url_for('static', filename='assets/favicon.png')}}">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="{{url_for('static', filename= 'tela-detalhes/style.css')}}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Sen:wght@400;700;800&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/731346dae6.js" crossorigin="anonymous"></script>
+
+  <title>Detalhes</title>
 </head>
+
 <body>
-    <header>
-        <a href="/">
-          <h1 class="logo">FATEC</h1>
+  <header>
+    <a href="/">
+      <h1 class="logo">FATEC</h1>
+    </a>
+
+    <nav class="nave">
+      <ul>
+        <a href="/" class="inicio">
+          <li>Início</li>
         </a>
-    
-        <nav class="nave">
+        <a href="/chamados" class="chamados">
+          <li>Chamados</li>
+        </a>
+        <a href="/contato" class="contato">
+          <li>Contato</li>
+        </a>
+      </ul>
+    </nav>
+    <div class="login">
+      {% if session['categoria'] == "admin" %}
+      <a href="/usuarios" class="btn1">Usuários</a>
+      <a href="/logout" class="btn2">Sair</a>
+      {% elif session['logged'] %}
+      <a href="/meus_chamados" class="btn1">Meus chamados</a>
+      <a href="/logout" class="btn2">Sair</a>
+      {% else %}
+      <a href="/login" class="btn1">Entrar</a>
+      <a href="/cadastro" class="btn2">Registrar-se</a>
+      {% endif %}
+    </div>
+  </header>
+
+  <main>
+
+    <div class="container">
+      <div class="conteudo">
+        <div id="pc_logo">
+          <img src="{{url_for('static', filename='assets/Win10.svg')}}" alt="">
+        </div>
+
+        <div id="windows_edition">
+
+          <h3>Windows Edition
+            <hr>
+          </h3> <br>
           <ul>
-            <a href="/" class="inicio">
-              <li>Início</li>
-            </a>
-            <a href="/chamados" class="chamados">
-              <li>Chamados</li>
-            </a>
-            <a href="/contato" class="contato">
-              <li>Contato</li>
-            </a>
+            <li>{{comp.win}}</li>
+            <li>Copyright c 2014 Microsoft. All Rights Reserved. </li>
+            <li>Service Pack 2</li>
           </ul>
-        </nav>
-        <div class="login">
-          {% if session['categoria'] == "admin" %}
-          <a href="/usuarios" class="btn1">Usuários</a>
-          <a href="/logout" class="btn2">Sair</a>
-          {% elif session['logged'] %}
-          <a href="/meus_chamados" class="btn1">Meus chamados</a>
-          <a href="/logout" class="btn2">Sair</a>
-          {% else %}
-          <a href="/login" class="btn1">Entrar</a>
-          <a href="/cadastro" class="btn2">Registrar-se</a>
-          {% endif %}
+
         </div>
-      </header>
 
-    <main>
+        {% if session.get('categoria') == 'suporte' or session.get('categoria') == 'admin' %}
+        <div id="edicao">
+          <a href="/{{comp.idComputador}}/teladetalhes/edit"><i class="fa-solid fa-pencil fa-2xl"></i></a>
+        </div>
+        {% endif %}
 
-        <div class="conteudo">
-            <div  id="pc_logo">
-                <img src="{{url_for('static', filename= 'assets/icone-windows.png')}}" alt="">
-            </div>
-            
-            <div id="windows_edition">
-                
-                <h3>Windows Edition   <hr>
-                 </h3>                    <br>
-                <ul>
-                    <li>{{comp.win}}</li>
-                    <li>Copyright c 2014 microsoft. All rights reserved. </li>
-                    <li>Service Pack 2</li>
+      </div>
+
+      <div class="conteudo">
+        <div id="especificacoes">
+          <h3>Sistema
+            <hr>
+            <h3>
+              <div class="colunas2">
+                <ul class="coluna1">
+                  <li>Nome do dispositivo</li>
+                  <li>Windows</li>
+                  <li>Processador</li>
+                  <li>Ram</li>
+                  <li>Tipo de sistema </li>
+                  <li>Versão do windows</li>
+                  <li>Endereço</li>
+                  <li>Patrimônio</li>
                 </ul>
-                
-            </div>
-
-            {% if session.get('categoria') == 'suporte' or session.get('categoria') == 'admin' %}
-            <div id="edicao">
-                <a href="/{{comp.idComputador}}/teladetalhes/edit"><img  src="{{url_for('static', filename= 'assets/lapis.png')}}" alt=""></a>
-            </div>
-            {% endif %}
-
-        </div>
-
-        <div class="conteudo">
-            <div id="especificacoes">
-                <h3>Sistema <hr> <h3>
-                <div class="colunas2">
-                        <ul class="coluna1">
-                            <li>Nome do dispositivo</li>
-                            <li>Windows</li>
-                            <li>Processador</li>
-                            <li>Ram</li>
-                            <li>Tipo de sistema </li>
-                            <li>versao do windows</li>
-                            <li>Endereço</li>
-                            <li>Patrimônio</li>
-                        </ul>
-                        <ul class="coluna2">
-                            <li>DESKTOP-VJNCDEO</li>
-                            <li>{{comp.win}}</li>
-                            <li>{{comp.processador}}</li>
-                            <li>{{comp.ram}}</li>
-                            <li>Sistema Operacional de {{comp.tipo_sis}} bits</li>
-                            <li>{{comp.versao}}</li>
-                            <li>sala {{comp.sala}}, computador {{comp.numero}}</li>
-                            <li>{{comp.patrimonio_gabinete}}</li>
-                        </ul>
+                <ul class="coluna2">
+                  <li>DESKTOP-VJNCDEO</li>
+                  <li>{{comp.win}}</li>
+                  <li>{{comp.processador}}</li>
+                  <li>{{comp.ram}}</li>
+                  <li>Sistema Operacional de {{comp.tipo_sis}} bits</li>
+                  <li>{{comp.versao}}</li>
+                  <li>sala {{comp.sala}}, computador {{comp.numero}}</li>
+                  <li>{{comp.patrimonio_gabinete}}</li>
+                </ul>
+              </div>
+              <div id="botões">
+                <div id='botao'>
+                  <a href="/abrir-chamado/{{comp.idComputador}}"><button>Voltar</button></a>
                 </div>
-                <div id="botões">
-                    <div id = 'botao'>
-                        <a href="/abrir-chamado/{{comp.idComputador}}"><button>Voltar</button></a>
-                    </div>
-                    {% if session.get('categoria') == 'suporte' or session.get('categoria') == 'admin' %}
-                    <div id = 'botao-edit'>
-                        <a href="/{{comp.idComputador}}/teladetalhes/edit"><button>Editar</button></a>
-                    </div>
-                    {% endif %}
-                </div>
-            </div>
+                {% if session.get('categoria') == 'suporte' or session.get('categoria') == 'admin' %}
+                {% endif %}
+              </div>
         </div>
-
-        
+      </div>
+    </div>
+  </main>
 </body>
+
 </html>

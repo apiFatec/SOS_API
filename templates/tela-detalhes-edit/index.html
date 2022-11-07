@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,138 +9,150 @@
     <link rel="icon" type="image/x-icon" href="{{url_for('static', filename='assets/favicon.png')}}">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="{{url_for('static', filename= 'tela-detalhes-edit/style.css')}}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Sen:wght@400;700;800&display=swap" rel="stylesheet">
     <title>Detalhes</title>
 </head>
+
 <body>
     <header>
         <a href="/">
-          <h1 class="logo">FATEC</h1>
+            <h1 class="logo">FATEC</h1>
         </a>
-    
+
         <nav class="nave">
-          <ul>
-            <a href="/" class="inicio">
-              <li>Início</li>
-            </a>
-            <a href="/chamados" class="chamados">
-              <li>Chamados</li>
-            </a>
-            <a href="/contato" class="contato">
-              <li>Contato</li>
-            </a>
-          </ul>
+            <ul>
+                <a href="/" class="inicio">
+                    <li>Início</li>
+                </a>
+                <a href="/chamados" class="chamados">
+                    <li>Chamados</li>
+                </a>
+                <a href="/contato" class="contato">
+                    <li>Contato</li>
+                </a>
+            </ul>
         </nav>
         <div class="login">
-          {% if session['categoria'] == "admin" %}
-          <a href="/usuarios" class="btn1">Usuários</a>
-          <a href="/logout" class="btn2">Sair</a>
-          {% elif session['logged'] %}
-          <a href="/meus_chamados" class="btn1">Meus chamados</a>
-          <a href="/logout" class="btn2">Sair</a>
-          {% else %}
-          <a href="/login" class="btn1">Entrar</a>
-          <a href="/cadastro" class="btn2">Registrar-se</a>
-          {% endif %}
+            {% if session['categoria'] == "admin" %}
+            <a href="/usuarios" class="btn1">Usuários</a>
+            <a href="/logout" class="btn2">Sair</a>
+            {% elif session['logged'] %}
+            <a href="/meus_chamados" class="btn1">Meus chamados</a>
+            <a href="/logout" class="btn2">Sair</a>
+            {% else %}
+            <a href="/login" class="btn1">Entrar</a>
+            <a href="/cadastro" class="btn2">Registrar-se</a>
+            {% endif %}
         </div>
-      </header>
+    </header>
 
     <main>
-        <div class="conteudo">
+        <div class="container">
+            <div class="conteudo">
 
-            <div  id="pc_logo">
-                <img src="{{url_for('static', filename='assets/icone-windows.png')}}" alt="">
-            </div>
+                <div id="pc_logo">
+                    <img src="{{url_for('static', filename='assets/Win10.svg')}}" alt="">
+                </div>
 
-            <div id="windows_edition">
+                <div id="windows_edition">
 
-                <h3>Windows Edition <hr> </h3>
+                    <h3>Windows Edition
+                        <hr>
+                    </h3>
                     <br>
-                <ul>
-                    <li>{{comp.win}}</li>
-                    <li>Copyright c 2014 microsoft. All rights reserved. </li>
-                    <li>Service Pack 2</li>
-                </ul>
+                    <ul>
+                        <li>{{comp.win}}</li>
+                        <li>Copyright c 2014 Microsoft. All Rights Reserved. </li>
+                        <li>Service Pack 2</li>
+                    </ul>
 
+                </div>
             </div>
-        </div>
 
-        <form action="/{{comp.idComputador}}/teladetalhes/edit" method="POST" class="conteudo">
+            <form action="/{{comp.idComputador}}/teladetalhes/edit" method="POST" class="conteudo">
                 <div id="especificacoes">
-                    <h3>Sistema <hr> <h3>
-                    <div class="colunas2">
-                            <ul class="coluna1">
-                                <li>Nome do dispositivo</li>
+                    <h3>Sistema
+                        <hr>
+                        <h3>
+                            <div class="colunas2">
+                                <ul class="coluna1">
+                                    <li>Nome do dispositivo</li>
 
-                                <label for="win">
-                                    <li>Windows</li>
-                                </label>
+                                    <label for="win">
+                                        <li>Windows</li>
+                                    </label>
 
-                                <label for="processador">
-                                    <li>Processador</li>
-                                </label>
+                                    <label for="processador">
+                                        <li>Processador</li>
+                                    </label>
 
-                                <label for="ram">
-                                    <li>Ram</li>
-                                </label>
+                                    <label for="ram">
+                                        <li>Ram</li>
+                                    </label>
 
-                                <label for="tipo_sis">
-                                    <li>Tipo de sistema </li>
-                                </label>
+                                    <label for="tipo_sis">
+                                        <li>Tipo de sistema </li>
+                                    </label>
 
-                                <label for="versao">
-                                    <li>versao do windows</li>
-                                </label>
+                                    <label for="versao">
+                                        <li>Versão do windows</li>
+                                    </label>
 
-                                <label for="sala">
-                                    <li>Endereço</li>
-                                </label>
+                                    <label for="sala">
+                                        <li>Endereço</li>
+                                    </label>
 
-                                <label for="numero"></label>
-                                <label for="patrimonio_gabinete">
-                                    <li>Patrimônio</li>
-                                </label>
-                            </ul>
-                            <ul class="coluna2">
-                                <li>DESKTOP-VJNCDEO</li>
+                                    <label for="numero"></label>
+                                    <label for="patrimonio_gabinete">
+                                        <li>Patrimônio</li>
+                                    </label>
+                                </ul>
+                                <ul class="coluna2">
+                                    <li>DESKTOP-VJNCDEO</li>
 
-                                <li>
-                                    <input type="text" value="{{comp.win}}" name="win" placeholder="{{comp.win}}">
-                                </li>
+                                    <li>
+                                        <input type="text" value="{{comp.win}}" name="win" placeholder="{{comp.win}}">
+                                    </li>
 
-                                <li>
-                                    <input type="text" value="{{comp.processador}}" name="processador" placeholder="processador {{comp.processador}}">
-                                </li>
+                                    <li>
+                                        <input type="text" value="{{comp.processador}}" name="processador" placeholder="processador {{comp.processador}}">
+                                    </li>
 
-                                <li >
-                                    <input type="text" value="{{comp.ram}}" name="ram" placeholder="{{comp.ram}}">
-                                </li>
+                                    <li>
+                                        <input type="text" value="{{comp.ram}}" name="ram" placeholder="{{comp.ram}}">
+                                    </li>
 
-                                <li>
-                                    <input type="text" value="{{comp.tipo_sis}}" name="tipo_sis" placeholder="tipo de sistema {{comp.tipo_sis}}">
-                                </li>
+                                    <li>
+                                        <input type="text" value="{{comp.tipo_sis}}" name="tipo_sis" placeholder="tipo de sistema {{comp.tipo_sis}}">
+                                    </li>
 
-                                <li>
-                                    <input type="text" value="{{comp.versao}}" name="versao" placeholder=" {{comp.versao}}">
-                                </li>
-                                
-                                <li class="input_sala">
-                                    <input type="text" value="{{comp.sala}}" name="sala" placeholder="sala {{comp.sala}}" >
-                                    <input type="text" value="{{comp.numero}}" name="numero" placeholder = '{{comp.numero}}'>
-                                </li>
+                                    <li>
+                                        <input type="text" value="{{comp.versao}}" name="versao" placeholder=" {{comp.versao}}">
+                                    </li>
 
-                                <li>
-                                    <input type="text" value="{{comp.patrimonio_gabinete}}" name="patrimonio_gabinete" placeholder="{{comp.patrimonio_gabinete}}"> 
-                                </li>
+                                    <li class="input_sala">
+                                        <input type="text" value="{{comp.sala}}" name="sala" placeholder="sala {{comp.sala}}">
+                                        <input type="text" value="{{comp.numero}}" name="numero" placeholder='{{comp.numero}}'>
+                                    </li>
 
-                            </ul>
-                    </div>
-                    <div id = 'botao'>
-                        <button type="submit" ><strong>Salvar</strong></button>
-                    </div>
+                                    <li>
+                                        <input type="text" value="{{comp.patrimonio_gabinete}}" name="patrimonio_gabinete" placeholder="{{comp.patrimonio_gabinete}}">
+                                    </li>
+
+                                </ul>
+                                <div id='botao'>
+                                    <button type="submit"><strong>Salvar</strong></button>
+                                </div>
+                            </div>
+
                 </div>
             </form>
-    </div>
+        </div>
+        </div>
+    </main>
 
-        
 </body>
+
 </html>
