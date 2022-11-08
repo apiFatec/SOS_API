@@ -1,277 +1,266 @@
-* {padding: 0;
+* {
+  padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
-body{font-family: "Sen", sans-serif;
+body {
+  font-family: "Sen", sans-serif;
   background: #f7f7f7;
   display: flex;
-  flex-direction: column;}
-
-main{
-    background-color: #ffffff;
-    border-style: solid;
-    border-radius: 20 px;
-    width: 80%;
-    height: 100%;
-    margin-left: 10%;
-    margin-top: 3%;
-    margin-bottom: 5%;
-    border-style: solid;
-    border-width: 2px;
-    border-color: rgb(230, 230, 230) ;
-    border-radius: 20px;
-    padding-left: 20px;
-    
-    
-}
-.conteudo{
-    display: flex;
-    margin-right: 3px;
+  flex-direction: column;
 }
 
-
-#pc_logo {
-    margin-top: 4%;
-    margin-right: 1%;
-    margin-left: 1%;
+.container {
+  display: flex;
+  width: 50%;
+  margin: auto;
+  flex-direction: column;
+  margin-top: 100px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  border-radius: 30px;
+  padding: 30px;
+}
+.conteudo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 70px;
 }
 
 #pc_logo img {
-    height: 160px;
-    width:  160px;
-    border-width: 0.2px;
-    border-color: rgb(235, 235, 235);
-    border-radius:10px ;
-    display: block;
+  height: 120px;
+  width: 120px;
+  display: block;
 }
 
 #windows_edition {
-    display: block;
-    margin-top: 5%;
-    width: 70%;
+  display: block;
+  margin-top: 5%;
+  width: 70%;
 }
 #windows_edition ul {
-    list-style: none;
-    margin-left: 7%;
+  list-style: none;
 }
 
 #windows_edition li {
-    padding: 5px;
+  padding: 5px;
 }
 
-.conteudo h3{
-    margin-left: 4%;
-    margin-top: 3%;
+.conteudo h3 {
+  margin-top: 3%;
+  font-weight: 400;
 }
 
-#especificacoes{
-    width:90%;
+#especificacoes {
+  width: 90%;
 }
 
-.colunas{
-    display: flex;
-    margin-left: 8%;
+.colunas {
+  display: flex;
 }
 
-.colunas2{
-    display: flex;
+.colunas2 {
+  display: flex;
+  align-items: center;
 }
 
 .coluna1 {
-    list-style: none;
-    display: flexbox;
-    font-size: medium;
-    width: 400px;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  font-size: medium;
+  width: 300px;
 }
 .coluna2 {
-    list-style: none;
-    display: flexbox;
-    font-size: medium;
-    width: 350px;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: medium;
+  align-items: center;
+  width: 320px;
 }
 .coluna1 li {
-    margin-bottom: 15px;
-    padding-top: 2px;
-    padding-bottom: 2px;
+  margin-bottom: 15px;
+  padding-top: 3px;
+  padding-bottom: 3.5px;
 }
 .coluna2 li {
-    color: rgba(83, 82, 82, 0.849);
-    text-decoration: none;
-    margin-bottom: 15px;
-    width: 400px;
+  color: rgba(83, 82, 82, 0.849);
+  text-decoration: none;
+  width: 400px;
 }
 
 .coluna2 input {
-    width:  380px;
+  width: 380px;
+  font-family: "Sen", sans-serif;
+  padding: 6px;
 }
 .input_sala input {
-    width: 188px;
+  width: 188px;
 }
- 
- #botao button:hover{
-    color:  #182d7b;
-    background-color: white;
-    border-style: ridge;
-    border-color: #182d7b;
- }
- 
-#botao button{
+
+#botao button:hover {
+  background-color: white;
+  border-color: #182d7b;
+  color: #182d7b;
+  font-weight: bolder;
+  transition: 0.2s;
+}
+
+#botao button {
+  padding: 1rem 1.5rem;
+  border-radius: 15px;
+  border: solid 2px transparent;
+  color: white;
+  background-color: #182d7b;
+  text-align: center;
+  margin-left: 100px;
+  margin-top: 270px;
+}
+
+#botao > button:active {
+  transition: 0.2s;
+  border: 1px solid black;
+  padding-block: 9px;
+}
+
+.input_ input {
+  width: 90%;
+  text-align: justify;
+  text-indent: 8px;
+}
+
+@media (max-width: 1007px) {
+  #pc_logo img {
+    height: 100px;
     width: 100px;
-    height: 50px;
+
+    border-width: 0.2px;
+    border-color: rgb(235, 235, 235);
+    border-radius: 10px;
+  }
+  main {
+    width: 96%;
+    margin-left: 2%;
+    margin-right: 2%;
+  }
+  body {
+    font-size: 14px;
+  }
+  .coluna1 {
+    list-style: none;
+    display: flexbox;
+    font-size: 14px;
+    width: 40%;
+    margin-right: 0%;
+  }
+  .coluna2 {
+    list-style: none;
+    display: flexbox;
+    font-size: 14px;
+  }
+
+  .coluna1 li {
+    margin-bottom: 17px;
+    width: 150px;
+    padding-top: 2px;
+    padding-bottom: 1px;
+  }
+
+  .coluna2 li {
+    width: 450px;
+    margin-bottom: 17px;
+  }
+  .coluna2 input {
+    width: 350px;
+  }
+  .input_sala input {
+    width: 175px;
+  }
+  #botao button {
+    width: 80px;
+    height: 40px;
     border-radius: 20px;
     border-style: inherit;
     color: white;
-    margin-top: 30pxpx;
-    margin-left: 96%;
-    margin-bottom: 30px;
+    text-align: center;
+    margin-top: 0%;
+    margin-bottom: 20px;
+    margin-left: 95%;
     background-color: #182d7b;
+  }
+}
+
+@media (max-width: 600px) {
+  #windows_edition {
     display: block;
-}
-  
-  #botao > button:active {
-    transition: 0.2s;
-    border: 1px solid black;
-    padding-block: 9px;
+    margin-top: 5%;
+    width: 60%;
   }
-
-  .input_ input {
-    width: 90%;
-    text-align: justify;
-    text-indent: 8px;
+  #windows_edition ul {
+    list-style: none;
+    margin-left: 7%;
   }
-
-    
-@media (max-width: 1007px){
-    #pc_logo img {
-        height: 100px;
-        width:  100px;
-        
-        border-width: 0.2px;
-        border-color: rgb(235, 235, 235);
-        border-radius:10px ;
-    }
-    main{
-        width: 96%;
-        margin-left: 2%;
-        margin-right: 2%;
-    }
-    body{
-        font-size: 14px;
-    }
-    .coluna1 {
-        list-style: none;
-        display: flexbox;
-        font-size: 14px;
-        width: 40%;
-        margin-right: 0%;
-    }
-    .coluna2 {
-        list-style: none;
-        display: flexbox;
-        font-size: 14px;
-    
-    }
-
-    .coluna1 li{
-        margin-bottom: 17px;
-        width: 150px;
-        padding-top:2px ;
-        padding-bottom: 1px;
-    }
-
-    .coluna2 li {
-        width: 450px;
-        margin-bottom: 17px;
-    }
-    .coluna2 input {
-        width: 350px;
-    }
-    .input_sala input{
-        width: 175px;
-    }
-    #botao button{
-        width: 80px;
-        height: 40px;
-        border-radius: 20px;
-        border-style: inherit;
-        color: white;
-        margin-top: 0%;
-        margin-bottom: 20px;
-        margin-left: 95%;
-        background-color: #182d7b;
-    }
-}
-
-@media (max-width: 600px){
-    #windows_edition {
-        display: block;
-        margin-top: 5%;
-        width: 60%;
-    }
-    #windows_edition ul {
-        list-style: none;
-        margin-left: 7%;
-    }
-    #pc_logo {
+  #pc_logo {
     margin-top: 5%;
     margin-right: 1%;
     margin-left: 1%;
-    }
-    #pc_logo img {
-        height: 100px;
-        width:  100px;
-        
-        border-width: 0.2px;
-        border-color: rgb(235, 235, 235);
-        border-radius:10px ;
-    }
-    main{
-        width: 98%;
-        margin: 0%;
-    }
-    body{
-        font-size: 12px;
-    }
-    .coluna1 {
-        list-style: none;
-        display: flexbox;
-        font-size: 12px;
-        width: 40%;
-        margin-right: 0%;
-    }
-    .coluna2 {
-        list-style: none;
-        display: flexbox;
-        font-size: 12px;
-    
-    }
+  }
+  #pc_logo img {
+    height: 100px;
+    width: 100px;
 
-    .coluna1 li{
-        margin-bottom: 17px;
-        width: 150px;
-        padding-top: 2px;
-        padding-bottom:2px ;
-    }
+    border-width: 0.2px;
+    border-color: rgb(235, 235, 235);
+    border-radius: 10px;
+  }
+  main {
+    width: 98%;
+    margin: 0%;
+  }
+  body {
+    font-size: 12px;
+  }
+  .coluna1 {
+    list-style: none;
+    display: flexbox;
+    font-size: 12px;
+    width: 40%;
+    margin-right: 0%;
+  }
+  .coluna2 {
+    list-style: none;
+    display: flexbox;
+    font-size: 12px;
+  }
 
-    .coluna2 li {
-        width: 340px;
-        margin-bottom: 17px;
-    }
-    .coluna2 input {
-        width: 280px;
-    }
-    .input_sala input {
-        width: 140px
-    }
-    #botao button{
-        width: 70px;
-        height: 35px;
-        border-radius: 20px;
-        border-style: inherit;
-        color: white;
-        margin-top: 2%;
-        margin-bottom: 20px;
-        margin-left: 92%;
-        background-color: #182d7b;
-    }
+  .coluna1 li {
+    margin-bottom: 17px;
+    width: 150px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+  }
+
+  .coluna2 li {
+    width: 340px;
+    margin-bottom: 17px;
+  }
+  .coluna2 input {
+    width: 280px;
+  }
+  .input_sala input {
+    width: 140px;
+  }
+  #botao button {
+    width: 70px;
+    height: 35px;
+    border-radius: 20px;
+    border-style: inherit;
+    color: white;
+    margin-top: 2%;
+    margin-bottom: 20px;
+    margin-left: 92%;
+    background-color: #182d7b;
+  }
 }
