@@ -31,7 +31,11 @@
                 <div class="email">
                     <i class="fa-regular fa-envelope fa-xl"></i>
                     <input class="em" type="email" name="email" placeholder="Email">
+                    
                 </div>
+                {% if session['notFatec'] %}
+                <span class="alert">Por motivos de segurança só são permitidos email institucional FATEC</span>
+                {% endif %}
                 <div class="turma">
                     <i class="fa-solid fa-users fa-xl"></i>
                     <input class="tm" type="text" name="turma" placeholder="Turma">
@@ -46,6 +50,7 @@
             </form>
         </div>
     </section>
+    
 </body>
 
 </html>

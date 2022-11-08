@@ -174,3 +174,10 @@ header {
   background-color: #a8bafe;
   padding: 10px;
 }
+
+.alert {
+  width: 300px;
+  margin: auto;
+  font-size: small;
+  color: red;
+}
