@@ -97,7 +97,7 @@ def Create(id):
 @main.route("/chamados/", methods=["GET"])
 def TelaChamados():
   chamados = Filtrar(request.args.get("status"), request.args.get("categoria"), request.args.get("search"))
-  dates = getDate(chamados)
+  dates = getDates(chamados)
   for i in range(0, len(chamados)):
     chamados[i].data = dates[i]
   return render_template("chamados/index.html", chamados=chamados, searched_for=request.args.get("search"), len=len(chamados))
@@ -217,7 +217,7 @@ def insertDate():
   date = date[:10] + " " + date[10+1:]
   return date
 
-def getDate(chamados):
+def getDates(chamados):
   dates = []
   for chamado in chamados:
     date = chamado.data.strftime("%d %m %Y %X")
@@ -226,18 +226,28 @@ def getDate(chamados):
     dates.append(date)
   return dates
 
+def getDate(chamado):
+  date = chamado.data.strftime("%d %m %Y %X")
+  date = date.replace(" ", "/")
+  date = date[:10] + " " + date[11:]
+  return date
+
 
 
 # Rota para criar um novo usuário no banco
 
 @main.route('/cadastro', methods=["GET", "POST"])
 def cadastro():
+  session['notFatec'] = False
   if request.method == "POST":
     name = request.form['name']
-    email = request.form['email']
     turma = request.form['turma']
     password = request.form['password']
     hashed = generate_password_hash(password, method='sha256')
+    email = request.form['email']
+    if "@fatec.sp.gov.br" not in email:
+      session['notFatec'] = True
+      return render_template('cadastro/index.html')
     
     user = Users(
       nome=name,
@@ -367,18 +377,25 @@ def Usuarios_edit(id):
 # -------------------------------------------------------------------------------------------------
 #  FILTRO DOS CHAMADOS DE UM USUÁRIO LOGADO
 # -------------------------------------------------------------------------------------------------
-@main.route('/meus_chamados')
-def meus_chamados():
+@main.route('/meus_chamados', defaults={'id': None})
+@main.route('/meus_chamados/<id>')
+def meus_chamados(id):
   if not session.get('logged'):
     return redirect(url_for("routes.Index"))
+  if id:
+    chamados = Chamados.query.filter_by(idChamado=id).first()
+    search = chamados.titulo
+    chamados.data = getDate(chamados)
+    chamados = [chamados]
+    print(chamados)
+  else: 
+    search = request.args.get("search")
+    chamados = meus_chamados_filter(request.args.get("status"), request.args.get("categoria"), search)
+    dates = getDates(chamados)
+    for i in range(0, len(chamados)):
+      chamados[i].data = dates[i]
 
-  chamados = meus_chamados_filter(request.args.get("status"), request.args.get("categoria"), request.args.get("search"))
-
-  # chamados = Chamados.query.filter_by(id_usuario=session.get('id_user')).all()
-  dates = getDate(chamados)
-  for i in range(0, len(chamados)):
-    chamados[i].data = dates[i]
-  return render_template('meus-chamados/index.html', chamados=chamados, searched_for=request.args.get("search"), len=len(chamados))
+  return render_template('meus-chamados/index.html', chamados=chamados, searched_for=search, len=len(chamados))
 
 
 def meus_chamados_filter(status, categoria, search):
@@ -429,11 +446,21 @@ def edit_chamados(id):
   chamado.cod_erro_chamado = request.form.get('error')
   chamado.descricao_chamado = request.form.get('desc')
   chamado.status_chamado = request.form.get('status-hidden')
-  db.session.commit()
 
+  if chamado.email:
+    send_notif(chamado.email,request.form.get('status-hidden'),chamado.idChamados)
+  db.session.commit()
   return redirect(url_for('routes.TelaChamados'))
 
 
+def send_notif(email,status,id):
+  msg = Message('SOS FATEC', sender='wedevtm@gmail.com', recipients=[email])
+  link = url_for('routes.meus_chamados', searched_for=id, _external=True)
+  msg.body = f'''
+  Olá estamos entrando em contato para te informar que temos atualizações sobre o chamado que você abriu no SOS FATEC o status dele foi alterado para: {status}
+  link para visualizar o chamado {link}
+  '''
+  mail.send(msg)
 
 @main.route('/contato')
 def contato():
