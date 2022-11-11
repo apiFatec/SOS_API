@@ -238,150 +238,33 @@
         </a>
       </div>
 
+      {% set i = namespace(value=1) %}
+      {% for x in range(0,6) %}
       <div class="fileira1">
-        {% for x in range(1, 4) %}
+        {% for x in range(0,4) %}
         <div class="dropzone">
-          {% if not pcs[x] %}
-          
-          {% else %}
-         {% if session.get('logged') and session.get('categoria') == 'suporte' or session.get('categoria') == 'admin' %}
-          <a href="/{{pcs[x].sala}}/{{pcs[x].numero}}/teladetalhes" class="pc" draggable="true">
-          {% else %}
-          <a href="/abrir-chamado/{{pcs[x].idComputador}}" class="pc" draggable="true">
-          {% endif %}
+          {% for pc in pcs %}
+          {% if i.value|string in "1,2,3,4,5,6,7,8,9" %}
+          {% if pc.numero == "0"+i.value|string %}
+          <a href="/{{pc.sala}}/{{pc.numero}}/teladetalhes" class="pc" draggable="true">
             <img src="{{url_for('static', filename='assets/pc.png')}}" alt="logo-pc">
-            {{pcs[x].sala}}{{pcs[x].numero}}
+            {{pc.sala}}{{pc.numero}}
           </a>
           {% endif %}
-        </div>
-        {% endfor %}
-      </div>
-      <div class="fileira">
-        {% for x in range(4, 7) %}
-        <div class="dropzone">
-          {% if not pcs[x] %}
-          
           {% else %}
-         {% if session.get('logged') and session.get('categoria') == 'suporte' or session.get('categoria') == 'admin' %}
-          <a href="/{{pcs[x].sala}}/{{pcs[x].numero}}/teladetalhes" class="pc" draggable="true">
-          {% else %}
-          <a href="/abrir-chamado/{{pcs[x].idComputador}}" class="pc" draggable="true">
-          {% endif %}
+          {% if pc.numero == i.value|string %}
+          <a href="/{{pc.sala}}/{{pc.numero}}/teladetalhes" class="pc" draggable="true">
             <img src="{{url_for('static', filename='assets/pc.png')}}" alt="logo-pc">
-            {{pcs[x].sala}}{{pcs[x].numero}}
+            {{pc.sala}}{{pc.numero}}
           </a>
           {% endif %}
+          {% endif %}
+          {% endfor %}
         </div>
-        {% endfor %}
+        {% set i.value = i.value + 1 %}
+      {% endfor %}
       </div>
-      <div class="fileira1">
-        {% for x in range(7, 10) %}
-        <div class="dropzone">
-          {% if not pcs[x] %}
-          
-          {% else %}
-         {% if session.get('logged') and session.get('categoria') == 'suporte' or session.get('categoria') == 'admin' %}
-          <a href="/{{pcs[x].sala}}/{{pcs[x].numero}}/teladetalhes" class="pc" draggable="true">
-          {% else %}
-          <a href="/abrir-chamado/{{pcs[x].idComputador}}" class="pc" draggable="true">
-          {% endif %}
-            <img src="{{url_for('static', filename='assets/pc.png')}}" alt="logo-pc">
-            {{pcs[x].sala}}{{pcs[x].numero}}
-          </a>
-          {% endif %}
-        </div>
-        {% endfor %}
-      </div>
-      <div class="fileira">
-        {% for x in range(10, 13) %}
-        <div class="dropzone">
-          {% if not pcs[x] %}
-          
-          {% else %}
-         {% if session.get('logged') and session.get('categoria') == 'suporte' or session.get('categoria') == 'admin' %}
-          <a href="/{{pcs[x].sala}}/{{pcs[x].numero}}/teladetalhes" class="pc" draggable="true">
-          {% else %}
-          <a href="/abrir-chamado/{{pcs[x].idComputador}}" class="pc" draggable="true">
-          {% endif %}
-            <img src="{{url_for('static', filename='assets/pc.png')}}" alt="logo-pc">
-            {{pcs[x].sala}}{{pcs[x].numero}}
-          </a>
-          {% endif %}
-        </div>
-        {% endfor %}
-      </div>
-      <div class="fileira1">
-        {% for x in range(13, 16) %}
-        <div class="dropzone">
-          {% if not pcs[x] %}
-          
-          {% else %}
-         {% if session.get('logged') and session.get('categoria') == 'suporte' or session.get('categoria') == 'admin' %}
-          <a href="/{{pcs[x].sala}}/{{pcs[x].numero}}/teladetalhes" class="pc" draggable="true">
-          {% else %}
-          <a href="/abrir-chamado/{{pcs[x].idComputador}}" class="pc" draggable="true">
-          {% endif %}
-            <img src="{{url_for('static', filename='assets/pc.png')}}" alt="logo-pc">
-            {{pcs[x].sala}}{{pcs[x].numero}}
-          </a>
-          {% endif %}
-        </div>
-        {% endfor %}
-      </div>
-      <div class="fileira">
-        {% for x in range(16, 19) %}
-        <div class="dropzone">
-          {% if not pcs[x] %}
-          
-          {% else %}
-         {% if session.get('logged') and session.get('categoria') == 'suporte' or session.get('categoria') == 'admin' %}
-          <a href="/{{pcs[x].sala}}/{{pcs[x].numero}}/teladetalhes" class="pc" draggable="true">
-          {% else %}
-          <a href="/abrir-chamado/{{pcs[x].idComputador}}" class="pc" draggable="true">
-          {% endif %}
-            <img src="{{url_for('static', filename='assets/pc.png')}}" alt="logo-pc">
-            {{pcs[x].sala}}{{pcs[x].numero}}
-          </a>
-          {% endif %}
-        </div>
-        {% endfor %}
-      </div>
-      <div class="fileira1">
-        {% for x in range(19, 22) %}
-        <div class="dropzone">
-          {% if not pcs[x] %}
-          
-          {% else %}
-         {% if session.get('logged') and session.get('categoria') == 'suporte' or session.get('categoria') == 'admin' %}
-          <a href="/{{pcs[x].sala}}/{{pcs[x].numero}}/teladetalhes" class="pc" draggable="true">
-          {% else %}
-          <a href="/abrir-chamado/{{pcs[x].idComputador}}" class="pc" draggable="true">
-          {% endif %}
-            <img src="{{url_for('static', filename='assets/pc.png')}}" alt="logo-pc">
-            {{pcs[x].sala}}{{pcs[x].numero}}
-          </a>
-          {% endif %}
-        </div>
-        {% endfor %}
-      </div>
-      <div class="fileira">
-        {% for x in range(22, 25) %}
-        <div class="dropzone">
-          {% if not pcs[x] %}
-            <!-- AUSENCIA DE COMPUTADOR -->
-          {% else %}
-         {% if session.get('logged') and session.get('categoria') == 'suporte' or session.get('categoria') == 'admin' %}
-          <a href="/{{pcs[x].sala}}/{{pcs[x].numero}}/teladetalhes" class="pc" draggable="true">
-          {% else %}
-          <a href="/abrir-chamado/{{pcs[x].idComputador}}" class="pc" draggable="true">
-          {% endif %}
-            <img src="{{url_for('static', filename='assets/pc.png')}}" alt="logo-pc">
-            {{pcs[x].sala}}{{pcs[x].numero}}
-          </a>
-          {% endif %}
-        </div>
-        {% endfor %}
-      </div>
+      {% endfor %}
     </div>
   </div>
 
