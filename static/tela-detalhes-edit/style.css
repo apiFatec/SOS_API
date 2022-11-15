@@ -12,7 +12,7 @@ body {
 
 .container {
   display: flex;
-  width: 50%;
+  width: 70%;
   margin: auto;
   flex-direction: column;
   margin-top: 100px;
@@ -94,7 +94,7 @@ body {
 .coluna2 input {
   width: 380px;
   font-family: "Sen", sans-serif;
-  padding: 6px;
+  padding: 4.5px;
 }
 .input_sala input {
   width: 188px;

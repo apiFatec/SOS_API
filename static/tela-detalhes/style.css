@@ -25,6 +25,10 @@ i {
   color: #343434;
 }
 
+.container{
+  width: 70%
+}
+
 .conteudo {
   display: flex;
 }
@@ -82,13 +86,14 @@ i {
   list-style: none;
   display: flexbox;
   font-size: medium;
-  width: 40%;
+  width: 32%;
 }
 .coluna2 {
   list-style: none;
   display: flexbox;
   font-size: medium;
-  width: 500px;
+  width: 33%;
+  margin-left: 5%;
 }
 .coluna1 li {
   margin-top: 15px;
