@@ -309,6 +309,8 @@ def confirmed_email(name):
 
 @main.route('/login', methods=["GET", "POST"])
 def Login():
+  session['errorMail'] = False
+  session['errorPassword'] = False
   if request.method == "POST":
     email = request.form['email']
     senha = request.form['password']
@@ -318,13 +320,18 @@ def Login():
       if check_password_hash(user.senha, senha):
         login_user(user)
         return redirect(url_for('routes.Index'))
+      else:
+        session['errorPassword'] = True
+        return render_template('tela-login/index.html')
 
     if email == "suporte.sjc@fatec.com":
       user_sup = Suporte.query.filter_by(email=email).first()
       if check_password_hash(user_sup.senha, senha):
         login_sup(user_sup)
         return redirect(url_for('routes.Index'))
-
+    else:
+      session['errorMail'] = True
+      return render_template('tela-login/index.html')
 
 
 

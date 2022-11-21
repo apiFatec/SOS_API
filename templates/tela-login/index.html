@@ -25,10 +25,16 @@
                     <i class="fa-regular fa-envelope fa-xl"></i>
                     <input class="em" type="email" name="email" placeholder="Email">
                 </div>
+                {% if session['errorMail'] %}
+                <span class="alert">Você deve digitar um email valido!</span>
+                {% endif %}
                 <div class="senha">
                     <i class="fa-solid fa-lock fa-xl"></i>
                     <input class="sh" type="password" name="password" placeholder="Senha">
                 </div>
+                {% if session['errorPassword'] %}
+                <span class="alert">Senha incorreta!</span>
+                {% endif %}
                 <input type="submit" class="btn" value="Entrar">
 
                 <a class="link" href="/cadastro">Não possui uma conta?<br>Clique aqui para se cadastrar</a>

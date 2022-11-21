@@ -139,3 +139,10 @@ i {
   margin-block-end: 0;
   line-height: 1.25;
 }
+
+.alert {
+  width: 300px;
+  margin: auto;
+  font-size: small;
+  color: red;
+}
