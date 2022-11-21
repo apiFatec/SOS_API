@@ -246,14 +246,14 @@
           {% for pc in pcs %}
           {% if i.value|string in "1,2,3,4,5,6,7,8,9" %}
           {% if pc.numero == "0"+i.value|string %}
-          <a href="/{{pc.sala}}/{{pc.numero}}/teladetalhes" class="pc" draggable="true">
+          <a href="/abrir-chamado/{{pc.idComputador}}" class="pc" draggable="true">
             <img src="{{url_for('static', filename='assets/pc.png')}}" alt="logo-pc">
             {{pc.sala}}{{pc.numero}}
           </a>
           {% endif %}
           {% else %}
           {% if pc.numero == i.value|string %}
-          <a href="/{{pc.sala}}/{{pc.numero}}/teladetalhes" class="pc" draggable="true">
+          <a href="/abrir-chamado/{{pc.idComputador}}" class="pc" draggable="true">
             <img src="{{url_for('static', filename='assets/pc.png')}}" alt="logo-pc">
             {{pc.sala}}{{pc.numero}}
           </a>

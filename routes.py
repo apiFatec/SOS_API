@@ -323,7 +323,6 @@ def Login():
       else:
         session['errorPassword'] = True
         return render_template('tela-login/index.html')
-
     if email == "suporte.sjc@fatec.com":
       user_sup = Suporte.query.filter_by(email=email).first()
       if check_password_hash(user_sup.senha, senha):
