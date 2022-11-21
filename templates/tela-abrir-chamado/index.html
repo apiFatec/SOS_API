@@ -105,17 +105,18 @@
             <h3 class="h3">Categoria</h3>
             <div class="categoria">
                 <label for="categoria1">
-                    <input required type="radio" id="categoria1" value="Hardware" name="categoria">
+                    <input onclick="abrir()" required type="radio" id="categoria1" value="Hardware" name="categoria">
                     Hardware
                 </label>
                 <label for="categoria2">
-                    <input required type="radio" id="categoria2" value="Software" name="categoria">
+                    <input onclick="abrir()" required type="radio" id="categoria2" value="Software" name="categoria">
                     Software
                 </label>
                 <label for="categoria3">
-                    <input required type="radio" id="categoria3" value="Rede" name="categoria">
+                    <input onclick="abrir()" required type="radio" id="categoria3" value="Rede" name="categoria">
                     Rede
                 </label>
+                <div onclick="acao()"  class="abrir_modal">Sugestões de solução</div>
             </div>
 
             <h3 class="h3">Código de error</h3>
@@ -158,6 +159,19 @@
             </div>
         </div>
     </div>
+ 
+    <div class="modal_container" >
+        <div id="modal" >
+            <h3>sugestões de solução</h3>
+            <ul>
+                <li>Verifique se todos os cabos estão conectados</li>
+                <li>Verifique que o compuador está ligado na tomada</li>
+                <li>verifique se o cab da internet está conectado</li>
+                <li>Aperte o botão do monitor</li>
+            </ul>
+            <div class="fechar" onclick="fechar()">Fechar</div>
+        </div>
+    </div>
 
 
     <footer>
@@ -190,6 +204,8 @@
         }
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+    
+  <script src="{{url_for('static', filename='tela-abrir-chamados/script.js')}}"></script>
 </body>
 
 </html>
