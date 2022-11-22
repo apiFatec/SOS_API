@@ -507,3 +507,7 @@ def adicionar_computador():
     print(computador)
 
   return render_template('add-pc/index.html')
+
+@main.route('/sala-aula')
+def sala_aula():
+  return render_template('sala-aula/index.html')
