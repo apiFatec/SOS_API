@@ -511,3 +511,8 @@ def adicionar_computador():
 @main.route('/sala-aula')
 def sala_aula():
   return render_template('sala-aula/index.html')
+
+@main.route('/relatorio')
+def relatorio():
+  return render_template('relatorio/index.html')
+  
