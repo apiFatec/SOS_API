@@ -12,6 +12,7 @@ from mail import mail
 from models.tbl_computador import Computador
 from models.users import Users
 from werkzeug.security import generate_password_hash, check_password_hash
+from models.relatorio import Relatorio
 
 main = Blueprint("routes", __name__)
 
@@ -512,22 +513,25 @@ def adicionar_computador():
 def sala_aula():
   return render_template('sala-aula/index.html')
 
+
 @main.route('/relatorio', methods=["GET", "POST"])
 def relatorio():
   if request.method == "POST":
-    nome = request.form['nome']
-    data = request.form['data']
-    resolucao = request.form['resolucao']
+    nome = request.form.get('nome')
+    data = request.form.get('data')
+    resolucao = request.form.get('resolucao')
    
-    Relatorio = relatorio(
+    relatorio = Relatorio(
       nome=nome,
       data=data,
       resolucao=resolucao
     )
 
-    db.session.add(Relatorio)
+    db.session.add(relatorio)
     db.session.commit()
+    print(relatorio)
     return render_template('home/index.html')
+  
  
   return render_template('relatorio/index.html')
   
