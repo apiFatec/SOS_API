@@ -512,7 +512,22 @@ def adicionar_computador():
 def sala_aula():
   return render_template('sala-aula/index.html')
 
-@main.route('/relatorio')
+@main.route('/relatorio', methods=["GET", "POST"])
 def relatorio():
+  if request.method == "POST":
+    nome = request.form['nome']
+    data = request.form['data']
+    resolucao = request.form['resolucao']
+   
+    Relatorio = relatorio(
+      nome=nome,
+      data=data,
+      resolucao=resolucao
+    )
+
+    db.session.add(Relatorio)
+    db.session.commit()
+    return render_template('home/index.html')
+ 
   return render_template('relatorio/index.html')
   
