@@ -10,37 +10,103 @@ body {
   display: flex;
   flex-direction: column;
 }
-.abrir_modal {
+.abrir_modal_hardware {
   margin-left: 30px;
   border: none;
   text-decoration-line: underline;
   display: none;
+  animation: animate;
 }
-.abrir_modal:hover{
+.abrir_modal_hardware:hover{
   color: rgb(43, 46, 226);
   cursor: pointer;
 }
 
-.modal_container {
+.abrir_modal_software {
+  margin-left: 30px;
+  border: none;
+  text-decoration-line: underline;
+  display: none;
+  animation: animate;
+}
+.abrir_modal_software:hover{
+  color: rgb(43, 46, 226);
+  cursor: pointer;
+}
+
+.abrir_modal_rede {
+  margin-left: 30px;
+  border: none;
+  text-decoration-line: underline;
+  display: none;
+  animation: animate;
+}
+.abrir_modal_rede:hover{
+  color: rgb(43, 46, 226);
+  cursor: pointer;
+}
+
+.modal_container_hardware {
   background-color: rgb(255, 255, 255);
   border: 0.5px solid rgba(31, 28, 28, 0.582);
   border-radius: 10px;
   position: absolute;
   top: 90%;
-  left: 70%;
+  left: 67%;
   display: none;
   animation: animate;
   animation-duration: 0.5s;
 }
 
-.modal_container h3{
+.modal_container_hardware h3{
   text-align: center;
 }
 
-.modal_container ul {
+.modal_container_hardware ul {
   margin-right: 10px;
   
 }
+
+.modal_container_software {
+  background-color: rgb(255, 255, 255);
+  border: 0.5px solid rgba(31, 28, 28, 0.582);
+  border-radius: 10px;
+  position: absolute;
+  top: 90%;
+  left: 67%;
+  display: none;
+  animation: animate;
+  animation-duration: 0.5s;
+}
+
+.modal_container_software h3{
+  text-align: center;
+}
+
+.modal_container_software ul {
+  margin-right: 10px;
+}
+
+.modal_container_rede {
+  background-color: rgb(255, 255, 255);
+  border: 0.5px solid rgba(31, 28, 28, 0.582);
+  border-radius: 10px;
+  position: absolute;
+  top: 90%;
+  left: 67%;
+  display: none;
+  animation: animate;
+  animation-duration: 0.5s;
+}
+
+.modal_container_rede h3{
+  text-align: center;
+}
+
+.modal_container_rede ul {
+  margin-right: 10px;
+}
+
 .fechar {
   width: 50%;
   margin-bottom: 4px;

@@ -15,7 +15,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Sen:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../../static/tela-abrir-chamados/sugestao.css">
     <script src="https://kit.fontawesome.com/00b11d72aa.js" crossorigin="anonymous"></script>
 </head>
 
@@ -106,50 +105,20 @@
             <h3 class="h3">Categoria</h3>
             <div class="categoria">
                 <label for="categoria1">
-                    <input onclick="abrir()" required type="radio" id="categoria1" value="Hardware" name="categoria">
+                    <input onclick="abrir_hardware()" required type="radio" id="categoria1" value="Hardware" name="categoria">
                     Hardware
                 </label>
                 <label for="categoria2">
-                    <input onclick="abrir()" required type="radio" id="categoria2" value="Software" name="categoria">
+                    <input onclick="abrir_software()" required type="radio" id="categoria2" value="Software" name="categoria">
                     Software
                 </label>
                 <label for="categoria3">
-                    <input onclick="abrir()" required type="radio" id="categoria3" value="Rede" name="categoria">
+                    <input onclick="abrir_rede()" required type="radio" id="categoria3" value="Rede" name="categoria">
                     Rede
                 </label>
-                <div onclick="acao()"  class="abrir_modal">Sugestões de solução</div>
-            </div>
-
-            <a href="#modal" class="btn">problemas frequentes</a>
-            <div class="modal" id="modal">
-                <div class="modal-content">
-                    <h2 class="modal-title">Software</h2>
-                    <p class="modal-description">
-                        <article>
-                            <h4>blablabla</h4>
-                            <p>bkabkakbak</p>
-                        </article>
-                    </p>
-                    <br>
-                    <h2 class="modal-title">hardware</h2>
-                    <p class="modal-description">
-                        <article>
-                            <h4>blablabla</h4>
-                            <p>bkabkakbak Lorem ipsum dolor sit amet consectetur, adipisicing elit. Atque, saepe unde, nostrum minus quibusdam recusandae culpa assumenda incidunt beatae nisi rem, magnam numquam fuga consequatur quos delectus dicta. Iusto, corrupti. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolorem, sapiente quasi! Ipsum sint consequatur eligendi ducimus animi! Et nulla repellendus quasi nisi eos ipsam, perspiciatis a nesciunt similique repellat illum.</p>
-                            <h4>blablabla</h4>
-                            <p>bkabkakbak Lorem ipsum dolor sit amet consectetur, adipisicing elit. Atque, saepe unde, nostrum minus quibusdam recusandae culpa assumenda incidunt beatae nisi rem, magnam numquam fuga consequatur quos delectus dicta. Iusto, corrupti. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolorem, sapiente quasi! Ipsum sint consequatur eligendi ducimus animi! Et nulla repellendus quasi nisi eos ipsam, perspiciatis a nesciunt similique repellat illum.</p>
-                        </article>
-                    </p>
-                    <br>
-                    <h2 class="modal-title">Rede</h2>
-                    <p class="modal-description">
-                        <article>
-                            <h4>blablabla</h4>
-                            <p>bkabkakbak</p>
-                        </article>
-                    </p>
-                    <a href="#" class="modal-link">FECHAR</a>
-                </div>
+                <div onclick="acao_hardware()"  class="abrir_modal_hardware">Sugestões de solução</div>
+                <div onclick="acao_software()"  class="abrir_modal_software">Sugestões de solução</div>
+                <div onclick="acao_rede()"  class="abrir_modal_rede">Sugestões de solução</div>
             </div>
 
             <h3 class="h3">Código de error</h3>
@@ -193,19 +162,47 @@
         </div>
     </div>
  
-    <div class="modal_container" >
+    <div class="modal_container_hardware" >
         <div id="modal" >
-            <h3>sugestões de solução</h3>
+            <h3>sugestões para Hardware
+            </h3>
             <ul>
-                <li>Verifique se todos os cabos estão conectados</li>
-                <li>Verifique que o compuador está ligado na tomada</li>
-                <li>verifique se o cab da internet está conectado</li>
-                <li>Aperte o botão do monitor</li>
+                <li><b>Entrada usb não funciona:</b> tente limpar a entrada usb ou atualizar os drivers</li>
+                <li><b>Microfone não funciona ao conectar com o computador:</b> verifique se o computador tem permissão para usar o microfone</li>
+                <li><b>Monitor não apresenta a imagem</b>: verifique se o mesmo está ligado atráves dos botões do monitor localizado na parte inferior do computador e verifique se os cabos que ligam o monitor estão bem conectados</li>
+                <li><b>Computador não liga:</b> verifique se está conectado á tomada</li>
+                <li><b>Travamento do curso do mouse:</b> verifique se o driver está instalado corretamente, caso o travamento seja constatnte verifique se os arquvios do computador ocupam mais que 90% do seu espaço interno, caso sim libere um pouco de espaço</li>
             </ul>
-            <div class="fechar" onclick="fechar()">Fechar</div>
+            <div class="fechar" onclick="fechar_hardware()">Fechar</div>
         </div>
     </div>
 
+    <div class="modal_container_software" >
+        <div id="modal" >
+            <h3>sugestões para Software</h3>
+            <ul>
+                <li><b>Computador lento:</b>  utilize o Windows defender para verificar a presença de malwares, resolução de problemas</li>
+                <li><b>Desligamento repentino:</b> utilize o windows defender para verificar a presença de malwares, resolução de problemas</li>
+                <li><b>Sem som:</b>  a barra de volume está com som? Tem o seu computador ligado a algum aparelho por Bluetooth? O software Windows ou os drivers estão atualizados?, caso não funcione, utilize a resolução de problemas</li>
+                <li><b>dificuldade ao processar alguns programas:</b> verifique se o programa não é muito pesado de acordo com os requisitos interno do seu computador, cpu, memória ram...</li>
+                <li><b>Pop-ups suspeitos na área de trabalho:</b> verificar a presença de malwares no computador Resolução de qualidade baixa: verifique se os drivers estão com o funcionamento correto
+                    </li>
+            </ul>
+            <div class="fechar" onclick="fechar_software()">Fechar</div>
+        </div>
+    </div>
+
+    <div class="modal_container_rede" >
+        <div id="modal" >
+            <h3>sugestões para Rede</h3>
+            <ul>
+                <li><b>Sem internet:</b> verifique se o cabo de rede está conectado ao computador </li>
+                <li><b>Internet lenta:</b> verifique a solução de problema do windows para a resolução da lentidão e feche programas que não estão em uso</li>
+                <li><b>Computador não conecta ao wi-fi:</b> utilize a solução de problemas do windows para encontrar uma possível solução</li>
+            </ul>
+            <div class="fechar" onclick="fechar_rede()">Fechar</div>
+        </div>
+    </div>
 
     <footer>
         <a href="/" class="logo">FATEC</a>
