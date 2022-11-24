@@ -10,6 +10,57 @@ body {
   display: flex;
   flex-direction: column;
 }
+.abrir_modal {
+  margin-left: 30px;
+  border: none;
+  text-decoration-line: underline;
+  display: none;
+}
+.abrir_modal:hover{
+  color: rgb(43, 46, 226);
+  cursor: pointer;
+}
+
+.modal_container {
+  background-color: rgb(255, 255, 255);
+  border: 0.5px solid rgba(31, 28, 28, 0.582);
+  border-radius: 10px;
+  position: absolute;
+  top: 90%;
+  left: 70%;
+  display: none;
+  animation: animate;
+  animation-duration: 0.5s;
+}
+
+.modal_container h3{
+  text-align: center;
+}
+
+.modal_container ul {
+  margin-right: 10px;
+  
+}
+.fechar {
+  width: 50%;
+  margin-bottom: 4px;
+  margin-bottom: 3px;
+  margin-left: 25%;
+  border: 0.5px solid black;
+  border-radius: 7px;
+  cursor: pointer;
+  text-align: center;
+  
+}
+.fechar:hover {
+  background-color: rgb(43, 46, 226);
+  color: #ffffff;
+}
+
+@keyframes animate {
+  from{opacity: 1;}
+  from{opacity: 0;}
+}
 
 #container {
   background-color: #f3f3f3;

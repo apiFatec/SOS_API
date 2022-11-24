@@ -5,15 +5,14 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sala de aula</title>
   <link rel="icon" type="image/x-icon" href="{{url_for('static', filename='assets/favicon.png')}}">
-  <link rel="stylesheet" href="{{url_for('static', filename='sala-grande/style.css')}}">
+  <link rel="stylesheet" href="{{url_for('static', filename='sala-aula/style.css')}}">
   <link rel="stylesheet" href="{{url_for('static', filename='header/style.css')}}">
   <link rel="stylesheet" href="{{url_for('static',filename='footer/style.css')}}">
-  <script src="script.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Sen:wght@400;700&display=swap" rel="stylesheet">
-  <title>Sala {{sala}} - Fatec</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Sen:wght@400;700;800&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -73,8 +72,7 @@
   <div class="container">
     <div class="layout-pcs">
       <nav class="navbar">
-        <a class="voltar" href="/piso/{{piso}}" id="avoltar"><img
-            src="{{url_for('static', filename='assets/voltar.png')}}" alt="">Voltar</a>
+        <a class="voltar" href="/piso/{{piso}}" id="avoltar"><img src="{{url_for('static', filename='assets/voltar.png')}}" alt="">Voltar</a>
         <ul class="lista-nav">
           <span href="#">
             <li id="andar"> Andares
@@ -231,57 +229,43 @@
           </div>
           </li>
       </nav>
-
       <div class="pc-prof">
         <span>Professor</span>
-        <a href="/abrir-chamado/{{pcs[0].idComputador}}"><img src="{{url_for('static', filename='assets/pc.png')}}"
-            alt="icon pc">
-          {% if not pcs[0] %}
-          <figcaption class="pro">nao tem</figcaption>
-          {% else%}
-          <figcaption class="pro">{{pcs[0].sala}}{{pcs[0].numero}}</figcaption>
-          {% endif %}
-        </a>
+        <a href="#"><img src="{{url_for('static', filename='assets/pc.png')}}" alt="icon pc"></a>
       </div>
 
-      {% set i = namespace(value=1) %}
-      {% for x in range(0,6) %}
-      <div class="fileira1">
-        {% for x in range(0,3) %}
-        <div class="dropzone">
-          {% for pc in pcs %}
-          {% if i.value|string in "1,2,3,4,5,6,7,8,9" %}
-          {% if pc.numero == "0"+i.value|string %}
-          <a href="/abrir-chamado/{{pc.idComputador}}" class="pc" draggable="true">
-            <img src="{{url_for('static', filename='assets/pc.png')}}" alt="logo-pc">
-            {{pc.sala}}{{pc.numero}}
-          </a>
-          {% endif %}
-          {% else %}
-          {% if pc.numero == i.value|string %}
-          <a href="/abrir-chamado/{{pc.idComputador}}" class="pc" draggable="true">
-            <img src="{{url_for('static', filename='assets/pc.png')}}" alt="logo-pc">
-            {{pc.sala}}{{pc.numero}}
-          </a>
-          {% endif %}
-          {% endif %}
-          {% endfor %}
-        </div>
-        {% set i.value = i.value + 1 %}
-      {% endfor %}
+      <div class="carteiras">
+        <img src="{{url_for('static', filename='assets/desk.svg')}}" alt="desk">
+        <img src="{{url_for('static', filename='assets/desk.svg')}}" alt="desk">
+        <img src="{{url_for('static', filename='assets/desk.svg')}}" alt="desk">
+        <img src="{{url_for('static', filename='assets/desk.svg')}}" alt="desk">
+        <img src="{{url_for('static', filename='assets/desk.svg')}}" alt="desk">
+        <img src="{{url_for('static', filename='assets/desk.svg')}}" alt="desk">
+        <img src="{{url_for('static', filename='assets/desk.svg')}}" alt="desk">
       </div>
-      {% endfor %}
-      
+      <div class="carteiras">
+        <img src="{{url_for('static', filename='assets/desk.svg')}}" alt="desk">
+        <img src="{{url_for('static', filename='assets/desk.svg')}}" alt="desk">
+        <img src="{{url_for('static', filename='assets/desk.svg')}}" alt="desk">
+        <img src="{{url_for('static', filename='assets/desk.svg')}}" alt="desk">
+        <img src="{{url_for('static', filename='assets/desk.svg')}}" alt="desk">
+        <img src="{{url_for('static', filename='assets/desk.svg')}}" alt="desk">
+        <img src="{{url_for('static', filename='assets/desk.svg')}}" alt="desk">
+      </div>
+      <div class="carteiras">
+        <img src="{{url_for('static', filename='assets/desk.svg')}}" alt="desk">
+        <img src="{{url_for('static', filename='assets/desk.svg')}}" alt="desk">
+        <img src="{{url_for('static', filename='assets/desk.svg')}}" alt="desk">
+        <img src="{{url_for('static', filename='assets/desk.svg')}}" alt="desk">
+        <img src="{{url_for('static', filename='assets/desk.svg')}}" alt="desk">
+        <img src="{{url_for('static', filename='assets/desk.svg')}}" alt="desk">
+        <img src="{{url_for('static', filename='assets/desk.svg')}}" alt="desk">
+      </div>
+
     </div>
-  </div>
-
-  <footer>
-    <a href="#" class="logo">FATEC</a>
-  </footer>
-  {% if session.get('logged') and session.get('categoria') == 'suporte' or session.get('categoria') == 'admin' %}
-  <script src="{{url_for('static', filename='sala-grande/script.js')}}" defer></script>
-  {% endif %}
-</body>
+    <footer>
+      <a href="#" class="logo">FATEC</a>
+    </footer>
 </body>
 
 </html>

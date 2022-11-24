@@ -12,6 +12,7 @@ from mail import mail
 from models.tbl_computador import Computador
 from models.users import Users
 from werkzeug.security import generate_password_hash, check_password_hash
+from models.relatorio import Relatorio
 
 main = Blueprint("routes", __name__)
 
@@ -323,7 +324,6 @@ def Login():
       else:
         session['errorPassword'] = True
         return render_template('tela-login/index.html')
-
     if email == "suporte.sjc@fatec.com":
       user_sup = Suporte.query.filter_by(email=email).first()
       if check_password_hash(user_sup.senha, senha):
@@ -508,3 +508,30 @@ def adicionar_computador():
     print(computador)
 
   return render_template('add-pc/index.html')
+
+@main.route('/sala-aula')
+def sala_aula():
+  return render_template('sala-aula/index.html')
+
+
+@main.route('/relatorio', methods=["GET", "POST"])
+def relatorio():
+  if request.method == "POST":
+    nome = request.form.get('nome')
+    data = request.form.get('data')
+    resolucao = request.form.get('resolucao')
+   
+    relatorio = Relatorio(
+      nome=nome,
+      data=data,
+      resolucao=resolucao
+    )
+
+    db.session.add(relatorio)
+    db.session.commit()
+    print(relatorio)
+    return render_template('home/index.html')
+  
+ 
+  return render_template('relatorio/index.html')
+  

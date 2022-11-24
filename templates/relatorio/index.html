@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static', filename='relatorio/style.css')}}">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/00b11d72aa.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Sen:wght@400;700;800&display=swap" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body>
+    <main >
+        
+        <h1 class="titulo">Relatório de Manutenção</h1>
+      
+        <form action="/relatorio" method="POST">
+           
+            <div class="dados"> 
+                <div>
+                    <h3 class="subtitulo">Nome do técnico:</h3>
+                    <input class="input" type="text" name="nome" id="nome">
+                </div>
+            
+                <div>
+                    <h3 class="subtitulo">Data de finalização:</h3>
+                    <input  class="input" type="date" name="data" id="data">
+                </div>
+
+                <div>
+                    <h3 class="subtitulo">Descrição da resolução do problema:</h3>
+                    <textarea class="input2" type="text" name="resolucao" id="resolucao"></textarea>
+                </div>
+                <input type="submit" class="btn" value="Finalizar">
+            </div>
+
+        </form>
+
+    </main>
+</body>
+</html>
