@@ -2,6 +2,7 @@ from flask import Blueprint, render_template, request, redirect, url_for, sessio
 from datetime import datetime
 from models.Adress import Address
 from models.adm_suporte import Suporte
+from models.bancadas import Bancadas
 from models.chamados import Chamados
 from models.computers import Computadores
 from db import db
@@ -38,12 +39,13 @@ def Piso(num):
 @main.route("/piso/<num>/sala/<sala>")
 def Sala(num, sala):
   pcs = db.session.query(Computadores).filter_by(sala=sala).all()
-  if sala == "402":
-    return render_template("sala-grande/sala402.html", piso=num, sala=sala, pcs=pcs)
-  elif sala == "401" or sala == "301" or sala == "302":
-    return render_template("sala-grande/index.html", piso=num, sala=sala, pcs=pcs)
+  bancada = db.session.query(Bancadas).filter_by(sala=sala).first()
+  if len(pcs) > 0:
+    qtPcBancada = bancada.pcBancadas
+    return render_template("laboratorio/index.html", piso=num, sala=sala, pcs=pcs, bancadas=bancada.numBancadas, qtPc=qtPcBancada)
   else:
-    return render_template("sala-pequena/index.html", piso=num, sala=sala, pcs=pcs)
+    return render_template('sala-aula/index.html', piso=num)
+  
 
 # Tela para abrir um novo chamado
 @main.route("/abrir-chamado/<id>")
@@ -356,6 +358,7 @@ def login_sup(user):
   session['email'] = user.email
   session['logged'] = True
   session['categoria'] = user.categoria
+  session['verified'] = True
   session['id_user'] = user.idUsers_suporte
 
 
@@ -511,11 +514,6 @@ def adicionar_computador():
 
   return render_template('add-pc/index.html')
 
-@main.route('/sala-aula')
-def sala_aula():
-  return render_template('sala-aula/index.html')
-
-
 @main.route('/relatorio', methods=["GET", "POST"])
 def relatorio():
   if request.method == "POST":
@@ -537,3 +535,8 @@ def relatorio():
  
   return render_template('relatorio/index.html')
   
+
+@main.route('/teste')
+def teste():
+  pcs = db.session.query(Computadores).filter_by(sala='402').all()
+  return render_template('teste/index.html', pcs=pcs)
