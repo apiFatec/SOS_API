@@ -1,3 +1,4 @@
+from math import ceil
 from flask import Blueprint, render_template, request, redirect, url_for, session
 from datetime import datetime
 from models.Adress import Address
@@ -40,9 +41,16 @@ def Piso(num):
 def Sala(num, sala):
   pcs = db.session.query(Computadores).filter_by(sala=sala).all()
   bancada = db.session.query(Bancadas).filter_by(sala=sala).first()
+  qtBancadas = bancada.numBancadas
   if len(pcs) > 0:
     qtPcBancada = bancada.pcBancadas
-    return render_template("laboratorio/index.html", piso=num, sala=sala, pcs=pcs, bancadas=bancada.numBancadas, qtPc=qtPcBancada)
+
+    if qtBancadas <= ceil((len(pcs) - 1)/qtPcBancada):
+      qtBancadas = ceil((len(pcs) - 1)/qtPcBancada)
+      print(qtBancadas)
+      bancada.numBancadas = qtBancadas
+      db.session.commit()
+    return render_template("laboratorio/index.html", piso=num, sala=sala, pcs=pcs, bancadas=qtBancadas, qtPc=qtPcBancada)
   else:
     return render_template('sala-aula/index.html', piso=num)
   
@@ -199,6 +207,9 @@ def tela_detalhes_edit(id):
         Computadores.query.filter_by(idComputador=id).update({'patrimonio_gabinete':patrimonio_gabinete})
         db.session.commit()
         return redirect(url_for('routes.teladetalhes', sala=comp.sala, num=comp.numero))
+      else:
+        # verificar se 
+        ""
 
 
       if not has_pc: 
