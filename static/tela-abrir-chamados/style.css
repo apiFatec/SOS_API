@@ -11,7 +11,7 @@ body {
   flex-direction: column;
 }
 .abrir_modal_hardware {
-  margin-left: 30px;
+  margin-left: 10px;
   border: none;
   text-decoration-line: underline;
   display: none;
@@ -23,7 +23,7 @@ body {
 }
 
 .abrir_modal_software {
-  margin-left: 30px;
+  margin-left: 10px;
   border: none;
   text-decoration-line: underline;
   display: none;
@@ -35,7 +35,7 @@ body {
 }
 
 .abrir_modal_rede {
-  margin-left: 30px;
+  margin-left: 10px;
   border: none;
   text-decoration-line: underline;
   display: none;
@@ -51,8 +51,9 @@ body {
   border: 0.5px solid rgba(31, 28, 28, 0.582);
   border-radius: 10px;
   position: absolute;
-  top: 90%;
-  left: 67%;
+  top: 65%;
+  left: 59%;
+  margin-right: 7%;
   display: none;
   animation: animate;
   animation-duration: 0.5s;
@@ -72,8 +73,9 @@ body {
   border: 0.5px solid rgba(31, 28, 28, 0.582);
   border-radius: 10px;
   position: absolute;
-  top: 90%;
-  left: 67%;
+  top: 65%;
+  left: 58%;
+  margin-right: 7%;
   display: none;
   animation: animate;
   animation-duration: 0.5s;
@@ -92,8 +94,9 @@ body {
   border: 0.5px solid rgba(31, 28, 28, 0.582);
   border-radius: 10px;
   position: absolute;
-  top: 90%;
-  left: 67%;
+  top: 85%;
+  left: 58%;
+  margin-right: 7%;
   display: none;
   animation: animate;
   animation-duration: 0.5s;
@@ -112,16 +115,15 @@ body {
   margin-bottom: 4px;
   margin-bottom: 3px;
   margin-left: 25%;
-  border: 0.5px solid black;
+  border: 0.5px solid white;
   border-radius: 7px;
   cursor: pointer;
   text-align: center;
-  
+  background-color:  #182d7b ;
+  color: white;
 }
-.fechar:hover {
-  background-color: rgb(43, 46, 226);
-  color: #ffffff;
-}
+
+
 
 @keyframes animate {
   from{opacity: 1;}
