@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/x-icon" href="{{url_for('static', filename='assets/favicon.png')}}">
-  <link rel="stylesheet" href="{{url_for('static', filename='sala-grande/style.css')}}">
+  <link rel="stylesheet" href="{{url_for('static', filename='laboratorio/style.css')}}">
   <link rel="stylesheet" href="{{url_for('static', filename='header/style.css')}}">
   <link rel="stylesheet" href="{{url_for('static', filename='footer/style.css')}}">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -74,8 +74,9 @@
       <nav class="navbar">
         <a class="voltar" href="/piso/{{piso}}" id="avoltar"><img
             src="{{url_for('static', filename='assets/voltar.png')}}" alt="" />Voltar</a>
-        <ul class="lista-nav">
-          <span href="#">
+        <ul class="lista-nav" style="align-items: center;">
+          <a href="/adicionar_computador" style="margin-right: 30px">Adicionar computador</a>
+          <span>
             <li id="andar"> Andares
           </span>
           <div class="dropAndares">
@@ -194,7 +195,7 @@
               <li id="andar4"><a>Andar 4</a>
                 <div class="dropSala4">
                   <ul>
-                    <a href="../sala-grande/index.html">
+                    <a href="../laboratorio/index.html">
                       <li>Sala 401</li>
                       <a href="#">
                         <li>Sala 402</li>
@@ -232,28 +233,35 @@
       </nav>
       <div class="pc-prof">
         <span>Professor</span>
+        {% if session.get('logged') and session.get('categoria') == 'suporte' or session.get('categoria') == 'admin' %}
+        <a href="/{{pcs[0].sala}}/{{pcs[0].numero}}/teladetalhes"><img src="{{url_for('static', filename='assets/pc.png')}}"
+            alt="icon pc">
+          <figcaption class="pro">{{pcs[0].sala}}{{pcs[0].numero}}</figcaption>
+        </a>
+        {% else %}
         <a href="/abrir-chamado/{{pcs[0].idComputador}}"><img src="{{url_for('static', filename='assets/pc.png')}}"
             alt="icon pc">
           <figcaption class="pro">{{pcs[0].sala}}{{pcs[0].numero}}</figcaption>
         </a>
+        {% endif %}
       </div>
-
       {% set i = namespace(value=1) %}
-      {% for x in range(0,6) %}
+      {% for x in range(0,bancadas) %}
+      {% if session.get('logged') and session.get('categoria') == 'suporte' or session.get('categoria') == 'admin' %}
       <div class="fileira1">
-        {% for x in range(0,4) %}
+        {% for x in range(0,qtPc) %}
         <div class="dropzone">
           {% for pc in pcs %}
           {% if i.value|string in "1,2,3,4,5,6,7,8,9" %}
           {% if pc.numero == "0"+i.value|string %}
-          <a href="/abrir-chamado/{{pc.idComputador}} class="pc" draggable="true">
+          <a href="/{{pc.sala}}/{{pc.numero}}/teladetalhes" class="pc" draggable="true">
             <img src="{{url_for('static', filename='assets/pc.png')}}" alt="logo-pc">
             {{pc.sala}}{{pc.numero}}
           </a>
           {% endif %}
           {% else %}
           {% if pc.numero == i.value|string %}
-          <a href="/abrir-chamado/{{pc.idComputador}} class="pc" draggable="true">
+          <a href="/{{pc.sala}}/{{pc.numero}}/teladetalhes" class="pc" draggable="true">
             <img src="{{url_for('static', filename='assets/pc.png')}}" alt="logo-pc">
             {{pc.sala}}{{pc.numero}}
           </a>
@@ -262,18 +270,46 @@
           {% endfor %}
         </div>
         {% set i.value = i.value + 1 %}
-      {% endfor %}
+        {% endfor %}
       </div>
+      {% else %}
+      <div class="fileira1">
+        {% for x in range(0,qtPc) %}
+        <div class="dropzone">
+          {% for pc in pcs %}
+          {% if i.value|string in "1,2,3,4,5,6,7,8,9" %}
+          {% if pc.numero == "0"+i.value|string %}
+          <a href="/abrir-chamado/{{pc.idComputador}}" class="pc" draggable="true">
+            <img src="{{url_for('static', filename='assets/pc.png')}}" alt="logo-pc">
+            {{pc.sala}}{{pc.numero}}
+          </a>
+          {% endif %}
+          {% else %}
+          {% if pc.numero == i.value|string %}
+          <a href="/402/19/teladetalhes" class="pc" draggable="true">
+            <img src="{{url_for('static', filename='assets/pc.png')}}" alt="logo-pc">
+            {{pc.sala}}{{pc.numero}}
+          </a>
+          {% endif %}
+          {% endif %}
+          {% endfor %}
+        </div>
+        {% set i.value = i.value + 1 %}
+        {% endfor %}
+      </div>
+      {% endif %}
       {% endfor %}
     </div>
   </div>
-
   <footer>
-    <a href="/" class="logo">FATEC</a>
+    <a href="#" class="logo">FATEC</a>
   </footer>
+
   {% if session.get('logged') and session.get('categoria') == 'suporte' or session.get('categoria') == 'admin' %}
-  <script src="{{url_for('static', filename='sala-grande/script.js')}}" defer></script>
+  <script src="{{url_for('static', filename='laboratorio/script.js')}}" defer></script>
   {% endif %}
+
+</body>
 </body>
 
 </html>

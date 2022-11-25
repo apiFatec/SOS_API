@@ -1,11 +1,12 @@
 const pcs = document.querySelectorAll('.pc')
 const dropzones = document.querySelectorAll('.dropzone')
 const vazio = document.querySelector('.vazio')
-
+let endereco;
 pcs.forEach(pc => {
   pc.addEventListener('dragstart', dragstart)
   pc.addEventListener('drag', drag)
   pc.addEventListener('dragend', dragend)
+  
 })
 
 function dragstart() {
@@ -20,6 +21,7 @@ function drag() {
 function dragend() {
   dropzones.forEach(dropzone => dropzone.classList.remove('highlight'))
   this.classList.remove('is-dragging')
+  console.log(this)
 }
 
 dropzones.forEach(dropzone => {
