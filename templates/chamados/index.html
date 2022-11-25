@@ -6,8 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="icon" type="image/x-icon" href="{{url_for('static', filename='assets/favicon.png')}}">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous" />
   <link rel="stylesheet" href="{{url_for('static', filename='footer/style.css')}}">
   <link rel="stylesheet" href="{{url_for('static', filename='chamados/style.css')}}">
   <link rel="stylesheet" href="{{url_for('static', filename='header/style.css')}}">
@@ -49,7 +48,7 @@
       {% endif %}
     </div>
   </header>
-  
+
   <section class="container">
     <nav class="nav">
       <form action="/chamados" class="pesquisa">
@@ -97,8 +96,7 @@
     <section class="cards">
       {% set count = namespace(value=1) %}
       {% for chamado in chamados %}
-      <div class="div" role="button" data-bs-toggle="modal" data-bs-target="#exampleModal"
-        onclick="modal_sup('{{count.value}}')">
+      <div class="div" role="button" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="modal_sup('{{count.value}}')">
         <h3 id="status{{count.value}}" class="{{chamado.status}}">{{chamado.status}}</h3>
         <div>
           <h2 id="title{{count.value}}" class="titulo">{{chamado.titulo}}</h2>
@@ -136,7 +134,7 @@
       <span>Exibindo {{len}} resultados para o titulo: <b>{{searched_for}}</b></span>
       {% endif %}
     </div>
-    
+
     <section class="cards">
       {% if not chamados %}
       <div style="display: flex;flex-direction: column;">
@@ -144,9 +142,8 @@
       </div>
       {% else %}
       {% set count = namespace(value=1) %}
-      {% for chamado in chamados %}
-      <div class="div" role="button" data-bs-toggle="modal" data-bs-target="#exampleModal"
-        onclick="modal('{{count.value}}')">
+      {% for chamado in pagination.items %}
+      <div class="div" role="button" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="modal('{{count.value}}')">
         <h3 id="status{{count.value}}" class="{{chamado.status}}">{{chamado.status}}</h3>
         <div>
           <h2 id="title{{count.value}}" class="titulo">{{chamado.titulo}}</h2>
@@ -181,19 +178,19 @@
     </section>
     {% endif %}
     <ul class="row-list">
-      <a class="row" href="#">
+      <a class="row" href="/chamados/?page=1">
         <li>1</li>
       </a>
-      <a class="row" href="#">
+      <a class="row" href="/chamados/?page=2">
         <li>2</li>
       </a>
-      <a class="row" href="#">
+      <a class="row" href="/chamados/?page=3">
         <li>3</li>
       </a>
-      <a class="row" href="#">
+      <a class="row" href="/chamados/?page=4">
         <li>4</li>
       </a>
-      <a class="row" href="#">
+      <a class="row" href="/chamados/?page={{pagination.next_num}}">
         <li>></li>
       </a>
     </ul>
@@ -240,8 +237,7 @@
           <div class="alter_status">
             <h2>Alterar Status </h2>
             <div class="btn-group status-btn-group">
-              <button type="button" class="btn btn-danger dropdown-toggle drop_btn" data-bs-toggle="dropdown"
-                aria-expanded="false">
+              <button type="button" class="btn btn-danger dropdown-toggle drop_btn" data-bs-toggle="dropdown" aria-expanded="false">
                 Status
               </button>
               <ul class="dropdown-menu">
@@ -308,9 +304,7 @@
     </div>
   </div>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
-    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 
   {% if session.get('logged') and session.get('categoria') == 'suporte' or session.get('categoria') == 'admin' %}
   <script src="{{url_for('static', filename='chamados/script.js')}}"></script>

@@ -101,7 +101,9 @@ def TelaChamados():
   dates = getDates(chamados)
   for i in range(0, len(chamados)):
     chamados[i].data = dates[i]
-  return render_template("chamados/index.html", chamados=chamados, searched_for=request.args.get("search"), len=len(chamados))
+  page = request.args.get('page', 1, type=int)
+  pagination = Chamados.query.filter_by().paginate(page, per_page=8)
+  return render_template("chamados/index.html", chamados=chamados, searched_for=request.args.get("search"), len=len(chamados), pagination=pagination)
 
 
 def Filtrar(status, categoria, search):
