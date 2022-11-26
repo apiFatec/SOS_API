@@ -116,9 +116,9 @@
                     <input onclick="abrir_rede()" required type="radio" id="categoria3" value="Rede" name="categoria">
                     Rede
                 </label>
-                <div onclick="acao_hardware()"  class="abrir_modal_hardware">Sugestões de solução</div>
-                <div onclick="acao_software()"  class="abrir_modal_software">Sugestões de solução</div>
-                <div onclick="acao_rede()"  class="abrir_modal_rede">Sugestões de solução</div>
+                <div onclick="acao_hardware()" class="abrir_modal_hardware">Sugestões de solução</div>
+                <div onclick="acao_software()" class="abrir_modal_software">Sugestões de solução</div>
+                <div onclick="acao_rede()" class="abrir_modal_rede">Sugestões de solução</div>
             </div>
 
             <h3 class="h3">Código de error</h3>
@@ -161,10 +161,10 @@
             </div>
         </div>
     </div>
- 
-    <div class="modal_container_hardware" >
-        <div id="modal" >
-            <h3>sugestões para Hardware
+
+    <div class="modal_container_hardware">
+        <div id="modal">
+            <h3>Sugestões para Hardware
             </h3>
             <ul>
                 <li><b>Entrada usb não funciona:</b> tente limpar a entrada usb ou atualizar os drivers</li>
@@ -177,24 +177,24 @@
         </div>
     </div>
 
-    <div class="modal_container_software" >
-        <div id="modal" >
-            <h3>sugestões para Software</h3>
+    <div class="modal_container_software">
+        <div id="modal">
+            <h3>Sugestões para Software</h3>
             <ul>
-                <li><b>Computador lento:</b>  utilize o Windows defender para verificar a presença de malwares, resolução de problemas</li>
+                <li><b>Computador lento:</b> utilize o Windows defender para verificar a presença de malwares, resolução de problemas</li>
                 <li><b>Desligamento repentino:</b> utilize o windows defender para verificar a presença de malwares, resolução de problemas</li>
-                <li><b>Sem som:</b>  a barra de volume está com som? Tem o seu computador ligado a algum aparelho por Bluetooth? O software Windows ou os drivers estão atualizados?, caso não funcione, utilize a resolução de problemas</li>
+                <li><b>Sem som:</b> a barra de volume está com som? Tem o seu computador ligado a algum aparelho por Bluetooth? O software Windows ou os drivers estão atualizados?, caso não funcione, utilize a resolução de problemas</li>
                 <li><b>dificuldade ao processar alguns programas:</b> verifique se o programa não é muito pesado de acordo com os requisitos interno do seu computador, cpu, memória ram...</li>
                 <li><b>Pop-ups suspeitos na área de trabalho:</b> verificar a presença de malwares no computador Resolução de qualidade baixa: verifique se os drivers estão com o funcionamento correto
-                    </li>
+                </li>
             </ul>
             <div class="fechar" onclick="fechar_software()">Fechar</div>
         </div>
     </div>
 
-    <div class="modal_container_rede" >
-        <div id="modal" >
-            <h3>sugestões para Rede</h3>
+    <div class="modal_container_rede">
+        <div id="modal">
+            <h3>Sugestões para Rede</h3>
             <ul>
                 <li><b>Sem internet:</b> verifique se o cabo de rede está conectado ao computador </li>
                 <li><b>Internet lenta:</b> verifique a solução de problema do windows para a resolução da lentidão e feche programas que não estão em uso</li>
@@ -234,8 +234,8 @@
         }
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
-    
-  <script src="{{url_for('static', filename='tela-abrir-chamados/script.js')}}"></script>
+
+    <script src="{{url_for('static', filename='tela-abrir-chamados/script.js')}}"></script>
 </body>
 
 </html>
