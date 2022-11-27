@@ -5,7 +5,7 @@
 }
 body {
   font-family: "Sen", sans-serif;
-  background: #f7f7f7;
+  background: #fff;
   display: flex;
   flex-direction: column;
 }
@@ -25,8 +25,8 @@ i {
   color: #343434;
 }
 
-.container{
-  width: 70%
+.container {
+  width: 70%;
 }
 
 .conteudo {
@@ -134,10 +134,11 @@ i {
   transition: 0.2s;
 }
 #botao button {
-  padding: 1rem 1.5rem;
-  border-radius: 15px;
+  padding: 0.7rem 1.5rem;
+  border-radius: 10px;
   border: solid 2px transparent;
   color: white;
+  font-size: 11pt;
   background-color: #182d7b;
   text-align: center;
 }

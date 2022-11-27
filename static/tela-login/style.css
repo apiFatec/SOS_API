@@ -18,8 +18,12 @@
 }
 
 .container {
+  width: 100vw;
+  height: 100vh;
   display: flex;
-  margin-top: 150px;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
 
 .corpo {
@@ -117,7 +121,9 @@
 }
 
 .btn:hover {
-  background-color: #1a285f;
+  background-color: #04002c;
+  transition: 0.2s;
+  cursor: pointer;
 }
 
 i {

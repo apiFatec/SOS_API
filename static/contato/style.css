@@ -1,3 +1,9 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Sen", sans-serif;
+}
 body {
   font-family: "Sen", sans-serif;
 }
@@ -51,8 +57,12 @@ body {
   border-color: transparent;
   margin-bottom: 166px;
   margin-top: 30px;
+  cursor: pointer;
 }
-
+.btn:hover {
+  background-color: #030c30;
+  transition: 0.2s;
+}
 input {
   border-color: #dedede;
 }
@@ -82,4 +92,3 @@ button {
   height: 55px;
   margin-top: 9px;
 }
-

@@ -11,15 +11,18 @@ body {
 }
 
 .flex {
+  width: 100vw;
+  height: 100vh;
   display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
 
 .container {
   display: grid;
   grid-template-columns: 1.5fr 2fr;
   grid-template-rows: 1fr;
-  margin: auto;
-  margin-top: 150px;
   border-radius: 10px;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
@@ -122,6 +125,7 @@ button {
 
 button:hover {
   background-color: #04002c;
+  transition: 0.2s;
   cursor: pointer;
 }
 

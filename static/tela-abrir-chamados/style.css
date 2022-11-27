@@ -13,36 +13,34 @@ body {
 .abrir_modal_hardware {
   margin-left: 10px;
   border: none;
-  text-decoration-line: underline;
   display: none;
+  color: #000;
   animation: animate;
 }
 .abrir_modal_hardware:hover {
-  color: rgb(43, 46, 226);
+  color: #182d7b;
   cursor: pointer;
 }
 
 .abrir_modal_software {
   margin-left: 10px;
   border: none;
-  text-decoration-line: underline;
   display: none;
   animation: animate;
 }
 .abrir_modal_software:hover {
-  color: rgb(43, 46, 226);
+  color: #182d7b;
   cursor: pointer;
 }
 
 .abrir_modal_rede {
   margin-left: 10px;
   border: none;
-  text-decoration-line: underline;
   display: none;
   animation: animate;
 }
 .abrir_modal_rede:hover {
-  color: rgb(43, 46, 226);
+  color: #182d7b;
   cursor: pointer;
 }
 
