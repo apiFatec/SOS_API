@@ -99,6 +99,7 @@ def Create(id):
         fk_idComputador=id,
         fk_idUsuario=id_usuario
       )
+      getPc.status = 'Aberto'
       db.session.add(chamado)
       db.session.commit()
       return render_template("tela-abrir-chamado/confirm.html")
@@ -469,6 +470,8 @@ def edit_chamados(id):
   chamado.cod_erro_chamado = request.form.get('error')
   chamado.descricao_chamado = request.form.get('desc')
   chamado.status_chamado = request.form.get('status-hidden')
+  pc = Computador.query.filter_by(idComputador=chamado.fk_idComputador).first()
+  pc.status = request.form.get('status-hidden')
 
   if chamado.email:
     send_notif(chamado.email,request.form.get('status-hidden'),chamado.idChamados)

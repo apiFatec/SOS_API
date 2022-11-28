@@ -237,11 +237,13 @@
         <a href="/{{pcs[0].sala}}/{{pcs[0].numero}}/teladetalhes"><img src="{{url_for('static', filename='assets/pc.png')}}"
             alt="icon pc">
           <figcaption class="pro">{{pcs[0].sala}}{{pcs[0].numero}}</figcaption>
+          <div class="status{{pcs[0].status}}"></div>
         </a>
         {% else %}
         <a href="/abrir-chamado/{{pcs[0].idComputador}}"><img src="{{url_for('static', filename='assets/pc.png')}}"
             alt="icon pc">
           <figcaption class="pro">{{pcs[0].sala}}{{pcs[0].numero}}</figcaption>
+          <div class="status{{pcs[0].status}}"></div>
         </a>
         {% endif %}
       </div>
@@ -257,6 +259,7 @@
           <a href="/{{pc.sala}}/{{pc.numero}}/teladetalhes" class="pc" draggable="true">
             <img src="{{url_for('static', filename='assets/pc.png')}}" alt="logo-pc">
             {{pc.sala}}{{pc.numero}}
+            <div class="status{{pc.status}}"></div>
           </a>
           {% endif %}
           {% else %}
@@ -264,6 +267,7 @@
           <a href="/{{pc.sala}}/{{pc.numero}}/teladetalhes" class="pc" draggable="true">
             <img src="{{url_for('static', filename='assets/pc.png')}}" alt="logo-pc">
             {{pc.sala}}{{pc.numero}}
+            <div class="status{{pc.status}}"></div>
           </a>
           {% endif %}
           {% endif %}
@@ -282,6 +286,7 @@
           <a href="/abrir-chamado/{{pc.idComputador}}" class="pc" draggable="true">
             <img src="{{url_for('static', filename='assets/pc.png')}}" alt="logo-pc">
             {{pc.sala}}{{pc.numero}}
+            <div class="status{{pc.status}}"></div>
           </a>
           {% endif %}
           {% else %}
@@ -289,6 +294,7 @@
           <a href="/402/19/teladetalhes" class="pc" draggable="true">
             <img src="{{url_for('static', filename='assets/pc.png')}}" alt="logo-pc">
             {{pc.sala}}{{pc.numero}}
+            <div class="status{{pc.status}}"></div>
           </a>
           {% endif %}
           {% endif %}

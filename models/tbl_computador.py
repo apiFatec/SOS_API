@@ -18,3 +18,4 @@ class Computador(db.Model):
   Versao = db.Column(db.String, nullable=False)
   fk_idenderecos = db.Column(db.Integer, db.ForeignKey(Address.id_enderecos))
   chamados = db.relationship("TblChamados", backref='computador')
+  status = db.Column(db.String, nullable=False)

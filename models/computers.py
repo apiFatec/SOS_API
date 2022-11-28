@@ -12,6 +12,7 @@ class Computadores(db.Model):
   numero = db.Column(db.String)
   patrimonio_gabinete = db.Column(db.String)
   patrimonio_monitor = db.Column(db.String)
+  status = db.Column(db.String, nullable=False)
 
 
 
