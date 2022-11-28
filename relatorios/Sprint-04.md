@@ -87,25 +87,22 @@ O foco da última sprint, foi a finalização do site, buscando a resolução de
 ## Trabalho desenvolvido
 
 <ul style="display: grid; gap: 20px; grid-template-columns: auto auto">
-  <li>Tela Cadastro
-    <img src="https://user-images.githubusercontent.com/111662298/200141104-00205bc7-eacb-4145-baaa-04efac4e0a2b.png" alt="Home"/>
+  <li>Sala de Aula
+    <img src="https://user-images.githubusercontent.com/111662298/204184385-03843bfa-74e3-4d66-9340-5925da50867e.png" alt="sala-aula"/>
   </li>
-  <li>Tela Login
-    <img src="https://user-images.githubusercontent.com/111662298/200141119-d0d6b583-0d2e-4728-aede-4f000bb3c9e0.png" alt="Carrossel"/>
+  <li>Modal de Sugestões
+    <img src="https://user-images.githubusercontent.com/111662298/204185901-b2249074-012f-44b5-af46-e37fff65b69a.png" alt="sugestões"/>
   </li>
-  <li>Tela de Usuários
-    <img src="https://user-images.githubusercontent.com/111662298/200141139-c639d670-f0d6-4239-b80a-6bcff3d9f54e.png" alt="Chamados-recentes"/>
+  <li>Tela de Relatório
+    <img src="https://user-images.githubusercontent.com/111662298/204184558-3bb7dcd1-193d-4693-a4f8-9df6b1403772.png" alt="relatório"/>
   </li>
   <li>Tela de Contato com o Suporte
-    <img src="https://user-images.githubusercontent.com/111662298/200141160-8480cf19-bb14-486e-8a85-9bc6e6ae2b7b.png" alt="tela-chamados"/>
+    <img src="https://user-images.githubusercontent.com/111662298/204184679-936845dd-4d34-4f8c-aad3-3bd982e3322a.png" alt="suporte"/>
   </li>
-  <li>Tela de Edição do Chamado Aberto
-    <img src="https://user-images.githubusercontent.com/111662298/200200936-778e6aea-579e-4df7-8ce7-1256ae1cfe8f.jpeg" alt="tela-chamados"/>
+  <li>Status nos computadores dos laboratórios
+    <img src="https://user-images.githubusercontent.com/111662298/204184829-7d54a22a-f3b7-45d5-bb08-46d6109dc345.png" alt="status-layout"/>
   </li>
-  <li>Tela de Verificar Email
-    <img src="https://user-images.githubusercontent.com/111662298/200200961-06e97d24-f3a9-46d2-99bc-34fdcdc2b357.jpeg" alt="tela-chamados"/>
-  </li>
-  <li>Tela de Email Verificado
-    <img src="https://user-images.githubusercontent.com/111662298/200200979-298e3fb2-78ea-4808-8b49-edfa64250724.jpeg" alt="tela-chamados"/>
+  <li>Edição de layout laboratórios
+    <img src="https://user-images.githubusercontent.com/111662298/204185392-4dca494a-ed3e-49fe-a272-791ed4360a81.jpg" alt="drag-drop"/>
   </li>
 </ul>
