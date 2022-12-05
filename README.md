@@ -169,5 +169,5 @@
   <li><a href="./relatorios/Sprint-01.md">Sprint 01 - 18/09/2022</a></li>
   <li><a href="./relatorios/Sprint-02.md">Sprint 02 - 09/10/2022</a></li>
   <li><a href="./relatorios/Sprint-03.md">Sprint 03 - 06/11/2022</a></li>
-  <li><a href="">Sprint 04 - 27/11/2022 (indiponível)</a></li>
+  <li><a href="./relatorios/Sprint-04.md">Sprint 04 - 27/11/2022</a></li>
 </ol>

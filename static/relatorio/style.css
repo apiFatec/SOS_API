@@ -2,6 +2,8 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: "Sen", sans-serif;
+
   }
   
   main {
@@ -19,8 +21,9 @@
     border-radius: 10px;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     block-size: 73vh;
-    width: 40vw;
+    width: 35vw;
     text-align: center;
+    padding: 0.5rem;
     
   }
   
@@ -35,20 +38,22 @@
     padding: 0.25rem;
     outline: none;
     border: none;
+    color: #fff;
     background-color: transparent;
     font-family: "Sen", sans-serif;
-    margin-top: 30px;
+    margin: 1rem 0rem 1rem 0rem;
     font-size: 13pt;
   }
 
   .input{
     outline: none;
     border: none;
-    background-color: #eaeaea;
+    border-radius: 10px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    background-color: #fff;
     margin-inline: auto;
     display: flex;
     align-items: center;
-    gap: 10px;
     padding: 10px;
     width: 300px;
     
@@ -56,14 +61,14 @@
   .input2{
     outline: none;
     border: none;
-    background-color: #eaeaea;
+    border-radius: 10px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    background-color: #fff;
     margin-inline: auto;
     align-items: center;
-    
     padding: 10px;
     width: 300px;
     height: 170px;
-    margin-bottom: 20px;
   
   }
 
@@ -81,10 +86,13 @@
     text-align: center;
     font-weight: 700;
     font-size: 11pt;
+    margin-top: 1rem;
     
   }
 
   .btn:hover {
-    background-color: #1a285f;
+    background-color: #03081c;
+    transition: 0.2s;
+    cursor: pointer;
   }
   

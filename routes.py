@@ -103,7 +103,6 @@ def Create(id):
         fk_idComputador=id,
         fk_idUsuario=id_usuario
       )
-      # Computador.query.filter_by(idComputador=id).update({'status':"Aberto"})
       getPc.status = 'Aberto'
       db.session.add(chamado)
       db.session.commit()

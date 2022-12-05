@@ -85,31 +85,30 @@ body {
 }
 
 .Concluído {
-  font-weight: 400;
   padding: 8px 12px;
   text-align: center;
   font-size: 10pt;
   font-family: Arial, Helvetica, sans-serif;
   color: #ffffff;
   background-color: #3eaf3f;
+  font-weight: bolder;
   width: 86px;
   border-radius: 20px;
 }
 
 .Aberto {
-  font-weight: 400;
   padding: 8px 12px;
   text-align: center;
   font-size: 10pt;
   font-family: Arial, Helvetica, sans-serif;
   color: #ffffff;
   background-color: #e14942;
+  font-weight: bolder;
   width: 86px;
   border-radius: 20px;
 }
 
 .Manutenção {
-  font-weight: 400;
   padding: 8px 12px;
   text-align: center;
   font-size: 10pt;
@@ -117,6 +116,7 @@ body {
   color: #ffffff;
   background-color: #e1ce25;
   width: 100px;
+  font-weight: bolder;
   border-radius: 20px;
 }
 
@@ -174,7 +174,7 @@ section h3 {
 }
 
 .row:hover {
-  background-color: #4a73ff;
+  background-color: #182d7b;
   color: #fff;
   transition: 0.2s;
   border-color: transparent;
@@ -278,7 +278,6 @@ input::-webkit-search-results-decoration {
 }
 
 .right span {
-  margin-bottom: 10px;
   width: 330px;
 }
 
@@ -300,7 +299,7 @@ input::-webkit-search-results-decoration {
   display: flex;
   flex-direction: column;
   width: 100%;
-  margin-top: 30px;
+  margin-top: 15px;
 }
 
 .bottom_sup textarea {
@@ -308,6 +307,7 @@ input::-webkit-search-results-decoration {
   resize: none;
   height: 120px;
   padding: 5px;
+  border-radius: 10px;
   width: 85%;
 }
 
@@ -326,6 +326,10 @@ input::-webkit-search-results-decoration {
 }
 .body-modal label input {
   font-size: 15px;
+  border-radius: 10px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  border: solid 0.2px;
+  padding: 0.3rem;
   font-weight: 400;
 }
 
@@ -382,6 +386,11 @@ input::-webkit-search-results-decoration {
 }
 
 .drop_btn {
-  background-color: #0d6efd;
+  background-color: #182d7b;
+  color: white;
+}
+
+.btn-primary {
+  background-color: #182d7b;
   color: white;
 }

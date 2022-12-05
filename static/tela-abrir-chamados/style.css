@@ -11,75 +11,78 @@ body {
   flex-direction: column;
 }
 .abrir_modal_hardware {
-  margin-left: 30px;
+  margin-left: 10px;
   border: none;
-  text-decoration-line: underline;
   display: none;
+  color: #000;
   animation: animate;
 }
-.abrir_modal_hardware:hover{
-  color: rgb(43, 46, 226);
+.abrir_modal_hardware:hover {
+  color: #182d7b;
   cursor: pointer;
 }
 
 .abrir_modal_software {
-  margin-left: 30px;
+  margin-left: 10px;
   border: none;
-  text-decoration-line: underline;
   display: none;
   animation: animate;
 }
-.abrir_modal_software:hover{
-  color: rgb(43, 46, 226);
+.abrir_modal_software:hover {
+  color: #182d7b;
   cursor: pointer;
 }
 
 .abrir_modal_rede {
-  margin-left: 30px;
+  margin-left: 10px;
   border: none;
-  text-decoration-line: underline;
   display: none;
   animation: animate;
 }
-.abrir_modal_rede:hover{
-  color: rgb(43, 46, 226);
+.abrir_modal_rede:hover {
+  color: #182d7b;
   cursor: pointer;
 }
 
 .modal_container_hardware {
   background-color: rgb(255, 255, 255);
-  border: 0.5px solid rgba(31, 28, 28, 0.582);
+  border: 0.5px solid transparent;
   border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 4px 12px;
   position: absolute;
-  top: 90%;
-  left: 67%;
+  top: 65%;
+  padding: 2rem;
+  left: 55%;
+  margin-right: 7%;
   display: none;
   animation: animate;
   animation-duration: 0.5s;
 }
 
-.modal_container_hardware h3{
+.modal_container_hardware h3 {
   text-align: center;
 }
 
 .modal_container_hardware ul {
   margin-right: 10px;
-  
 }
 
 .modal_container_software {
   background-color: rgb(255, 255, 255);
-  border: 0.5px solid rgba(31, 28, 28, 0.582);
+  border: 0.5px solid transparent;
   border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 4px 12px;
   position: absolute;
-  top: 90%;
-  left: 67%;
+  padding: 2rem;
+  top: 65%;
+  left: 58%;
+  margin-right: 7%;
   display: none;
   animation: animate;
   animation-duration: 0.5s;
 }
 
-.modal_container_software h3{
+.modal_container_software h3 {
   text-align: center;
 }
 
@@ -89,17 +92,20 @@ body {
 
 .modal_container_rede {
   background-color: rgb(255, 255, 255);
-  border: 0.5px solid rgba(31, 28, 28, 0.582);
+  border: 0.5px solid transparent;
   border-radius: 10px;
   position: absolute;
-  top: 90%;
-  left: 67%;
+  top: 75%;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 4px 12px;
+  padding: 2rem;
+  left: 55%;
+  margin-right: 7%;
   display: none;
   animation: animate;
   animation-duration: 0.5s;
 }
 
-.modal_container_rede h3{
+.modal_container_rede h3 {
   text-align: center;
 }
 
@@ -108,24 +114,29 @@ body {
 }
 
 .fechar {
-  width: 50%;
-  margin-bottom: 4px;
-  margin-bottom: 3px;
-  margin-left: 25%;
-  border: 0.5px solid black;
+  width: 25%;
+  border: 0.5px solid white;
   border-radius: 7px;
   cursor: pointer;
+  padding: 0.6rem 1rem;
+  margin: auto;
   text-align: center;
-  
+  background-color: #182d7b;
+  color: white;
+  transition: 0.2s;
 }
+
 .fechar:hover {
-  background-color: rgb(43, 46, 226);
-  color: #ffffff;
+  background-color: #0c1537;
 }
 
 @keyframes animate {
-  from{opacity: 1;}
-  from{opacity: 0;}
+  from {
+    opacity: 1;
+  }
+  from {
+    opacity: 0;
+  }
 }
 
 #container {
