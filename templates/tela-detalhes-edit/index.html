@@ -131,8 +131,13 @@
                                     </li>
 
                                     <li class="input_sala">
+                                        {% if comp.out %}
+                                        <input type="text" value="{{comp.sala}}" name="sala" placeholder="sala {{comp.sala}}" disabled>
+                                        <input type="text" value="{{comp.numero}}" name="numero" placeholder='{{comp.numero}}' disabled>
+                                        {% else %}
                                         <input type="text" value="{{comp.sala}}" name="sala" placeholder="sala {{comp.sala}}">
                                         <input type="text" value="{{comp.numero}}" name="numero" placeholder='{{comp.numero}}'>
+                                        {% endif %}
                                     </li>
 
                                     <li>

@@ -234,8 +234,8 @@
       <div class="pc-prof">
         <span>Professor</span>
         {% if session.get('logged') and session.get('categoria') == 'suporte' or session.get('categoria') == 'admin' %}
-        <a href="/{{pcs[0].sala}}/{{pcs[0].numero}}/teladetalhes"><img src="{{url_for('static', filename='assets/pc.png')}}"
-            alt="icon pc">
+        <a href="/{{pcs[0].sala}}/{{pcs[0].numero}}/teladetalhes"><img
+            src="{{url_for('static', filename='assets/pc.png')}}" alt="icon pc">
           <figcaption class="pro">{{pcs[0].sala}}{{pcs[0].numero}}</figcaption>
         </a>
         {% else %}
@@ -250,26 +250,26 @@
       {% if session.get('logged') and session.get('categoria') == 'suporte' or session.get('categoria') == 'admin' %}
       <div class="fileira1">
         {% for x in range(0,qtPc) %}
-        <div class="dropzone">
+        <div class="dropzone" id="{{i.value}}">
           {% for pc in pcs %}
           {% if i.value|string in "1,2,3,4,5,6,7,8,9" %}
           {% if pc.numero == "0"+i.value|string %}
-          <a href="/{{pc.sala}}/{{pc.numero}}/teladetalhes" class="pc" draggable="true">
+          <a href="/{{pc.sala}}/{{pc.numero}}/teladetalhes" id="{{pc.sala}}{{pc.numero}}" class="pc" draggable="true">
             <img src="{{url_for('static', filename='assets/pc.png')}}" alt="logo-pc">
             {{pc.sala}}{{pc.numero}}
           </a>
           {% endif %}
           {% else %}
           {% if pc.numero == i.value|string %}
-          <a href="/{{pc.sala}}/{{pc.numero}}/teladetalhes" class="pc" draggable="true">
+          <a href="/{{pc.sala}}/{{pc.numero}}/teladetalhes" id="{{pc.sala}}{{pc.numero}}" class="pc" draggable="true">
             <img src="{{url_for('static', filename='assets/pc.png')}}" alt="logo-pc">
             {{pc.sala}}{{pc.numero}}
           </a>
           {% endif %}
           {% endif %}
           {% endfor %}
+          {% set i.value = i.value + 1 %}
         </div>
-        {% set i.value = i.value + 1 %}
         {% endfor %}
       </div>
       {% else %}
@@ -301,6 +301,29 @@
       {% endfor %}
     </div>
   </div>
+  <section class="editLayout">
+    <div class="top">
+      <button class="backPc" onclick="voltarTodos()">Restaurar posição dos computadores </button>
+      <button class="salvarPc" style="visibility: hidden;" id="salvar" onclick="alterarEndereco()">Salvar
+        Alterações</button>
+    </div>
+    <div class="drops">
+      {% for i in range(0,6) %}
+      {% if outPc[i] %}
+      <div class="dropzone dropEdit">
+        <a href="/{{outPc[i].sala}}/{{outPc[i].oldLocale[3:]}}/teladetalhes" id="{{outPc[i].sala}}{{outPc[i].oldLocale[3:]}}" class="pc"
+          draggable="true">
+          <img src="{{url_for('static', filename='assets/pc.png')}}" alt="logo-pc">
+          {{outPc[i].oldLocale}}
+        </a>
+      </div>
+      {% else %}
+      <div class="dropzone dropEdit">
+      </div>
+      {% endif %}
+      {% endfor %}
+    </div>
+  </section>
   <footer>
     <a href="#" class="logo">FATEC</a>
   </footer>

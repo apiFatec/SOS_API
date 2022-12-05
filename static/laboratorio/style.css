@@ -38,6 +38,62 @@ img {
   direction: rtl;
 }
 
+.editLayout {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  background-color: #f8f8f8;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 4px 12px;
+  width: fit-content;
+  margin-inline: auto;
+  margin-block: 30px;
+  border-radius: 20px;
+}
+
+.dropEdit {
+  background-color: lightgray;
+  border-radius: 5px;
+}
+
+.drops {
+  display: flex;
+  gap: 10px;
+}
+
+.backPc {
+  padding: 16px;
+  border-radius: 8px;
+  background-color: #182d7b;
+  color: white;
+  outline: none;
+  border: none;
+  margin: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.backPc:hover {
+  background-color: #4560c2;
+}
+
+.salvarPc {
+  padding: 16px;
+  border-radius: 8px;
+  background-color: green;
+  color: white;
+  outline: none;
+  border: none;
+  margin: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.salvarPc:hover {
+  background-color: rgb(23, 83, 23);
+}
+
 .pc-prof a:hover,
 a:visited {
   background-color: rgb(215, 215, 215);
@@ -107,6 +163,7 @@ a:visited {
   border-radius: 6px;
   box-shadow: rgba(0, 0, 0, 0.1) 4px 6px 15px;
 }
+
 
 .navbar {
   justify-content: space-between;
@@ -365,7 +422,9 @@ a:visited {
   width: 70px;
   height: 80px;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
+  border-radius: 5px;
 }

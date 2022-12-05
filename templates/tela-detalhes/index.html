@@ -11,7 +11,8 @@
   <link rel="stylesheet" href="{{url_for('static', filename= 'tela-detalhes/style.css')}}">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Sen:wght@400;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Sen:wght@400;700;800&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="../../static/tela-detalhes/sugestao.css">
   <script src="https://kit.fontawesome.com/731346dae6.js" crossorigin="anonymous"></script>
 
@@ -103,7 +104,11 @@
                   <li>{{comp.ram}}</li>
                   <li>Sistema Operacional de {{comp.tipo_sis}} bits</li>
                   <li>{{comp.versao}}</li>
+                  {% if comp.out %}
+                  <li>sala {{comp.sala}}, computador {{comp.oldLocale[3:]}} em manutenção</li>
+                  {% else %}
                   <li>sala {{comp.sala}}, computador {{comp.numero}}</li>
+                  {% endif %}
                   <li>{{comp.patrimonio_gabinete}}</li>
                 </ul>
               </div>

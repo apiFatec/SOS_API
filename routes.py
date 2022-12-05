@@ -39,7 +39,12 @@ def Piso(num):
 # Função para abrir sala grande ou sala pequena dependendo dos parametros que forem passados.
 @main.route("/piso/<num>/sala/<sala>")
 def Sala(num, sala):
+  outPc = []
   pcs = db.session.query(Computadores).filter_by(sala=sala).all()
+  for pc in pcs:
+    if pc.out:
+      outPc.append(pc)
+
   bancada = db.session.query(Bancadas).filter_by(sala=sala).first()
   qtBancadas = bancada.numBancadas
   if len(pcs) > 0:
@@ -47,10 +52,9 @@ def Sala(num, sala):
 
     if qtBancadas <= ceil((len(pcs) - 1)/qtPcBancada):
       qtBancadas = ceil((len(pcs) - 1)/qtPcBancada)
-      print(qtBancadas)
       bancada.numBancadas = qtBancadas
       db.session.commit()
-    return render_template("laboratorio/index.html", piso=num, sala=sala, pcs=pcs, bancadas=qtBancadas, qtPc=qtPcBancada)
+    return render_template("laboratorio/index.html", piso=num, sala=sala, pcs=pcs, bancadas=qtBancadas, qtPc=qtPcBancada, outPc=outPc)
   else:
     return render_template('sala-aula/index.html', piso=num)
   
@@ -99,6 +103,8 @@ def Create(id):
         fk_idComputador=id,
         fk_idUsuario=id_usuario
       )
+      # Computador.query.filter_by(idComputador=id).update({'status':"Aberto"})
+      getPc.status = 'Aberto'
       db.session.add(chamado)
       db.session.commit()
       return render_template("tela-abrir-chamado/confirm.html")
@@ -175,8 +181,12 @@ def HomeChamado():
 
 @main.route('/<int:sala>/<int:num>/teladetalhes')
 def teladetalhes(sala,num):
-    comp =  Computadores.query.filter_by(sala=sala, numero=num).first()
-    return render_template('tela-detalhes/index.html', comp=comp)
+    compOut =  Computadores.query.filter_by(oldLocale=f"{sala}"+f"{num}", out=True).first()
+    if compOut:
+      return render_template('tela-detalhes/index.html', comp=compOut)
+    else:
+      comp =  Computadores.query.filter_by(sala=sala, numero=num).first()
+      return render_template('tela-detalhes/index.html', comp=comp)
   
 
 
@@ -186,6 +196,9 @@ def teladetalhes(sala,num):
 def tela_detalhes_edit(id):
   if session.get('categoria') == 'suporte' or session.get('categoria') == 'admin':
     comp = Computadores.query.filter_by(idComputador=id).first()
+    if comp.out:
+      comp.numero = comp.oldLocale[3:] + " em manutenção"
+
     if request.method == 'POST':
       win = request.form['win']
       processador = request.form['processador']
@@ -469,6 +482,8 @@ def edit_chamados(id):
   chamado.cod_erro_chamado = request.form.get('error')
   chamado.descricao_chamado = request.form.get('desc')
   chamado.status_chamado = request.form.get('status-hidden')
+  pc = Computador.query.filter_by(idComputador=chamado.fk_idComputador).first()
+  pc.status = request.form.get('status-hidden')
 
   if chamado.email:
     send_notif(chamado.email,request.form.get('status-hidden'),chamado.idChamados)
@@ -551,3 +566,26 @@ def relatorio():
 def teste():
   pcs = db.session.query(Computadores).filter_by(sala='402').all()
   return render_template('teste/index.html', pcs=pcs)
+
+@main.route('/edit_layout', methods=['POST', 'GET'])
+def editLayout():
+  if request.method == "POST":
+    for alterPc in request.get_json(force=True):
+      print(alterPc)
+      pc = Computadores.query.filter(db.and_(Computadores.sala ==alterPc['old'][:3] , Computadores.numero == alterPc['old'][3:])).first()
+      hasPc = Computadores.query.filter(db.and_(Computadores.sala ==alterPc['new'][:3] , Computadores.numero == alterPc['new'][3:])).first()
+      if alterPc['new'] == "manutencao":
+        pc.out = True
+        pc.oldLocale = alterPc['old']
+        pc.numero = ""
+        print("oldlocal")
+      elif not hasPc:
+        print("haspc")
+        pc.sala = alterPc['new'][:3]
+        pc.numero = alterPc['new'][3:]
+        print("foi")
+      else: print("nao foi")
+      db.session.commit()
+    return ""
+  else: 
+    return ""
