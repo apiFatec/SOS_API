@@ -162,23 +162,23 @@ async function alterarEndereco() {
     return a.old - b.old
   })
   console.log(data)
-  // const response = await fetch('http://127.0.0.1:5000/edit_layout', {
-  //   method: 'POST', // or 'PUT'
-  //   headers: {
-  //     'Content-Type': 'application/json'
-  //   },
-  //   // redirect: 'follow',
-  //   body: JSON.stringify(data),
-  // })
-  //   .then((response) => response)
-  //   .then((data) => {
-  //     console.log('Success:', data);
-  //     window.location.reload();
-  //   })
-  //   .catch((error) => {
-  //     console.error('Error:', error);
-  //   });
-  // return response
+  const response = await fetch('http://127.0.0.1:5000/edit_layout', {
+    method: 'POST', // or 'PUT'
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    // redirect: 'follow',
+    body: JSON.stringify(data),
+  })
+    .then((response) => response)
+    .then((data) => {
+      console.log('Success:', data);
+      window.location.reload();
+    })
+    .catch((error) => {
+      console.error('Error:', error);
+    });
+  return response
 
 }
 

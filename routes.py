@@ -570,20 +570,22 @@ def teste():
 def editLayout():
   if request.method == "POST":
     for alterPc in request.get_json(force=True):
-      print(alterPc)
-      pc = Computadores.query.filter(db.and_(Computadores.sala ==alterPc['old'][:3] , Computadores.numero == alterPc['old'][3:])).first()
-      hasPc = Computadores.query.filter(db.and_(Computadores.sala ==alterPc['new'][:3] , Computadores.numero == alterPc['new'][3:])).first()
       if alterPc['new'] == "manutencao":
-        pc.out = True
-        pc.oldLocale = alterPc['old']
-        pc.numero = ""
-        print("oldlocal")
-      elif not hasPc:
-        print("haspc")
-        pc.sala = alterPc['new'][:3]
-        pc.numero = alterPc['new'][3:]
-        print("foi")
-      else: print("nao foi")
+        outPc = Computadores.query.filter(db.and_(Computadores.sala ==alterPc['old'][:3] , Computadores.oldLocale == alterPc['old'])).first()
+        if outPc:
+          outPc.out = True
+          outPc.oldLocale = alterPc['old']
+          outPc.numero = ""
+          print("oldlocal")
+      else:
+        pc = Computadores.query.filter(db.and_(Computadores.sala ==alterPc['old'][:3] , Computadores.numero == alterPc['old'][3:])).first()
+        hasPc = Computadores.query.filter(db.and_(Computadores.sala ==alterPc['new'][:3] , Computadores.numero == alterPc['new'][3:])).first()
+        if not hasPc:
+          print("haspc")
+          pc.sala = alterPc['new'][:3]
+          pc.numero = alterPc['new'][3:]
+          print("foi")
+        else: print("nao foi")
       db.session.commit()
     return ""
   else: 

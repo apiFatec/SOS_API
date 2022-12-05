@@ -13,7 +13,7 @@ class Computadores(db.Model):
   patrimonio_gabinete = db.Column(db.String)
   patrimonio_monitor = db.Column(db.String)
   status = db.Column(db.String, nullable=False)
-  out = db.Column(db.Integer)
+  out = db.Column(db.Boolean)
   oldLocale = db.Column(db.String)
 
 
