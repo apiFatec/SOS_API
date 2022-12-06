@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="{{url_for('static', filename='header/style.css')}}">
   <link rel="stylesheet" href="{{url_for('static', filename='tela-abrir-chamados/styleConfirm.css')}}">
   <title>Document</title>
+  <script src="https://kit.fontawesome.com/731346dae6.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -39,14 +40,14 @@
   <main>
     <div class="card">
       <label for="">
-        <h2 >Chamado enviado com sucesso</h2>
-        <span >
-          Você pode acompanha-lo pela tela de
-          <a href="/chamados">Chamados</a>
-        </span>
+        <h2>Chamado enviado com sucesso!</h2>
       </label>
-      <img src="{{url_for('static', filename='assets/Vector.svg')}}" alt="sucesso">
-      <a class="ok" href="/">OK</a>
+      <a class="x" href="/"><i class="fa-solid fa-xmark fa-xl"></i></a>
+      <img src="{{url_for('static', filename='assets/mark.png')}}" alt="confirm">
+      <span>
+        Você pode acompanha-lo pela tela de Chamados
+        <input type="button" value="Chamados" class="but">
+      </span>
     </div>
   </main>
 

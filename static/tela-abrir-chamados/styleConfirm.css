@@ -14,7 +14,7 @@ body {
 }
 
 main {
-  background-color: #F8F8F8;
+  background-color: #f8f8f8;
   height: 100vh;
   display: flex;
   justify-content: center;
@@ -24,18 +24,20 @@ main {
 .card {
   display: flex;
   flex-direction: column;
-  padding: 20px 50px;
+  padding: 1.8rem;
   border-radius: 10px;
   background-color: white;
   justify-content: space-between;
   width: fit-content;
   align-items: center;
   gap: 40px;
-  box-shadow: 4px 4px 4px 1px rgba(0, 0, 0, 0.1);
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
 .card label {
   text-align: center;
+  display: flex;
+  gap: 2rem;
 }
 
 .card label a:visited {
@@ -51,25 +53,42 @@ main {
 }
 
 .card img {
-  width: 210px;
+  width: 128px;
 }
 
-.ok {
+.but {
   text-decoration: none;
   padding: 10px;
-  width: 60px;
-  background-color: #07185A;
+  background-color: #07185a;
   color: white;
   border-radius: 5px;
   text-align: center;
-  align-self: flex-end;
   font-weight: 600;
-  border: 1px solid #07185A;
+  border: 1px solid #07185a;
+  transition: 0.2s;
+}
+.but:hover {
+  background-color: white;
+  border: 1px solid #07185a;
+  color: #07185a;
+  font-weight: 600;
+  transition: 0.2s;
+  cursor: pointer;
 }
 
-.ok:hover {
-  background-color: white;
-  border: 1px solid #07185A;
-  color: #07185A;
-  font-weight: 600;
+span {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+h2 {
+  color: #07185a;
+}
+.x {
+  position: absolute;
+  right: 43.5rem;
+  top: 20.4rem;
+  color: #07185a;
 }
