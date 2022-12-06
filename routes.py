@@ -45,9 +45,9 @@ def Sala(num, sala):
     if pc.out:
       outPc.append(pc)
 
-  bancada = db.session.query(Bancadas).filter_by(sala=sala).first()
-  qtBancadas = bancada.numBancadas
   if len(pcs) > 0:
+    bancada = db.session.query(Bancadas).filter_by(sala=sala).first()
+    qtBancadas = bancada.numBancadas
     qtPcBancada = bancada.pcBancadas
 
     if qtBancadas <= ceil((len(pcs) - 1)/qtPcBancada):
