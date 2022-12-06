@@ -102,8 +102,41 @@ a:visited {
   transition: 0.4s;
 }
 
-.pc-prof {
+.top-layout {
   grid-column: 2;
+  display: flex;
+}
+
+.legenda {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.legenda > label {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 10px;
+  margin-right: 30px;
+}
+
+.leg1 {
+  background-color: red;
+  width: 30px;
+  height: 30px;
+  border-radius: 5px;
+}
+.leg2 {
+  background-color: #d4d011;
+  width: 30px;
+  height: 30px;
+  border-radius: 5px;
+}
+.leg {}
+
+.pc-prof {
+  grid-column: 1;
 
   margin: 0px 2rem 10px 100px;
   display: flex;

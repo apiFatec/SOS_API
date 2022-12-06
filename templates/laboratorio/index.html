@@ -72,7 +72,8 @@
   <div class="container">
     <div class="layout-pcs">
       <nav class="navbar">
-        <a class="voltar" href="/piso/{{piso}}" id="avoltar"><img src="{{url_for('static', filename='assets/voltar.png')}}" alt="" />Voltar</a>
+        <a class="voltar" href="/piso/{{piso}}" id="avoltar"><img
+            src="{{url_for('static', filename='assets/voltar.png')}}" alt="" />Voltar</a>
         <ul class="lista-nav" style="align-items: center;">
           <a href="/adicionar_computador" style="margin-right: 30px">Adicionar computador</a>
           <span>
@@ -230,21 +231,42 @@
           </div>
           </li>
       </nav>
-      <div class="pc-prof">
-        <span>Professor</span>
-        {% if session.get('logged') and session.get('categoria') == 'suporte' or session.get('categoria') == 'admin' %}
-        <a href="/{{pcs[0].sala}}/{{pcs[0].numero}}/teladetalhes"><img
-            src="{{url_for('static', filename='assets/pc.png')}}" alt="icon pc">
-          <figcaption class="pro">{{pcs[0].sala}}{{pcs[0].numero}}</figcaption>
-          <div class="status{{pcs[0].status}}"></div>
-        </a>
-        {% else %}
-        <a href="/abrir-chamado/{{pcs[0].idComputador}}"><img src="{{url_for('static', filename='assets/pc.png')}}" alt="icon pc">
-          <figcaption class="pro">{{pcs[0].sala}}{{pcs[0].numero}}</figcaption>
-          <div class="status{{pcs[0].status}}"></div>
-        </a>
-        {% endif %}
+      <div class="legenda">
+        <label for="leg1">
+          <div class="leg1" id="leg1"></div>
+          Computador com problemas
+        </label>
+        <label for="leg2">
+          <div class="leg2" id="leg2"></div>
+          Computador em manutenção
+        </label>
+        <label for="leg3">
+          <div class="leg3" id="leg3"></div>
+        </label>
       </div>
+
+      <div class="top-layout">
+
+        <div class="pc-prof">
+          <span>Professor</span>
+          {% if session.get('logged') and session.get('categoria') == 'suporte' or session.get('categoria') == 'admin'
+          %}
+          <a href="/{{pcs[0].sala}}/{{pcs[0].numero}}/teladetalhes"><img
+              src="{{url_for('static', filename='assets/pc.png')}}" alt="icon pc">
+            <figcaption class="pro">{{pcs[0].sala}}{{pcs[0].numero}}</figcaption>
+            <div class="status{{pcs[0].status}}"></div>
+          </a>
+          {% else %}
+          <a href="/abrir-chamado/{{pcs[0].idComputador}}"><img src="{{url_for('static', filename='assets/pc.png')}}"
+              alt="icon pc">
+            <figcaption class="pro">{{pcs[0].sala}}{{pcs[0].numero}}</figcaption>
+            <div class="status{{pcs[0].status}}"></div>
+          </a>
+          {% endif %}
+        </div>
+
+      </div>
+
       {% set i = namespace(value=1) %}
       {% for x in range(0,bancadas) %}
       {% if session.get('logged') and session.get('categoria') == 'suporte' or session.get('categoria') == 'admin' %}
@@ -315,8 +337,8 @@
       {% for i in range(0,6) %}
       {% if outPc[i] %}
       <div class="dropzone dropEdit">
-        <a href="/{{outPc[i].sala}}/{{outPc[i].oldLocale[3:]}}/teladetalhes" id="{{outPc[i].sala}}{{outPc[i].oldLocale[3:]}}" class="pc"
-          draggable="true">
+        <a href="/{{outPc[i].sala}}/{{outPc[i].oldLocale[3:]}}/teladetalhes"
+          id="{{outPc[i].sala}}{{outPc[i].oldLocale[3:]}}" class="pc" draggable="true">
           <img src="{{url_for('static', filename='assets/pc.png')}}" alt="logo-pc">
           {{outPc[i].oldLocale}}
         </a>
