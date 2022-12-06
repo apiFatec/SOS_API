@@ -18,6 +18,4 @@ class Computador(db.Model):
   Versao = db.Column(db.String, nullable=False)
   fk_idenderecos = db.Column(db.Integer, db.ForeignKey(Address.id_enderecos))
   status = db.Column(db.String, nullable=False)
-  out = db.Column(db.Integer)
-  oldLocale = db.Column(db.String)
   chamados = db.relationship("TblChamados", backref='computador')
