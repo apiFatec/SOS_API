@@ -96,7 +96,7 @@
     </div>
     <section class="cards">
       {% set count = namespace(value=1) %}
-      {% for chamado in chamados %}
+      {% for chamado in pagination.items %}
       <div class="div" role="button" data-bs-toggle="modal" data-bs-target="#exampleModal"
         onclick="modal_sup('{{count.value}}')">
         <h3 id="status{{count.value}}" class="{{chamado.status}}">{{chamado.status}}</h3>
